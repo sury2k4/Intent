@@ -1,0 +1,8 @@
+seed: 17
+threads: 8
+cache_dir: .cache/model-intent
+output_dir: artifacts/benchmark
+languages: [vi, en]
+top_k: 5
+warmup_queries: 2
+latency_repeats: 3

@@ -1,0 +1,236 @@
+{
+  "items": {
+    "39": {
+      "description_vi": "Cơ sở cung cấp các dịch vụ chăm sóc da, móng và làm đẹp tổng hợp.",
+      "description_en": "A venue offering skin, nail, and general beauty treatments.",
+      "aliases_vi": ["thẩm mỹ salon", "tiệm làm đẹp"],
+      "aliases_en": ["beauty salon", "beauty parlor"],
+      "examples_vi": ["muốn chăm sóc da mặt và làm móng trước buổi tiệc", "cần nơi thực hiện nhiều liệu trình cải thiện vẻ ngoài"],
+      "examples_en": ["get a facial and manicure before a celebration", "find several appearance treatments under one roof"]
+    },
+    "40": {
+      "description_vi": "Cơ sở chuyên cắt, tạo kiểu, nhuộm và chăm sóc tóc.",
+      "description_en": "A venue specializing in cutting, styling, coloring, and caring for hair.",
+      "aliases_vi": ["tiệm làm tóc", "salon tóc"],
+      "aliases_en": ["hairdresser", "hair salon"],
+      "examples_vi": ["muốn cắt ngắn và tạo kiểu tóc mới", "cần nhuộm lại phần chân tóc đã mọc"],
+      "examples_en": ["have my hair trimmed and restyled", "touch up the color at my roots"]
+    },
+    "44": {
+      "description_vi": "Trường giảng dạy những năm đầu của giáo dục phổ thông cho trẻ em.",
+      "description_en": "A school providing the first years of general education for children.",
+      "aliases_vi": ["trường tiểu học", "trường cấp một"],
+      "aliases_en": ["elementary school", "grade school"],
+      "examples_vi": ["tìm chỗ học phù hợp cho bé bắt đầu lớp một", "cần chuyển hồ sơ cho con đang học lớp bốn"],
+      "examples_en": ["enroll a child who is starting first grade", "transfer records for a fourth-grade pupil"]
+    },
+    "45": {
+      "description_vi": "Trường phổ thông dành cho học sinh sau tiểu học và trước trung học phổ thông.",
+      "description_en": "A school for pupils between primary and upper-secondary education.",
+      "aliases_vi": ["trường trung học cơ sở", "trường cấp hai"],
+      "aliases_en": ["middle school", "junior high school"],
+      "examples_vi": ["cần nhập học cho con vừa hoàn thành lớp năm", "tìm nơi tiếp nhận học sinh lớp tám chuyển trường"],
+      "examples_en": ["enroll a child who has just finished primary education", "find a new campus for an eighth-grade student"]
+    },
+    "46": {
+      "description_vi": "Trường giảng dạy giai đoạn cuối của giáo dục phổ thông trước bậc sau trung học.",
+      "description_en": "A school providing the final stage of general education before postsecondary study.",
+      "aliases_vi": ["trường trung học phổ thông", "trường cấp ba"],
+      "aliases_en": ["senior high school", "upper-secondary school"],
+      "examples_vi": ["tìm nơi cho học sinh lớp mười theo học", "cần trường giúp con hoàn tất chương trình phổ thông"],
+      "examples_en": ["find a place for a student entering tenth grade", "complete the final school years before higher education"]
+    },
+    "47": {
+      "description_vi": "Cơ sở giáo dục đại học đào tạo nhiều ngành và có thể cấp bằng học thuật.",
+      "description_en": "A higher-education institution offering degree programs across academic fields.",
+      "aliases_vi": ["đại học", "trường đại học"],
+      "aliases_en": ["university", "higher-education institution"],
+      "examples_vi": ["muốn theo học chương trình cử nhân bốn năm", "cần đến khuôn viên để gặp khoa tuyển sinh"],
+      "examples_en": ["pursue a four-year bachelor's degree", "visit the campus admissions department"]
+    },
+    "48": {
+      "description_vi": "Cơ sở giáo dục sau trung học đào tạo chương trình cao đẳng và nghề nghiệp ứng dụng.",
+      "description_en": "A postsecondary institution offering college-level and applied career programs.",
+      "aliases_vi": ["trường cao đẳng", "cao đẳng"],
+      "aliases_en": ["college", "community college"],
+      "examples_vi": ["muốn học chương trình thực hành ngắn hơn bậc cử nhân", "cần nộp hồ sơ cho khóa cấp bằng cao đẳng"],
+      "examples_en": ["take an applied program shorter than a bachelor's degree", "submit an application for an associate-level qualification"]
+    },
+    "49": {
+      "description_vi": "Cơ sở chăm sóc và giáo dục trẻ nhỏ trước độ tuổi vào tiểu học.",
+      "description_en": "A facility caring for and educating young children before primary school.",
+      "aliases_vi": ["trường mẫu giáo", "trường mầm non", "nhà trẻ"],
+      "aliases_en": ["preschool", "nursery school", "kindergarten"],
+      "examples_vi": ["cần gửi bé ban ngày trước tuổi vào lớp một", "tìm lớp có hoạt động vui học cho trẻ nhỏ"],
+      "examples_en": ["arrange daytime learning and care for a young child", "find play-based classes before primary education"]
+    },
+    "50": {
+      "description_vi": "Nơi lưu trữ tài liệu để đọc, tra cứu hoặc mượn sử dụng.",
+      "description_en": "A place that keeps materials for reading, research, or borrowing.",
+      "aliases_vi": ["thư viện", "phòng đọc"],
+      "aliases_en": ["library", "reading room"],
+      "examples_vi": ["cần mượn giáo trình về nhà trong hai tuần", "muốn tra cứu tài liệu trong không gian yên tĩnh"],
+      "examples_en": ["borrow a textbook for a couple of weeks", "research reference materials in a quiet setting"]
+    },
+    "52": {
+      "description_vi": "Máy tự phục vụ cho phép rút tiền và thực hiện một số giao dịch ngân hàng.",
+      "description_en": "A self-service machine for cash withdrawals and selected banking transactions.",
+      "aliases_vi": ["máy rút tiền", "máy giao dịch tự động"],
+      "aliases_en": ["cash machine", "automated teller"],
+      "examples_vi": ["muốn lấy tiền giấy từ thẻ ngân hàng", "cần kiểm tra số dư bằng máy tự phục vụ"],
+      "examples_en": ["take banknotes out using my debit card", "check an account balance at a self-service terminal"]
+    },
+    "98": {
+      "description_vi": "Cá nhân hoặc đơn vị cung cấp lời khuyên chuyên môn cho khách hàng.",
+      "description_en": "A professional or firm providing expert advice to clients.",
+      "aliases_vi": ["chuyên gia tư vấn", "đơn vị cố vấn"],
+      "aliases_en": ["consultant", "advisory firm"],
+      "examples_vi": ["cần chuyên gia đánh giá kế hoạch kinh doanh", "muốn nhận khuyến nghị độc lập cho dự án mới"],
+      "examples_en": ["have an expert assess a business plan", "get independent recommendations for a new project"]
+    },
+    "99": {
+      "description_vi": "Dịch vụ nhận, vận chuyển và giao nhanh thư từ hoặc kiện hàng.",
+      "description_en": "A service that collects, transports, and promptly delivers documents or parcels.",
+      "aliases_vi": ["dịch vụ giao nhận", "chuyển phát"],
+      "aliases_en": ["courier", "express delivery"],
+      "examples_vi": ["cần gửi hợp đồng đến khách hàng trong ngày", "muốn có người đến lấy kiện nhỏ và giao tận nơi"],
+      "examples_en": ["send a contract to a client on the same day", "have a small parcel collected and delivered door to door"]
+    },
+    "100": {
+      "description_vi": "Cơ sở nhận giặt, sấy và có thể ủi quần áo hoặc đồ vải.",
+      "description_en": "A business that washes, dries, and may press clothing or linens.",
+      "aliases_vi": ["tiệm giặt sấy", "dịch vụ giặt là"],
+      "aliases_en": ["laundromat", "wash-and-fold service"],
+      "examples_vi": ["cần làm sạch và sấy khô một túi quần áo", "muốn gửi chăn ga rồi nhận lại đã gấp gọn"],
+      "examples_en": ["get a bag of clothes washed and dried", "drop off bedding and collect it clean and folded"]
+    },
+    "101": {
+      "description_vi": "Văn phòng cung cấp tư vấn, đại diện và các dịch vụ pháp lý.",
+      "description_en": "An office providing legal advice, representation, and related services.",
+      "aliases_vi": ["văn phòng luật sư", "hãng luật"],
+      "aliases_en": ["law office", "attorney's office"],
+      "examples_vi": ["cần người xem lại điều khoản hợp đồng trước khi ký", "muốn được đại diện trong một tranh chấp dân sự"],
+      "examples_en": ["have contract terms reviewed before signing", "seek representation in a civil dispute"]
+    },
+    "102": {
+      "description_vi": "Thợ hoặc cơ sở làm chìa, lắp khóa và xử lý khóa bị hỏng hay thất lạc chìa.",
+      "description_en": "A tradesperson or shop that cuts keys, installs locks, and resolves lockouts.",
+      "aliases_vi": ["thợ sửa khóa", "tiệm khóa"],
+      "aliases_en": ["locksmith", "key cutter"],
+      "examples_vi": ["bị kẹt ngoài nhà vì chìa đã thất lạc", "cần làm thêm một bản chìa cho ổ khóa hiện có"],
+      "examples_en": ["regain entry after misplacing the house key", "make a spare key for an existing lock"]
+    },
+    "103": {
+      "description_vi": "Doanh nghiệp vận chuyển đồ đạc khi khách chuyển nhà hoặc chuyển văn phòng.",
+      "description_en": "A company that transports belongings during home or office relocations.",
+      "aliases_vi": ["đơn vị dọn nhà", "dịch vụ chuyển đồ"],
+      "aliases_en": ["movers", "removal company"],
+      "examples_vi": ["cần xe tải và nhân công đưa nội thất sang căn hộ mới", "muốn đóng gói thiết bị để dời văn phòng"],
+      "examples_en": ["hire a truck and crew to move furniture to a new flat", "pack equipment for an office relocation"]
+    },
+    "104": {
+      "description_vi": "Đơn vị môi giới, cho thuê hoặc hỗ trợ giao dịch nhà đất.",
+      "description_en": "An agency brokering, renting, or supporting transactions involving property.",
+      "aliases_vi": ["môi giới nhà đất", "sàn bất động sản"],
+      "aliases_en": ["property agency", "realty office"],
+      "examples_vi": ["muốn xem các căn hộ đang cho thuê trong khu vực", "cần người hỗ trợ rao bán một lô đất"],
+      "examples_en": ["view flats currently available to rent nearby", "get help listing a parcel of land for sale"]
+    },
+    "105": {
+      "description_vi": "Thợ hoặc cửa hiệu may, sửa và điều chỉnh trang phục theo số đo.",
+      "description_en": "A craftsperson or shop that makes, repairs, and alters clothing to fit.",
+      "aliases_vi": ["tiệm may", "thợ may đo"],
+      "aliases_en": ["tailor", "alterations shop"],
+      "examples_vi": ["cần bóp eo chiếc áo cho vừa người", "muốn đặt may bộ trang phục theo số đo"],
+      "examples_en": ["have a jacket taken in for a better fit", "order an outfit made to my measurements"]
+    },
+    "106": {
+      "description_vi": "Điểm hỗ trợ đăng ký, thanh toán và xử lý vấn đề về điện thoại hoặc internet.",
+      "description_en": "A service point for phone or internet subscriptions, payments, and support.",
+      "aliases_vi": ["điểm giao dịch viễn thông", "cửa hàng nhà mạng"],
+      "aliases_en": ["telecom shop", "carrier service center"],
+      "examples_vi": ["cần đăng ký đường truyền internet cho căn hộ", "muốn đổi thẻ SIM bị hỏng nhưng giữ số cũ"],
+      "examples_en": ["set up an internet connection for an apartment", "replace a damaged SIM while keeping the same number"]
+    },
+    "107": {
+      "description_vi": "Đại lý hỗ trợ đặt vé, chỗ ở, tour và các dịch vụ cho chuyến đi.",
+      "description_en": "An agency arranging tickets, lodging, tours, and other trip services.",
+      "aliases_vi": ["đại lý lữ hành", "văn phòng du lịch"],
+      "aliases_en": ["travel agent", "booking agency"],
+      "examples_vi": ["cần người đặt vé và phòng cho kỳ nghỉ sắp tới", "muốn được tư vấn lịch trình đi nhiều thành phố"],
+      "examples_en": ["arrange transport and lodging for an upcoming holiday", "get help planning a trip across several cities"]
+    },
+    "151": {
+      "description_vi": "Trường đào tạo nghề hoặc kỹ thuật thực hành cho một lĩnh vực cụ thể.",
+      "description_en": "A school providing practical vocational or technical training for specific occupations.",
+      "aliases_vi": ["trường nghề", "trường trung cấp nghề"],
+      "aliases_en": ["trade school", "technical school"],
+      "examples_vi": ["muốn học thực hành để làm kỹ thuật viên điện", "cần khóa đào tạo nghề có xưởng thực tập"],
+      "examples_en": ["gain hands-on training to become an electrical technician", "take a career program with workshop practice"]
+    },
+    "152": {
+      "description_vi": "Cơ sở tổ chức khóa học ngoại ngữ cho nhiều trình độ và mục tiêu.",
+      "description_en": "A center offering foreign-language courses for varied levels and goals.",
+      "aliases_vi": ["trung tâm ngôn ngữ", "lớp ngoại ngữ"],
+      "aliases_en": ["language school", "foreign-language institute"],
+      "examples_vi": ["muốn luyện giao tiếp với giáo viên theo nhóm nhỏ", "cần ôn chứng chỉ quốc tế vào buổi tối"],
+      "examples_en": ["practice conversation with a teacher in a small group", "prepare for an international proficiency exam after work"]
+    },
+    "153": {
+      "description_vi": "Cơ sở dạy lý thuyết, kỹ năng điều khiển xe và chuẩn bị thi giấy phép lái xe.",
+      "description_en": "A school teaching road theory, vehicle operation, and license-test preparation.",
+      "aliases_vi": ["trung tâm dạy lái xe", "trường đào tạo lái xe"],
+      "aliases_en": ["driving academy", "driver training school"],
+      "examples_vi": ["cần học điều khiển ô tô từ đầu với giáo viên", "muốn luyện sa hình trước kỳ thi giấy phép"],
+      "examples_en": ["learn to operate a car with an instructor from the basics", "practice road maneuvers before a license test"]
+    },
+    "165": {
+      "description_vi": "Trường giảng dạy liên tục từ hai hay nhiều cấp học phổ thông.",
+      "description_en": "A school combining two or more consecutive levels of general education.",
+      "aliases_vi": ["trường nhiều cấp", "trường phổ thông liên cấp"],
+      "aliases_en": ["multi-level school", "combined school"],
+      "examples_vi": ["muốn hai anh em khác cấp học cùng một khuôn viên", "cần môi trường cho con học xuyên suốt nhiều bậc"],
+      "examples_en": ["send siblings in different grades to the same campus", "keep a child at one institution across several school stages"]
+    },
+    "177": {
+      "description_vi": "Cơ sở sao chép và sản xuất tài liệu, hình ảnh hoặc ấn phẩm theo yêu cầu.",
+      "description_en": "A business reproducing and producing documents, images, or printed materials on request.",
+      "aliases_vi": ["tiệm in", "dịch vụ in sao"],
+      "aliases_en": ["print shop", "printing service"],
+      "examples_vi": ["cần làm một trăm tờ rơi màu cho sự kiện", "muốn đóng quyển và sao nhiều bản tài liệu"],
+      "examples_en": ["produce a hundred color flyers for an event", "bind a document and make several copies"]
+    },
+    "183": {
+      "description_vi": "Dịch vụ chụp và xử lý hình ảnh cho cá nhân, sản phẩm hoặc sự kiện.",
+      "description_en": "A service capturing and processing images for people, products, or events.",
+      "aliases_vi": ["dịch vụ nhiếp ảnh", "thợ chụp hình"],
+      "aliases_en": ["photographer", "photo service"],
+      "examples_vi": ["cần bộ ảnh chân dung chuyên nghiệp cho hồ sơ", "muốn ghi lại khoảnh khắc trong buổi lễ gia đình"],
+      "examples_en": ["get professional portraits for a profile", "capture memorable moments at a family ceremony"]
+    },
+    "195": {
+      "description_vi": "Chương trình hoặc cơ sở giúp người học chuẩn bị kiến thức trước khi vào đại học.",
+      "description_en": "A program or institution preparing learners academically for university entry.",
+      "aliases_vi": ["khóa dự bị đại học", "chương trình tiền đại học"],
+      "aliases_en": ["university foundation program", "pre-university course"],
+      "examples_vi": ["cần củng cố kiến thức một năm trước bậc cử nhân", "muốn hoàn thiện yêu cầu học thuật để nộp vào đại học"],
+      "examples_en": ["strengthen academic skills for a year before a degree", "meet entry requirements before applying to university"]
+    },
+    "198": {
+      "description_vi": "Cơ sở cung cấp chụp ảnh cưới, trang phục và dịch vụ hình ảnh cho lễ cưới.",
+      "description_en": "A studio providing wedding photography, attire, and related image services.",
+      "aliases_vi": ["studio ảnh cưới", "ảnh viện cưới"],
+      "aliases_en": ["bridal studio", "wedding photo studio"],
+      "examples_vi": ["muốn thuê váy và chụp bộ ảnh trước ngày thành hôn", "cần ê-kíp trang điểm và ghi hình cho cô dâu chú rể"],
+      "examples_en": ["rent bridal attire and take portraits before the ceremony", "book makeup and photography for the couple"]
+    },
+    "203": {
+      "description_vi": "Cơ sở tổ chức huấn luyện kỹ năng, nghiệp vụ hoặc năng lực chuyên biệt.",
+      "description_en": "A center delivering instruction in skills, professional practices, or specialized capabilities.",
+      "aliases_vi": ["trung tâm đào tạo", "cơ sở huấn luyện"],
+      "aliases_en": ["training institute", "skills center"],
+      "examples_vi": ["cần khóa ngắn hạn nâng cao kỹ năng cho nhân viên", "muốn tham gia chương trình thực hành nghiệp vụ chuyên môn"],
+      "examples_en": ["arrange a short skills course for employees", "join hands-on instruction in a professional practice"]
+    }
+  }
+}

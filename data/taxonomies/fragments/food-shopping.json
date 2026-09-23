@@ -1,0 +1,564 @@
+{
+  "items": {
+    "213": {
+      "description_vi": "Quán chuyên phục vụ cháo với nhiều loại thịt, cá hoặc rau củ ăn kèm.",
+      "description_en": "An eatery specializing in rice porridge with meat, seafood, or vegetable accompaniments.",
+      "aliases_vi": ["quán cháo", "tiệm cháo"],
+      "aliases_en": ["porridge eatery", "congee shop"],
+      "examples_vi": ["cần một bát nóng, mềm và dễ ăn cho người đang mệt", "muốn ăn món gạo nấu nhừ kèm thịt bằm"],
+      "examples_en": ["need a warm, soft bowl for someone feeling unwell", "craving slow-cooked rice with minced meat on top"]
+    },
+    "218": {
+      "description_vi": "Quán bán các món ăn nhẹ, khẩu phần nhỏ và đồ nhâm nhi giữa các bữa chính.",
+      "description_en": "A shop serving light bites, small portions, and treats between main meals.",
+      "aliases_vi": ["quán ăn vặt", "tiệm đồ ăn nhẹ"],
+      "aliases_en": ["snack bar", "snack eatery"],
+      "examples_vi": ["muốn gọi vài món nhỏ để vừa trò chuyện vừa nhâm nhi", "cần chút đồ lót dạ vào giữa buổi chiều"],
+      "examples_en": ["want a few small bites to share while chatting", "need a light treat between lunch and dinner"]
+    },
+    "53": {
+      "description_vi": "Nhà hàng chuyên món thịt, hải sản hoặc rau củ nướng trên vỉ hay bếp than.",
+      "description_en": "A restaurant specializing in meat, seafood, or vegetables cooked on grills or over coals.",
+      "aliases_vi": ["quán nướng", "nhà hàng đồ nướng"],
+      "aliases_en": ["grill restaurant", "barbecue place"],
+      "examples_vi": ["cả nhóm muốn tự nướng thịt ngay tại bàn", "thèm sườn ám khói vừa lấy khỏi vỉ"],
+      "examples_en": ["our group wants to grill meat together at the table", "craving smoky ribs served straight from the grill"]
+    },
+    "54": {
+      "description_vi": "Nhà hàng phục vụ các món ăn thuộc nhiều vùng ẩm thực Trung Hoa.",
+      "description_en": "A restaurant serving dishes from the diverse regional cuisines of China.",
+      "aliases_vi": ["quán món Hoa", "nhà hàng Trung Hoa"],
+      "aliases_en": ["Chinese dining", "Chinese eatery"],
+      "examples_vi": ["muốn dùng dim sum và vịt quay cho bữa trưa", "cần nơi có món xào kiểu Quảng Đông cho gia đình"],
+      "examples_en": ["want dim sum and roast duck for lunch", "need Cantonese-style stir-fries for a family meal"]
+    },
+    "55": {
+      "description_vi": "Nhà hàng chỉ phục vụ món có nguồn gốc thực vật, không dùng nguyên liệu động vật.",
+      "description_en": "A restaurant serving entirely plant-based dishes without animal-derived ingredients.",
+      "aliases_vi": ["quán thuần chay", "nhà hàng vegan"],
+      "aliases_en": ["plant-based restaurant", "vegan eatery"],
+      "examples_vi": ["cần bữa ăn hoàn toàn không có thịt, trứng hay sữa", "muốn đãi người bạn chỉ dùng thực phẩm từ thực vật"],
+      "examples_en": ["need a meal with no meat, eggs, or dairy", "taking a guest who eats only plant-based food"]
+    },
+    "56": {
+      "description_vi": "Nhà hàng phục vụ món Ấn Độ với cà ri, gia vị thơm và các loại bánh dẹt đặc trưng.",
+      "description_en": "A restaurant serving Indian cuisine with curries, aromatic spices, and traditional flatbreads.",
+      "aliases_vi": ["quán món Ấn", "nhà hàng Ấn Độ"],
+      "aliases_en": ["Indian eatery", "Indian dining"],
+      "examples_vi": ["thèm cà ri đậm gia vị ăn cùng bánh naan", "muốn thử cơm biryani và món tandoori"],
+      "examples_en": ["craving a fragrant curry with naan", "want biryani and something cooked in a tandoor"]
+    },
+    "57": {
+      "description_vi": "Nhà hàng phục vụ nhiều món Nhật như cơm, mì, đồ nướng và món theo mùa.",
+      "description_en": "A restaurant serving varied Japanese dishes such as rice, noodles, grilled foods, and seasonal fare.",
+      "aliases_vi": ["quán món Nhật", "nhà hàng Nhật Bản"],
+      "aliases_en": ["Japanese eatery", "Japanese dining"],
+      "examples_vi": ["muốn ăn set cơm kiểu Nhật cùng súp miso", "cần nơi có yakitori và tempura cho bữa tối"],
+      "examples_en": ["want a Japanese set meal with miso soup", "looking for yakitori and tempura at dinner"]
+    },
+    "58": {
+      "description_vi": "Cửa hàng làm và bán bánh mì Việt Nam kẹp nhân mặn hoặc chay.",
+      "description_en": "A shop preparing Vietnamese baguettes filled with savory or vegetarian ingredients.",
+      "aliases_vi": ["tiệm bánh mì kẹp", "quầy bánh mì Việt"],
+      "aliases_en": ["Vietnamese baguette shop", "banh mi stand"],
+      "examples_vi": ["cần ổ giòn kẹp thịt và rau để mang đi", "muốn bữa sáng nhanh với pate và đồ chua"],
+      "examples_en": ["need a crisp filled baguette to take away", "want a quick breakfast with pâté and pickled vegetables"]
+    },
+    "59": {
+      "description_vi": "Nhà hàng phục vụ món Hàn Quốc như thịt nướng, cơm trộn, canh và món ăn kèm.",
+      "description_en": "A restaurant serving Korean dishes such as grilled meat, mixed rice, stews, and side dishes.",
+      "aliases_vi": ["quán món Hàn", "nhà hàng Hàn"],
+      "aliases_en": ["Korean eatery", "Korean dining"],
+      "examples_vi": ["muốn ăn cơm trộn nóng với kimchi", "cả nhóm thèm thịt nướng kèm nhiều đĩa banchan"],
+      "examples_en": ["craving hot mixed rice with kimchi", "our group wants grilled meat with plenty of banchan"]
+    },
+    "60": {
+      "description_vi": "Nhà hàng chuyên bánh pizza nướng với nhiều loại đế, sốt và lớp phủ.",
+      "description_en": "A restaurant specializing in baked pizzas with varied crusts, sauces, and toppings.",
+      "aliases_vi": ["quán pizza", "tiệm bánh pizza"],
+      "aliases_en": ["pizzeria", "pizza place"],
+      "examples_vi": ["muốn chia một chiếc đế mỏng phủ phô mai cho cả nhóm", "cần đặt bánh tròn nướng giao đến buổi tụ họp"],
+      "examples_en": ["want to share a thin-crust pie topped with cheese", "need a baked round delivered for a group gathering"]
+    },
+    "61": {
+      "description_vi": "Nhà hàng chuyên mì ramen Nhật Bản dùng với nước dùng và các loại topping.",
+      "description_en": "A restaurant specializing in Japanese ramen noodles served in broth with assorted toppings.",
+      "aliases_vi": ["quán mì ramen", "tiệm ramen"],
+      "aliases_en": ["ramen shop", "ramen bar"],
+      "examples_vi": ["thèm tô mì nước dùng xương đậm vị với trứng lòng đào", "muốn ăn sợi mì Nhật nóng cùng thịt chashu"],
+      "examples_en": ["craving noodles in rich broth with a soft egg", "want a hot Japanese noodle bowl topped with chashu"]
+    },
+    "62": {
+      "description_vi": "Nhà hàng chuyên chế biến cá, tôm, cua, sò và các sản vật từ biển.",
+      "description_en": "A restaurant specializing in fish, shrimp, crab, shellfish, and other marine fare.",
+      "aliases_vi": ["quán hải sản", "nhà hàng đồ biển"],
+      "aliases_en": ["fish restaurant", "seafood dining"],
+      "examples_vi": ["cả nhà muốn gọi cua hấp và tôm nướng tại bàn", "cần bữa tối có nhiều món tươi từ biển"],
+      "examples_en": ["the family wants steamed crab and grilled prawns", "looking for a dinner centered on fresh catch from the sea"]
+    },
+    "63": {
+      "description_vi": "Nhà hàng tập trung vào các phần thịt bò cắt miếng và nướng theo độ chín yêu cầu.",
+      "description_en": "A restaurant focused on cuts of beef grilled to the diner's preferred doneness.",
+      "aliases_vi": ["nhà hàng bò bít tết", "quán steak"],
+      "aliases_en": ["steakhouse", "steak restaurant"],
+      "examples_vi": ["muốn phần thăn bò chín vừa kèm khoai nghiền", "cần nơi biết nướng miếng ribeye đúng độ chín"],
+      "examples_en": ["want a medium-cooked tenderloin with mashed potatoes", "need somewhere that prepares ribeye to the requested doneness"]
+    },
+    "64": {
+      "description_vi": "Nhà hàng phục vụ món Thái với vị chua, cay, mặn, ngọt và thảo mộc đặc trưng.",
+      "description_en": "A restaurant serving Thai cuisine known for sour, spicy, salty, sweet, and herbal flavors.",
+      "aliases_vi": ["quán món Thái", "nhà hàng Thái Lan"],
+      "aliases_en": ["Thai eatery", "Thai dining"],
+      "examples_vi": ["thèm tom yum cay chua và cơm thơm", "muốn gọi pad thai cùng gỏi đu đủ"],
+      "examples_en": ["craving hot-and-sour tom yum with fragrant rice", "want pad thai and green papaya salad"]
+    },
+    "65": {
+      "description_vi": "Nhà hàng chuyên sushi, cơm cuộn và hải sản sống chế biến theo phong cách Nhật.",
+      "description_en": "A restaurant specializing in sushi, rice rolls, and Japanese-style raw seafood preparations.",
+      "aliases_vi": ["quán sushi", "tiệm sushi"],
+      "aliases_en": ["sushi bar", "sushi place"],
+      "examples_vi": ["muốn gọi một khay nigiri và sashimi để chia sẻ", "cần chỗ làm cơm cuộn ngay tại quầy"],
+      "examples_en": ["want a shared platter of nigiri and sashimi", "looking for rolls prepared fresh at the counter"]
+    },
+    "66": {
+      "description_vi": "Nhà hàng phục vụ các món truyền thống và đương đại của ẩm thực Việt Nam.",
+      "description_en": "A restaurant serving traditional and contemporary dishes from Vietnamese cuisine.",
+      "aliases_vi": ["quán món Việt", "nhà hàng Việt"],
+      "aliases_en": ["Vietnamese eatery", "Vietnamese dining"],
+      "examples_vi": ["muốn mời khách nước ngoài dùng một mâm cơm quê", "cần nơi có món Việt từ nhiều vùng miền"],
+      "examples_en": ["want to introduce an overseas guest to a home-style local meal", "looking for regional dishes from across Vietnam"]
+    },
+    "186": {
+      "description_vi": "Nhà hàng phục vụ ẩm thực Pháp với kỹ thuật, nước sốt và cách trình bày đặc trưng.",
+      "description_en": "A restaurant serving French cuisine with its characteristic techniques, sauces, and presentation.",
+      "aliases_vi": ["quán món Pháp", "nhà hàng kiểu Pháp"],
+      "aliases_en": ["French dining", "French eatery"],
+      "examples_vi": ["muốn bữa tối có súp hành và vịt áp chảo", "cần không gian dùng món Âu kèm rượu vang theo phong cách Paris"],
+      "examples_en": ["want onion soup and seared duck for dinner", "seeking Parisian-style cooking paired with wine"]
+    },
+    "179": {
+      "description_vi": "Nhà hàng phục vụ ẩm thực Đài Loan, từ món mì, cơm đến đồ ăn đường phố đặc trưng.",
+      "description_en": "A restaurant serving Taiwanese cuisine, including characteristic noodles, rice dishes, and street foods.",
+      "aliases_vi": ["quán món Đài", "nhà hàng Đài Loan"],
+      "aliases_en": ["Taiwanese eatery", "Taiwanese dining"],
+      "examples_vi": ["thèm mì bò hầm và bánh hành kiểu Đài", "muốn ăn cơm thịt kho cùng các món ăn đường phố xứ Đài"],
+      "examples_en": ["craving Taiwanese beef noodles and scallion pancakes", "want braised pork rice with island-style street bites"]
+    },
+    "180": {
+      "description_vi": "Nhà hàng phục vụ ẩm thực Brazil, thường có thịt nướng xiên và món ăn bản địa.",
+      "description_en": "A restaurant serving Brazilian cuisine, often featuring skewered grilled meats and regional dishes.",
+      "aliases_vi": ["quán món Brazil", "nhà hàng kiểu Brazil"],
+      "aliases_en": ["Brazilian eatery", "Brazilian steakhouse"],
+      "examples_vi": ["muốn thử nhiều loại thịt xiên được cắt tại bàn", "cần bữa ăn có feijoada và hương vị Nam Mỹ"],
+      "examples_en": ["want assorted skewered meats carved tableside", "looking for feijoada and South American flavors"]
+    },
+    "181": {
+      "description_vi": "Nhà hàng phục vụ ẩm thực Ý như pasta, risotto và các món theo vùng.",
+      "description_en": "A restaurant serving Italian cuisine such as pasta, risotto, and regional specialties.",
+      "aliases_vi": ["quán món Ý", "nhà hàng Italia"],
+      "aliases_en": ["Italian eatery", "Italian dining"],
+      "examples_vi": ["muốn ăn pasta làm tươi với sốt kem nấm", "cần một bữa risotto và tiramisu theo kiểu Ý"],
+      "examples_en": ["want fresh pasta with a creamy mushroom sauce", "looking for an Italian-style meal of risotto and tiramisu"]
+    },
+    "20": {
+      "description_vi": "Cơ sở phục vụ các bữa ăn được chế biến và dùng tại chỗ, thường có thực đơn cùng chỗ ngồi.",
+      "description_en": "An establishment preparing meals for on-site dining, typically with a menu and seating.",
+      "aliases_vi": ["quán ăn", "cơ sở ăn uống"],
+      "aliases_en": ["dining establishment", "eatery"],
+      "examples_vi": ["cần chỗ ngồi gọi nhiều món cho bữa tối cùng gia đình", "muốn dùng một bữa chính có phục vụ tại bàn"],
+      "examples_en": ["need seated dining with several dishes for the family", "want a substantial evening meal with table service"]
+    },
+    "21": {
+      "description_vi": "Cơ sở làm và bán bánh mì, bánh ngọt cùng các sản phẩm nướng từ bột.",
+      "description_en": "A business making and selling bread, pastries, cakes, and other baked goods.",
+      "aliases_vi": ["lò bánh", "tiệm bánh ngọt"],
+      "aliases_en": ["bake shop", "pastry shop"],
+      "examples_vi": ["cần ổ bánh mới ra lò cho bữa sáng", "muốn đặt bánh kem cho sinh nhật cuối tuần"],
+      "examples_en": ["need a freshly baked loaf for breakfast", "want to order a decorated cake for a weekend birthday"]
+    },
+    "22": {
+      "description_vi": "Địa điểm pha và phục vụ đồ uống có cồn, thường có quầy ngồi và không khí về đêm.",
+      "description_en": "A venue mixing and serving alcoholic drinks, usually with counter seating and a nightlife atmosphere.",
+      "aliases_vi": ["quầy rượu", "cocktail bar"],
+      "aliases_en": ["cocktail lounge", "drinks bar"],
+      "examples_vi": ["muốn ngồi ở quầy gọi cocktail sau giờ làm", "cần nơi có bartender pha đồ uống theo yêu cầu"],
+      "examples_en": ["want a mixed drink at the counter after work", "looking for a bartender who can make a custom cocktail"]
+    },
+    "23": {
+      "description_vi": "Quán pha chế cà phê và đồ uống liên quan, thường có chỗ ngồi để gặp gỡ hoặc nghỉ ngơi.",
+      "description_en": "A café preparing coffee-based drinks, usually with seating for meeting or relaxing.",
+      "aliases_vi": ["quán cafe", "tiệm cà phê"],
+      "aliases_en": ["café", "coffeehouse"],
+      "examples_vi": ["cần một góc có ổ cắm để làm việc cùng ly cappuccino", "muốn gặp bạn buổi sáng và gọi đồ uống từ hạt rang"],
+      "examples_en": ["need a table with an outlet while sipping a cappuccino", "want to meet a friend over a freshly brewed cup"]
+    },
+    "24": {
+      "description_vi": "Quán chuyên các loại trà pha, trà sữa và đồ uống có topping.",
+      "description_en": "A shop specializing in brewed tea, milk tea, and drinks with optional toppings.",
+      "aliases_vi": ["quán trà sữa", "tiệm trà"],
+      "aliases_en": ["milk tea shop", "tea house"],
+      "examples_vi": ["muốn ly trà có trân châu và điều chỉnh mức đường", "cần thức uống từ lá trà để trò chuyện cùng bạn"],
+      "examples_en": ["want a tea drink with tapioca pearls and custom sweetness", "looking for brewed leaves and a place to chat with friends"]
+    },
+    "25": {
+      "description_vi": "Cửa hàng bán kem lạnh theo viên, ly, ốc quế hoặc các món tráng miệng từ kem.",
+      "description_en": "A shop selling frozen cream desserts by scoop, cup, cone, or in composed treats.",
+      "aliases_vi": ["tiệm kem", "quán kem"],
+      "aliases_en": ["ice cream parlor", "gelato shop"],
+      "examples_vi": ["muốn vài viên vị chocolate trong ốc quế", "cần món lạnh ngọt cho trẻ sau bữa tối"],
+      "examples_en": ["want a few chocolate scoops in a cone", "need a cold sweet treat for the children after dinner"]
+    },
+    "26": {
+      "description_vi": "Quán uống bình dân phục vụ bia, rượu và món nhắm cho các nhóm tụ họp.",
+      "description_en": "A casual drinking venue serving beer, alcohol, and shareable food for social groups.",
+      "aliases_vi": ["quán nhậu", "quán bia nhậu"],
+      "aliases_en": ["beer pub", "public house"],
+      "examples_vi": ["cả nhóm muốn cụng bia và gọi vài món lai rai", "cần bàn rộng để tụ tập uống và ăn đồ nhắm"],
+      "examples_en": ["our group wants beers with plates to share", "need a casual table for drinks and savory bites"]
+    },
+    "75": {
+      "description_vi": "Cơ sở phục vụ món ăn được chuẩn bị nhanh, gọi tại quầy và thuận tiện mang đi.",
+      "description_en": "An outlet serving quickly prepared food ordered at a counter and convenient for takeaway.",
+      "aliases_vi": ["quán phục vụ nhanh", "đồ ăn nhanh"],
+      "aliases_en": ["quick-service restaurant", "takeaway food outlet"],
+      "examples_vi": ["chỉ có ít phút để mua phần ăn mang theo", "cần món nóng được phục vụ ngay tại quầy"],
+      "examples_en": ["only have a few minutes to pick up a meal", "need hot food served promptly at the counter"]
+    },
+    "168": {
+      "description_vi": "Quán ăn phổ thông bán các món no bụng với mức giá phải chăng.",
+      "description_en": "An unpretentious eatery offering filling dishes at affordable prices.",
+      "aliases_vi": ["quán cơm bình dân", "quán ăn giá rẻ"],
+      "aliases_en": ["budget eatery", "inexpensive diner"],
+      "examples_vi": ["cần suất cơm no bụng mà không tốn nhiều tiền", "muốn ăn món hằng ngày với giá vừa túi"],
+      "examples_en": ["need a filling plate without spending much", "want an everyday cooked meal on a modest budget"]
+    },
+    "208": {
+      "description_vi": "Quán bán nhiều loại nước giải khát, nước ép hoặc đồ uống pha chế không nhất thiết từ cà phê.",
+      "description_en": "A shop selling refreshments, juices, or mixed drinks not necessarily centered on coffee.",
+      "aliases_vi": ["quán nước", "tiệm nước giải khát"],
+      "aliases_en": ["refreshment shop", "drinks shop"],
+      "examples_vi": ["đang khát và muốn chọn giữa nước ép với soda", "cần mua vài ly nước mát cho cả nhóm"],
+      "examples_en": ["feeling thirsty and choosing between juice and soda", "need several chilled drinks for the group"]
+    },
+    "209": {
+      "description_vi": "Nhà hàng kết hợp món ăn và phong cách chế biến từ cả châu Á lẫn châu Âu.",
+      "description_en": "A restaurant combining dishes and cooking styles from both Asian and European traditions.",
+      "aliases_vi": ["nhà hàng Á - Âu", "quán món Á Âu"],
+      "aliases_en": ["Asian-European dining", "East-West restaurant"],
+      "examples_vi": ["nhóm có người muốn món Á và người thích món Tây", "cần thực đơn vừa có cơm, mì vừa có steak và pasta"],
+      "examples_en": ["our party is split between Asian and Western flavors", "need one menu offering rice and noodles alongside steak and pasta"]
+    },
+    "219": {
+      "description_vi": "Cửa hàng đo mắt, tư vấn và bán kính thuốc, kính mát cùng phụ kiện kính.",
+      "description_en": "A shop offering eye measurements and selling prescription glasses, sunglasses, and eyewear accessories.",
+      "aliases_vi": ["tiệm kính", "cửa hàng kính mắt"],
+      "aliases_en": ["optical shop", "optician"],
+      "examples_vi": ["cần thay tròng mới theo số đo thị lực", "muốn thử gọng phù hợp với khuôn mặt"],
+      "examples_en": ["need new lenses made to my vision measurements", "want to try frames that suit my face"]
+    },
+    "10": {
+      "description_vi": "Cửa hàng bán sách, ấn phẩm và thường có thêm văn phòng phẩm.",
+      "description_en": "A retail shop selling books and publications, often alongside stationery.",
+      "aliases_vi": ["hiệu sách", "tiệm sách"],
+      "aliases_en": ["bookstore", "bookseller"],
+      "examples_vi": ["muốn tìm bản in mới của một cuốn tiểu thuyết", "cần mua sách giáo khoa cho năm học tới"],
+      "examples_en": ["want a new edition of a particular novel", "need textbooks for the coming school year"]
+    },
+    "11": {
+      "description_vi": "Cửa hàng bán quần áo và các sản phẩm thời trang cho người mặc.",
+      "description_en": "A retail shop selling garments and fashion items for personal wear.",
+      "aliases_vi": ["shop quần áo", "tiệm thời trang"],
+      "aliases_en": ["apparel store", "fashion boutique"],
+      "examples_vi": ["cần thử một bộ đồ đi làm vừa vặn", "muốn chọn áo khoác mới cho mùa lạnh"],
+      "examples_en": ["need to try on a well-fitting outfit for work", "want a new jacket for colder weather"]
+    },
+    "12": {
+      "description_vi": "Cửa hàng chuyên bán máy tính để bàn, laptop, linh kiện và phụ kiện liên quan.",
+      "description_en": "A shop specializing in desktop computers, laptops, components, and related accessories.",
+      "aliases_vi": ["tiệm máy tính", "cửa hàng laptop"],
+      "aliases_en": ["PC shop", "computer retailer"],
+      "examples_vi": ["cần chọn laptop đủ mạnh cho công việc thiết kế", "muốn mua thêm RAM và ổ cứng cho máy bàn"],
+      "examples_en": ["need a laptop powerful enough for design work", "want more memory and storage for a desktop PC"]
+    },
+    "13": {
+      "description_vi": "Cửa hàng bán nhanh thực phẩm, đồ uống và vật dụng thiết yếu, thường mở cửa nhiều giờ.",
+      "description_en": "A small retailer offering food, drinks, and essentials with typically extended opening hours.",
+      "aliases_vi": ["cửa hàng 24 giờ", "tiệm tiện ích"],
+      "aliases_en": ["corner convenience shop", "mini-mart"],
+      "examples_vi": ["cần mua nước và đồ dùng cá nhân vào lúc khuya", "muốn ghé nhanh lấy bữa ăn đóng gói trên đường về"],
+      "examples_en": ["need drinks and toiletries late at night", "want a quick stop for a packaged meal on the way home"]
+    },
+    "14": {
+      "description_vi": "Cửa hàng bán hoa tươi, bó hoa và sản phẩm cắm hoa cho nhiều dịp.",
+      "description_en": "A shop selling fresh flowers, bouquets, and floral arrangements for different occasions.",
+      "aliases_vi": ["tiệm hoa", "shop hoa tươi"],
+      "aliases_en": ["flower shop", "floral shop"],
+      "examples_vi": ["cần bó hoa chúc mừng cho lễ tốt nghiệp", "muốn đặt lẵng hoa giao đến một buổi khai trương"],
+      "examples_en": ["need a congratulatory bouquet for a graduation", "want an arrangement delivered to a grand opening"]
+    },
+    "15": {
+      "description_vi": "Cửa hàng bán đồ lưu niệm và sản phẩm dùng làm quà cho các dịp khác nhau.",
+      "description_en": "A shop selling souvenirs and items intended as presents for different occasions.",
+      "aliases_vi": ["tiệm quà", "cửa hàng lưu niệm"],
+      "aliases_en": ["present shop", "souvenir shop"],
+      "examples_vi": ["cần món nhỏ mang về cho đồng nghiệp sau chuyến đi", "muốn chọn quà sinh nhật rồi gói ngay tại chỗ"],
+      "examples_en": ["need a small keepsake for coworkers after a trip", "want to choose a birthday present and have it wrapped"]
+    },
+    "16": {
+      "description_vi": "Cửa hàng cung cấp vật tư dùng trong xây dựng như xi măng, gạch, cát và thép.",
+      "description_en": "A retailer supplying construction materials such as cement, bricks, sand, and steel.",
+      "aliases_vi": ["đại lý vật liệu xây dựng", "cửa hàng vật tư xây dựng"],
+      "aliases_en": ["construction materials supplier", "builders' merchant"],
+      "examples_vi": ["cần mua xi măng và gạch cho công trình sửa nhà", "muốn báo giá cát, đá và thép theo số lượng lớn"],
+      "examples_en": ["need cement and bricks for a home renovation", "want bulk pricing for sand, aggregate, and steel"]
+    },
+    "27": {
+      "description_vi": "Tổ hợp bán lẻ lớn tập trung nhiều cửa hàng, dịch vụ và tiện ích trong cùng một địa điểm.",
+      "description_en": "A large retail complex containing many shops, services, and amenities in one location.",
+      "aliases_vi": ["trung tâm thương mại", "khu mua sắm"],
+      "aliases_en": ["retail mall", "shopping center"],
+      "examples_vi": ["muốn dành cả buổi ghé nhiều thương hiệu trong một tòa nhà", "cần nơi vừa mua sắm vừa ăn uống và xem giải trí"],
+      "examples_en": ["want to browse many brands in one building for an afternoon", "need one destination for retail, dining, and entertainment"]
+    },
+    "28": {
+      "description_vi": "Cửa hàng bán lẻ quy mô lớn với nhiều ngành hàng thực phẩm và đồ dùng gia đình theo quầy kệ.",
+      "description_en": "A large self-service retailer with broad grocery and household ranges arranged in aisles.",
+      "aliases_vi": ["siêu thị tổng hợp", "siêu thị bán lẻ"],
+      "aliases_en": ["grocery supermarket", "large food store"],
+      "examples_vi": ["cần chất đầy xe đẩy cho nhu cầu cả tuần của gia đình", "muốn chọn thực phẩm và chất tẩy rửa trong cùng chuyến mua"],
+      "examples_en": ["need to fill a trolley with a week's household supplies", "want groceries and cleaning products in the same trip"]
+    },
+    "29": {
+      "description_vi": "Khu mua bán gồm nhiều sạp hoặc người bán, thường cung cấp thực phẩm tươi và hàng tiêu dùng.",
+      "description_en": "A trading area with multiple stalls or vendors, often offering fresh food and everyday goods.",
+      "aliases_vi": ["chợ dân sinh", "khu chợ"],
+      "aliases_en": ["marketplace", "public market"],
+      "examples_vi": ["muốn đi qua nhiều sạp để chọn đồ tươi trong buổi sáng", "cần trả giá và mua trực tiếp từ các tiểu thương"],
+      "examples_en": ["want to browse morning stalls for fresh ingredients", "looking to buy directly from independent vendors and bargain"]
+    },
+    "30": {
+      "description_vi": "Cửa hàng chuyên bán thịt tươi, thịt cắt phần và sản phẩm chế biến từ thịt.",
+      "description_en": "A shop specializing in fresh meat, prepared cuts, and meat products.",
+      "aliases_vi": ["tiệm thịt", "quầy thịt"],
+      "aliases_en": ["butcher's", "meat shop"],
+      "examples_vi": ["cần miếng ba chỉ được cắt theo trọng lượng", "muốn nhờ lọc xương và chia phần thịt cho bữa tiệc"],
+      "examples_en": ["need pork belly cut to a specific weight", "want meat deboned and portioned for a gathering"]
+    },
+    "31": {
+      "description_vi": "Cửa hàng chuyên bán sữa, sản phẩm từ sữa và dinh dưỡng làm từ sữa.",
+      "description_en": "A shop specializing in milk, dairy products, and milk-based nutrition products.",
+      "aliases_vi": ["đại lý sữa", "tiệm sữa"],
+      "aliases_en": ["dairy shop", "milk retailer"],
+      "examples_vi": ["cần mua sữa công thức đúng độ tuổi cho em bé", "muốn lấy một thùng sữa tươi cho gia đình"],
+      "examples_en": ["need age-appropriate formula for a baby", "want a case of fresh milk for the household"]
+    },
+    "32": {
+      "description_vi": "Cửa hàng tổng hợp sản phẩm mỹ phẩm, chăm sóc cá nhân và làm đẹp.",
+      "description_en": "A broad beauty retailer offering cosmetics, personal-care items, and beauty products.",
+      "aliases_vi": ["shop làm đẹp", "cửa hàng mỹ phẩm và làm đẹp"],
+      "aliases_en": ["beauty shop", "beauty products store"],
+      "examples_vi": ["muốn mua cùng lúc đồ trang điểm, chăm sóc tóc và dưỡng da", "cần nơi có nhiều ngành hàng để hoàn thiện bộ đồ làm đẹp"],
+      "examples_en": ["want makeup, hair care, and skin care in one visit", "need a broad range of products for a beauty routine"]
+    },
+    "33": {
+      "description_vi": "Điểm bán hoặc trưng bày các món trang sức và vật phẩm đeo trang trí.",
+      "description_en": "A retail point or display specializing in jewelry and decorative wearable pieces.",
+      "aliases_vi": ["điểm bán trang sức", "quầy nữ trang"],
+      "aliases_en": ["jewelry outlet", "jewellery counter"],
+      "examples_vi": ["muốn xem một món phụ kiện quý để kỷ niệm ngày cưới", "cần chọn dây chuyền làm quà cho người thân"],
+      "examples_en": ["want a precious accessory to mark an anniversary", "need to choose a necklace for a relative"]
+    },
+    "35": {
+      "description_vi": "Đại lý trưng bày, tư vấn và bán ô tô hoặc xe máy mới hay đã qua sử dụng.",
+      "description_en": "A dealership displaying, advising on, and selling new or used cars and motorcycles.",
+      "aliases_vi": ["đại lý xe cơ giới", "showroom ô tô xe máy"],
+      "aliases_en": ["vehicle dealership", "auto and motorcycle dealer"],
+      "examples_vi": ["muốn so sánh cả xe bốn bánh lẫn xe hai bánh trước khi mua", "cần nhân viên tư vấn giá và phương án trả góp cho phương tiện mới"],
+      "examples_en": ["want to compare both four-wheelers and two-wheelers before buying", "need advice on pricing and finance for a new vehicle"]
+    },
+    "36": {
+      "description_vi": "Điểm bán lẻ chuyên về giày, dép và sản phẩm mang chân.",
+      "description_en": "A retail outlet specializing in shoes, sandals, and other footwear.",
+      "aliases_vi": ["tiệm giày", "shop giày"],
+      "aliases_en": ["footwear shop", "shoe retailer"],
+      "examples_vi": ["cần thử đôi giày da phù hợp với bộ vest", "muốn tìm dép đi hằng ngày đúng cỡ chân"],
+      "examples_en": ["need to try leather footwear that matches a suit", "want everyday sandals in the right size"]
+    },
+    "37": {
+      "description_vi": "Cửa hàng bán điện thoại di động, phụ kiện và thường hỗ trợ dịch vụ liên quan.",
+      "description_en": "A shop selling mobile phones and accessories, often with related support services.",
+      "aliases_vi": ["shop điện thoại", "tiệm di động"],
+      "aliases_en": ["mobile phone shop", "cellphone retailer"],
+      "examples_vi": ["muốn so sánh camera của vài mẫu smartphone trước khi chọn", "cần mua máy di động cùng ốp và bộ sạc"],
+      "examples_en": ["want to compare cameras on several smartphones before choosing", "need a handset together with a case and charger"]
+    },
+    "109": {
+      "description_vi": "Cửa hàng bán xe đạp, linh kiện, phụ kiện và thiết bị dành cho người đi xe đạp.",
+      "description_en": "A shop selling bicycles, parts, accessories, and equipment for cyclists.",
+      "aliases_vi": ["tiệm xe đạp", "shop xe đạp"],
+      "aliases_en": ["bike shop", "cycle store"],
+      "examples_vi": ["cần chọn chiếc xe hai bánh vừa chiều cao để đi học", "muốn mua mũ bảo hiểm và ruột thay cho chuyến đạp xa"],
+      "examples_en": ["need a pedal bike sized correctly for a school commute", "want a helmet and spare tube for a long ride"]
+    },
+    "123": {
+      "description_vi": "Cửa hàng bán thiết bị điện tử tiêu dùng và phụ kiện như âm thanh, hình ảnh hoặc đồ thông minh.",
+      "description_en": "A shop selling consumer electronics and accessories for audio, video, or smart-device use.",
+      "aliases_vi": ["tiệm điện tử", "cửa hàng thiết bị điện tử"],
+      "aliases_en": ["consumer electronics store", "electronics retailer"],
+      "examples_vi": ["cần mua tai nghe và loa dùng trong phòng khách", "muốn xem thiết bị thông minh kết nối với TV"],
+      "examples_en": ["need headphones and speakers for the living room", "want a smart device that connects to the television"]
+    },
+    "124": {
+      "description_vi": "Cửa hàng bán dụng cụ cầm tay, phụ kiện sửa chữa, khóa và vật tư kỹ thuật nhỏ.",
+      "description_en": "A shop selling hand tools, repair accessories, locks, and small technical supplies.",
+      "aliases_vi": ["tiệm kim khí", "cửa hàng đồ nghề"],
+      "aliases_en": ["tool shop", "ironmongery"],
+      "examples_vi": ["cần mua búa, tua vít và vài con ốc để sửa tại nhà", "muốn tìm ổ khóa cùng dụng cụ lắp đặt"],
+      "examples_en": ["need a hammer, screwdrivers, and fasteners for a home repair", "want a padlock together with tools for fitting it"]
+    },
+    "125": {
+      "description_vi": "Cửa hàng bán đồ dùng thiết yếu cho sinh hoạt, nhà bếp, vệ sinh và tổ chức nhà cửa.",
+      "description_en": "A shop selling practical items for household living, kitchens, cleaning, and home organization.",
+      "aliases_vi": ["cửa hàng gia dụng", "tiệm đồ dùng nhà"],
+      "aliases_en": ["housewares store", "household goods shop"],
+      "examples_vi": ["cần nồi, hộp đựng và dụng cụ vệ sinh cho căn hộ mới", "muốn mua các vật dụng nhỏ để sắp xếp nhà bếp"],
+      "examples_en": ["need cookware, storage boxes, and cleaning items for a new flat", "want small organizers and utensils for the kitchen"]
+    },
+    "126": {
+      "description_vi": "Cửa hàng chuyên bán nhẫn, vòng, dây chuyền và trang sức bằng kim loại hoặc đá quý.",
+      "description_en": "A dedicated store selling rings, bracelets, necklaces, and pieces made with precious metals or stones.",
+      "aliases_vi": ["tiệm trang sức", "cửa hàng nữ trang"],
+      "aliases_en": ["jeweler", "jewellery store"],
+      "examples_vi": ["cần đo cỡ nhẫn và xem các mẫu đính đá", "muốn mua vòng tay bằng kim loại quý có bảo hành"],
+      "examples_en": ["need my ring size measured while viewing stone-set designs", "want a precious-metal bracelet with a warranty"]
+    },
+    "127": {
+      "description_vi": "Cửa hàng chuyên bán rượu vang, rượu mạnh và các loại đồ uống có cồn đóng chai.",
+      "description_en": "A shop specializing in bottled wine, spirits, and other alcoholic beverages.",
+      "aliases_vi": ["tiệm rượu", "cửa hàng rượu vang"],
+      "aliases_en": ["wine shop", "bottle shop"],
+      "examples_vi": ["cần chọn chai vang phù hợp với bữa tối", "muốn mua một loại whisky đóng hộp để biếu"],
+      "examples_en": ["need a bottle of wine suited to dinner", "want a boxed whisky to give as a present"]
+    },
+    "128": {
+      "description_vi": "Cửa hàng bán thức ăn, phụ kiện và vật dụng phục vụ thú nuôi.",
+      "description_en": "A retailer selling food, accessories, and supplies for companion animals.",
+      "aliases_vi": ["shop thú cưng", "cửa hàng đồ cho vật nuôi"],
+      "aliases_en": ["pet supplies store", "pet shop"],
+      "examples_vi": ["cần hạt dinh dưỡng và cát vệ sinh cho mèo", "muốn mua dây dắt cùng đồ chơi cho chó"],
+      "examples_en": ["need dry food and litter for a cat", "want a leash and toys for a dog"]
+    },
+    "129": {
+      "description_vi": "Cửa hàng chuyên bán nhiều loại giày dép cho các mục đích và đối tượng khác nhau.",
+      "description_en": "A dedicated store carrying varied footwear for different uses and customers.",
+      "aliases_vi": ["cửa hàng giày dép", "tiệm giày dép"],
+      "aliases_en": ["shoe shop", "footwear store"],
+      "examples_vi": ["muốn chọn giày chạy bộ có đệm đúng nhu cầu", "cần mua nhiều cỡ giày dép cho cả gia đình"],
+      "examples_en": ["want cushioned running footwear suited to my stride", "need several sizes of shoes and sandals for the family"]
+    },
+    "130": {
+      "description_vi": "Cửa hàng bán dụng cụ, trang phục và phụ kiện dành cho luyện tập hoặc thi đấu thể thao.",
+      "description_en": "A shop selling equipment, clothing, and accessories for sports training or competition.",
+      "aliases_vi": ["shop thể thao", "cửa hàng đồ thể thao"],
+      "aliases_en": ["sports shop", "athletic goods store"],
+      "examples_vi": ["cần mua vợt và bóng để bắt đầu chơi cuối tuần", "muốn thử quần áo cùng đồ bảo hộ cho buổi tập"],
+      "examples_en": ["need a racket and balls to start playing on weekends", "want training clothes and protective gear for practice"]
+    },
+    "154": {
+      "description_vi": "Cửa hàng chuyên bán sản phẩm trang điểm, dưỡng da và chăm sóc sắc đẹp.",
+      "description_en": "A dedicated shop selling makeup, skin-care, and cosmetic beauty products.",
+      "aliases_vi": ["shop mỹ phẩm", "tiệm mỹ phẩm"],
+      "aliases_en": ["makeup store", "cosmetics shop"],
+      "examples_vi": ["cần thử màu son và kem nền hợp tông da", "muốn mua serum cùng kem chống nắng cho chu trình dưỡng da"],
+      "examples_en": ["need to test lipstick and foundation shades against my skin tone", "want serum and sunscreen for a skin-care routine"]
+    },
+    "167": {
+      "description_vi": "Nhà phố thương mại kết hợp mặt bằng kinh doanh với không gian ở hoặc sử dụng phía trên.",
+      "description_en": "A commercial townhouse combining a street-level business space with residential or usable floors above.",
+      "aliases_vi": ["nhà phố thương mại", "nhà ở kết hợp cửa hàng"],
+      "aliases_en": ["commercial townhouse", "shop house"],
+      "examples_vi": ["muốn xem căn vừa mở cửa hàng tầng trệt vừa ở phía trên", "cần mặt bằng liền thổ trong dãy phố kinh doanh"],
+      "examples_en": ["want a unit with retail downstairs and living space above", "need a landed commercial unit in a business street"]
+    },
+    "169": {
+      "description_vi": "Trung tâm bán lẻ quy mô lớn tập trung nhiều nhóm điện máy và thiết bị gia đình.",
+      "description_en": "A large retail center focused on multiple categories of appliances and consumer electronics.",
+      "aliases_vi": ["siêu thị điện máy", "trung tâm điện tử gia dụng"],
+      "aliases_en": ["electronics megastore", "appliance center"],
+      "examples_vi": ["muốn so sánh TV, tủ lạnh và máy giặt tại một nơi lớn", "cần khu trưng bày nhiều hãng điện máy để chọn trọn bộ cho nhà mới"],
+      "examples_en": ["want to compare televisions, fridges, and washers in one large venue", "need many appliance brands displayed together for a new home"]
+    },
+    "174": {
+      "description_vi": "Cửa hàng chuyên quần áo và phụ kiện thời trang dành cho trẻ em.",
+      "description_en": "A shop specializing in clothing and fashion accessories for children.",
+      "aliases_vi": ["shop quần áo trẻ em", "thời trang bé"],
+      "aliases_en": ["kids' clothing shop", "children's boutique"],
+      "examples_vi": ["cần bộ đồ đúng cỡ cho bé đi dự tiệc", "muốn mua áo khoác và mũ mới cho con"],
+      "examples_en": ["need a party outfit in the child's size", "want a new jacket and hat for my kid"]
+    },
+    "175": {
+      "description_vi": "Cửa hàng bán nội thất như bàn, ghế, giường, tủ và đồ bố trí không gian sống.",
+      "description_en": "A store selling furniture such as tables, chairs, beds, cabinets, and pieces for living spaces.",
+      "aliases_vi": ["showroom nội thất", "cửa hàng đồ nội thất"],
+      "aliases_en": ["furniture showroom", "home furnishings store"],
+      "examples_vi": ["cần thử sofa và bàn ăn trước khi đặt mua", "muốn chọn giường, tủ đồng bộ cho phòng ngủ mới"],
+      "examples_en": ["need to sit on sofas and inspect dining tables before ordering", "want a matching bed and wardrobe for a new bedroom"]
+    },
+    "176": {
+      "description_vi": "Cửa hàng khu dân cư bán thực phẩm đóng gói, nhu yếu phẩm và hàng dùng hằng ngày.",
+      "description_en": "A neighborhood shop selling packaged foods, staples, and everyday household necessities.",
+      "aliases_vi": ["tiệm tạp hóa", "cửa hàng nhu yếu phẩm"],
+      "aliases_en": ["neighborhood grocery", "general store"],
+      "examples_vi": ["cần mua gạo, dầu ăn và gia vị ở ngay gần nhà", "muốn ghé tiệm nhỏ lấy vài nhu yếu phẩm hằng ngày"],
+      "examples_en": ["need rice, cooking oil, and seasonings close to home", "want a few daily staples from a small neighborhood shop"]
+    },
+    "178": {
+      "description_vi": "Cửa hàng chuyên thực phẩm bổ sung hoặc sản phẩm hỗ trợ chức năng cơ thể và dinh dưỡng.",
+      "description_en": "A shop specializing in supplements and food products intended to support nutrition or bodily functions.",
+      "aliases_vi": ["cửa hàng thực phẩm bổ sung", "shop dinh dưỡng bổ sung"],
+      "aliases_en": ["supplement store", "health food supplement shop"],
+      "examples_vi": ["cần tìm viên bổ sung theo nhu cầu dinh dưỡng của người lớn tuổi", "muốn được tư vấn sản phẩm hỗ trợ tiêu hóa dạng thực phẩm"],
+      "examples_en": ["need a nutritional supplement suited to an older adult", "want advice on a food-based product supporting digestion"]
+    },
+    "182": {
+      "description_vi": "Cửa hàng chuyên bán bia lon, bia chai, bia thủ công hoặc bia theo thùng.",
+      "description_en": "A shop specializing in canned, bottled, craft, or case-packaged beer.",
+      "aliases_vi": ["đại lý bia", "tiệm bán bia"],
+      "aliases_en": ["beer shop", "beer retailer"],
+      "examples_vi": ["cần mua vài thùng đồ uống lên men cho buổi liên hoan", "muốn chọn nhiều loại bia thủ công mang về thử"],
+      "examples_en": ["need several cases of brewed drinks for a party", "want assorted craft brews to sample at home"]
+    },
+    "204": {
+      "description_vi": "Cửa hàng bán cá, tôm, cua, sò và thủy hải sản tươi hoặc đông lạnh để mang về.",
+      "description_en": "A shop selling fresh or frozen fish, shrimp, crab, shellfish, and other aquatic foods for home preparation.",
+      "aliases_vi": ["vựa hải sản", "tiệm thủy hải sản"],
+      "aliases_en": ["seafood market", "fish and shellfish shop"],
+      "examples_vi": ["cần mua tôm tươi và mực để tự nấu bữa tối", "muốn chọn cá nguyên con rồi nhờ làm sạch"],
+      "examples_en": ["need fresh prawns and squid to cook at home", "want to choose a whole fish and have it cleaned"]
+    },
+    "205": {
+      "description_vi": "Cửa hàng chuyên bán rau, củ, nấm và các loại rau gia vị tươi.",
+      "description_en": "A shop specializing in fresh vegetables, roots, mushrooms, and culinary herbs.",
+      "aliases_vi": ["tiệm rau củ", "cửa hàng rau sạch"],
+      "aliases_en": ["greengrocer", "vegetable market"],
+      "examples_vi": ["cần rau lá và củ tươi để nấu bữa tối", "muốn mua nấm cùng rau thơm theo cân"],
+      "examples_en": ["need leafy greens and fresh roots for dinner", "want mushrooms and culinary herbs sold by weight"]
+    },
+    "206": {
+      "description_vi": "Điểm bán vé xổ số và đôi khi hỗ trợ kiểm tra kết quả hoặc đổi thưởng theo quy định.",
+      "description_en": "A retail point selling lottery tickets and sometimes checking results or processing permitted prizes.",
+      "aliases_vi": ["đại lý vé số", "điểm bán xổ số"],
+      "aliases_en": ["lottery retailer", "ticket lottery outlet"],
+      "examples_vi": ["muốn mua một tờ dự thưởng cho kỳ quay hôm nay", "cần kiểm tra dãy số và hỏi nơi nhận giải hợp lệ"],
+      "examples_en": ["want an entry ticket for today's draw", "need the numbers checked and guidance on claiming a valid prize"]
+    },
+    "207": {
+      "description_vi": "Cửa hàng chuyên bán trái cây tươi, theo mùa, nhập khẩu hoặc đóng giỏ quà.",
+      "description_en": "A shop specializing in fresh, seasonal, or imported fruit, including arranged gift baskets.",
+      "aliases_vi": ["tiệm trái cây", "cửa hàng hoa quả"],
+      "aliases_en": ["fruit market", "fruiterer's shop"],
+      "examples_vi": ["cần chọn hoa quả chín vừa để ăn trong vài ngày", "muốn đặt giỏ gồm nhiều loại quả để đi thăm người thân"],
+      "examples_en": ["need fruit at the right ripeness for the next few days", "want a mixed basket to bring when visiting a relative"]
+    }
+  }
+}

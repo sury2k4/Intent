@@ -1,0 +1,4509 @@
+{
+  "schema_version": 2,
+  "source": "merged_reviewed_fragments",
+  "sources": [
+    "civic-leisure.json",
+    "education-services.json",
+    "food-shopping.json",
+    "late-added.json",
+    "mobility-health.json"
+  ],
+  "items": {
+    "1": {
+      "description_vi": "Đầu mối hàng không có nhà ga phục vụ hành khách và các chuyến bay.",
+      "description_en": "An aviation hub with passenger terminals and flight services.",
+      "aliases_vi": [
+        "sân bay",
+        "phi trường",
+        "cảng hàng không"
+      ],
+      "aliases_en": [
+        "airport",
+        "air terminal",
+        "aerodrome"
+      ],
+      "examples_vi": [
+        "Tôi cần đến nhà ga để lên chuyến bay sáng sớm.",
+        "Đâu là nơi đón người vừa hạ cánh?"
+      ],
+      "examples_en": [
+        "I need to reach the terminal for an early departure.",
+        "Where should I meet someone arriving by plane?"
+      ]
+    },
+    "3": {
+      "description_vi": "Khu vực được quy hoạch chủ yếu cho nhà ở và đời sống dân cư.",
+      "description_en": "An area planned primarily for homes and residential living.",
+      "aliases_vi": [
+        "khu dân cư",
+        "khu ở",
+        "khu nhà ở"
+      ],
+      "aliases_en": [
+        "residential area",
+        "housing area",
+        "neighborhood"
+      ],
+      "examples_vi": [
+        "Tôi đang tìm đường vào khu có nhiều hộ gia đình sinh sống.",
+        "Đây có phải khu quy hoạch nhà ở không?"
+      ],
+      "examples_en": [
+        "I am looking for the neighborhood where these families live.",
+        "Is this district mainly planned for housing?"
+      ]
+    },
+    "5": {
+      "description_vi": "Tòa nhà được sử dụng chủ yếu làm không gian làm việc cho doanh nghiệp và tổ chức.",
+      "description_en": "A building used primarily as workspace for businesses and organizations.",
+      "aliases_vi": [
+        "cao ốc văn phòng",
+        "tòa văn phòng"
+      ],
+      "aliases_en": [
+        "office tower",
+        "business office building"
+      ],
+      "examples_vi": [
+        "tìm tòa nhà nơi công ty đặt văn phòng",
+        "cần đến cao ốc có nhiều doanh nghiệp làm việc"
+      ],
+      "examples_en": [
+        "find the building where the company has its office",
+        "go to a tower containing business workplaces"
+      ]
+    },
+    "7": {
+      "description_vi": "Cơ sở lưu trú trả phí có phòng và dịch vụ dành cho khách qua đêm.",
+      "description_en": "Paid lodging with guest rooms and services for overnight stays.",
+      "aliases_vi": [
+        "khách sạn",
+        "nơi lưu trú",
+        "chỗ nghỉ qua đêm"
+      ],
+      "aliases_en": [
+        "hotel",
+        "lodging",
+        "accommodation"
+      ],
+      "examples_vi": [
+        "Tôi muốn đặt phòng riêng cho chuyến công tác hai đêm.",
+        "Chỗ nào có quầy tiếp tân và dịch vụ lưu trú?"
+      ],
+      "examples_en": [
+        "I want a private room for a two-night business trip.",
+        "Where can I stay somewhere with a front desk and guest services?"
+      ]
+    },
+    "10": {
+      "description_vi": "Cửa hàng bán sách, ấn phẩm và thường có thêm văn phòng phẩm.",
+      "description_en": "A retail shop selling books and publications, often alongside stationery.",
+      "aliases_vi": [
+        "hiệu sách",
+        "tiệm sách"
+      ],
+      "aliases_en": [
+        "bookstore",
+        "bookseller"
+      ],
+      "examples_vi": [
+        "muốn tìm bản in mới của một cuốn tiểu thuyết",
+        "cần mua sách giáo khoa cho năm học tới"
+      ],
+      "examples_en": [
+        "want a new edition of a particular novel",
+        "need textbooks for the coming school year"
+      ]
+    },
+    "11": {
+      "description_vi": "Cửa hàng bán quần áo và các sản phẩm thời trang cho người mặc.",
+      "description_en": "A retail shop selling garments and fashion items for personal wear.",
+      "aliases_vi": [
+        "shop quần áo",
+        "tiệm thời trang"
+      ],
+      "aliases_en": [
+        "apparel store",
+        "fashion boutique"
+      ],
+      "examples_vi": [
+        "cần thử một bộ đồ đi làm vừa vặn",
+        "muốn chọn áo khoác mới cho mùa lạnh"
+      ],
+      "examples_en": [
+        "need to try on a well-fitting outfit for work",
+        "want a new jacket for colder weather"
+      ]
+    },
+    "12": {
+      "description_vi": "Cửa hàng chuyên bán máy tính để bàn, laptop, linh kiện và phụ kiện liên quan.",
+      "description_en": "A shop specializing in desktop computers, laptops, components, and related accessories.",
+      "aliases_vi": [
+        "tiệm máy tính",
+        "cửa hàng laptop"
+      ],
+      "aliases_en": [
+        "PC shop",
+        "computer retailer"
+      ],
+      "examples_vi": [
+        "cần chọn laptop đủ mạnh cho công việc thiết kế",
+        "muốn mua thêm RAM và ổ cứng cho máy bàn"
+      ],
+      "examples_en": [
+        "need a laptop powerful enough for design work",
+        "want more memory and storage for a desktop PC"
+      ]
+    },
+    "13": {
+      "description_vi": "Cửa hàng bán nhanh thực phẩm, đồ uống và vật dụng thiết yếu, thường mở cửa nhiều giờ.",
+      "description_en": "A small retailer offering food, drinks, and essentials with typically extended opening hours.",
+      "aliases_vi": [
+        "cửa hàng 24 giờ",
+        "tiệm tiện ích"
+      ],
+      "aliases_en": [
+        "corner convenience shop",
+        "mini-mart"
+      ],
+      "examples_vi": [
+        "cần mua nước và đồ dùng cá nhân vào lúc khuya",
+        "muốn ghé nhanh lấy bữa ăn đóng gói trên đường về"
+      ],
+      "examples_en": [
+        "need drinks and toiletries late at night",
+        "want a quick stop for a packaged meal on the way home"
+      ]
+    },
+    "14": {
+      "description_vi": "Cửa hàng bán hoa tươi, bó hoa và sản phẩm cắm hoa cho nhiều dịp.",
+      "description_en": "A shop selling fresh flowers, bouquets, and floral arrangements for different occasions.",
+      "aliases_vi": [
+        "tiệm hoa",
+        "shop hoa tươi"
+      ],
+      "aliases_en": [
+        "flower shop",
+        "floral shop"
+      ],
+      "examples_vi": [
+        "cần bó hoa chúc mừng cho lễ tốt nghiệp",
+        "muốn đặt lẵng hoa giao đến một buổi khai trương"
+      ],
+      "examples_en": [
+        "need a congratulatory bouquet for a graduation",
+        "want an arrangement delivered to a grand opening"
+      ]
+    },
+    "15": {
+      "description_vi": "Cửa hàng bán đồ lưu niệm và sản phẩm dùng làm quà cho các dịp khác nhau.",
+      "description_en": "A shop selling souvenirs and items intended as presents for different occasions.",
+      "aliases_vi": [
+        "tiệm quà",
+        "cửa hàng lưu niệm"
+      ],
+      "aliases_en": [
+        "present shop",
+        "souvenir shop"
+      ],
+      "examples_vi": [
+        "cần món nhỏ mang về cho đồng nghiệp sau chuyến đi",
+        "muốn chọn quà sinh nhật rồi gói ngay tại chỗ"
+      ],
+      "examples_en": [
+        "need a small keepsake for coworkers after a trip",
+        "want to choose a birthday present and have it wrapped"
+      ]
+    },
+    "16": {
+      "description_vi": "Cửa hàng cung cấp vật tư dùng trong xây dựng như xi măng, gạch, cát và thép.",
+      "description_en": "A retailer supplying construction materials such as cement, bricks, sand, and steel.",
+      "aliases_vi": [
+        "đại lý vật liệu xây dựng",
+        "cửa hàng vật tư xây dựng"
+      ],
+      "aliases_en": [
+        "construction materials supplier",
+        "builders' merchant"
+      ],
+      "examples_vi": [
+        "cần mua xi măng và gạch cho công trình sửa nhà",
+        "muốn báo giá cát, đá và thép theo số lượng lớn"
+      ],
+      "examples_en": [
+        "need cement and bricks for a home renovation",
+        "want bulk pricing for sand, aggregate, and steel"
+      ]
+    },
+    "17": {
+      "description_vi": "Điểm đậu đỗ dành cho ô tô thuộc dịch vụ GSM.",
+      "description_en": "A designated parking point for cars operated by GSM.",
+      "aliases_vi": [
+        "bãi đỗ xe GSM",
+        "điểm đỗ GSM"
+      ],
+      "aliases_en": [
+        "GSM car parking",
+        "GSM parking point"
+      ],
+      "examples_vi": [
+        "Tôi đang tìm khu đậu xe được đánh dấu cho ô tô GSM.",
+        "Xe GSM có điểm chờ riêng ở đâu?"
+      ],
+      "examples_en": [
+        "I am looking for the parking area marked for GSM cars.",
+        "Where is the designated waiting point for GSM vehicles?"
+      ]
+    },
+    "18": {
+      "description_vi": "Cơ sở hoặc trạm đầu mối phục vụ nhiều tuyến xe buýt.",
+      "description_en": "A station or terminal serving multiple bus routes.",
+      "aliases_vi": [
+        "trạm xe buýt",
+        "bến xe buýt",
+        "nhà ga xe buýt"
+      ],
+      "aliases_en": [
+        "bus station",
+        "bus terminal",
+        "bus depot"
+      ],
+      "examples_vi": [
+        "Tôi cần đến đầu mối để chuyển sang tuyến buýt khác.",
+        "Xe buýt liên tuyến khởi hành từ nhà ga nào?"
+      ],
+      "examples_en": [
+        "I need the terminal where I can transfer between bus routes.",
+        "Which station do the connecting buses depart from?"
+      ]
+    },
+    "19": {
+      "description_vi": "Trạm sạc dành cho phương tiện điện VinFast.",
+      "description_en": "A charging station for VinFast electric vehicles.",
+      "aliases_vi": [
+        "trạm sạc VinFast",
+        "điểm sạc VinFast"
+      ],
+      "aliases_en": [
+        "VinFast charging station",
+        "VinFast charge point"
+      ],
+      "examples_vi": [
+        "Tôi cần nạp điện cho xe VinFast tại trạm của hãng.",
+        "Điểm cắm sạc VinFast gần tuyến đường này ở đâu?"
+      ],
+      "examples_en": [
+        "I need to charge my VinFast vehicle at a brand charging point.",
+        "Where is a VinFast charger along this route?"
+      ]
+    },
+    "20": {
+      "description_vi": "Cơ sở phục vụ các bữa ăn được chế biến và dùng tại chỗ, thường có thực đơn cùng chỗ ngồi.",
+      "description_en": "An establishment preparing meals for on-site dining, typically with a menu and seating.",
+      "aliases_vi": [
+        "quán ăn",
+        "cơ sở ăn uống"
+      ],
+      "aliases_en": [
+        "dining establishment",
+        "eatery"
+      ],
+      "examples_vi": [
+        "cần chỗ ngồi gọi nhiều món cho bữa tối cùng gia đình",
+        "muốn dùng một bữa chính có phục vụ tại bàn"
+      ],
+      "examples_en": [
+        "need seated dining with several dishes for the family",
+        "want a substantial evening meal with table service"
+      ]
+    },
+    "21": {
+      "description_vi": "Cơ sở làm và bán bánh mì, bánh ngọt cùng các sản phẩm nướng từ bột.",
+      "description_en": "A business making and selling bread, pastries, cakes, and other baked goods.",
+      "aliases_vi": [
+        "lò bánh",
+        "tiệm bánh ngọt"
+      ],
+      "aliases_en": [
+        "bake shop",
+        "pastry shop"
+      ],
+      "examples_vi": [
+        "cần ổ bánh mới ra lò cho bữa sáng",
+        "muốn đặt bánh kem cho sinh nhật cuối tuần"
+      ],
+      "examples_en": [
+        "need a freshly baked loaf for breakfast",
+        "want to order a decorated cake for a weekend birthday"
+      ]
+    },
+    "22": {
+      "description_vi": "Địa điểm pha và phục vụ đồ uống có cồn, thường có quầy ngồi và không khí về đêm.",
+      "description_en": "A venue mixing and serving alcoholic drinks, usually with counter seating and a nightlife atmosphere.",
+      "aliases_vi": [
+        "quầy rượu",
+        "cocktail bar"
+      ],
+      "aliases_en": [
+        "cocktail lounge",
+        "drinks bar"
+      ],
+      "examples_vi": [
+        "muốn ngồi ở quầy gọi cocktail sau giờ làm",
+        "cần nơi có bartender pha đồ uống theo yêu cầu"
+      ],
+      "examples_en": [
+        "want a mixed drink at the counter after work",
+        "looking for a bartender who can make a custom cocktail"
+      ]
+    },
+    "23": {
+      "description_vi": "Quán pha chế cà phê và đồ uống liên quan, thường có chỗ ngồi để gặp gỡ hoặc nghỉ ngơi.",
+      "description_en": "A café preparing coffee-based drinks, usually with seating for meeting or relaxing.",
+      "aliases_vi": [
+        "quán cafe",
+        "tiệm cà phê"
+      ],
+      "aliases_en": [
+        "café",
+        "coffeehouse"
+      ],
+      "examples_vi": [
+        "cần một góc có ổ cắm để làm việc cùng ly cappuccino",
+        "muốn gặp bạn buổi sáng và gọi đồ uống từ hạt rang"
+      ],
+      "examples_en": [
+        "need a table with an outlet while sipping a cappuccino",
+        "want to meet a friend over a freshly brewed cup"
+      ]
+    },
+    "24": {
+      "description_vi": "Quán chuyên các loại trà pha, trà sữa và đồ uống có topping.",
+      "description_en": "A shop specializing in brewed tea, milk tea, and drinks with optional toppings.",
+      "aliases_vi": [
+        "quán trà sữa",
+        "tiệm trà"
+      ],
+      "aliases_en": [
+        "milk tea shop",
+        "tea house"
+      ],
+      "examples_vi": [
+        "muốn ly trà có trân châu và điều chỉnh mức đường",
+        "cần thức uống từ lá trà để trò chuyện cùng bạn"
+      ],
+      "examples_en": [
+        "want a tea drink with tapioca pearls and custom sweetness",
+        "looking for brewed leaves and a place to chat with friends"
+      ]
+    },
+    "25": {
+      "description_vi": "Cửa hàng bán kem lạnh theo viên, ly, ốc quế hoặc các món tráng miệng từ kem.",
+      "description_en": "A shop selling frozen cream desserts by scoop, cup, cone, or in composed treats.",
+      "aliases_vi": [
+        "tiệm kem",
+        "quán kem"
+      ],
+      "aliases_en": [
+        "ice cream parlor",
+        "gelato shop"
+      ],
+      "examples_vi": [
+        "muốn vài viên vị chocolate trong ốc quế",
+        "cần món lạnh ngọt cho trẻ sau bữa tối"
+      ],
+      "examples_en": [
+        "want a few chocolate scoops in a cone",
+        "need a cold sweet treat for the children after dinner"
+      ]
+    },
+    "26": {
+      "description_vi": "Quán uống bình dân phục vụ bia, rượu và món nhắm cho các nhóm tụ họp.",
+      "description_en": "A casual drinking venue serving beer, alcohol, and shareable food for social groups.",
+      "aliases_vi": [
+        "quán nhậu",
+        "quán bia nhậu"
+      ],
+      "aliases_en": [
+        "beer pub",
+        "public house"
+      ],
+      "examples_vi": [
+        "cả nhóm muốn cụng bia và gọi vài món lai rai",
+        "cần bàn rộng để tụ tập uống và ăn đồ nhắm"
+      ],
+      "examples_en": [
+        "our group wants beers with plates to share",
+        "need a casual table for drinks and savory bites"
+      ]
+    },
+    "27": {
+      "description_vi": "Tổ hợp bán lẻ lớn tập trung nhiều cửa hàng, dịch vụ và tiện ích trong cùng một địa điểm.",
+      "description_en": "A large retail complex containing many shops, services, and amenities in one location.",
+      "aliases_vi": [
+        "trung tâm thương mại",
+        "khu mua sắm"
+      ],
+      "aliases_en": [
+        "retail mall",
+        "shopping center"
+      ],
+      "examples_vi": [
+        "muốn dành cả buổi ghé nhiều thương hiệu trong một tòa nhà",
+        "cần nơi vừa mua sắm vừa ăn uống và xem giải trí"
+      ],
+      "examples_en": [
+        "want to browse many brands in one building for an afternoon",
+        "need one destination for retail, dining, and entertainment"
+      ]
+    },
+    "28": {
+      "description_vi": "Cửa hàng bán lẻ quy mô lớn với nhiều ngành hàng thực phẩm và đồ dùng gia đình theo quầy kệ.",
+      "description_en": "A large self-service retailer with broad grocery and household ranges arranged in aisles.",
+      "aliases_vi": [
+        "siêu thị tổng hợp",
+        "siêu thị bán lẻ"
+      ],
+      "aliases_en": [
+        "grocery supermarket",
+        "large food store"
+      ],
+      "examples_vi": [
+        "cần chất đầy xe đẩy cho nhu cầu cả tuần của gia đình",
+        "muốn chọn thực phẩm và chất tẩy rửa trong cùng chuyến mua"
+      ],
+      "examples_en": [
+        "need to fill a trolley with a week's household supplies",
+        "want groceries and cleaning products in the same trip"
+      ]
+    },
+    "29": {
+      "description_vi": "Khu mua bán gồm nhiều sạp hoặc người bán, thường cung cấp thực phẩm tươi và hàng tiêu dùng.",
+      "description_en": "A trading area with multiple stalls or vendors, often offering fresh food and everyday goods.",
+      "aliases_vi": [
+        "chợ dân sinh",
+        "khu chợ"
+      ],
+      "aliases_en": [
+        "marketplace",
+        "public market"
+      ],
+      "examples_vi": [
+        "muốn đi qua nhiều sạp để chọn đồ tươi trong buổi sáng",
+        "cần trả giá và mua trực tiếp từ các tiểu thương"
+      ],
+      "examples_en": [
+        "want to browse morning stalls for fresh ingredients",
+        "looking to buy directly from independent vendors and bargain"
+      ]
+    },
+    "30": {
+      "description_vi": "Cửa hàng chuyên bán thịt tươi, thịt cắt phần và sản phẩm chế biến từ thịt.",
+      "description_en": "A shop specializing in fresh meat, prepared cuts, and meat products.",
+      "aliases_vi": [
+        "tiệm thịt",
+        "quầy thịt"
+      ],
+      "aliases_en": [
+        "butcher's",
+        "meat shop"
+      ],
+      "examples_vi": [
+        "cần miếng ba chỉ được cắt theo trọng lượng",
+        "muốn nhờ lọc xương và chia phần thịt cho bữa tiệc"
+      ],
+      "examples_en": [
+        "need pork belly cut to a specific weight",
+        "want meat deboned and portioned for a gathering"
+      ]
+    },
+    "31": {
+      "description_vi": "Cửa hàng chuyên bán sữa, sản phẩm từ sữa và dinh dưỡng làm từ sữa.",
+      "description_en": "A shop specializing in milk, dairy products, and milk-based nutrition products.",
+      "aliases_vi": [
+        "đại lý sữa",
+        "tiệm sữa"
+      ],
+      "aliases_en": [
+        "dairy shop",
+        "milk retailer"
+      ],
+      "examples_vi": [
+        "cần mua sữa công thức đúng độ tuổi cho em bé",
+        "muốn lấy một thùng sữa tươi cho gia đình"
+      ],
+      "examples_en": [
+        "need age-appropriate formula for a baby",
+        "want a case of fresh milk for the household"
+      ]
+    },
+    "32": {
+      "description_vi": "Cửa hàng tổng hợp sản phẩm mỹ phẩm, chăm sóc cá nhân và làm đẹp.",
+      "description_en": "A broad beauty retailer offering cosmetics, personal-care items, and beauty products.",
+      "aliases_vi": [
+        "shop làm đẹp",
+        "cửa hàng mỹ phẩm và làm đẹp"
+      ],
+      "aliases_en": [
+        "beauty shop",
+        "beauty products store"
+      ],
+      "examples_vi": [
+        "muốn mua cùng lúc đồ trang điểm, chăm sóc tóc và dưỡng da",
+        "cần nơi có nhiều ngành hàng để hoàn thiện bộ đồ làm đẹp"
+      ],
+      "examples_en": [
+        "want makeup, hair care, and skin care in one visit",
+        "need a broad range of products for a beauty routine"
+      ]
+    },
+    "33": {
+      "description_vi": "Điểm bán hoặc trưng bày các món trang sức và vật phẩm đeo trang trí.",
+      "description_en": "A retail point or display specializing in jewelry and decorative wearable pieces.",
+      "aliases_vi": [
+        "điểm bán trang sức",
+        "quầy nữ trang"
+      ],
+      "aliases_en": [
+        "jewelry outlet",
+        "jewellery counter"
+      ],
+      "examples_vi": [
+        "muốn xem một món phụ kiện quý để kỷ niệm ngày cưới",
+        "cần chọn dây chuyền làm quà cho người thân"
+      ],
+      "examples_en": [
+        "want a precious accessory to mark an anniversary",
+        "need to choose a necklace for a relative"
+      ]
+    },
+    "34": {
+      "description_vi": "Nơi bán thuốc, dược phẩm và sản phẩm chăm sóc sức khỏe.",
+      "description_en": "A place selling medicines, pharmaceuticals, and health-care products.",
+      "aliases_vi": [
+        "nhà thuốc",
+        "hiệu thuốc",
+        "quầy thuốc"
+      ],
+      "aliases_en": [
+        "pharmacy",
+        "drugstore",
+        "chemist"
+      ],
+      "examples_vi": [
+        "Tôi cần mua thuốc hạ sốt theo đơn.",
+        "Ở đâu có bán dược phẩm và băng cá nhân?"
+      ],
+      "examples_en": [
+        "I need to fill a prescription nearby.",
+        "Where can I buy cold tablets and bandages?"
+      ]
+    },
+    "35": {
+      "description_vi": "Đại lý trưng bày, tư vấn và bán ô tô hoặc xe máy mới hay đã qua sử dụng.",
+      "description_en": "A dealership displaying, advising on, and selling new or used cars and motorcycles.",
+      "aliases_vi": [
+        "đại lý xe cơ giới",
+        "showroom ô tô xe máy"
+      ],
+      "aliases_en": [
+        "vehicle dealership",
+        "auto and motorcycle dealer"
+      ],
+      "examples_vi": [
+        "muốn so sánh cả xe bốn bánh lẫn xe hai bánh trước khi mua",
+        "cần nhân viên tư vấn giá và phương án trả góp cho phương tiện mới"
+      ],
+      "examples_en": [
+        "want to compare both four-wheelers and two-wheelers before buying",
+        "need advice on pricing and finance for a new vehicle"
+      ]
+    },
+    "36": {
+      "description_vi": "Điểm bán lẻ chuyên về giày, dép và sản phẩm mang chân.",
+      "description_en": "A retail outlet specializing in shoes, sandals, and other footwear.",
+      "aliases_vi": [
+        "tiệm giày",
+        "shop giày"
+      ],
+      "aliases_en": [
+        "footwear shop",
+        "shoe retailer"
+      ],
+      "examples_vi": [
+        "cần thử đôi giày da phù hợp với bộ vest",
+        "muốn tìm dép đi hằng ngày đúng cỡ chân"
+      ],
+      "examples_en": [
+        "need to try leather footwear that matches a suit",
+        "want everyday sandals in the right size"
+      ]
+    },
+    "37": {
+      "description_vi": "Cửa hàng bán điện thoại di động, phụ kiện và thường hỗ trợ dịch vụ liên quan.",
+      "description_en": "A shop selling mobile phones and accessories, often with related support services.",
+      "aliases_vi": [
+        "shop điện thoại",
+        "tiệm di động"
+      ],
+      "aliases_en": [
+        "mobile phone shop",
+        "cellphone retailer"
+      ],
+      "examples_vi": [
+        "muốn so sánh camera của vài mẫu smartphone trước khi chọn",
+        "cần mua máy di động cùng ốp và bộ sạc"
+      ],
+      "examples_en": [
+        "want to compare cameras on several smartphones before choosing",
+        "need a handset together with a case and charger"
+      ]
+    },
+    "38": {
+      "description_vi": "Cơ sở cung cấp dịch vụ khám, tư vấn hoặc chăm sóc sức khỏe nói chung.",
+      "description_en": "A facility providing general medical, consultation, or health-care services.",
+      "aliases_vi": [
+        "dịch vụ y tế",
+        "cơ sở chăm sóc sức khỏe"
+      ],
+      "aliases_en": [
+        "medical services",
+        "health-care services"
+      ],
+      "examples_vi": [
+        "Tôi cần một cơ sở hỗ trợ y tế tổng quát.",
+        "Chỗ nào cung cấp dịch vụ chăm sóc sức khỏe?"
+      ],
+      "examples_en": [
+        "I am looking for a general health-care provider.",
+        "Where can I find local medical services?"
+      ]
+    },
+    "39": {
+      "description_vi": "Cơ sở cung cấp các dịch vụ chăm sóc da, móng và làm đẹp tổng hợp.",
+      "description_en": "A venue offering skin, nail, and general beauty treatments.",
+      "aliases_vi": [
+        "thẩm mỹ salon",
+        "tiệm làm đẹp"
+      ],
+      "aliases_en": [
+        "beauty salon",
+        "beauty parlor"
+      ],
+      "examples_vi": [
+        "muốn chăm sóc da mặt và làm móng trước buổi tiệc",
+        "cần nơi thực hiện nhiều liệu trình cải thiện vẻ ngoài"
+      ],
+      "examples_en": [
+        "get a facial and manicure before a celebration",
+        "find several appearance treatments under one roof"
+      ]
+    },
+    "40": {
+      "description_vi": "Cơ sở chuyên cắt, tạo kiểu, nhuộm và chăm sóc tóc.",
+      "description_en": "A venue specializing in cutting, styling, coloring, and caring for hair.",
+      "aliases_vi": [
+        "tiệm làm tóc",
+        "salon tóc"
+      ],
+      "aliases_en": [
+        "hairdresser",
+        "hair salon"
+      ],
+      "examples_vi": [
+        "muốn cắt ngắn và tạo kiểu tóc mới",
+        "cần nhuộm lại phần chân tóc đã mọc"
+      ],
+      "examples_en": [
+        "have my hair trimmed and restyled",
+        "touch up the color at my roots"
+      ]
+    },
+    "42": {
+      "description_vi": "Cơ sở y tế tiếp nhận cấp cứu, điều trị chuyên sâu và bệnh nhân nội trú.",
+      "description_en": "A medical facility for emergency, specialist, and inpatient treatment.",
+      "aliases_vi": [
+        "bệnh viện",
+        "khu cấp cứu"
+      ],
+      "aliases_en": [
+        "hospital",
+        "emergency hospital"
+      ],
+      "examples_vi": [
+        "Người bệnh cần được theo dõi nội trú nhiều ngày.",
+        "Tôi cần nơi có khoa cấp cứu hoạt động cả đêm."
+      ],
+      "examples_en": [
+        "The patient needs admission for several days.",
+        "I need a facility with an overnight emergency department."
+      ]
+    },
+    "43": {
+      "description_vi": "Tòa nhà hoặc đơn vị nhà ở gồm các căn hộ riêng biệt.",
+      "description_en": "A building or residential property made up of separate apartment units.",
+      "aliases_vi": [
+        "chung cư",
+        "căn hộ",
+        "tòa căn hộ"
+      ],
+      "aliases_en": [
+        "apartment",
+        "apartment building",
+        "flats"
+      ],
+      "examples_vi": [
+        "Tôi đang tìm tòa nhà có căn hộ ở tầng mười.",
+        "Căn hộ của bạn tôi nằm trong khối nhà nào?"
+      ],
+      "examples_en": [
+        "I am looking for the building containing a tenth-floor flat.",
+        "Which residential block is my friend's apartment in?"
+      ]
+    },
+    "44": {
+      "description_vi": "Trường giảng dạy những năm đầu của giáo dục phổ thông cho trẻ em.",
+      "description_en": "A school providing the first years of general education for children.",
+      "aliases_vi": [
+        "trường tiểu học",
+        "trường cấp một"
+      ],
+      "aliases_en": [
+        "elementary school",
+        "grade school"
+      ],
+      "examples_vi": [
+        "tìm chỗ học phù hợp cho bé bắt đầu lớp một",
+        "cần chuyển hồ sơ cho con đang học lớp bốn"
+      ],
+      "examples_en": [
+        "enroll a child who is starting first grade",
+        "transfer records for a fourth-grade pupil"
+      ]
+    },
+    "45": {
+      "description_vi": "Trường phổ thông dành cho học sinh sau tiểu học và trước trung học phổ thông.",
+      "description_en": "A school for pupils between primary and upper-secondary education.",
+      "aliases_vi": [
+        "trường trung học cơ sở",
+        "trường cấp hai"
+      ],
+      "aliases_en": [
+        "middle school",
+        "junior high school"
+      ],
+      "examples_vi": [
+        "cần nhập học cho con vừa hoàn thành lớp năm",
+        "tìm nơi tiếp nhận học sinh lớp tám chuyển trường"
+      ],
+      "examples_en": [
+        "enroll a child who has just finished primary education",
+        "find a new campus for an eighth-grade student"
+      ]
+    },
+    "46": {
+      "description_vi": "Trường giảng dạy giai đoạn cuối của giáo dục phổ thông trước bậc sau trung học.",
+      "description_en": "A school providing the final stage of general education before postsecondary study.",
+      "aliases_vi": [
+        "trường trung học phổ thông",
+        "trường cấp ba"
+      ],
+      "aliases_en": [
+        "senior high school",
+        "upper-secondary school"
+      ],
+      "examples_vi": [
+        "tìm nơi cho học sinh lớp mười theo học",
+        "cần trường giúp con hoàn tất chương trình phổ thông"
+      ],
+      "examples_en": [
+        "find a place for a student entering tenth grade",
+        "complete the final school years before higher education"
+      ]
+    },
+    "47": {
+      "description_vi": "Cơ sở giáo dục đại học đào tạo nhiều ngành và có thể cấp bằng học thuật.",
+      "description_en": "A higher-education institution offering degree programs across academic fields.",
+      "aliases_vi": [
+        "đại học",
+        "trường đại học"
+      ],
+      "aliases_en": [
+        "university",
+        "higher-education institution"
+      ],
+      "examples_vi": [
+        "muốn theo học chương trình cử nhân bốn năm",
+        "cần đến khuôn viên để gặp khoa tuyển sinh"
+      ],
+      "examples_en": [
+        "pursue a four-year bachelor's degree",
+        "visit the campus admissions department"
+      ]
+    },
+    "48": {
+      "description_vi": "Cơ sở giáo dục sau trung học đào tạo chương trình cao đẳng và nghề nghiệp ứng dụng.",
+      "description_en": "A postsecondary institution offering college-level and applied career programs.",
+      "aliases_vi": [
+        "trường cao đẳng",
+        "cao đẳng"
+      ],
+      "aliases_en": [
+        "college",
+        "community college"
+      ],
+      "examples_vi": [
+        "muốn học chương trình thực hành ngắn hơn bậc cử nhân",
+        "cần nộp hồ sơ cho khóa cấp bằng cao đẳng"
+      ],
+      "examples_en": [
+        "take an applied program shorter than a bachelor's degree",
+        "submit an application for an associate-level qualification"
+      ]
+    },
+    "49": {
+      "description_vi": "Cơ sở chăm sóc và giáo dục trẻ nhỏ trước độ tuổi vào tiểu học.",
+      "description_en": "A facility caring for and educating young children before primary school.",
+      "aliases_vi": [
+        "trường mẫu giáo",
+        "trường mầm non",
+        "nhà trẻ"
+      ],
+      "aliases_en": [
+        "preschool",
+        "nursery school",
+        "kindergarten"
+      ],
+      "examples_vi": [
+        "cần gửi bé ban ngày trước tuổi vào lớp một",
+        "tìm lớp có hoạt động vui học cho trẻ nhỏ"
+      ],
+      "examples_en": [
+        "arrange daytime learning and care for a young child",
+        "find play-based classes before primary education"
+      ]
+    },
+    "50": {
+      "description_vi": "Nơi lưu trữ tài liệu để đọc, tra cứu hoặc mượn sử dụng.",
+      "description_en": "A place that keeps materials for reading, research, or borrowing.",
+      "aliases_vi": [
+        "thư viện",
+        "phòng đọc"
+      ],
+      "aliases_en": [
+        "library",
+        "reading room"
+      ],
+      "examples_vi": [
+        "cần mượn giáo trình về nhà trong hai tuần",
+        "muốn tra cứu tài liệu trong không gian yên tĩnh"
+      ],
+      "examples_en": [
+        "borrow a textbook for a couple of weeks",
+        "research reference materials in a quiet setting"
+      ]
+    },
+    "52": {
+      "description_vi": "Máy tự phục vụ cho phép rút tiền và thực hiện một số giao dịch ngân hàng.",
+      "description_en": "A self-service machine for cash withdrawals and selected banking transactions.",
+      "aliases_vi": [
+        "máy rút tiền",
+        "máy giao dịch tự động"
+      ],
+      "aliases_en": [
+        "cash machine",
+        "automated teller"
+      ],
+      "examples_vi": [
+        "muốn lấy tiền giấy từ thẻ ngân hàng",
+        "cần kiểm tra số dư bằng máy tự phục vụ"
+      ],
+      "examples_en": [
+        "take banknotes out using my debit card",
+        "check an account balance at a self-service terminal"
+      ]
+    },
+    "53": {
+      "description_vi": "Nhà hàng chuyên món thịt, hải sản hoặc rau củ nướng trên vỉ hay bếp than.",
+      "description_en": "A restaurant specializing in meat, seafood, or vegetables cooked on grills or over coals.",
+      "aliases_vi": [
+        "quán nướng",
+        "nhà hàng đồ nướng"
+      ],
+      "aliases_en": [
+        "grill restaurant",
+        "barbecue place"
+      ],
+      "examples_vi": [
+        "cả nhóm muốn tự nướng thịt ngay tại bàn",
+        "thèm sườn ám khói vừa lấy khỏi vỉ"
+      ],
+      "examples_en": [
+        "our group wants to grill meat together at the table",
+        "craving smoky ribs served straight from the grill"
+      ]
+    },
+    "54": {
+      "description_vi": "Nhà hàng phục vụ các món ăn thuộc nhiều vùng ẩm thực Trung Hoa.",
+      "description_en": "A restaurant serving dishes from the diverse regional cuisines of China.",
+      "aliases_vi": [
+        "quán món Hoa",
+        "nhà hàng Trung Hoa"
+      ],
+      "aliases_en": [
+        "Chinese dining",
+        "Chinese eatery"
+      ],
+      "examples_vi": [
+        "muốn dùng dim sum và vịt quay cho bữa trưa",
+        "cần nơi có món xào kiểu Quảng Đông cho gia đình"
+      ],
+      "examples_en": [
+        "want dim sum and roast duck for lunch",
+        "need Cantonese-style stir-fries for a family meal"
+      ]
+    },
+    "55": {
+      "description_vi": "Nhà hàng chỉ phục vụ món có nguồn gốc thực vật, không dùng nguyên liệu động vật.",
+      "description_en": "A restaurant serving entirely plant-based dishes without animal-derived ingredients.",
+      "aliases_vi": [
+        "quán thuần chay",
+        "nhà hàng vegan"
+      ],
+      "aliases_en": [
+        "plant-based restaurant",
+        "vegan eatery"
+      ],
+      "examples_vi": [
+        "cần bữa ăn hoàn toàn không có thịt, trứng hay sữa",
+        "muốn đãi người bạn chỉ dùng thực phẩm từ thực vật"
+      ],
+      "examples_en": [
+        "need a meal with no meat, eggs, or dairy",
+        "taking a guest who eats only plant-based food"
+      ]
+    },
+    "56": {
+      "description_vi": "Nhà hàng phục vụ món Ấn Độ với cà ri, gia vị thơm và các loại bánh dẹt đặc trưng.",
+      "description_en": "A restaurant serving Indian cuisine with curries, aromatic spices, and traditional flatbreads.",
+      "aliases_vi": [
+        "quán món Ấn",
+        "nhà hàng Ấn Độ"
+      ],
+      "aliases_en": [
+        "Indian eatery",
+        "Indian dining"
+      ],
+      "examples_vi": [
+        "thèm cà ri đậm gia vị ăn cùng bánh naan",
+        "muốn thử cơm biryani và món tandoori"
+      ],
+      "examples_en": [
+        "craving a fragrant curry with naan",
+        "want biryani and something cooked in a tandoor"
+      ]
+    },
+    "57": {
+      "description_vi": "Nhà hàng phục vụ nhiều món Nhật như cơm, mì, đồ nướng và món theo mùa.",
+      "description_en": "A restaurant serving varied Japanese dishes such as rice, noodles, grilled foods, and seasonal fare.",
+      "aliases_vi": [
+        "quán món Nhật",
+        "nhà hàng Nhật Bản"
+      ],
+      "aliases_en": [
+        "Japanese eatery",
+        "Japanese dining"
+      ],
+      "examples_vi": [
+        "muốn ăn set cơm kiểu Nhật cùng súp miso",
+        "cần nơi có yakitori và tempura cho bữa tối"
+      ],
+      "examples_en": [
+        "want a Japanese set meal with miso soup",
+        "looking for yakitori and tempura at dinner"
+      ]
+    },
+    "58": {
+      "description_vi": "Cửa hàng làm và bán bánh mì Việt Nam kẹp nhân mặn hoặc chay.",
+      "description_en": "A shop preparing Vietnamese baguettes filled with savory or vegetarian ingredients.",
+      "aliases_vi": [
+        "tiệm bánh mì kẹp",
+        "quầy bánh mì Việt"
+      ],
+      "aliases_en": [
+        "Vietnamese baguette shop",
+        "banh mi stand"
+      ],
+      "examples_vi": [
+        "cần ổ giòn kẹp thịt và rau để mang đi",
+        "muốn bữa sáng nhanh với pate và đồ chua"
+      ],
+      "examples_en": [
+        "need a crisp filled baguette to take away",
+        "want a quick breakfast with pâté and pickled vegetables"
+      ]
+    },
+    "59": {
+      "description_vi": "Nhà hàng phục vụ món Hàn Quốc như thịt nướng, cơm trộn, canh và món ăn kèm.",
+      "description_en": "A restaurant serving Korean dishes such as grilled meat, mixed rice, stews, and side dishes.",
+      "aliases_vi": [
+        "quán món Hàn",
+        "nhà hàng Hàn"
+      ],
+      "aliases_en": [
+        "Korean eatery",
+        "Korean dining"
+      ],
+      "examples_vi": [
+        "muốn ăn cơm trộn nóng với kimchi",
+        "cả nhóm thèm thịt nướng kèm nhiều đĩa banchan"
+      ],
+      "examples_en": [
+        "craving hot mixed rice with kimchi",
+        "our group wants grilled meat with plenty of banchan"
+      ]
+    },
+    "60": {
+      "description_vi": "Nhà hàng chuyên bánh pizza nướng với nhiều loại đế, sốt và lớp phủ.",
+      "description_en": "A restaurant specializing in baked pizzas with varied crusts, sauces, and toppings.",
+      "aliases_vi": [
+        "quán pizza",
+        "tiệm bánh pizza"
+      ],
+      "aliases_en": [
+        "pizzeria",
+        "pizza place"
+      ],
+      "examples_vi": [
+        "muốn chia một chiếc đế mỏng phủ phô mai cho cả nhóm",
+        "cần đặt bánh tròn nướng giao đến buổi tụ họp"
+      ],
+      "examples_en": [
+        "want to share a thin-crust pie topped with cheese",
+        "need a baked round delivered for a group gathering"
+      ]
+    },
+    "61": {
+      "description_vi": "Nhà hàng chuyên mì ramen Nhật Bản dùng với nước dùng và các loại topping.",
+      "description_en": "A restaurant specializing in Japanese ramen noodles served in broth with assorted toppings.",
+      "aliases_vi": [
+        "quán mì ramen",
+        "tiệm ramen"
+      ],
+      "aliases_en": [
+        "ramen shop",
+        "ramen bar"
+      ],
+      "examples_vi": [
+        "thèm tô mì nước dùng xương đậm vị với trứng lòng đào",
+        "muốn ăn sợi mì Nhật nóng cùng thịt chashu"
+      ],
+      "examples_en": [
+        "craving noodles in rich broth with a soft egg",
+        "want a hot Japanese noodle bowl topped with chashu"
+      ]
+    },
+    "62": {
+      "description_vi": "Nhà hàng chuyên chế biến cá, tôm, cua, sò và các sản vật từ biển.",
+      "description_en": "A restaurant specializing in fish, shrimp, crab, shellfish, and other marine fare.",
+      "aliases_vi": [
+        "quán hải sản",
+        "nhà hàng đồ biển"
+      ],
+      "aliases_en": [
+        "fish restaurant",
+        "seafood dining"
+      ],
+      "examples_vi": [
+        "cả nhà muốn gọi cua hấp và tôm nướng tại bàn",
+        "cần bữa tối có nhiều món tươi từ biển"
+      ],
+      "examples_en": [
+        "the family wants steamed crab and grilled prawns",
+        "looking for a dinner centered on fresh catch from the sea"
+      ]
+    },
+    "63": {
+      "description_vi": "Nhà hàng tập trung vào các phần thịt bò cắt miếng và nướng theo độ chín yêu cầu.",
+      "description_en": "A restaurant focused on cuts of beef grilled to the diner's preferred doneness.",
+      "aliases_vi": [
+        "nhà hàng bò bít tết",
+        "quán steak"
+      ],
+      "aliases_en": [
+        "steakhouse",
+        "steak restaurant"
+      ],
+      "examples_vi": [
+        "muốn phần thăn bò chín vừa kèm khoai nghiền",
+        "cần nơi biết nướng miếng ribeye đúng độ chín"
+      ],
+      "examples_en": [
+        "want a medium-cooked tenderloin with mashed potatoes",
+        "need somewhere that prepares ribeye to the requested doneness"
+      ]
+    },
+    "64": {
+      "description_vi": "Nhà hàng phục vụ món Thái với vị chua, cay, mặn, ngọt và thảo mộc đặc trưng.",
+      "description_en": "A restaurant serving Thai cuisine known for sour, spicy, salty, sweet, and herbal flavors.",
+      "aliases_vi": [
+        "quán món Thái",
+        "nhà hàng Thái Lan"
+      ],
+      "aliases_en": [
+        "Thai eatery",
+        "Thai dining"
+      ],
+      "examples_vi": [
+        "thèm tom yum cay chua và cơm thơm",
+        "muốn gọi pad thai cùng gỏi đu đủ"
+      ],
+      "examples_en": [
+        "craving hot-and-sour tom yum with fragrant rice",
+        "want pad thai and green papaya salad"
+      ]
+    },
+    "65": {
+      "description_vi": "Nhà hàng chuyên sushi, cơm cuộn và hải sản sống chế biến theo phong cách Nhật.",
+      "description_en": "A restaurant specializing in sushi, rice rolls, and Japanese-style raw seafood preparations.",
+      "aliases_vi": [
+        "quán sushi",
+        "tiệm sushi"
+      ],
+      "aliases_en": [
+        "sushi bar",
+        "sushi place"
+      ],
+      "examples_vi": [
+        "muốn gọi một khay nigiri và sashimi để chia sẻ",
+        "cần chỗ làm cơm cuộn ngay tại quầy"
+      ],
+      "examples_en": [
+        "want a shared platter of nigiri and sashimi",
+        "looking for rolls prepared fresh at the counter"
+      ]
+    },
+    "66": {
+      "description_vi": "Nhà hàng phục vụ các món truyền thống và đương đại của ẩm thực Việt Nam.",
+      "description_en": "A restaurant serving traditional and contemporary dishes from Vietnamese cuisine.",
+      "aliases_vi": [
+        "quán món Việt",
+        "nhà hàng Việt"
+      ],
+      "aliases_en": [
+        "Vietnamese eatery",
+        "Vietnamese dining"
+      ],
+      "examples_vi": [
+        "muốn mời khách nước ngoài dùng một mâm cơm quê",
+        "cần nơi có món Việt từ nhiều vùng miền"
+      ],
+      "examples_en": [
+        "want to introduce an overseas guest to a home-style local meal",
+        "looking for regional dishes from across Vietnam"
+      ]
+    },
+    "68": {
+      "description_vi": "Trụ sở hoặc đơn vị của lực lượng công an tiếp nhận trình báo và thực hiện nhiệm vụ giữ gìn an ninh.",
+      "description_en": "An office or station where police receive reports and carry out public-safety duties.",
+      "aliases_vi": [
+        "đồn công an",
+        "trạm công an"
+      ],
+      "aliases_en": [
+        "police station",
+        "law enforcement office"
+      ],
+      "examples_vi": [
+        "cần trình báo việc mất giấy tờ",
+        "muốn gặp cán bộ để báo một vụ việc an ninh"
+      ],
+      "examples_en": [
+        "report stolen identification documents",
+        "speak to an officer about a safety incident"
+      ]
+    },
+    "69": {
+      "description_vi": "Cơ sở tiếp nhận, phân loại và phát thư từ hoặc bưu phẩm.",
+      "description_en": "A facility that accepts, sorts, and delivers letters or parcels.",
+      "aliases_vi": [
+        "bưu điện",
+        "bưu cục",
+        "điểm gửi thư"
+      ],
+      "aliases_en": [
+        "post office",
+        "postal office",
+        "mail office"
+      ],
+      "examples_vi": [
+        "Tôi muốn gửi một lá thư bảo đảm.",
+        "Chỗ nào nhận bưu phẩm qua mạng lưới bưu chính?"
+      ],
+      "examples_en": [
+        "I would like to mail a registered letter.",
+        "Where can I send a parcel through the postal service?"
+      ]
+    },
+    "70": {
+      "description_vi": "Cơ quan hành chính của chính quyền địa phương giải quyết thủ tục và công việc công tại địa bàn.",
+      "description_en": "A local administrative office handling public services and government matters for its area.",
+      "aliases_vi": [
+        "ủy ban địa phương",
+        "trụ sở hành chính địa phương"
+      ],
+      "aliases_en": [
+        "municipal office",
+        "local authority office"
+      ],
+      "examples_vi": [
+        "cần xác nhận giấy tờ tại phường",
+        "muốn hỏi thủ tục hành chính của quận"
+      ],
+      "examples_en": [
+        "get a document certified by the ward authority",
+        "ask the district administration about a local procedure"
+      ]
+    },
+    "71": {
+      "description_vi": "Cơ sở trực chiến của lực lượng chữa cháy, đặt xe và thiết bị ứng cứu hỏa hoạn.",
+      "description_en": "An emergency base housing firefighters, fire engines, and fire-response equipment.",
+      "aliases_vi": [
+        "đội chữa cháy",
+        "trụ sở cứu hỏa"
+      ],
+      "aliases_en": [
+        "firehouse",
+        "fire brigade station"
+      ],
+      "examples_vi": [
+        "cần liên hệ đơn vị ứng cứu cháy gần nhất",
+        "tìm nơi xe chữa cháy xuất phát"
+      ],
+      "examples_en": [
+        "contact the nearest fire response unit",
+        "locate the base where fire engines are stationed"
+      ]
+    },
+    "72": {
+      "description_vi": "Cơ quan đại diện ngoại giao chính thức của một quốc gia tại quốc gia khác.",
+      "description_en": "The official diplomatic mission of one country in another country.",
+      "aliases_vi": [
+        "cơ quan đại diện ngoại giao",
+        "sứ quán"
+      ],
+      "aliases_en": [
+        "diplomatic mission",
+        "foreign embassy"
+      ],
+      "examples_vi": [
+        "cần hỗ trợ lãnh sự từ nước mình",
+        "muốn nộp hồ sơ thị thực tại cơ quan ngoại giao"
+      ],
+      "examples_en": [
+        "seek consular help from my home country",
+        "submit visa papers to a diplomatic mission"
+      ]
+    },
+    "73": {
+      "description_vi": "Công trình nơi tòa án xét xử vụ án và thực hiện các hoạt động tư pháp.",
+      "description_en": "A building where courts hear cases and conduct judicial proceedings.",
+      "aliases_vi": [
+        "trụ sở tòa án",
+        "pháp đình"
+      ],
+      "aliases_en": [
+        "court building",
+        "court of law"
+      ],
+      "examples_vi": [
+        "đến dự phiên xét xử theo giấy triệu tập",
+        "cần nộp hồ sơ cho cơ quan xét xử"
+      ],
+      "examples_en": [
+        "attend a scheduled legal hearing",
+        "file documents with the court handling a case"
+      ]
+    },
+    "74": {
+      "description_vi": "Không gian xanh công cộng dành cho đi dạo, nghỉ ngơi và hoạt động ngoài trời.",
+      "description_en": "A public green space for walking, relaxing, and outdoor activities.",
+      "aliases_vi": [
+        "vườn công cộng",
+        "khu cây xanh"
+      ],
+      "aliases_en": [
+        "public park",
+        "green space"
+      ],
+      "examples_vi": [
+        "muốn đi dạo dưới nhiều cây xanh",
+        "cần chỗ ngồi ngoài trời cho cả nhà"
+      ],
+      "examples_en": [
+        "somewhere green for an afternoon walk",
+        "an outdoor place for the family to relax"
+      ]
+    },
+    "75": {
+      "description_vi": "Cơ sở phục vụ món ăn được chuẩn bị nhanh, gọi tại quầy và thuận tiện mang đi.",
+      "description_en": "An outlet serving quickly prepared food ordered at a counter and convenient for takeaway.",
+      "aliases_vi": [
+        "quán phục vụ nhanh",
+        "đồ ăn nhanh"
+      ],
+      "aliases_en": [
+        "quick-service restaurant",
+        "takeaway food outlet"
+      ],
+      "examples_vi": [
+        "chỉ có ít phút để mua phần ăn mang theo",
+        "cần món nóng được phục vụ ngay tại quầy"
+      ],
+      "examples_en": [
+        "only have a few minutes to pick up a meal",
+        "need hot food served promptly at the counter"
+      ]
+    },
+    "76": {
+      "description_vi": "Cơ sở khám, phòng ngừa và điều trị các vấn đề răng miệng.",
+      "description_en": "A clinic that examines, prevents, and treats dental and oral conditions.",
+      "aliases_vi": [
+        "nha khoa",
+        "phòng khám răng",
+        "phòng khám nha khoa"
+      ],
+      "aliases_en": [
+        "dentist",
+        "dental office",
+        "dental clinic"
+      ],
+      "examples_vi": [
+        "Tôi muốn kiểm tra chiếc răng bị ê buốt.",
+        "Chỗ nào có thể trám một răng sâu?"
+      ],
+      "examples_en": [
+        "I need someone to examine a sensitive tooth.",
+        "Where can I have a cavity filled?"
+      ]
+    },
+    "77": {
+      "description_vi": "Địa điểm hành nghề của bác sĩ để khám, tư vấn hoặc điều trị bệnh.",
+      "description_en": "A doctor's practice for medical examination, advice, or treatment.",
+      "aliases_vi": [
+        "bác sĩ",
+        "phòng mạch bác sĩ"
+      ],
+      "aliases_en": [
+        "doctor",
+        "physician",
+        "doctor's office"
+      ],
+      "examples_vi": [
+        "Tôi muốn gặp bác sĩ để hỏi về cơn ho kéo dài.",
+        "Cần người có chuyên môn kiểm tra triệu chứng này."
+      ],
+      "examples_en": [
+        "I would like a physician to assess this persistent cough.",
+        "Where can I consult a doctor about these symptoms?"
+      ]
+    },
+    "78": {
+      "description_vi": "Cơ sở thư giãn và chăm sóc cơ thể bằng massage hoặc các liệu pháp spa.",
+      "description_en": "A wellness venue offering massage, relaxation, and spa treatments.",
+      "aliases_vi": [
+        "spa",
+        "trung tâm thư giãn",
+        "spa massage"
+      ],
+      "aliases_en": [
+        "spa",
+        "wellness spa",
+        "massage spa"
+      ],
+      "examples_vi": [
+        "Tôi muốn thư giãn với một buổi massage toàn thân.",
+        "Chỗ nào có liệu trình chăm sóc cơ thể nhẹ nhàng?"
+      ],
+      "examples_en": [
+        "I would like a relaxing full-body massage.",
+        "Where can I book a soothing body treatment?"
+      ]
+    },
+    "81": {
+      "description_vi": "Đại lý trưng bày và bán ô tô hoặc các loại xe cơ giới.",
+      "description_en": "A dealership that displays and sells cars or other motor vehicles.",
+      "aliases_vi": [
+        "đại lý ô tô",
+        "showroom xe",
+        "cửa hàng bán xe"
+      ],
+      "aliases_en": [
+        "car dealer",
+        "auto dealership",
+        "vehicle showroom"
+      ],
+      "examples_vi": [
+        "Tôi muốn xem xe mới và hỏi giá bán.",
+        "Ở đâu có nhân viên tư vấn mua ô tô?"
+      ],
+      "examples_en": [
+        "I want to compare new vehicles and ask about prices.",
+        "Where can I speak with someone about buying a car?"
+      ]
+    },
+    "82": {
+      "description_vi": "Cơ sở cho thuê ô tô hoặc xe cơ giới trong một khoảng thời gian.",
+      "description_en": "A business renting cars or motor vehicles for a period of time.",
+      "aliases_vi": [
+        "thuê xe",
+        "dịch vụ cho thuê ô tô"
+      ],
+      "aliases_en": [
+        "car rental",
+        "vehicle hire",
+        "rent-a-car"
+      ],
+      "examples_vi": [
+        "Tôi cần thuê một chiếc xe tự lái trong cuối tuần.",
+        "Chỗ nào cho mượn ô tô theo ngày?"
+      ],
+      "examples_en": [
+        "I need a self-drive vehicle for the weekend.",
+        "Where can I hire a car by the day?"
+      ]
+    },
+    "83": {
+      "description_vi": "Gara hoặc xưởng sửa chữa động cơ, hệ thống và bộ phận của xe.",
+      "description_en": "A garage repairing vehicle engines, systems, and components.",
+      "aliases_vi": [
+        "gara sửa xe",
+        "xưởng sửa ô tô",
+        "tiệm sửa xe"
+      ],
+      "aliases_en": [
+        "garage",
+        "auto repair",
+        "car mechanic"
+      ],
+      "examples_vi": [
+        "Ô tô phát tiếng lạ và cần thợ chẩn đoán.",
+        "Tôi muốn sửa hệ thống phanh đang gặp sự cố."
+      ],
+      "examples_en": [
+        "My vehicle is making an unusual noise and needs diagnosis.",
+        "I need a mechanic to fix a braking problem."
+      ]
+    },
+    "84": {
+      "description_vi": "Nơi làm sạch bên ngoài hoặc nội thất ô tô, xe máy.",
+      "description_en": "A place that cleans the exterior or interior of cars and motorbikes.",
+      "aliases_vi": [
+        "tiệm rửa xe",
+        "dịch vụ rửa ô tô"
+      ],
+      "aliases_en": [
+        "car wash",
+        "auto wash",
+        "vehicle wash"
+      ],
+      "examples_vi": [
+        "Xe bám nhiều bùn sau chuyến đi và cần làm sạch.",
+        "Tôi muốn vệ sinh cả khoang bên trong ô tô."
+      ],
+      "examples_en": [
+        "The vehicle is muddy after a trip and needs cleaning.",
+        "I would like the inside of my car cleaned as well."
+      ]
+    },
+    "85": {
+      "description_vi": "Điểm bán nhiên liệu để tiếp xăng hoặc dầu cho phương tiện.",
+      "description_en": "A station selling gasoline or other fuel for vehicles.",
+      "aliases_vi": [
+        "cây xăng",
+        "trạm xăng",
+        "trạm nhiên liệu"
+      ],
+      "aliases_en": [
+        "gas station",
+        "fuel station",
+        "petrol station"
+      ],
+      "examples_vi": [
+        "Kim báo nhiên liệu đã gần vạch trống.",
+        "Tôi cần tiếp thêm dầu cho xe trước khi đi xa."
+      ],
+      "examples_en": [
+        "The fuel gauge is almost empty.",
+        "I need to refuel before continuing a long drive."
+      ]
+    },
+    "86": {
+      "description_vi": "Khu vực dành cho việc đỗ hoặc gửi ô tô, xe máy.",
+      "description_en": "An area designated for parking cars or motorbikes.",
+      "aliases_vi": [
+        "bãi đỗ xe",
+        "bãi giữ xe",
+        "chỗ gửi xe"
+      ],
+      "aliases_en": [
+        "parking lot",
+        "car park",
+        "parking area"
+      ],
+      "examples_vi": [
+        "Tôi cần gửi phương tiện vài giờ trước khi vào trung tâm.",
+        "Có khu nào cho phép để ô tô an toàn không?"
+      ],
+      "examples_en": [
+        "I need to leave my vehicle somewhere for a few hours.",
+        "Is there a designated area where I can safely leave the car?"
+      ]
+    },
+    "87": {
+      "description_vi": "Điểm dừng bên đường để hành khách và tài xế nghỉ trong hành trình.",
+      "description_en": "A roadside stop where drivers and passengers can rest during a journey.",
+      "aliases_vi": [
+        "trạm dừng nghỉ",
+        "điểm nghỉ đường bộ",
+        "trạm nghỉ"
+      ],
+      "aliases_en": [
+        "rest stop",
+        "roadside rest area",
+        "service area"
+      ],
+      "examples_vi": [
+        "Lái xe đường dài nên tôi muốn dừng nghỉ một lát.",
+        "Cần một điểm ven đường để cả đoàn nghỉ chân."
+      ],
+      "examples_en": [
+        "I have been driving for hours and need a short break.",
+        "We need a roadside place for the group to rest."
+      ]
+    },
+    "88": {
+      "description_vi": "Cơ sở tập trung trò chơi và hoạt động vui chơi giải trí, thường ở trong nhà.",
+      "description_en": "A venue offering games and recreational activities, often indoors.",
+      "aliases_vi": [
+        "khu vui chơi",
+        "tổ hợp giải trí"
+      ],
+      "aliases_en": [
+        "entertainment center",
+        "recreation center"
+      ],
+      "examples_vi": [
+        "muốn chơi máy game và trò tương tác",
+        "tìm chỗ vui chơi khi trời mưa"
+      ],
+      "examples_en": [
+        "somewhere to play arcade and interactive games",
+        "indoor fun for a rainy afternoon"
+      ]
+    },
+    "89": {
+      "description_vi": "Khu vui chơi quy mô lớn có các trò vận động, trò cảm giác mạnh và điểm tham quan.",
+      "description_en": "A large leisure destination with rides, attractions, and thrill-based entertainment.",
+      "aliases_vi": [
+        "khu trò chơi",
+        "công viên chủ đề"
+      ],
+      "aliases_en": [
+        "theme park",
+        "funfair park"
+      ],
+      "examples_vi": [
+        "muốn đi tàu lượn và chơi cả ngày",
+        "đưa gia đình đến nơi có nhiều trò ngoài trời"
+      ],
+      "examples_en": [
+        "a full day of rides and attractions",
+        "somewhere the family can enjoy roller coasters"
+      ]
+    },
+    "90": {
+      "description_vi": "Địa điểm được trang bị để tổ chức chương trình, buổi gặp mặt hoặc sự kiện.",
+      "description_en": "A place equipped to host programs, gatherings, or organized events.",
+      "aliases_vi": [
+        "không gian sự kiện",
+        "sảnh sự kiện"
+      ],
+      "aliases_en": [
+        "function venue",
+        "event space"
+      ],
+      "examples_vi": [
+        "cần thuê chỗ cho buổi ra mắt sản phẩm",
+        "tìm không gian tiếp đón vài trăm khách"
+      ],
+      "examples_en": [
+        "a space for a product launch",
+        "somewhere to host several hundred guests"
+      ]
+    },
+    "91": {
+      "description_vi": "Công trình hoặc địa điểm gắn với sự kiện, nhân vật hay giai đoạn lịch sử đáng chú ý.",
+      "description_en": "A site or structure associated with a notable historical event, person, or period.",
+      "aliases_vi": [
+        "địa danh lịch sử",
+        "di tích"
+      ],
+      "aliases_en": [
+        "historic site",
+        "heritage landmark"
+      ],
+      "examples_vi": [
+        "muốn thăm nơi lưu dấu một thời kỳ xưa",
+        "tìm công trình có giá trị lịch sử địa phương"
+      ],
+      "examples_en": [
+        "visit a site tied to the area's past",
+        "see a structure with local historical significance"
+      ]
+    },
+    "92": {
+      "description_vi": "Cơ sở có phòng chiếu và màn ảnh để khán giả xem phim.",
+      "description_en": "A venue with screens and auditoriums where audiences watch films.",
+      "aliases_vi": [
+        "rạp phim",
+        "rạp chiếu bóng"
+      ],
+      "aliases_en": [
+        "cinema",
+        "film theater"
+      ],
+      "examples_vi": [
+        "muốn xem suất tối trên màn ảnh lớn",
+        "cần chỗ có phòng chiếu và ghế đặt trước"
+      ],
+      "examples_en": [
+        "watch an evening release on a big screen",
+        "book seats for the latest film"
+      ]
+    },
+    "93": {
+      "description_vi": "Khu thiên nhiên được bảo vệ ở cấp quốc gia nhằm bảo tồn cảnh quan và hệ sinh thái.",
+      "description_en": "A nationally protected natural area conserving landscapes and ecosystems.",
+      "aliases_vi": [
+        "vườn quốc gia",
+        "khu bảo tồn cấp quốc gia"
+      ],
+      "aliases_en": [
+        "national preserve",
+        "protected national park"
+      ],
+      "examples_vi": [
+        "muốn đi bộ giữa rừng được bảo tồn",
+        "tìm nơi quan sát hệ sinh thái tự nhiên quy mô lớn"
+      ],
+      "examples_en": [
+        "hike through a nationally protected forest",
+        "observe wildlife in a large conservation area"
+      ]
+    },
+    "94": {
+      "description_vi": "Địa điểm giải trí về đêm có âm nhạc lớn, khiêu vũ và đồ uống.",
+      "description_en": "A late-night venue with loud music, dancing, and drinks.",
+      "aliases_vi": [
+        "câu lạc bộ đêm",
+        "vũ trường"
+      ],
+      "aliases_en": [
+        "dance club",
+        "nightspot"
+      ],
+      "examples_vi": [
+        "muốn nghe DJ và nhảy đến khuya",
+        "tìm chỗ sôi động sau nửa đêm"
+      ],
+      "examples_en": [
+        "dance to a DJ late into the night",
+        "a lively place that stays open past midnight"
+      ]
+    },
+    "95": {
+      "description_vi": "Địa điểm có cảnh quan, trải nghiệm hoặc nét đặc sắc thu hút khách tham quan.",
+      "description_en": "A place whose scenery, experiences, or distinctive features attract visitors.",
+      "aliases_vi": [
+        "điểm tham quan",
+        "thắng cảnh"
+      ],
+      "aliases_en": [
+        "visitor attraction",
+        "sightseeing spot"
+      ],
+      "examples_vi": [
+        "muốn ghé nơi nổi tiếng khi đến thành phố",
+        "tìm chỗ đáng tham quan trong chuyến đi"
+      ],
+      "examples_en": [
+        "see a well-known sight while visiting the city",
+        "something worthwhile to visit on this trip"
+      ]
+    },
+    "96": {
+      "description_vi": "Cơ sở chuyên phục vụ lễ thành hôn và tiệc chiêu đãi cưới.",
+      "description_en": "A venue designed for marriage ceremonies and wedding receptions.",
+      "aliases_vi": [
+        "sảnh cưới",
+        "nhà hàng cưới"
+      ],
+      "aliases_en": [
+        "wedding hall",
+        "reception venue"
+      ],
+      "examples_vi": [
+        "cần sảnh đãi khách trong ngày thành hôn",
+        "tìm nơi có gói trang trí và bàn tiệc cho cô dâu chú rể"
+      ],
+      "examples_en": [
+        "a hall for the ceremony and reception",
+        "somewhere with wedding decor and banquet service"
+      ]
+    },
+    "97": {
+      "description_vi": "Cơ sở nuôi giữ và trưng bày nhiều loài động vật để tham quan, giáo dục hoặc bảo tồn.",
+      "description_en": "A facility housing diverse animals for viewing, education, or conservation.",
+      "aliases_vi": [
+        "vườn thú",
+        "thảo cầm viên"
+      ],
+      "aliases_en": [
+        "zoological park",
+        "animal park"
+      ],
+      "examples_vi": [
+        "đưa trẻ đi xem hươu cao cổ và sư tử",
+        "muốn quan sát nhiều loài động vật trong một khu"
+      ],
+      "examples_en": [
+        "take the children to see giraffes and lions",
+        "observe many animal species in one place"
+      ]
+    },
+    "98": {
+      "description_vi": "Cá nhân hoặc đơn vị cung cấp lời khuyên chuyên môn cho khách hàng.",
+      "description_en": "A professional or firm providing expert advice to clients.",
+      "aliases_vi": [
+        "chuyên gia tư vấn",
+        "đơn vị cố vấn"
+      ],
+      "aliases_en": [
+        "consultant",
+        "advisory firm"
+      ],
+      "examples_vi": [
+        "cần chuyên gia đánh giá kế hoạch kinh doanh",
+        "muốn nhận khuyến nghị độc lập cho dự án mới"
+      ],
+      "examples_en": [
+        "have an expert assess a business plan",
+        "get independent recommendations for a new project"
+      ]
+    },
+    "99": {
+      "description_vi": "Dịch vụ nhận, vận chuyển và giao nhanh thư từ hoặc kiện hàng.",
+      "description_en": "A service that collects, transports, and promptly delivers documents or parcels.",
+      "aliases_vi": [
+        "dịch vụ giao nhận",
+        "chuyển phát"
+      ],
+      "aliases_en": [
+        "courier",
+        "express delivery"
+      ],
+      "examples_vi": [
+        "cần gửi hợp đồng đến khách hàng trong ngày",
+        "muốn có người đến lấy kiện nhỏ và giao tận nơi"
+      ],
+      "examples_en": [
+        "send a contract to a client on the same day",
+        "have a small parcel collected and delivered door to door"
+      ]
+    },
+    "100": {
+      "description_vi": "Cơ sở nhận giặt, sấy và có thể ủi quần áo hoặc đồ vải.",
+      "description_en": "A business that washes, dries, and may press clothing or linens.",
+      "aliases_vi": [
+        "tiệm giặt sấy",
+        "dịch vụ giặt là"
+      ],
+      "aliases_en": [
+        "laundromat",
+        "wash-and-fold service"
+      ],
+      "examples_vi": [
+        "cần làm sạch và sấy khô một túi quần áo",
+        "muốn gửi chăn ga rồi nhận lại đã gấp gọn"
+      ],
+      "examples_en": [
+        "get a bag of clothes washed and dried",
+        "drop off bedding and collect it clean and folded"
+      ]
+    },
+    "101": {
+      "description_vi": "Văn phòng cung cấp tư vấn, đại diện và các dịch vụ pháp lý.",
+      "description_en": "An office providing legal advice, representation, and related services.",
+      "aliases_vi": [
+        "văn phòng luật sư",
+        "hãng luật"
+      ],
+      "aliases_en": [
+        "law office",
+        "attorney's office"
+      ],
+      "examples_vi": [
+        "cần người xem lại điều khoản hợp đồng trước khi ký",
+        "muốn được đại diện trong một tranh chấp dân sự"
+      ],
+      "examples_en": [
+        "have contract terms reviewed before signing",
+        "seek representation in a civil dispute"
+      ]
+    },
+    "102": {
+      "description_vi": "Thợ hoặc cơ sở làm chìa, lắp khóa và xử lý khóa bị hỏng hay thất lạc chìa.",
+      "description_en": "A tradesperson or shop that cuts keys, installs locks, and resolves lockouts.",
+      "aliases_vi": [
+        "thợ sửa khóa",
+        "tiệm khóa"
+      ],
+      "aliases_en": [
+        "locksmith",
+        "key cutter"
+      ],
+      "examples_vi": [
+        "bị kẹt ngoài nhà vì chìa đã thất lạc",
+        "cần làm thêm một bản chìa cho ổ khóa hiện có"
+      ],
+      "examples_en": [
+        "regain entry after misplacing the house key",
+        "make a spare key for an existing lock"
+      ]
+    },
+    "103": {
+      "description_vi": "Doanh nghiệp vận chuyển đồ đạc khi khách chuyển nhà hoặc chuyển văn phòng.",
+      "description_en": "A company that transports belongings during home or office relocations.",
+      "aliases_vi": [
+        "đơn vị dọn nhà",
+        "dịch vụ chuyển đồ"
+      ],
+      "aliases_en": [
+        "movers",
+        "removal company"
+      ],
+      "examples_vi": [
+        "cần xe tải và nhân công đưa nội thất sang căn hộ mới",
+        "muốn đóng gói thiết bị để dời văn phòng"
+      ],
+      "examples_en": [
+        "hire a truck and crew to move furniture to a new flat",
+        "pack equipment for an office relocation"
+      ]
+    },
+    "104": {
+      "description_vi": "Đơn vị môi giới, cho thuê hoặc hỗ trợ giao dịch nhà đất.",
+      "description_en": "An agency brokering, renting, or supporting transactions involving property.",
+      "aliases_vi": [
+        "môi giới nhà đất",
+        "sàn bất động sản"
+      ],
+      "aliases_en": [
+        "property agency",
+        "realty office"
+      ],
+      "examples_vi": [
+        "muốn xem các căn hộ đang cho thuê trong khu vực",
+        "cần người hỗ trợ rao bán một lô đất"
+      ],
+      "examples_en": [
+        "view flats currently available to rent nearby",
+        "get help listing a parcel of land for sale"
+      ]
+    },
+    "105": {
+      "description_vi": "Thợ hoặc cửa hiệu may, sửa và điều chỉnh trang phục theo số đo.",
+      "description_en": "A craftsperson or shop that makes, repairs, and alters clothing to fit.",
+      "aliases_vi": [
+        "tiệm may",
+        "thợ may đo"
+      ],
+      "aliases_en": [
+        "tailor",
+        "alterations shop"
+      ],
+      "examples_vi": [
+        "cần bóp eo chiếc áo cho vừa người",
+        "muốn đặt may bộ trang phục theo số đo"
+      ],
+      "examples_en": [
+        "have a jacket taken in for a better fit",
+        "order an outfit made to my measurements"
+      ]
+    },
+    "106": {
+      "description_vi": "Điểm hỗ trợ đăng ký, thanh toán và xử lý vấn đề về điện thoại hoặc internet.",
+      "description_en": "A service point for phone or internet subscriptions, payments, and support.",
+      "aliases_vi": [
+        "điểm giao dịch viễn thông",
+        "cửa hàng nhà mạng"
+      ],
+      "aliases_en": [
+        "telecom shop",
+        "carrier service center"
+      ],
+      "examples_vi": [
+        "cần đăng ký đường truyền internet cho căn hộ",
+        "muốn đổi thẻ SIM bị hỏng nhưng giữ số cũ"
+      ],
+      "examples_en": [
+        "set up an internet connection for an apartment",
+        "replace a damaged SIM while keeping the same number"
+      ]
+    },
+    "107": {
+      "description_vi": "Đại lý hỗ trợ đặt vé, chỗ ở, tour và các dịch vụ cho chuyến đi.",
+      "description_en": "An agency arranging tickets, lodging, tours, and other trip services.",
+      "aliases_vi": [
+        "đại lý lữ hành",
+        "văn phòng du lịch"
+      ],
+      "aliases_en": [
+        "travel agent",
+        "booking agency"
+      ],
+      "examples_vi": [
+        "cần người đặt vé và phòng cho kỳ nghỉ sắp tới",
+        "muốn được tư vấn lịch trình đi nhiều thành phố"
+      ],
+      "examples_en": [
+        "arrange transport and lodging for an upcoming holiday",
+        "get help planning a trip across several cities"
+      ]
+    },
+    "108": {
+      "description_vi": "Cơ sở thú y khám, điều trị và chăm sóc sức khỏe cho động vật.",
+      "description_en": "A veterinary facility providing examination, treatment, and health care for animals.",
+      "aliases_vi": [
+        "phòng khám thú y",
+        "bác sĩ thú y",
+        "cơ sở thú y"
+      ],
+      "aliases_en": [
+        "vet",
+        "veterinary clinic",
+        "animal clinic"
+      ],
+      "examples_vi": [
+        "Mèo của tôi bỏ ăn và cần được kiểm tra.",
+        "Tôi muốn đưa chó đi tiêm phòng định kỳ."
+      ],
+      "examples_en": [
+        "My cat has stopped eating and needs an examination.",
+        "I need a vaccination appointment for my dog."
+      ]
+    },
+    "109": {
+      "description_vi": "Cửa hàng bán xe đạp, linh kiện, phụ kiện và thiết bị dành cho người đi xe đạp.",
+      "description_en": "A shop selling bicycles, parts, accessories, and equipment for cyclists.",
+      "aliases_vi": [
+        "tiệm xe đạp",
+        "shop xe đạp"
+      ],
+      "aliases_en": [
+        "bike shop",
+        "cycle store"
+      ],
+      "examples_vi": [
+        "cần chọn chiếc xe hai bánh vừa chiều cao để đi học",
+        "muốn mua mũ bảo hiểm và ruột thay cho chuyến đạp xa"
+      ],
+      "examples_en": [
+        "need a pedal bike sized correctly for a school commute",
+        "want a helmet and spare tube for a long ride"
+      ]
+    },
+    "111": {
+      "description_vi": "Nhà ga phục vụ hành khách lên xuống các chuyến tàu hỏa.",
+      "description_en": "A station where passengers board and leave railway trains.",
+      "aliases_vi": [
+        "ga tàu hỏa",
+        "nhà ga đường sắt",
+        "ga xe lửa"
+      ],
+      "aliases_en": [
+        "train station",
+        "railway station",
+        "rail station"
+      ],
+      "examples_vi": [
+        "Tôi cần ra ga để bắt chuyến tàu đêm.",
+        "Người đi đường sắt xuống ở đâu trong thành phố?"
+      ],
+      "examples_en": [
+        "I need to board an overnight rail service.",
+        "Where do intercity train passengers arrive?"
+      ]
+    },
+    "112": {
+      "description_vi": "Ga đón trả hành khách của hệ thống tàu điện đô thị MRT.",
+      "description_en": "A passenger station on an urban MRT rapid-transit system.",
+      "aliases_vi": [
+        "ga MRT",
+        "ga tàu điện",
+        "ga metro"
+      ],
+      "aliases_en": [
+        "MRT station",
+        "metro station",
+        "rapid-transit station"
+      ],
+      "examples_vi": [
+        "Tôi muốn xuống ga tàu điện gần khu trung tâm.",
+        "Lối vào hệ thống MRT nằm ở đâu?"
+      ],
+      "examples_en": [
+        "I need the rapid-transit stop closest to downtown.",
+        "Where is the entrance to the MRT network?"
+      ]
+    },
+    "113": {
+      "description_vi": "Bến nơi phà cập, đón trả hành khách và phương tiện qua đường thủy.",
+      "description_en": "A terminal where ferries dock and load passengers or vehicles.",
+      "aliases_vi": [
+        "bến phà",
+        "đầu bến phà"
+      ],
+      "aliases_en": [
+        "ferry terminal",
+        "ferry port",
+        "ferry landing"
+      ],
+      "examples_vi": [
+        "Tôi cần đưa xe xuống phà để sang bờ bên kia.",
+        "Hành khách chờ chuyến phà kế tiếp ở bến nào?"
+      ],
+      "examples_en": [
+        "I need to drive onto a ferry to cross the river.",
+        "Where do passengers wait for the next ferry departure?"
+      ]
+    },
+    "114": {
+      "description_vi": "Điểm ven đường nơi xe buýt công cộng dừng để đón trả khách.",
+      "description_en": "A roadside point where public buses stop to pick up and drop off passengers.",
+      "aliases_vi": [
+        "điểm dừng xe buýt",
+        "trạm buýt",
+        "điểm đón bus"
+      ],
+      "aliases_en": [
+        "bus stop",
+        "bus pickup point"
+      ],
+      "examples_vi": [
+        "Tôi nên đứng ở đâu để chờ tuyến số 8?",
+        "Xe buýt sẽ cho khách xuống tại điểm nào?"
+      ],
+      "examples_en": [
+        "Where should I wait for route number eight?",
+        "At which roadside point will the bus let passengers off?"
+      ]
+    },
+    "116": {
+      "description_vi": "Cơ sở cung cấp không gian, lớp học và thiết bị cho rèn luyện thể lực tổng hợp.",
+      "description_en": "A facility offering space, classes, and equipment for broad physical training.",
+      "aliases_vi": [
+        "trung tâm thể hình",
+        "trung tâm luyện tập"
+      ],
+      "aliases_en": [
+        "fitness club",
+        "exercise center"
+      ],
+      "examples_vi": [
+        "muốn đăng ký lớp vận động và huấn luyện cá nhân",
+        "cần nơi tập nhiều bộ môn nâng cao sức khỏe"
+      ],
+      "examples_en": [
+        "join exercise classes with personal coaching",
+        "a place offering several ways to improve fitness"
+      ]
+    },
+    "117": {
+      "description_vi": "Khu sân cỏ có các đường golf, hố golf và tiện ích phục vụ người chơi.",
+      "description_en": "A landscaped course with fairways, greens, holes, and facilities for golfers.",
+      "aliases_vi": [
+        "sân gôn",
+        "câu lạc bộ golf"
+      ],
+      "aliases_en": [
+        "golf club",
+        "golfing course"
+      ],
+      "examples_vi": [
+        "muốn đặt giờ chơi đủ 18 hố",
+        "tìm nơi có fairway và khu phát bóng"
+      ],
+      "examples_en": [
+        "book a tee time for eighteen holes",
+        "play a round on fairways and greens"
+      ]
+    },
+    "118": {
+      "description_vi": "Phòng luyện tập có máy thể hình, tạ và dụng cụ rèn sức mạnh.",
+      "description_en": "A workout room with exercise machines, weights, and strength-training equipment.",
+      "aliases_vi": [
+        "phòng thể hình",
+        "phòng tập tạ"
+      ],
+      "aliases_en": [
+        "weight room",
+        "workout gym"
+      ],
+      "examples_vi": [
+        "cần chỗ tập máy chạy và nâng tạ",
+        "muốn mua vé tập theo ngày"
+      ],
+      "examples_en": [
+        "use treadmills and free weights",
+        "get a day pass for a strength workout"
+      ]
+    },
+    "119": {
+      "description_vi": "Khu có thiết bị và khoảng trống an toàn để trẻ em vui chơi, vận động.",
+      "description_en": "An area with equipment and safe open space for children to play and move.",
+      "aliases_vi": [
+        "khu vui chơi trẻ em",
+        "sân chơi trẻ nhỏ"
+      ],
+      "aliases_en": [
+        "children's play area",
+        "kids' playpark"
+      ],
+      "examples_vi": [
+        "đưa bé đi cầu trượt và xích đu",
+        "cần chỗ để trẻ chạy nhảy an toàn"
+      ],
+      "examples_en": [
+        "somewhere with swings and slides for the kids",
+        "a safe area where children can run around"
+      ]
+    },
+    "120": {
+      "description_vi": "Quần thể có nhiều sân bãi và cơ sở phục vụ các môn thể thao khác nhau.",
+      "description_en": "A multi-facility site containing courts, fields, or venues for different sports.",
+      "aliases_vi": [
+        "liên hợp thể thao",
+        "tổ hợp thể thao"
+      ],
+      "aliases_en": [
+        "athletic complex",
+        "multi-sport center"
+      ],
+      "examples_vi": [
+        "tìm nơi vừa có sân bóng vừa có nhà thi đấu",
+        "cần địa điểm tổ chức giải nhiều môn"
+      ],
+      "examples_en": [
+        "a site with both playing fields and indoor courts",
+        "host a tournament across several sports"
+      ]
+    },
+    "121": {
+      "description_vi": "Công trình lớn có sân thi đấu trung tâm và khán đài cho đông khán giả.",
+      "description_en": "A large venue with a central field or arena and seating for many spectators.",
+      "aliases_vi": [
+        "sân thi đấu",
+        "đấu trường thể thao"
+      ],
+      "aliases_en": [
+        "sports stadium",
+        "arena ground"
+      ],
+      "examples_vi": [
+        "đi xem trận đấu có hàng nghìn khán giả",
+        "tìm khán đài quanh một sân thi đấu lớn"
+      ],
+      "examples_en": [
+        "watch a match with thousands of spectators",
+        "a major field surrounded by grandstands"
+      ]
+    },
+    "122": {
+      "description_vi": "Cơ sở có bể nước được thiết kế cho bơi lội, luyện tập hoặc thư giãn.",
+      "description_en": "A facility with a purpose-built pool for swimming, training, or recreation.",
+      "aliases_vi": [
+        "bể bơi",
+        "bể tập bơi"
+      ],
+      "aliases_en": [
+        "swim center",
+        "public pool"
+      ],
+      "examples_vi": [
+        "muốn bơi vài vòng sau giờ làm",
+        "tìm nơi cho trẻ học bơi"
+      ],
+      "examples_en": [
+        "swim a few laps after work",
+        "somewhere for a child to take swim lessons"
+      ]
+    },
+    "123": {
+      "description_vi": "Cửa hàng bán thiết bị điện tử tiêu dùng và phụ kiện như âm thanh, hình ảnh hoặc đồ thông minh.",
+      "description_en": "A shop selling consumer electronics and accessories for audio, video, or smart-device use.",
+      "aliases_vi": [
+        "tiệm điện tử",
+        "cửa hàng thiết bị điện tử"
+      ],
+      "aliases_en": [
+        "consumer electronics store",
+        "electronics retailer"
+      ],
+      "examples_vi": [
+        "cần mua tai nghe và loa dùng trong phòng khách",
+        "muốn xem thiết bị thông minh kết nối với TV"
+      ],
+      "examples_en": [
+        "need headphones and speakers for the living room",
+        "want a smart device that connects to the television"
+      ]
+    },
+    "124": {
+      "description_vi": "Cửa hàng bán dụng cụ cầm tay, phụ kiện sửa chữa, khóa và vật tư kỹ thuật nhỏ.",
+      "description_en": "A shop selling hand tools, repair accessories, locks, and small technical supplies.",
+      "aliases_vi": [
+        "tiệm kim khí",
+        "cửa hàng đồ nghề"
+      ],
+      "aliases_en": [
+        "tool shop",
+        "ironmongery"
+      ],
+      "examples_vi": [
+        "cần mua búa, tua vít và vài con ốc để sửa tại nhà",
+        "muốn tìm ổ khóa cùng dụng cụ lắp đặt"
+      ],
+      "examples_en": [
+        "need a hammer, screwdrivers, and fasteners for a home repair",
+        "want a padlock together with tools for fitting it"
+      ]
+    },
+    "125": {
+      "description_vi": "Cửa hàng bán đồ dùng thiết yếu cho sinh hoạt, nhà bếp, vệ sinh và tổ chức nhà cửa.",
+      "description_en": "A shop selling practical items for household living, kitchens, cleaning, and home organization.",
+      "aliases_vi": [
+        "cửa hàng gia dụng",
+        "tiệm đồ dùng nhà"
+      ],
+      "aliases_en": [
+        "housewares store",
+        "household goods shop"
+      ],
+      "examples_vi": [
+        "cần nồi, hộp đựng và dụng cụ vệ sinh cho căn hộ mới",
+        "muốn mua các vật dụng nhỏ để sắp xếp nhà bếp"
+      ],
+      "examples_en": [
+        "need cookware, storage boxes, and cleaning items for a new flat",
+        "want small organizers and utensils for the kitchen"
+      ]
+    },
+    "126": {
+      "description_vi": "Cửa hàng chuyên bán nhẫn, vòng, dây chuyền và trang sức bằng kim loại hoặc đá quý.",
+      "description_en": "A dedicated store selling rings, bracelets, necklaces, and pieces made with precious metals or stones.",
+      "aliases_vi": [
+        "tiệm trang sức",
+        "cửa hàng nữ trang"
+      ],
+      "aliases_en": [
+        "jeweler",
+        "jewellery store"
+      ],
+      "examples_vi": [
+        "cần đo cỡ nhẫn và xem các mẫu đính đá",
+        "muốn mua vòng tay bằng kim loại quý có bảo hành"
+      ],
+      "examples_en": [
+        "need my ring size measured while viewing stone-set designs",
+        "want a precious-metal bracelet with a warranty"
+      ]
+    },
+    "127": {
+      "description_vi": "Cửa hàng chuyên bán rượu vang, rượu mạnh và các loại đồ uống có cồn đóng chai.",
+      "description_en": "A shop specializing in bottled wine, spirits, and other alcoholic beverages.",
+      "aliases_vi": [
+        "tiệm rượu",
+        "cửa hàng rượu vang"
+      ],
+      "aliases_en": [
+        "wine shop",
+        "bottle shop"
+      ],
+      "examples_vi": [
+        "cần chọn chai vang phù hợp với bữa tối",
+        "muốn mua một loại whisky đóng hộp để biếu"
+      ],
+      "examples_en": [
+        "need a bottle of wine suited to dinner",
+        "want a boxed whisky to give as a present"
+      ]
+    },
+    "128": {
+      "description_vi": "Cửa hàng bán thức ăn, phụ kiện và vật dụng phục vụ thú nuôi.",
+      "description_en": "A retailer selling food, accessories, and supplies for companion animals.",
+      "aliases_vi": [
+        "shop thú cưng",
+        "cửa hàng đồ cho vật nuôi"
+      ],
+      "aliases_en": [
+        "pet supplies store",
+        "pet shop"
+      ],
+      "examples_vi": [
+        "cần hạt dinh dưỡng và cát vệ sinh cho mèo",
+        "muốn mua dây dắt cùng đồ chơi cho chó"
+      ],
+      "examples_en": [
+        "need dry food and litter for a cat",
+        "want a leash and toys for a dog"
+      ]
+    },
+    "129": {
+      "description_vi": "Cửa hàng chuyên bán nhiều loại giày dép cho các mục đích và đối tượng khác nhau.",
+      "description_en": "A dedicated store carrying varied footwear for different uses and customers.",
+      "aliases_vi": [
+        "cửa hàng giày dép",
+        "tiệm giày dép"
+      ],
+      "aliases_en": [
+        "shoe shop",
+        "footwear store"
+      ],
+      "examples_vi": [
+        "muốn chọn giày chạy bộ có đệm đúng nhu cầu",
+        "cần mua nhiều cỡ giày dép cho cả gia đình"
+      ],
+      "examples_en": [
+        "want cushioned running footwear suited to my stride",
+        "need several sizes of shoes and sandals for the family"
+      ]
+    },
+    "130": {
+      "description_vi": "Cửa hàng bán dụng cụ, trang phục và phụ kiện dành cho luyện tập hoặc thi đấu thể thao.",
+      "description_en": "A shop selling equipment, clothing, and accessories for sports training or competition.",
+      "aliases_vi": [
+        "shop thể thao",
+        "cửa hàng đồ thể thao"
+      ],
+      "aliases_en": [
+        "sports shop",
+        "athletic goods store"
+      ],
+      "examples_vi": [
+        "cần mua vợt và bóng để bắt đầu chơi cuối tuần",
+        "muốn thử quần áo cùng đồ bảo hộ cho buổi tập"
+      ],
+      "examples_en": [
+        "need a racket and balls to start playing on weekends",
+        "want training clothes and protective gear for practice"
+      ]
+    },
+    "132": {
+      "description_vi": "Không gian trưng bày và giới thiệu tranh, tượng, ảnh hoặc tác phẩm nghệ thuật.",
+      "description_en": "A space that exhibits paintings, sculpture, photography, or other artworks.",
+      "aliases_vi": [
+        "phòng tranh",
+        "không gian mỹ thuật"
+      ],
+      "aliases_en": [
+        "art space",
+        "gallery"
+      ],
+      "examples_vi": [
+        "muốn xem bộ sưu tập tranh đương đại",
+        "tìm nơi đang trưng bày tác phẩm của họa sĩ địa phương"
+      ],
+      "examples_en": [
+        "see a contemporary painting collection",
+        "view work by local artists on display"
+      ]
+    },
+    "133": {
+      "description_vi": "Cơ sở sưu tầm, bảo quản và trưng bày hiện vật có giá trị lịch sử, văn hóa hoặc khoa học.",
+      "description_en": "An institution that collects, preserves, and displays objects of historical, cultural, or scientific value.",
+      "aliases_vi": [
+        "nhà bảo tàng",
+        "không gian hiện vật"
+      ],
+      "aliases_en": [
+        "exhibition museum",
+        "collections museum"
+      ],
+      "examples_vi": [
+        "muốn xem hiện vật khảo cổ được lưu giữ",
+        "tìm nơi kể câu chuyện địa phương qua bộ sưu tập"
+      ],
+      "examples_en": [
+        "view preserved archaeological objects",
+        "learn the area's story through curated collections"
+      ]
+    },
+    "134": {
+      "description_vi": "Nhà hát có sân khấu dành cho kịch, múa, nhạc và các chương trình biểu diễn trực tiếp.",
+      "description_en": "A theater with a stage for live drama, dance, music, and other performances.",
+      "aliases_vi": [
+        "nhà hát biểu diễn",
+        "sân khấu nghệ thuật"
+      ],
+      "aliases_en": [
+        "playhouse",
+        "performing arts venue"
+      ],
+      "examples_vi": [
+        "muốn xem một vở diễn trực tiếp",
+        "tìm sân khấu có chương trình múa tối nay"
+      ],
+      "examples_en": [
+        "see a live stage production",
+        "watch a dance performance this evening"
+      ]
+    },
+    "135": {
+      "description_vi": "Khu lưu trú phục vụ nghỉ dưỡng, thường kết hợp tiện ích thư giãn và giải trí.",
+      "description_en": "A holiday property combining accommodation with leisure and relaxation amenities.",
+      "aliases_vi": [
+        "khu nghỉ dưỡng",
+        "resort",
+        "khu du lịch nghỉ dưỡng"
+      ],
+      "aliases_en": [
+        "resort",
+        "holiday resort",
+        "vacation resort"
+      ],
+      "examples_vi": [
+        "Gia đình muốn nghỉ vài ngày tại khu có nhiều tiện ích thư giãn.",
+        "Tôi đang tìm nơi nghỉ dưỡng trọn gói cho kỳ nghỉ."
+      ],
+      "examples_en": [
+        "Our family wants a holiday property with leisure facilities.",
+        "I am seeking an all-in-one place for a relaxing vacation."
+      ]
+    },
+    "136": {
+      "description_vi": "Nơi lưu trú tiết kiệm, thường có giường hoặc phòng dùng chung cho khách du lịch.",
+      "description_en": "Budget lodging that often offers shared rooms or beds for travelers.",
+      "aliases_vi": [
+        "hostel",
+        "nhà trọ du lịch",
+        "phòng dorm"
+      ],
+      "aliases_en": [
+        "hostel",
+        "backpacker hostel",
+        "dorm lodging"
+      ],
+      "examples_vi": [
+        "Tôi chỉ cần một giường trong phòng chung cho khách ba lô.",
+        "Có nơi nào lưu trú tiết kiệm với bếp dùng chung không?"
+      ],
+      "examples_en": [
+        "I only need a bed in a shared room for backpackers.",
+        "Is there inexpensive lodging with a communal kitchen?"
+      ]
+    },
+    "137": {
+      "description_vi": "Cơ sở lưu trú ngắn hạn, thường thuận tiện cho khách đi đường và phương tiện cá nhân.",
+      "description_en": "Short-stay lodging typically convenient for road travelers and private vehicles.",
+      "aliases_vi": [
+        "nhà nghỉ",
+        "motel",
+        "nhà nghỉ ven đường"
+      ],
+      "aliases_en": [
+        "motel",
+        "motor lodge",
+        "roadside motel"
+      ],
+      "examples_vi": [
+        "Tôi cần nghỉ một đêm dọc tuyến đường đang đi.",
+        "Có chỗ lưu trú ngắn hạn thuận tiện đỗ xe không?"
+      ],
+      "examples_en": [
+        "I need a one-night stop along this driving route.",
+        "Is there short-stay lodging with convenient vehicle access?"
+      ]
+    },
+    "138": {
+      "description_vi": "Khách sạn hướng đến kỳ nghỉ, kết hợp phòng lưu trú với tiện ích nghỉ dưỡng.",
+      "description_en": "A hotel designed for vacations, combining guest rooms with resort amenities.",
+      "aliases_vi": [
+        "khách sạn nghỉ dưỡng",
+        "resort hotel"
+      ],
+      "aliases_en": [
+        "resort hotel",
+        "vacation hotel",
+        "holiday hotel"
+      ],
+      "examples_vi": [
+        "Tôi muốn khách sạn có hồ bơi và tiện ích cho kỳ nghỉ.",
+        "Chỗ lưu trú nào vừa có dịch vụ khách sạn vừa mang tính nghỉ dưỡng?"
+      ],
+      "examples_en": [
+        "I want a hotel with a pool and vacation facilities.",
+        "Which lodging combines hotel service with a resort setting?"
+      ]
+    },
+    "140": {
+      "description_vi": "Công trình thờ phượng Kitô giáo, nơi cộng đoàn dự lễ và cầu nguyện.",
+      "description_en": "A Christian place of worship where a congregation gathers for services and prayer.",
+      "aliases_vi": [
+        "thánh đường",
+        "giáo đường"
+      ],
+      "aliases_en": [
+        "Christian church",
+        "chapel"
+      ],
+      "examples_vi": [
+        "muốn dự lễ cùng giáo dân vào chủ nhật",
+        "tìm nơi có thánh giá và giờ cầu nguyện"
+      ],
+      "examples_en": [
+        "attend a Sunday service with a congregation",
+        "a place with a cross and scheduled prayers"
+      ]
+    },
+    "141": {
+      "description_vi": "Cơ sở thờ Phật, nơi thực hành nghi lễ và sinh hoạt Phật giáo.",
+      "description_en": "A Buddhist place of worship for rituals, meditation, and religious practice.",
+      "aliases_vi": [
+        "tự viện",
+        "chùa Phật giáo"
+      ],
+      "aliases_en": [
+        "Buddhist temple",
+        "Buddhist monastery"
+      ],
+      "examples_vi": [
+        "muốn dâng hương và nghe tụng kinh",
+        "tìm nơi sinh hoạt Phật giáo thanh tịnh"
+      ],
+      "examples_en": [
+        "offer incense and listen to Buddhist chanting",
+        "a peaceful place for Buddhist practice"
+      ]
+    },
+    "142": {
+      "description_vi": "Cơ sở y tế tuyến cơ sở phục vụ chăm sóc sức khỏe ban đầu cho cộng đồng địa phương.",
+      "description_en": "A local primary-care facility serving the surrounding community.",
+      "aliases_vi": [
+        "trạm y tế",
+        "trạm xá",
+        "y tế phường xã"
+      ],
+      "aliases_en": [
+        "health station",
+        "community health post",
+        "local clinic"
+      ],
+      "examples_vi": [
+        "Tôi cần đến điểm y tế của phường để được sơ cứu.",
+        "Ở xã có nơi nào tư vấn sức khỏe ban đầu?"
+      ],
+      "examples_en": [
+        "I need basic first aid at the neighborhood health post.",
+        "Where is the local facility for primary health advice?"
+      ]
+    },
+    "143": {
+      "description_vi": "Cơ sở chuyên giám sát dịch tễ, tiêm chủng và phòng ngừa bệnh tật.",
+      "description_en": "A center focused on disease surveillance, vaccination, and preventive health programs.",
+      "aliases_vi": [
+        "y tế dự phòng",
+        "trung tâm phòng bệnh"
+      ],
+      "aliases_en": [
+        "preventive health center",
+        "disease prevention center"
+      ],
+      "examples_vi": [
+        "Tôi cần hỏi về chương trình tiêm chủng cộng đồng.",
+        "Chỗ nào phụ trách theo dõi và phòng chống dịch?"
+      ],
+      "examples_en": [
+        "I need information about a community vaccination program.",
+        "Which center handles local disease prevention and surveillance?"
+      ]
+    },
+    "144": {
+      "description_vi": "Phòng khám ngoại trú khám nhiều nhóm bệnh thông thường và nhiều chuyên môn.",
+      "description_en": "An outpatient clinic covering common conditions across multiple medical specialties.",
+      "aliases_vi": [
+        "phòng khám đa khoa",
+        "phòng khám tổng quát",
+        "phòng mạch"
+      ],
+      "aliases_en": [
+        "general clinic",
+        "outpatient clinic",
+        "medical clinic"
+      ],
+      "examples_vi": [
+        "Tôi muốn khám tổng quát rồi về trong ngày.",
+        "Cần một phòng khám xử lý nhiều loại triệu chứng thông thường."
+      ],
+      "examples_en": [
+        "I want a general checkup without being admitted.",
+        "I need an outpatient facility that treats a range of common conditions."
+      ]
+    },
+    "145": {
+      "description_vi": "Phòng khám tập trung vào một chuyên khoa hoặc nhóm bệnh cụ thể.",
+      "description_en": "A clinic focused on one medical specialty or a specific group of conditions.",
+      "aliases_vi": [
+        "phòng khám chuyên khoa",
+        "phòng khám chuyên biệt"
+      ],
+      "aliases_en": [
+        "specialty clinic",
+        "specialist clinic"
+      ],
+      "examples_vi": [
+        "Tôi cần cơ sở chỉ chuyên khám bệnh về da.",
+        "Muốn đặt lịch tại phòng khám của một chuyên ngành cụ thể."
+      ],
+      "examples_en": [
+        "I need a clinic dedicated to skin conditions.",
+        "I want an appointment at a single-specialty medical practice."
+      ]
+    },
+    "146": {
+      "description_vi": "Cơ sở thực hiện tư vấn và các dịch vụ thẩm mỹ, cải thiện ngoại hình.",
+      "description_en": "A clinic providing consultations and aesthetic procedures to enhance appearance.",
+      "aliases_vi": [
+        "phòng khám thẩm mỹ",
+        "thẩm mỹ viện",
+        "cơ sở thẩm mỹ"
+      ],
+      "aliases_en": [
+        "aesthetic clinic",
+        "cosmetic clinic",
+        "beauty clinic"
+      ],
+      "examples_vi": [
+        "Tôi muốn được tư vấn một liệu trình thẩm mỹ da.",
+        "Chỗ nào thực hiện thủ thuật cải thiện ngoại hình?"
+      ],
+      "examples_en": [
+        "I would like a consultation about an aesthetic skin procedure.",
+        "Where can I inquire about a cosmetic treatment?"
+      ]
+    },
+    "147": {
+      "description_vi": "Cơ sở khám chữa bệnh bằng phương pháp y học cổ truyền.",
+      "description_en": "A facility treating health conditions through traditional medicine practices.",
+      "aliases_vi": [
+        "y học cổ truyền",
+        "đông y",
+        "phòng khám đông y"
+      ],
+      "aliases_en": [
+        "traditional medicine",
+        "traditional medical clinic",
+        "Eastern medicine clinic"
+      ],
+      "examples_vi": [
+        "Tôi muốn tư vấn điều trị theo phương pháp đông y.",
+        "Ở đâu có khám bệnh bằng y học truyền thống?"
+      ],
+      "examples_en": [
+        "I am seeking care based on traditional medical methods.",
+        "Where can I consult a traditional medicine practitioner?"
+      ]
+    },
+    "148": {
+      "description_vi": "Cơ sở tư vấn, đánh giá và hỗ trợ chế độ dinh dưỡng.",
+      "description_en": "A center providing nutritional assessment, counseling, and diet support.",
+      "aliases_vi": [
+        "trung tâm dinh dưỡng",
+        "tư vấn dinh dưỡng"
+      ],
+      "aliases_en": [
+        "nutrition center",
+        "dietary counseling center"
+      ],
+      "examples_vi": [
+        "Tôi cần chuyên gia xây dựng chế độ ăn phù hợp.",
+        "Muốn đánh giá dinh dưỡng cho trẻ đang chậm tăng cân."
+      ],
+      "examples_en": [
+        "I need professional help planning a suitable diet.",
+        "I want a nutritional assessment for a child gaining weight slowly."
+      ]
+    },
+    "149": {
+      "description_vi": "Cơ sở phục hồi vận động bằng vật lý trị liệu và các bài tập chức năng.",
+      "description_en": "A facility restoring movement through physical therapy and rehabilitation exercises.",
+      "aliases_vi": [
+        "vật lý trị liệu",
+        "trung tâm phục hồi chức năng",
+        "cơ sở trị liệu vận động"
+      ],
+      "aliases_en": [
+        "physical therapy center",
+        "physiotherapy clinic",
+        "rehabilitation center"
+      ],
+      "examples_vi": [
+        "Tôi cần tập phục hồi vận động sau chấn thương đầu gối.",
+        "Chỗ nào có kỹ thuật viên hướng dẫn bài tập trị liệu?"
+      ],
+      "examples_en": [
+        "I need help regaining knee movement after an injury.",
+        "Where can a therapist guide me through rehabilitation exercises?"
+      ]
+    },
+    "150": {
+      "description_vi": "Cơ sở phân tích mẫu bệnh phẩm để cung cấp kết quả xét nghiệm y khoa.",
+      "description_en": "A facility analyzing clinical samples to provide medical test results.",
+      "aliases_vi": [
+        "phòng xét nghiệm",
+        "cơ sở xét nghiệm",
+        "labo y khoa"
+      ],
+      "aliases_en": [
+        "medical laboratory",
+        "clinical lab",
+        "testing laboratory"
+      ],
+      "examples_vi": [
+        "Tôi cần lấy mẫu máu để làm các chỉ số sức khỏe.",
+        "Chỗ nào nhận phân tích mẫu xét nghiệm theo chỉ định?"
+      ],
+      "examples_en": [
+        "I need blood samples analyzed for several health markers.",
+        "Where can I submit a clinical sample ordered by my doctor?"
+      ]
+    },
+    "151": {
+      "description_vi": "Trường đào tạo nghề hoặc kỹ thuật thực hành cho một lĩnh vực cụ thể.",
+      "description_en": "A school providing practical vocational or technical training for specific occupations.",
+      "aliases_vi": [
+        "trường nghề",
+        "trường trung cấp nghề"
+      ],
+      "aliases_en": [
+        "trade school",
+        "technical school"
+      ],
+      "examples_vi": [
+        "muốn học thực hành để làm kỹ thuật viên điện",
+        "cần khóa đào tạo nghề có xưởng thực tập"
+      ],
+      "examples_en": [
+        "gain hands-on training to become an electrical technician",
+        "take a career program with workshop practice"
+      ]
+    },
+    "152": {
+      "description_vi": "Cơ sở tổ chức khóa học ngoại ngữ cho nhiều trình độ và mục tiêu.",
+      "description_en": "A center offering foreign-language courses for varied levels and goals.",
+      "aliases_vi": [
+        "trung tâm ngôn ngữ",
+        "lớp ngoại ngữ"
+      ],
+      "aliases_en": [
+        "language school",
+        "foreign-language institute"
+      ],
+      "examples_vi": [
+        "muốn luyện giao tiếp với giáo viên theo nhóm nhỏ",
+        "cần ôn chứng chỉ quốc tế vào buổi tối"
+      ],
+      "examples_en": [
+        "practice conversation with a teacher in a small group",
+        "prepare for an international proficiency exam after work"
+      ]
+    },
+    "153": {
+      "description_vi": "Cơ sở dạy lý thuyết, kỹ năng điều khiển xe và chuẩn bị thi giấy phép lái xe.",
+      "description_en": "A school teaching road theory, vehicle operation, and license-test preparation.",
+      "aliases_vi": [
+        "trung tâm dạy lái xe",
+        "trường đào tạo lái xe"
+      ],
+      "aliases_en": [
+        "driving academy",
+        "driver training school"
+      ],
+      "examples_vi": [
+        "cần học điều khiển ô tô từ đầu với giáo viên",
+        "muốn luyện sa hình trước kỳ thi giấy phép"
+      ],
+      "examples_en": [
+        "learn to operate a car with an instructor from the basics",
+        "practice road maneuvers before a license test"
+      ]
+    },
+    "154": {
+      "description_vi": "Cửa hàng chuyên bán sản phẩm trang điểm, dưỡng da và chăm sóc sắc đẹp.",
+      "description_en": "A dedicated shop selling makeup, skin-care, and cosmetic beauty products.",
+      "aliases_vi": [
+        "shop mỹ phẩm",
+        "tiệm mỹ phẩm"
+      ],
+      "aliases_en": [
+        "makeup store",
+        "cosmetics shop"
+      ],
+      "examples_vi": [
+        "cần thử màu son và kem nền hợp tông da",
+        "muốn mua serum cùng kem chống nắng cho chu trình dưỡng da"
+      ],
+      "examples_en": [
+        "need to test lipstick and foundation shades against my skin tone",
+        "want serum and sunscreen for a skin-care routine"
+      ]
+    },
+    "155": {
+      "description_vi": "Bến tập trung xe khách hoặc xe đường dài đón trả hành khách.",
+      "description_en": "A terminal for intercity coaches and long-distance passenger buses.",
+      "aliases_vi": [
+        "bến xe khách",
+        "bến xe",
+        "bến xe liên tỉnh"
+      ],
+      "aliases_en": [
+        "coach station",
+        "intercity bus terminal",
+        "coach terminal"
+      ],
+      "examples_vi": [
+        "Tôi cần bắt xe khách đi sang tỉnh khác.",
+        "Các chuyến đường dài tập trung ở bến nào?"
+      ],
+      "examples_en": [
+        "I need an intercity coach to another province.",
+        "Which terminal serves long-distance passenger buses?"
+      ]
+    },
+    "156": {
+      "description_vi": "Khu cảng nơi tàu thuyền neo đậu, đón trả người hoặc xếp dỡ hàng.",
+      "description_en": "A port area where vessels dock for passengers, cargo, or shelter.",
+      "aliases_vi": [
+        "bến cảng",
+        "cảng tàu",
+        "cảng biển"
+      ],
+      "aliases_en": [
+        "harbor",
+        "port",
+        "harbour"
+      ],
+      "examples_vi": [
+        "Tôi muốn đến nơi tàu hàng đang neo đậu.",
+        "Tàu thuyền vào khu cảng bằng lối nào?"
+      ],
+      "examples_en": [
+        "I need to reach the docks where cargo vessels berth.",
+        "Where do boats enter the sheltered port area?"
+      ]
+    },
+    "157": {
+      "description_vi": "Công trình truyền thống của làng Việt dùng để thờ thành hoàng và hội họp cộng đồng.",
+      "description_en": "A traditional Vietnamese village building for tutelary worship and community gatherings.",
+      "aliases_vi": [
+        "đình làng",
+        "đình cổ"
+      ],
+      "aliases_en": [
+        "Vietnamese communal house",
+        "village đình"
+      ],
+      "examples_vi": [
+        "muốn thăm nơi làng tổ chức lễ thành hoàng",
+        "tìm công trình cổ dùng cho việc chung của dân làng"
+      ],
+      "examples_en": [
+        "visit where a village honors its tutelary deity",
+        "see a traditional hall used for village affairs"
+      ]
+    },
+    "158": {
+      "description_vi": "Nơi thờ thần linh, anh hùng hoặc nhân vật được tôn kính trong tín ngưỡng truyền thống.",
+      "description_en": "A traditional place honoring deities, heroes, or other revered figures.",
+      "aliases_vi": [
+        "đền thờ",
+        "đền linh thiêng"
+      ],
+      "aliases_en": [
+        "traditional temple",
+        "worship temple"
+      ],
+      "examples_vi": [
+        "muốn dâng lễ tưởng nhớ một vị anh hùng",
+        "tìm nơi thờ vị thần bảo hộ vùng này"
+      ],
+      "examples_en": [
+        "make an offering to a revered hero",
+        "visit a site honoring the area's guardian deity"
+      ]
+    },
+    "159": {
+      "description_vi": "Công trình thờ tự nhỏ dành cho thần linh, vong linh hoặc nhân vật được tôn kính.",
+      "description_en": "A small sacred structure dedicated to a deity, spirit, or revered figure.",
+      "aliases_vi": [
+        "miếu thờ",
+        "am thờ"
+      ],
+      "aliases_en": [
+        "small shrine",
+        "wayside shrine"
+      ],
+      "examples_vi": [
+        "tìm am nhỏ để thắp hương ven đường",
+        "muốn ghé nơi dân địa phương thờ một vị thần"
+      ],
+      "examples_en": [
+        "stop at a small roadside sacred site",
+        "visit where locals honor a particular spirit"
+      ]
+    },
+    "160": {
+      "description_vi": "Cơ sở thờ tự của đạo Cao Đài, nơi tín đồ hành lễ và sinh hoạt tôn giáo.",
+      "description_en": "A Cao Dai place of worship where followers hold ceremonies and religious gatherings.",
+      "aliases_vi": [
+        "thánh thất Cao Đài",
+        "nhà thờ Cao Đài"
+      ],
+      "aliases_en": [
+        "Cao Dai temple",
+        "Cao Dai holy house"
+      ],
+      "examples_vi": [
+        "muốn xem giờ hành lễ của tín đồ Cao Đài",
+        "tìm nơi có kiến trúc và biểu tượng Thiên Nhãn"
+      ],
+      "examples_en": [
+        "attend a Cao Dai prayer ceremony",
+        "see a sacred building marked by the Divine Eye"
+      ]
+    },
+    "161": {
+      "description_vi": "Cơ sở thờ phượng Hồi giáo, nơi tín đồ thực hiện các buổi cầu nguyện.",
+      "description_en": "An Islamic place of worship where Muslims gather for prayer.",
+      "aliases_vi": [
+        "thánh đường Hồi giáo",
+        "giáo đường Islam"
+      ],
+      "aliases_en": [
+        "masjid",
+        "Islamic prayer hall"
+      ],
+      "examples_vi": [
+        "cần nơi thực hiện lễ nguyện thứ sáu",
+        "tìm phòng cầu nguyện dành cho tín đồ Hồi giáo"
+      ],
+      "examples_en": [
+        "join the Friday congregational prayer",
+        "a prayer space for Muslim worshippers"
+      ]
+    },
+    "162": {
+      "description_vi": "Công trình của một dòng họ dùng để thờ tổ tiên và tổ chức nghi lễ gia tộc.",
+      "description_en": "A clan building used to honor ancestors and hold lineage ceremonies.",
+      "aliases_vi": [
+        "từ đường",
+        "nhà thờ tộc"
+      ],
+      "aliases_en": [
+        "clan ancestral hall",
+        "lineage hall"
+      ],
+      "examples_vi": [
+        "muốn về nơi dòng họ làm lễ giỗ tổ",
+        "tìm từ đường lưu gia phả và bài vị"
+      ],
+      "examples_en": [
+        "visit where a clan holds ancestor rites",
+        "find the hall preserving a lineage's tablets and records"
+      ]
+    },
+    "163": {
+      "description_vi": "Cơ sở chung phục vụ hội họp, sinh hoạt văn hóa và hoạt động của cư dân địa phương.",
+      "description_en": "A shared local facility for meetings, cultural programs, and neighborhood activities.",
+      "aliases_vi": [
+        "nhà văn hóa",
+        "nhà sinh hoạt cộng đồng"
+      ],
+      "aliases_en": [
+        "community hall",
+        "neighborhood center"
+      ],
+      "examples_vi": [
+        "cần phòng họp cho tổ dân phố",
+        "tìm nơi có lớp sinh hoạt cho cư dân quanh đây"
+      ],
+      "examples_en": [
+        "a meeting room for neighborhood residents",
+        "local classes and activities for the community"
+      ]
+    },
+    "164": {
+      "description_vi": "Địa điểm hoặc công trình được dùng làm nơi ở thường xuyên.",
+      "description_en": "A place or building used as a regular home or residence.",
+      "aliases_vi": [
+        "nhà ở",
+        "nơi cư trú",
+        "chỗ ở"
+      ],
+      "aliases_en": [
+        "residence",
+        "dwelling",
+        "home"
+      ],
+      "examples_vi": [
+        "Đây là địa chỉ nơi người đó đang sinh sống.",
+        "Tôi đang tìm một công trình dùng làm chỗ ở lâu dài."
+      ],
+      "examples_en": [
+        "This is the address where the person normally lives.",
+        "I am looking for a building used as a long-term home."
+      ]
+    },
+    "165": {
+      "description_vi": "Trường giảng dạy liên tục từ hai hay nhiều cấp học phổ thông.",
+      "description_en": "A school combining two or more consecutive levels of general education.",
+      "aliases_vi": [
+        "trường nhiều cấp",
+        "trường phổ thông liên cấp"
+      ],
+      "aliases_en": [
+        "multi-level school",
+        "combined school"
+      ],
+      "examples_vi": [
+        "muốn hai anh em khác cấp học cùng một khuôn viên",
+        "cần môi trường cho con học xuyên suốt nhiều bậc"
+      ],
+      "examples_en": [
+        "send siblings in different grades to the same campus",
+        "keep a child at one institution across several school stages"
+      ]
+    },
+    "166": {
+      "description_vi": "Khu dân cư gồm nhiều biệt thự hoặc nhà ở biệt lập.",
+      "description_en": "A residential development composed of villas or detached homes.",
+      "aliases_vi": [
+        "khu biệt thự",
+        "quần thể biệt thự"
+      ],
+      "aliases_en": [
+        "villa area",
+        "villa development",
+        "villa community"
+      ],
+      "examples_vi": [
+        "Tôi cần vào khu có dãy nhà biệt thự biệt lập.",
+        "Căn nhà nằm trong quần thể biệt thự nào?"
+      ],
+      "examples_en": [
+        "I need to enter the development of detached villas.",
+        "Which villa community contains this house?"
+      ]
+    },
+    "167": {
+      "description_vi": "Nhà phố thương mại kết hợp mặt bằng kinh doanh với không gian ở hoặc sử dụng phía trên.",
+      "description_en": "A commercial townhouse combining a street-level business space with residential or usable floors above.",
+      "aliases_vi": [
+        "nhà phố thương mại",
+        "nhà ở kết hợp cửa hàng"
+      ],
+      "aliases_en": [
+        "commercial townhouse",
+        "shop house"
+      ],
+      "examples_vi": [
+        "muốn xem căn vừa mở cửa hàng tầng trệt vừa ở phía trên",
+        "cần mặt bằng liền thổ trong dãy phố kinh doanh"
+      ],
+      "examples_en": [
+        "want a unit with retail downstairs and living space above",
+        "need a landed commercial unit in a business street"
+      ]
+    },
+    "168": {
+      "description_vi": "Quán ăn phổ thông bán các món no bụng với mức giá phải chăng.",
+      "description_en": "An unpretentious eatery offering filling dishes at affordable prices.",
+      "aliases_vi": [
+        "quán cơm bình dân",
+        "quán ăn giá rẻ"
+      ],
+      "aliases_en": [
+        "budget eatery",
+        "inexpensive diner"
+      ],
+      "examples_vi": [
+        "cần suất cơm no bụng mà không tốn nhiều tiền",
+        "muốn ăn món hằng ngày với giá vừa túi"
+      ],
+      "examples_en": [
+        "need a filling plate without spending much",
+        "want an everyday cooked meal on a modest budget"
+      ]
+    },
+    "169": {
+      "description_vi": "Trung tâm bán lẻ quy mô lớn tập trung nhiều nhóm điện máy và thiết bị gia đình.",
+      "description_en": "A large retail center focused on multiple categories of appliances and consumer electronics.",
+      "aliases_vi": [
+        "siêu thị điện máy",
+        "trung tâm điện tử gia dụng"
+      ],
+      "aliases_en": [
+        "electronics megastore",
+        "appliance center"
+      ],
+      "examples_vi": [
+        "muốn so sánh TV, tủ lạnh và máy giặt tại một nơi lớn",
+        "cần khu trưng bày nhiều hãng điện máy để chọn trọn bộ cho nhà mới"
+      ],
+      "examples_en": [
+        "want to compare televisions, fridges, and washers in one large venue",
+        "need many appliance brands displayed together for a new home"
+      ]
+    },
+    "170": {
+      "description_vi": "Cơ sở cung cấp dịch vụ mát xa và thư giãn cơ thể.",
+      "description_en": "A place providing body massage and relaxation services.",
+      "aliases_vi": [
+        "tiệm mát xa",
+        "massage trị liệu"
+      ],
+      "aliases_en": [
+        "massage parlor",
+        "massage therapy"
+      ],
+      "examples_vi": [
+        "muốn thư giãn và xoa bóp cơ thể",
+        "cần đặt buổi massage trị liệu"
+      ],
+      "examples_en": [
+        "I want a relaxing body massage",
+        "book a therapeutic massage session"
+      ]
+    },
+    "171": {
+      "description_vi": "Khu vực trên đường nơi phương tiện dừng hoặc đi qua để nộp phí sử dụng đường.",
+      "description_en": "A roadway facility where vehicles stop or pass through to pay a road toll.",
+      "aliases_vi": [
+        "trạm thu phí",
+        "trạm phí đường bộ",
+        "cổng thu phí"
+      ],
+      "aliases_en": [
+        "toll plaza",
+        "toll station",
+        "toll booth"
+      ],
+      "examples_vi": [
+        "Tôi cần chuẩn bị thanh toán phí trước khi vào cao tốc.",
+        "Phương tiện sẽ đi qua cổng tính phí ở đoạn nào?"
+      ],
+      "examples_en": [
+        "I need to prepare payment before entering the expressway.",
+        "Where will vehicles pass through the road-charging booths?"
+      ]
+    },
+    "172": {
+      "description_vi": "Cổng hoặc lối kiểm soát vào một khu dân cư.",
+      "description_en": "A gate or controlled entrance to a residential area.",
+      "aliases_vi": [
+        "cổng khu dân cư",
+        "cổng khu đô thị"
+      ],
+      "aliases_en": [
+        "residential entrance",
+        "neighborhood gate"
+      ],
+      "examples_vi": [
+        "tìm lối vào khu dân cư này",
+        "đi đến cổng chính của khu đô thị"
+      ],
+      "examples_en": [
+        "find the entrance to this residential area",
+        "take me to the main neighborhood gate"
+      ]
+    },
+    "173": {
+      "description_vi": "Cơ quan thuộc bộ máy nhà nước thực hiện chức năng quản lý hoặc cung cấp dịch vụ công.",
+      "description_en": "A public-sector body performing government administration or delivering public services.",
+      "aliases_vi": [
+        "cơ quan công quyền",
+        "đơn vị nhà nước"
+      ],
+      "aliases_en": [
+        "government agency",
+        "public authority"
+      ],
+      "examples_vi": [
+        "cần làm việc với đơn vị quản lý chuyên ngành",
+        "tìm trụ sở cơ quan công quyền phụ trách hồ sơ này"
+      ],
+      "examples_en": [
+        "visit the public body responsible for this sector",
+        "locate the authority that processes this application"
+      ]
+    },
+    "174": {
+      "description_vi": "Cửa hàng chuyên quần áo và phụ kiện thời trang dành cho trẻ em.",
+      "description_en": "A shop specializing in clothing and fashion accessories for children.",
+      "aliases_vi": [
+        "shop quần áo trẻ em",
+        "thời trang bé"
+      ],
+      "aliases_en": [
+        "kids' clothing shop",
+        "children's boutique"
+      ],
+      "examples_vi": [
+        "cần bộ đồ đúng cỡ cho bé đi dự tiệc",
+        "muốn mua áo khoác và mũ mới cho con"
+      ],
+      "examples_en": [
+        "need a party outfit in the child's size",
+        "want a new jacket and hat for my kid"
+      ]
+    },
+    "175": {
+      "description_vi": "Cửa hàng bán nội thất như bàn, ghế, giường, tủ và đồ bố trí không gian sống.",
+      "description_en": "A store selling furniture such as tables, chairs, beds, cabinets, and pieces for living spaces.",
+      "aliases_vi": [
+        "showroom nội thất",
+        "cửa hàng đồ nội thất"
+      ],
+      "aliases_en": [
+        "furniture showroom",
+        "home furnishings store"
+      ],
+      "examples_vi": [
+        "cần thử sofa và bàn ăn trước khi đặt mua",
+        "muốn chọn giường, tủ đồng bộ cho phòng ngủ mới"
+      ],
+      "examples_en": [
+        "need to sit on sofas and inspect dining tables before ordering",
+        "want a matching bed and wardrobe for a new bedroom"
+      ]
+    },
+    "176": {
+      "description_vi": "Cửa hàng khu dân cư bán thực phẩm đóng gói, nhu yếu phẩm và hàng dùng hằng ngày.",
+      "description_en": "A neighborhood shop selling packaged foods, staples, and everyday household necessities.",
+      "aliases_vi": [
+        "tiệm tạp hóa",
+        "cửa hàng nhu yếu phẩm"
+      ],
+      "aliases_en": [
+        "neighborhood grocery",
+        "general store"
+      ],
+      "examples_vi": [
+        "cần mua gạo, dầu ăn và gia vị ở ngay gần nhà",
+        "muốn ghé tiệm nhỏ lấy vài nhu yếu phẩm hằng ngày"
+      ],
+      "examples_en": [
+        "need rice, cooking oil, and seasonings close to home",
+        "want a few daily staples from a small neighborhood shop"
+      ]
+    },
+    "177": {
+      "description_vi": "Cơ sở sao chép và sản xuất tài liệu, hình ảnh hoặc ấn phẩm theo yêu cầu.",
+      "description_en": "A business reproducing and producing documents, images, or printed materials on request.",
+      "aliases_vi": [
+        "tiệm in",
+        "dịch vụ in sao"
+      ],
+      "aliases_en": [
+        "print shop",
+        "printing service"
+      ],
+      "examples_vi": [
+        "cần làm một trăm tờ rơi màu cho sự kiện",
+        "muốn đóng quyển và sao nhiều bản tài liệu"
+      ],
+      "examples_en": [
+        "produce a hundred color flyers for an event",
+        "bind a document and make several copies"
+      ]
+    },
+    "178": {
+      "description_vi": "Cửa hàng chuyên thực phẩm bổ sung hoặc sản phẩm hỗ trợ chức năng cơ thể và dinh dưỡng.",
+      "description_en": "A shop specializing in supplements and food products intended to support nutrition or bodily functions.",
+      "aliases_vi": [
+        "cửa hàng thực phẩm bổ sung",
+        "shop dinh dưỡng bổ sung"
+      ],
+      "aliases_en": [
+        "supplement store",
+        "health food supplement shop"
+      ],
+      "examples_vi": [
+        "cần tìm viên bổ sung theo nhu cầu dinh dưỡng của người lớn tuổi",
+        "muốn được tư vấn sản phẩm hỗ trợ tiêu hóa dạng thực phẩm"
+      ],
+      "examples_en": [
+        "need a nutritional supplement suited to an older adult",
+        "want advice on a food-based product supporting digestion"
+      ]
+    },
+    "179": {
+      "description_vi": "Nhà hàng phục vụ ẩm thực Đài Loan, từ món mì, cơm đến đồ ăn đường phố đặc trưng.",
+      "description_en": "A restaurant serving Taiwanese cuisine, including characteristic noodles, rice dishes, and street foods.",
+      "aliases_vi": [
+        "quán món Đài",
+        "nhà hàng Đài Loan"
+      ],
+      "aliases_en": [
+        "Taiwanese eatery",
+        "Taiwanese dining"
+      ],
+      "examples_vi": [
+        "thèm mì bò hầm và bánh hành kiểu Đài",
+        "muốn ăn cơm thịt kho cùng các món ăn đường phố xứ Đài"
+      ],
+      "examples_en": [
+        "craving Taiwanese beef noodles and scallion pancakes",
+        "want braised pork rice with island-style street bites"
+      ]
+    },
+    "180": {
+      "description_vi": "Nhà hàng phục vụ ẩm thực Brazil, thường có thịt nướng xiên và món ăn bản địa.",
+      "description_en": "A restaurant serving Brazilian cuisine, often featuring skewered grilled meats and regional dishes.",
+      "aliases_vi": [
+        "quán món Brazil",
+        "nhà hàng kiểu Brazil"
+      ],
+      "aliases_en": [
+        "Brazilian eatery",
+        "Brazilian steakhouse"
+      ],
+      "examples_vi": [
+        "muốn thử nhiều loại thịt xiên được cắt tại bàn",
+        "cần bữa ăn có feijoada và hương vị Nam Mỹ"
+      ],
+      "examples_en": [
+        "want assorted skewered meats carved tableside",
+        "looking for feijoada and South American flavors"
+      ]
+    },
+    "181": {
+      "description_vi": "Nhà hàng phục vụ ẩm thực Ý như pasta, risotto và các món theo vùng.",
+      "description_en": "A restaurant serving Italian cuisine such as pasta, risotto, and regional specialties.",
+      "aliases_vi": [
+        "quán món Ý",
+        "nhà hàng Italia"
+      ],
+      "aliases_en": [
+        "Italian eatery",
+        "Italian dining"
+      ],
+      "examples_vi": [
+        "muốn ăn pasta làm tươi với sốt kem nấm",
+        "cần một bữa risotto và tiramisu theo kiểu Ý"
+      ],
+      "examples_en": [
+        "want fresh pasta with a creamy mushroom sauce",
+        "looking for an Italian-style meal of risotto and tiramisu"
+      ]
+    },
+    "182": {
+      "description_vi": "Cửa hàng chuyên bán bia lon, bia chai, bia thủ công hoặc bia theo thùng.",
+      "description_en": "A shop specializing in canned, bottled, craft, or case-packaged beer.",
+      "aliases_vi": [
+        "đại lý bia",
+        "tiệm bán bia"
+      ],
+      "aliases_en": [
+        "beer shop",
+        "beer retailer"
+      ],
+      "examples_vi": [
+        "cần mua vài thùng đồ uống lên men cho buổi liên hoan",
+        "muốn chọn nhiều loại bia thủ công mang về thử"
+      ],
+      "examples_en": [
+        "need several cases of brewed drinks for a party",
+        "want assorted craft brews to sample at home"
+      ]
+    },
+    "183": {
+      "description_vi": "Dịch vụ chụp và xử lý hình ảnh cho cá nhân, sản phẩm hoặc sự kiện.",
+      "description_en": "A service capturing and processing images for people, products, or events.",
+      "aliases_vi": [
+        "dịch vụ nhiếp ảnh",
+        "thợ chụp hình"
+      ],
+      "aliases_en": [
+        "photographer",
+        "photo service"
+      ],
+      "examples_vi": [
+        "cần bộ ảnh chân dung chuyên nghiệp cho hồ sơ",
+        "muốn ghi lại khoảnh khắc trong buổi lễ gia đình"
+      ],
+      "examples_en": [
+        "get professional portraits for a profile",
+        "capture memorable moments at a family ceremony"
+      ]
+    },
+    "184": {
+      "description_vi": "Khu đất dành cho an táng, phần mộ và tưởng niệm người đã khuất.",
+      "description_en": "Land designated for burials, graves, and remembrance of the deceased.",
+      "aliases_vi": [
+        "nghĩa địa",
+        "khu an táng"
+      ],
+      "aliases_en": [
+        "graveyard",
+        "burial ground"
+      ],
+      "examples_vi": [
+        "đi viếng phần mộ của người thân",
+        "tìm khu an táng của địa phương"
+      ],
+      "examples_en": [
+        "visit a relative's grave",
+        "locate the local burial grounds"
+      ]
+    },
+    "186": {
+      "description_vi": "Nhà hàng phục vụ ẩm thực Pháp với kỹ thuật, nước sốt và cách trình bày đặc trưng.",
+      "description_en": "A restaurant serving French cuisine with its characteristic techniques, sauces, and presentation.",
+      "aliases_vi": [
+        "quán món Pháp",
+        "nhà hàng kiểu Pháp"
+      ],
+      "aliases_en": [
+        "French dining",
+        "French eatery"
+      ],
+      "examples_vi": [
+        "muốn bữa tối có súp hành và vịt áp chảo",
+        "cần không gian dùng món Âu kèm rượu vang theo phong cách Paris"
+      ],
+      "examples_en": [
+        "want onion soup and seared duck for dinner",
+        "seeking Parisian-style cooking paired with wine"
+      ]
+    },
+    "187": {
+      "description_vi": "Địa điểm sinh hoạt câu lạc bộ hoặc gặp gỡ thành viên có cùng sở thích.",
+      "description_en": "A venue where club members meet for shared activities or interests.",
+      "aliases_vi": [
+        "câu lạc bộ sinh hoạt",
+        "địa điểm hội nhóm"
+      ],
+      "aliases_en": [
+        "social club",
+        "members club"
+      ],
+      "examples_vi": [
+        "tìm nơi sinh hoạt hội nhóm",
+        "đến địa điểm gặp mặt câu lạc bộ"
+      ],
+      "examples_en": [
+        "find a venue for our club meeting",
+        "where does this social club meet"
+      ]
+    },
+    "188": {
+      "description_vi": "Địa điểm có phòng hát karaoke và thiết bị âm thanh cho khách.",
+      "description_en": "A venue with karaoke rooms and audio equipment for customers.",
+      "aliases_vi": [
+        "quán karaoke",
+        "phòng hát"
+      ],
+      "aliases_en": [
+        "karaoke bar",
+        "karaoke room"
+      ],
+      "examples_vi": [
+        "muốn thuê phòng hát cùng bạn bè",
+        "tìm chỗ hát có phòng riêng"
+      ],
+      "examples_en": [
+        "book a private room to sing with friends",
+        "find a nearby karaoke venue"
+      ]
+    },
+    "189": {
+      "description_vi": "Khu nhà ở tập thể dành cho sinh viên, học viên hoặc một nhóm cư dân.",
+      "description_en": "Shared residential housing for students, trainees, or another defined group.",
+      "aliases_vi": [
+        "ký túc xá",
+        "khu nội trú",
+        "nhà ở sinh viên"
+      ],
+      "aliases_en": [
+        "dormitory",
+        "student residence",
+        "residence hall"
+      ],
+      "examples_vi": [
+        "Sinh viên năm nhất được xếp ở khu nội trú nào?",
+        "Tôi đang tìm tòa nhà có phòng ở tập thể của học viên."
+      ],
+      "examples_en": [
+        "Which residence hall houses first-year students?",
+        "I am looking for the building with shared rooms for trainees."
+      ]
+    },
+    "190": {
+      "description_vi": "Không gian công cộng rộng mở thường nằm ở trung tâm đô thị.",
+      "description_en": "A broad public open space, commonly located in an urban center.",
+      "aliases_vi": [
+        "quảng trường trung tâm",
+        "không gian công cộng"
+      ],
+      "aliases_en": [
+        "public square",
+        "city plaza"
+      ],
+      "examples_vi": [
+        "tìm khoảng sân lớn ở trung tâm thành phố",
+        "đến nơi thường tổ chức hoạt động cộng đồng ngoài trời"
+      ],
+      "examples_en": [
+        "find the large plaza in the city center",
+        "go to an open public gathering space"
+      ]
+    },
+    "191": {
+      "description_vi": "Cơ sở hoạt động từ thiện, hỗ trợ cộng đồng hoặc người có hoàn cảnh khó khăn.",
+      "description_en": "A charitable facility supporting communities or people in need.",
+      "aliases_vi": [
+        "tổ chức từ thiện",
+        "trung tâm hỗ trợ cộng đồng"
+      ],
+      "aliases_en": [
+        "charity center",
+        "community aid facility"
+      ],
+      "examples_vi": [
+        "muốn quyên góp đồ cho người khó khăn",
+        "tìm nơi hỗ trợ cộng đồng"
+      ],
+      "examples_en": [
+        "find a place to donate goods to people in need",
+        "locate a community charity center"
+      ]
+    },
+    "192": {
+      "description_vi": "Địa điểm làm việc hành chính, điều hành hoặc giao dịch của một doanh nghiệp.",
+      "description_en": "A business location used for a company's administration, management, or client meetings.",
+      "aliases_vi": [
+        "trụ sở doanh nghiệp",
+        "văn phòng doanh nghiệp"
+      ],
+      "aliases_en": [
+        "corporate office",
+        "business office"
+      ],
+      "examples_vi": [
+        "đến gặp bộ phận hành chính của doanh nghiệp",
+        "tìm trụ sở làm việc chứ không phải cửa hàng"
+      ],
+      "examples_en": [
+        "meet the company's administrative team",
+        "find the business workplace rather than its retail outlet"
+      ]
+    },
+    "193": {
+      "description_vi": "Cơ sở lưu trú và hỗ trợ sinh hoạt, chăm sóc dài hạn cho người cao tuổi.",
+      "description_en": "A residential facility providing daily assistance and long-term care for older adults.",
+      "aliases_vi": [
+        "viện dưỡng lão",
+        "nhà dưỡng lão",
+        "cơ sở chăm sóc người già"
+      ],
+      "aliases_en": [
+        "nursing home",
+        "elder care home",
+        "care home"
+      ],
+      "examples_vi": [
+        "Gia đình đang tìm nơi chăm sóc dài hạn cho ông bà.",
+        "Cần cơ sở có nhân viên hỗ trợ sinh hoạt cho người lớn tuổi."
+      ],
+      "examples_en": [
+        "Our family is seeking long-term residential care for an elderly relative.",
+        "I need a home with daily assistance for an older adult."
+      ]
+    },
+    "194": {
+      "description_vi": "Công trình hoặc tượng được dựng để tưởng niệm một người hay sự kiện.",
+      "description_en": "A structure or statue built to commemorate a person or event.",
+      "aliases_vi": [
+        "đài tưởng niệm",
+        "tượng kỷ niệm"
+      ],
+      "aliases_en": [
+        "memorial monument",
+        "commemorative statue"
+      ],
+      "examples_vi": [
+        "muốn tham quan công trình tưởng niệm lịch sử",
+        "tìm bức tượng kỷ niệm nổi tiếng"
+      ],
+      "examples_en": [
+        "visit a historical memorial structure",
+        "find a famous commemorative statue"
+      ]
+    },
+    "195": {
+      "description_vi": "Chương trình hoặc cơ sở giúp người học chuẩn bị kiến thức trước khi vào đại học.",
+      "description_en": "A program or institution preparing learners academically for university entry.",
+      "aliases_vi": [
+        "khóa dự bị đại học",
+        "chương trình tiền đại học"
+      ],
+      "aliases_en": [
+        "university foundation program",
+        "pre-university course"
+      ],
+      "examples_vi": [
+        "cần củng cố kiến thức một năm trước bậc cử nhân",
+        "muốn hoàn thiện yêu cầu học thuật để nộp vào đại học"
+      ],
+      "examples_en": [
+        "strengthen academic skills for a year before a degree",
+        "meet entry requirements before applying to university"
+      ]
+    },
+    "196": {
+      "description_vi": "Địa điểm tổ chức lễ tang và viếng người đã mất.",
+      "description_en": "A facility used for funeral ceremonies and visitations.",
+      "aliases_vi": [
+        "nhà tang lễ",
+        "phòng viếng"
+      ],
+      "aliases_en": [
+        "funeral home",
+        "memorial hall"
+      ],
+      "examples_vi": [
+        "đến nơi tổ chức lễ viếng",
+        "tìm địa điểm làm lễ tang"
+      ],
+      "examples_en": [
+        "find the hall for a funeral visitation",
+        "go to the funeral ceremony venue"
+      ]
+    },
+    "197": {
+      "description_vi": "Cơ sở thực hiện việc hỏa táng người đã mất.",
+      "description_en": "A facility where deceased people are cremated.",
+      "aliases_vi": [
+        "đài hóa thân",
+        "lò hỏa táng"
+      ],
+      "aliases_en": [
+        "crematorium",
+        "crematory"
+      ],
+      "examples_vi": [
+        "tìm cơ sở thực hiện hỏa táng",
+        "đến nơi làm thủ tục hỏa táng"
+      ],
+      "examples_en": [
+        "find a crematorium",
+        "go to a cremation facility"
+      ]
+    },
+    "198": {
+      "description_vi": "Cơ sở cung cấp chụp ảnh cưới, trang phục và dịch vụ hình ảnh cho lễ cưới.",
+      "description_en": "A studio providing wedding photography, attire, and related image services.",
+      "aliases_vi": [
+        "studio ảnh cưới",
+        "ảnh viện cưới"
+      ],
+      "aliases_en": [
+        "bridal studio",
+        "wedding photo studio"
+      ],
+      "examples_vi": [
+        "muốn thuê váy và chụp bộ ảnh trước ngày thành hôn",
+        "cần ê-kíp trang điểm và ghi hình cho cô dâu chú rể"
+      ],
+      "examples_en": [
+        "rent bridal attire and take portraits before the ceremony",
+        "book makeup and photography for the couple"
+      ]
+    },
+    "199": {
+      "description_vi": "Khu vui chơi dưới nước có hồ, máng trượt và trò chơi nước.",
+      "description_en": "A water-based amusement park with pools, slides, and water attractions.",
+      "aliases_vi": [
+        "công viên nước",
+        "khu vui chơi nước"
+      ],
+      "aliases_en": [
+        "aquatic park",
+        "water amusement park"
+      ],
+      "examples_vi": [
+        "muốn chơi máng trượt và các trò dưới nước",
+        "tìm khu vui chơi có nhiều hồ bơi cho gia đình"
+      ],
+      "examples_en": [
+        "find a place with water slides and aquatic rides",
+        "take the family to a water attraction park"
+      ]
+    },
+    "200": {
+      "description_vi": "Địa điểm có máy móc, dây chuyền hoặc nhân công để chế tạo, gia công hay tạo ra sản phẩm.",
+      "description_en": "A site using machinery, production lines, or labor to make, process, or assemble goods.",
+      "aliases_vi": [
+        "nhà máy",
+        "xưởng sản xuất"
+      ],
+      "aliases_en": [
+        "manufacturing facility",
+        "production plant"
+      ],
+      "examples_vi": [
+        "cần đến nơi hàng hóa được gia công",
+        "tìm xưởng có dây chuyền chế tạo sản phẩm"
+      ],
+      "examples_en": [
+        "visit the site where goods are manufactured",
+        "locate a plant with an assembly line"
+      ]
+    },
+    "201": {
+      "description_vi": "Trung tâm cung cấp nhiều hoạt động khám, điều trị hoặc chăm sóc sức khỏe.",
+      "description_en": "A center offering a range of medical treatment or health-care activities.",
+      "aliases_vi": [
+        "trung tâm y tế",
+        "cơ sở y tế"
+      ],
+      "aliases_en": [
+        "health center",
+        "medical center"
+      ],
+      "examples_vi": [
+        "Tôi cần một trung tâm có nhiều dịch vụ chăm sóc sức khỏe.",
+        "Đâu là cơ sở y tế tổng hợp trong khu vực?"
+      ],
+      "examples_en": [
+        "I am looking for a center with several health services.",
+        "Where is the area's multipurpose medical center?"
+      ]
+    },
+    "202": {
+      "description_vi": "Nhà thi đấu trong nhà dành cho thể thao, biểu diễn hoặc sự kiện đông người.",
+      "description_en": "An indoor arena for sports, performances, or large events.",
+      "aliases_vi": [
+        "nhà thi đấu",
+        "đấu trường trong nhà"
+      ],
+      "aliases_en": [
+        "indoor arena",
+        "sports arena"
+      ],
+      "examples_vi": [
+        "tìm nơi diễn ra trận đấu trong nhà",
+        "đến địa điểm tổ chức giải thể thao có khán đài"
+      ],
+      "examples_en": [
+        "find the indoor venue hosting the match",
+        "go to a sports arena with spectator seating"
+      ]
+    },
+    "203": {
+      "description_vi": "Cơ sở tổ chức huấn luyện kỹ năng, nghiệp vụ hoặc năng lực chuyên biệt.",
+      "description_en": "A center delivering instruction in skills, professional practices, or specialized capabilities.",
+      "aliases_vi": [
+        "trung tâm đào tạo",
+        "cơ sở huấn luyện"
+      ],
+      "aliases_en": [
+        "training institute",
+        "skills center"
+      ],
+      "examples_vi": [
+        "cần khóa ngắn hạn nâng cao kỹ năng cho nhân viên",
+        "muốn tham gia chương trình thực hành nghiệp vụ chuyên môn"
+      ],
+      "examples_en": [
+        "arrange a short skills course for employees",
+        "join hands-on instruction in a professional practice"
+      ]
+    },
+    "204": {
+      "description_vi": "Cửa hàng bán cá, tôm, cua, sò và thủy hải sản tươi hoặc đông lạnh để mang về.",
+      "description_en": "A shop selling fresh or frozen fish, shrimp, crab, shellfish, and other aquatic foods for home preparation.",
+      "aliases_vi": [
+        "vựa hải sản",
+        "tiệm thủy hải sản"
+      ],
+      "aliases_en": [
+        "seafood market",
+        "fish and shellfish shop"
+      ],
+      "examples_vi": [
+        "cần mua tôm tươi và mực để tự nấu bữa tối",
+        "muốn chọn cá nguyên con rồi nhờ làm sạch"
+      ],
+      "examples_en": [
+        "need fresh prawns and squid to cook at home",
+        "want to choose a whole fish and have it cleaned"
+      ]
+    },
+    "205": {
+      "description_vi": "Cửa hàng chuyên bán rau, củ, nấm và các loại rau gia vị tươi.",
+      "description_en": "A shop specializing in fresh vegetables, roots, mushrooms, and culinary herbs.",
+      "aliases_vi": [
+        "tiệm rau củ",
+        "cửa hàng rau sạch"
+      ],
+      "aliases_en": [
+        "greengrocer",
+        "vegetable market"
+      ],
+      "examples_vi": [
+        "cần rau lá và củ tươi để nấu bữa tối",
+        "muốn mua nấm cùng rau thơm theo cân"
+      ],
+      "examples_en": [
+        "need leafy greens and fresh roots for dinner",
+        "want mushrooms and culinary herbs sold by weight"
+      ]
+    },
+    "206": {
+      "description_vi": "Điểm bán vé xổ số và đôi khi hỗ trợ kiểm tra kết quả hoặc đổi thưởng theo quy định.",
+      "description_en": "A retail point selling lottery tickets and sometimes checking results or processing permitted prizes.",
+      "aliases_vi": [
+        "đại lý vé số",
+        "điểm bán xổ số"
+      ],
+      "aliases_en": [
+        "lottery retailer",
+        "ticket lottery outlet"
+      ],
+      "examples_vi": [
+        "muốn mua một tờ dự thưởng cho kỳ quay hôm nay",
+        "cần kiểm tra dãy số và hỏi nơi nhận giải hợp lệ"
+      ],
+      "examples_en": [
+        "want an entry ticket for today's draw",
+        "need the numbers checked and guidance on claiming a valid prize"
+      ]
+    },
+    "207": {
+      "description_vi": "Cửa hàng chuyên bán trái cây tươi, theo mùa, nhập khẩu hoặc đóng giỏ quà.",
+      "description_en": "A shop specializing in fresh, seasonal, or imported fruit, including arranged gift baskets.",
+      "aliases_vi": [
+        "tiệm trái cây",
+        "cửa hàng hoa quả"
+      ],
+      "aliases_en": [
+        "fruit market",
+        "fruiterer's shop"
+      ],
+      "examples_vi": [
+        "cần chọn hoa quả chín vừa để ăn trong vài ngày",
+        "muốn đặt giỏ gồm nhiều loại quả để đi thăm người thân"
+      ],
+      "examples_en": [
+        "need fruit at the right ripeness for the next few days",
+        "want a mixed basket to bring when visiting a relative"
+      ]
+    },
+    "208": {
+      "description_vi": "Quán bán nhiều loại nước giải khát, nước ép hoặc đồ uống pha chế không nhất thiết từ cà phê.",
+      "description_en": "A shop selling refreshments, juices, or mixed drinks not necessarily centered on coffee.",
+      "aliases_vi": [
+        "quán nước",
+        "tiệm nước giải khát"
+      ],
+      "aliases_en": [
+        "refreshment shop",
+        "drinks shop"
+      ],
+      "examples_vi": [
+        "đang khát và muốn chọn giữa nước ép với soda",
+        "cần mua vài ly nước mát cho cả nhóm"
+      ],
+      "examples_en": [
+        "feeling thirsty and choosing between juice and soda",
+        "need several chilled drinks for the group"
+      ]
+    },
+    "209": {
+      "description_vi": "Nhà hàng kết hợp món ăn và phong cách chế biến từ cả châu Á lẫn châu Âu.",
+      "description_en": "A restaurant combining dishes and cooking styles from both Asian and European traditions.",
+      "aliases_vi": [
+        "nhà hàng Á - Âu",
+        "quán món Á Âu"
+      ],
+      "aliases_en": [
+        "Asian-European dining",
+        "East-West restaurant"
+      ],
+      "examples_vi": [
+        "nhóm có người muốn món Á và người thích món Tây",
+        "cần thực đơn vừa có cơm, mì vừa có steak và pasta"
+      ],
+      "examples_en": [
+        "our party is split between Asian and Western flavors",
+        "need one menu offering rice and noodles alongside steak and pasta"
+      ]
+    },
+    "211": {
+      "description_vi": "Điểm được chỉ định để hành khách lên xe của dịch vụ Xanh SM.",
+      "description_en": "A designated point where passengers board a Xanh SM vehicle.",
+      "aliases_vi": [
+        "điểm đón Xanh SM",
+        "điểm lên xe Xanh SM"
+      ],
+      "aliases_en": [
+        "Xanh SM pick-up point",
+        "Xanh SM pickup zone"
+      ],
+      "examples_vi": [
+        "Tài xế Xanh SM hẹn tôi tại khu đón riêng.",
+        "Tôi phải đến vị trí nào để lên xe Xanh SM?"
+      ],
+      "examples_en": [
+        "My Xanh SM driver asked me to meet at the designated zone.",
+        "Where should I go to board my Xanh SM ride?"
+      ]
+    },
+    "212": {
+      "description_vi": "Cơ sở có phòng nghỉ dành cho khách, thường quy mô nhỏ hoặc phục vụ một đơn vị.",
+      "description_en": "A lodging property with guest rooms, often small or operated for an organization.",
+      "aliases_vi": [
+        "nhà khách",
+        "nhà nghỉ dành cho khách"
+      ],
+      "aliases_en": [
+        "guesthouse",
+        "guest house",
+        "guest lodging"
+      ],
+      "examples_vi": [
+        "Đơn vị đã bố trí phòng cho đoàn tại nhà khách.",
+        "Tôi tìm nơi lưu trú nhỏ có phòng dành cho khách."
+      ],
+      "examples_en": [
+        "The organization arranged rooms for our group at its guest lodging.",
+        "I am seeking a small property offering rooms to visitors."
+      ]
+    },
+    "213": {
+      "description_vi": "Quán chuyên phục vụ cháo với nhiều loại thịt, cá hoặc rau củ ăn kèm.",
+      "description_en": "An eatery specializing in rice porridge with meat, seafood, or vegetable accompaniments.",
+      "aliases_vi": [
+        "quán cháo",
+        "tiệm cháo"
+      ],
+      "aliases_en": [
+        "porridge eatery",
+        "congee shop"
+      ],
+      "examples_vi": [
+        "cần một bát nóng, mềm và dễ ăn cho người đang mệt",
+        "muốn ăn món gạo nấu nhừ kèm thịt bằm"
+      ],
+      "examples_en": [
+        "need a warm, soft bowl for someone feeling unwell",
+        "craving slow-cooked rice with minced meat on top"
+      ]
+    },
+    "214": {
+      "description_vi": "Công trình và hệ thống kỹ thuật thiết yếu hỗ trợ vận hành đô thị hoặc khu chức năng.",
+      "description_en": "Essential engineering works and utility systems supporting an urban or functional area.",
+      "aliases_vi": [
+        "hạ tầng kỹ thuật",
+        "công trình kỹ thuật"
+      ],
+      "aliases_en": [
+        "utility infrastructure",
+        "engineering infrastructure"
+      ],
+      "examples_vi": [
+        "tìm khu công trình phục vụ cấp thoát nước",
+        "cần xác định hệ thống kỹ thuật hỗ trợ vận hành đô thị"
+      ],
+      "examples_en": [
+        "locate works supporting water supply and drainage",
+        "identify the utility systems that keep an urban area operating"
+      ]
+    },
+    "215": {
+      "description_vi": "Cơ sở quy mô lớn có hội trường và khu trưng bày cho hội nghị, hội chợ hoặc triển lãm.",
+      "description_en": "A large facility with halls and display areas for conferences, trade fairs, or exhibitions.",
+      "aliases_vi": [
+        "trung tâm hội nghị",
+        "trung tâm triển lãm"
+      ],
+      "aliases_en": [
+        "convention center",
+        "exhibition centre"
+      ],
+      "examples_vi": [
+        "tham dự hội chợ có nhiều gian hàng doanh nghiệp",
+        "cần hội trường lớn cho đại hội chuyên ngành"
+      ],
+      "examples_en": [
+        "attend a trade fair with many exhibitor booths",
+        "a large hall for an industry congress"
+      ]
+    },
+    "217": {
+      "description_vi": "Doanh nghiệp tổ chức chương trình tham quan, kỳ nghỉ và các dịch vụ du lịch liên quan.",
+      "description_en": "A company that organizes tours, holidays, and related travel services.",
+      "aliases_vi": [
+        "công ty lữ hành",
+        "doanh nghiệp du lịch"
+      ],
+      "aliases_en": [
+        "tour operator",
+        "travel firm"
+      ],
+      "examples_vi": [
+        "muốn đặt tour trọn gói nhiều ngày",
+        "cần đơn vị tổ chức lịch trình cho đoàn"
+      ],
+      "examples_en": [
+        "book a multi-day package tour",
+        "hire a firm to arrange an itinerary for a group"
+      ]
+    },
+    "218": {
+      "description_vi": "Quán bán các món ăn nhẹ, khẩu phần nhỏ và đồ nhâm nhi giữa các bữa chính.",
+      "description_en": "A shop serving light bites, small portions, and treats between main meals.",
+      "aliases_vi": [
+        "quán ăn vặt",
+        "tiệm đồ ăn nhẹ"
+      ],
+      "aliases_en": [
+        "snack bar",
+        "snack eatery"
+      ],
+      "examples_vi": [
+        "muốn gọi vài món nhỏ để vừa trò chuyện vừa nhâm nhi",
+        "cần chút đồ lót dạ vào giữa buổi chiều"
+      ],
+      "examples_en": [
+        "want a few small bites to share while chatting",
+        "need a light treat between lunch and dinner"
+      ]
+    },
+    "219": {
+      "description_vi": "Cửa hàng đo mắt, tư vấn và bán kính thuốc, kính mát cùng phụ kiện kính.",
+      "description_en": "A shop offering eye measurements and selling prescription glasses, sunglasses, and eyewear accessories.",
+      "aliases_vi": [
+        "tiệm kính",
+        "cửa hàng kính mắt"
+      ],
+      "aliases_en": [
+        "optical shop",
+        "optician"
+      ],
+      "examples_vi": [
+        "cần thay tròng mới theo số đo thị lực",
+        "muốn thử gọng phù hợp với khuôn mặt"
+      ],
+      "examples_en": [
+        "need new lenses made to my vision measurements",
+        "want to try frames that suit my face"
+      ]
+    },
+    "220": {
+      "description_vi": "Tủ hoặc trạm dùng để đổi pin cho phương tiện điện VinFast tương thích.",
+      "description_en": "A cabinet or station for swapping batteries in compatible VinFast electric vehicles.",
+      "aliases_vi": [
+        "tủ đổi pin VinFast",
+        "trạm đổi pin VinFast"
+      ],
+      "aliases_en": [
+        "VinFast battery swapping station",
+        "VinFast battery swap cabinet"
+      ],
+      "examples_vi": [
+        "Tôi muốn thay pin đã cạn tại tủ đổi pin VinFast.",
+        "Xe VinFast tương thích có thể đổi pin ở điểm nào?"
+      ],
+      "examples_en": [
+        "I want to exchange a depleted battery at a VinFast swap cabinet.",
+        "Where can a compatible VinFast vehicle swap its battery?"
+      ]
+    },
+    "222": {
+      "description_vi": "Showroom chính thức trưng bày và bán ô tô VinFast.",
+      "description_en": "An official showroom displaying and selling VinFast automobiles.",
+      "aliases_vi": [
+        "showroom ô tô VinFast",
+        "đại lý ô tô VinFast"
+      ],
+      "aliases_en": [
+        "VinFast auto showroom",
+        "VinFast car showroom"
+      ],
+      "examples_vi": [
+        "Tôi muốn xem các mẫu ô tô VinFast đang trưng bày.",
+        "Có thể tư vấn mua xe VinFast tại showroom nào?"
+      ],
+      "examples_en": [
+        "I want to view the VinFast cars currently on display.",
+        "Which showroom can advise me about buying a VinFast automobile?"
+      ]
+    },
+    "223": {
+      "description_vi": "Showroom chính thức trưng bày và bán xe máy điện VinFast.",
+      "description_en": "An official showroom displaying and selling VinFast electric motorbikes.",
+      "aliases_vi": [
+        "showroom xe máy điện VinFast",
+        "đại lý xe máy điện VinFast"
+      ],
+      "aliases_en": [
+        "VinFast electric motorbike showroom",
+        "VinFast e-motorbike showroom"
+      ],
+      "examples_vi": [
+        "Tôi muốn lái thử một mẫu xe máy điện VinFast.",
+        "Showroom nào tư vấn giá xe hai bánh chạy điện VinFast?"
+      ],
+      "examples_en": [
+        "I would like to test a VinFast electric motorbike.",
+        "Which showroom provides pricing for VinFast electric two-wheelers?"
+      ]
+    },
+    "224": {
+      "description_vi": "Xưởng dịch vụ chính thức bảo dưỡng và sửa chữa ô tô VinFast.",
+      "description_en": "An official service center maintaining and repairing VinFast automobiles.",
+      "aliases_vi": [
+        "xưởng dịch vụ ô tô VinFast",
+        "trung tâm bảo dưỡng ô tô VinFast"
+      ],
+      "aliases_en": [
+        "VinFast auto service center",
+        "VinFast car service center"
+      ],
+      "examples_vi": [
+        "Ô tô VinFast của tôi đến kỳ bảo dưỡng tại xưởng hãng.",
+        "Tôi cần trung tâm chính thức kiểm tra lỗi trên xe VinFast."
+      ],
+      "examples_en": [
+        "My VinFast car is due for maintenance at an official workshop.",
+        "I need an authorized VinFast center to inspect a vehicle fault."
+      ]
+    },
+    "225": {
+      "description_vi": "Xưởng đối tác thực hiện dịch vụ bảo dưỡng hoặc sửa chữa ô tô VinFast.",
+      "description_en": "A partner workshop providing maintenance or repair services for VinFast automobiles.",
+      "aliases_vi": [
+        "xưởng đối tác ô tô VinFast",
+        "đối tác dịch vụ VinFast"
+      ],
+      "aliases_en": [
+        "VinFast partner auto service",
+        "VinFast partner workshop"
+      ],
+      "examples_vi": [
+        "Tôi muốn đưa xe VinFast đến một xưởng dịch vụ đối tác.",
+        "Đâu là cơ sở đối tác nhận bảo dưỡng ô tô VinFast?"
+      ],
+      "examples_en": [
+        "I want to take my VinFast car to a partner service workshop.",
+        "Which partner facility accepts VinFast automobiles for maintenance?"
+      ]
+    },
+    "226": {
+      "description_vi": "Trung tâm dịch vụ bảo dưỡng và sửa chữa xe buýt VinFast.",
+      "description_en": "A service center maintaining and repairing VinFast buses.",
+      "aliases_vi": [
+        "xưởng dịch vụ bus VinFast",
+        "trung tâm bảo dưỡng xe buýt VinFast"
+      ],
+      "aliases_en": [
+        "VinFast bus service center",
+        "VinFast bus workshop"
+      ],
+      "examples_vi": [
+        "Xe buýt VinFast cần được đưa vào xưởng kiểm tra định kỳ.",
+        "Trung tâm nào nhận sửa chữa bus VinFast?"
+      ],
+      "examples_en": [
+        "The VinFast bus needs a scheduled workshop inspection.",
+        "Which center handles repairs for VinFast buses?"
+      ]
+    },
+    "227": {
+      "description_vi": "Trung tâm dịch vụ bảo dưỡng và sửa chữa xe máy điện VinFast.",
+      "description_en": "A service center maintaining and repairing VinFast electric motorbikes.",
+      "aliases_vi": [
+        "xưởng xe máy điện VinFast",
+        "trung tâm dịch vụ xe máy điện VinFast"
+      ],
+      "aliases_en": [
+        "VinFast EV motorbike service",
+        "VinFast electric motorbike workshop"
+      ],
+      "examples_vi": [
+        "Xe máy điện VinFast của tôi cần kiểm tra hệ thống điện.",
+        "Đâu là xưởng hãng nhận bảo dưỡng xe hai bánh VinFast?"
+      ],
+      "examples_en": [
+        "My VinFast electric motorbike needs its electrical system checked.",
+        "Where is a brand service workshop for a VinFast two-wheeler?"
+      ]
+    },
+    "229": {
+      "description_vi": "Trạm sạc dành riêng cho xe máy điện VinFast.",
+      "description_en": "A charging station specifically for VinFast electric motorbikes.",
+      "aliases_vi": [
+        "trạm sạc xe máy điện VinFast",
+        "điểm sạc xe máy VinFast"
+      ],
+      "aliases_en": [
+        "VinFast electric motorbike charging station",
+        "VinFast e-motorbike charge point"
+      ],
+      "examples_vi": [
+        "Tôi cần cắm sạc cho xe máy điện VinFast.",
+        "Điểm nạp điện dành cho xe hai bánh VinFast nằm ở đâu?"
+      ],
+      "examples_en": [
+        "I need to plug in my VinFast electric motorbike.",
+        "Where is a charge point for a VinFast electric two-wheeler?"
+      ]
+    },
+    "231": {
+      "description_vi": "Địa điểm thuộc thương hiệu Vinhomes, gắn với phát triển và vận hành khu đô thị hoặc nhà ở.",
+      "description_en": "A Vinhomes-branded location associated with residential or urban development and operations.",
+      "aliases_vi": [
+        "khu đô thị Vinhomes",
+        "Vinhomes"
+      ],
+      "aliases_en": [
+        "Vinhomes property",
+        "Vinhomes development"
+      ],
+      "examples_vi": [
+        "muốn đến khu nhà ở do thương hiệu này phát triển",
+        "tìm văn phòng vận hành của một đại đô thị cùng hệ sinh thái"
+      ],
+      "examples_en": [
+        "visit a residential development operated under this brand",
+        "locate the management office of one of its urban communities"
+      ]
+    },
+    "232": {
+      "description_vi": "Địa điểm thuộc thương hiệu Vinpearl, thường cung cấp nghỉ dưỡng, vui chơi hoặc dịch vụ du lịch.",
+      "description_en": "A Vinpearl-branded location typically offering resort, leisure, or tourism services.",
+      "aliases_vi": [
+        "khu nghỉ dưỡng Vinpearl",
+        "Vinpearl"
+      ],
+      "aliases_en": [
+        "Vinpearl resort",
+        "Vinpearl destination"
+      ],
+      "examples_vi": [
+        "muốn nghỉ tại điểm du lịch biển của thương hiệu này",
+        "tìm khu vui chơi nghỉ dưỡng thuộc hệ sinh thái tập đoàn"
+      ],
+      "examples_en": [
+        "stay at this brand's seaside holiday destination",
+        "visit a leisure resort within the group's ecosystem"
+      ]
+    },
+    "233": {
+      "description_vi": "Địa điểm thuộc thương hiệu Vincom, thường là trung tâm thương mại hoặc không gian bán lẻ.",
+      "description_en": "A Vincom-branded location, usually a shopping mall or retail property.",
+      "aliases_vi": [
+        "trung tâm thương mại Vincom",
+        "Vincom"
+      ],
+      "aliases_en": [
+        "Vincom mall",
+        "Vincom shopping center"
+      ],
+      "examples_vi": [
+        "muốn mua sắm tại trung tâm thương mại của thương hiệu này",
+        "tìm tòa nhà có nhiều cửa hàng thuộc hệ thống bán lẻ tập đoàn"
+      ],
+      "examples_en": [
+        "shop at this brand's multi-store retail center",
+        "visit the group's mall with shops and restaurants"
+      ]
+    },
+    "234": {
+      "description_vi": "Cơ sở giáo dục thuộc hệ thống Vinschool.",
+      "description_en": "An educational facility operated under the Vinschool system.",
+      "aliases_vi": [
+        "trường Vinschool",
+        "hệ thống Vinschool"
+      ],
+      "aliases_en": [
+        "Vinschool campus",
+        "Vinschool school"
+      ],
+      "examples_vi": [
+        "đưa học sinh đến cơ sở của hệ thống giáo dục này",
+        "tìm khuôn viên trường thuộc tập đoàn"
+      ],
+      "examples_en": [
+        "take a student to a campus in this education system",
+        "locate one of the group's school facilities"
+      ]
+    },
+    "235": {
+      "description_vi": "Cơ sở y tế thuộc hệ thống chăm sóc sức khỏe Vinmec.",
+      "description_en": "A medical facility operated under the Vinmec healthcare system.",
+      "aliases_vi": [
+        "bệnh viện Vinmec",
+        "phòng khám Vinmec"
+      ],
+      "aliases_en": [
+        "Vinmec hospital",
+        "Vinmec clinic"
+      ],
+      "examples_vi": [
+        "cần khám tại cơ sở y tế của hệ thống này",
+        "tìm bệnh viện thuộc mảng chăm sóc sức khỏe của tập đoàn"
+      ],
+      "examples_en": [
+        "book care at a facility in this medical network",
+        "find the group's healthcare hospital or clinic"
+      ]
+    },
+    "236": {
+      "description_vi": "Khuôn viên hoặc cơ sở thuộc Trường Đại học VinUniversity.",
+      "description_en": "A campus or facility belonging to VinUniversity.",
+      "aliases_vi": [
+        "Đại học VinUni",
+        "VinUniversity"
+      ],
+      "aliases_en": [
+        "VinUniversity",
+        "VinUni campus"
+      ],
+      "examples_vi": [
+        "đến khuôn viên đại học do tập đoàn sáng lập",
+        "tìm tòa nhà giảng dạy của trường này"
+      ],
+      "examples_en": [
+        "visit the university campus founded by the group",
+        "locate one of this institution's teaching buildings"
+      ]
+    },
+    "237": {
+      "description_vi": "Cơ sở có bàn bida và thiết bị để chơi các môn bi-a.",
+      "description_en": "A venue with cue-sport tables and equipment for billiards games.",
+      "aliases_vi": [
+        "quán bi-a",
+        "câu lạc bộ bida"
+      ],
+      "aliases_en": [
+        "billiard club",
+        "pool hall"
+      ],
+      "examples_vi": [
+        "muốn thuê bàn đánh vài ván với bạn",
+        "tìm chỗ có bàn carom và cơ bida"
+      ],
+      "examples_en": [
+        "rent a table for a few games with friends",
+        "somewhere with cue tables and equipment"
+      ]
+    },
+    "238": {
+      "description_vi": "Điểm kinh doanh tư nhân nhận khách hoặc hàng cho các chuyến xe đường bộ.",
+      "description_en": "A privately operated point handling passengers or freight for road-coach services.",
+      "aliases_vi": [
+        "nhà xe",
+        "chành xe",
+        "bến xe tư nhân"
+      ],
+      "aliases_en": [
+        "private coach station",
+        "private bus depot",
+        "coach operator depot"
+      ],
+      "examples_vi": [
+        "Tôi muốn gửi kiện hàng theo chuyến của một nhà xe.",
+        "Xe khách tư nhân đón người tại cơ sở nào?"
+      ],
+      "examples_en": [
+        "I want to send a package through a private coach operator.",
+        "Where does this privately run passenger coach collect travelers?"
+      ]
+    },
+    "239": {
+      "description_vi": "Khu vực cho phép dựng lều và lưu lại ngoài trời, thường có tiện ích cơ bản.",
+      "description_en": "An area where visitors may pitch tents and stay outdoors, often with basic amenities.",
+      "aliases_vi": [
+        "bãi cắm trại",
+        "khu dựng lều"
+      ],
+      "aliases_en": [
+        "campground",
+        "campsite"
+      ],
+      "examples_vi": [
+        "muốn dựng lều qua đêm gần thiên nhiên",
+        "tìm bãi có chỗ nhóm lửa và khu vệ sinh"
+      ],
+      "examples_en": [
+        "pitch a tent for a night in nature",
+        "a site with fire areas and basic wash facilities"
+      ]
+    },
+    "240": {
+      "description_vi": "Công trình vệ sinh dùng chung, mở cho người dân hoặc khách vãng lai.",
+      "description_en": "A shared sanitation facility open to the public or passing visitors.",
+      "aliases_vi": [
+        "toilet công cộng",
+        "WC công cộng"
+      ],
+      "aliases_en": [
+        "public restroom",
+        "public lavatory"
+      ],
+      "examples_vi": [
+        "cần chỗ rửa tay và đi vệ sinh gấp",
+        "tìm tiện ích vệ sinh dành cho khách qua đường"
+      ],
+      "examples_en": [
+        "need somewhere nearby to wash up and use the facilities",
+        "a restroom available to passersby"
+      ]
+    },
+    "241": {
+      "description_vi": "Điểm phục vụ khách dừng nghỉ trong hành trình, có thể có chỗ ngồi, ăn uống và tiện ích thiết yếu.",
+      "description_en": "A stopping place for travelers, potentially offering seating, refreshments, and essential amenities.",
+      "aliases_vi": [
+        "trạm nghỉ",
+        "điểm nghỉ chân"
+      ],
+      "aliases_en": [
+        "traveler rest area",
+        "roadside break area"
+      ],
+      "examples_vi": [
+        "muốn nghỉ một lát giữa chặng đường dài",
+        "cần chỗ có ghế ngồi và nước uống dọc tuyến"
+      ],
+      "examples_en": [
+        "take a short break during a long journey",
+        "stop along the route for seating and refreshments"
+      ]
+    }
+  }
+}

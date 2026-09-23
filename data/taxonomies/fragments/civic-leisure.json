@@ -1,0 +1,420 @@
+{
+  "items": {
+    "74": {
+      "description_vi": "Không gian xanh công cộng dành cho đi dạo, nghỉ ngơi và hoạt động ngoài trời.",
+      "description_en": "A public green space for walking, relaxing, and outdoor activities.",
+      "aliases_vi": ["vườn công cộng", "khu cây xanh"],
+      "aliases_en": ["public park", "green space"],
+      "examples_vi": ["muốn đi dạo dưới nhiều cây xanh", "cần chỗ ngồi ngoài trời cho cả nhà"],
+      "examples_en": ["somewhere green for an afternoon walk", "an outdoor place for the family to relax"]
+    },
+    "88": {
+      "description_vi": "Cơ sở tập trung trò chơi và hoạt động vui chơi giải trí, thường ở trong nhà.",
+      "description_en": "A venue offering games and recreational activities, often indoors.",
+      "aliases_vi": ["khu vui chơi", "tổ hợp giải trí"],
+      "aliases_en": ["entertainment center", "recreation center"],
+      "examples_vi": ["muốn chơi máy game và trò tương tác", "tìm chỗ vui chơi khi trời mưa"],
+      "examples_en": ["somewhere to play arcade and interactive games", "indoor fun for a rainy afternoon"]
+    },
+    "89": {
+      "description_vi": "Khu vui chơi quy mô lớn có các trò vận động, trò cảm giác mạnh và điểm tham quan.",
+      "description_en": "A large leisure destination with rides, attractions, and thrill-based entertainment.",
+      "aliases_vi": ["khu trò chơi", "công viên chủ đề"],
+      "aliases_en": ["theme park", "funfair park"],
+      "examples_vi": ["muốn đi tàu lượn và chơi cả ngày", "đưa gia đình đến nơi có nhiều trò ngoài trời"],
+      "examples_en": ["a full day of rides and attractions", "somewhere the family can enjoy roller coasters"]
+    },
+    "90": {
+      "description_vi": "Địa điểm được trang bị để tổ chức chương trình, buổi gặp mặt hoặc sự kiện.",
+      "description_en": "A place equipped to host programs, gatherings, or organized events.",
+      "aliases_vi": ["không gian sự kiện", "sảnh sự kiện"],
+      "aliases_en": ["function venue", "event space"],
+      "examples_vi": ["cần thuê chỗ cho buổi ra mắt sản phẩm", "tìm không gian tiếp đón vài trăm khách"],
+      "examples_en": ["a space for a product launch", "somewhere to host several hundred guests"]
+    },
+    "91": {
+      "description_vi": "Công trình hoặc địa điểm gắn với sự kiện, nhân vật hay giai đoạn lịch sử đáng chú ý.",
+      "description_en": "A site or structure associated with a notable historical event, person, or period.",
+      "aliases_vi": ["địa danh lịch sử", "di tích"],
+      "aliases_en": ["historic site", "heritage landmark"],
+      "examples_vi": ["muốn thăm nơi lưu dấu một thời kỳ xưa", "tìm công trình có giá trị lịch sử địa phương"],
+      "examples_en": ["visit a site tied to the area's past", "see a structure with local historical significance"]
+    },
+    "92": {
+      "description_vi": "Cơ sở có phòng chiếu và màn ảnh để khán giả xem phim.",
+      "description_en": "A venue with screens and auditoriums where audiences watch films.",
+      "aliases_vi": ["rạp phim", "rạp chiếu bóng"],
+      "aliases_en": ["cinema", "film theater"],
+      "examples_vi": ["muốn xem suất tối trên màn ảnh lớn", "cần chỗ có phòng chiếu và ghế đặt trước"],
+      "examples_en": ["watch an evening release on a big screen", "book seats for the latest film"]
+    },
+    "93": {
+      "description_vi": "Khu thiên nhiên được bảo vệ ở cấp quốc gia nhằm bảo tồn cảnh quan và hệ sinh thái.",
+      "description_en": "A nationally protected natural area conserving landscapes and ecosystems.",
+      "aliases_vi": ["vườn quốc gia", "khu bảo tồn cấp quốc gia"],
+      "aliases_en": ["national preserve", "protected national park"],
+      "examples_vi": ["muốn đi bộ giữa rừng được bảo tồn", "tìm nơi quan sát hệ sinh thái tự nhiên quy mô lớn"],
+      "examples_en": ["hike through a nationally protected forest", "observe wildlife in a large conservation area"]
+    },
+    "94": {
+      "description_vi": "Địa điểm giải trí về đêm có âm nhạc lớn, khiêu vũ và đồ uống.",
+      "description_en": "A late-night venue with loud music, dancing, and drinks.",
+      "aliases_vi": ["câu lạc bộ đêm", "vũ trường"],
+      "aliases_en": ["dance club", "nightspot"],
+      "examples_vi": ["muốn nghe DJ và nhảy đến khuya", "tìm chỗ sôi động sau nửa đêm"],
+      "examples_en": ["dance to a DJ late into the night", "a lively place that stays open past midnight"]
+    },
+    "95": {
+      "description_vi": "Địa điểm có cảnh quan, trải nghiệm hoặc nét đặc sắc thu hút khách tham quan.",
+      "description_en": "A place whose scenery, experiences, or distinctive features attract visitors.",
+      "aliases_vi": ["điểm tham quan", "thắng cảnh"],
+      "aliases_en": ["visitor attraction", "sightseeing spot"],
+      "examples_vi": ["muốn ghé nơi nổi tiếng khi đến thành phố", "tìm chỗ đáng tham quan trong chuyến đi"],
+      "examples_en": ["see a well-known sight while visiting the city", "something worthwhile to visit on this trip"]
+    },
+    "96": {
+      "description_vi": "Cơ sở chuyên phục vụ lễ thành hôn và tiệc chiêu đãi cưới.",
+      "description_en": "A venue designed for marriage ceremonies and wedding receptions.",
+      "aliases_vi": ["sảnh cưới", "nhà hàng cưới"],
+      "aliases_en": ["wedding hall", "reception venue"],
+      "examples_vi": ["cần sảnh đãi khách trong ngày thành hôn", "tìm nơi có gói trang trí và bàn tiệc cho cô dâu chú rể"],
+      "examples_en": ["a hall for the ceremony and reception", "somewhere with wedding decor and banquet service"]
+    },
+    "97": {
+      "description_vi": "Cơ sở nuôi giữ và trưng bày nhiều loài động vật để tham quan, giáo dục hoặc bảo tồn.",
+      "description_en": "A facility housing diverse animals for viewing, education, or conservation.",
+      "aliases_vi": ["vườn thú", "thảo cầm viên"],
+      "aliases_en": ["zoological park", "animal park"],
+      "examples_vi": ["đưa trẻ đi xem hươu cao cổ và sư tử", "muốn quan sát nhiều loài động vật trong một khu"],
+      "examples_en": ["take the children to see giraffes and lions", "observe many animal species in one place"]
+    },
+    "116": {
+      "description_vi": "Cơ sở cung cấp không gian, lớp học và thiết bị cho rèn luyện thể lực tổng hợp.",
+      "description_en": "A facility offering space, classes, and equipment for broad physical training.",
+      "aliases_vi": ["trung tâm thể hình", "trung tâm luyện tập"],
+      "aliases_en": ["fitness club", "exercise center"],
+      "examples_vi": ["muốn đăng ký lớp vận động và huấn luyện cá nhân", "cần nơi tập nhiều bộ môn nâng cao sức khỏe"],
+      "examples_en": ["join exercise classes with personal coaching", "a place offering several ways to improve fitness"]
+    },
+    "117": {
+      "description_vi": "Khu sân cỏ có các đường golf, hố golf và tiện ích phục vụ người chơi.",
+      "description_en": "A landscaped course with fairways, greens, holes, and facilities for golfers.",
+      "aliases_vi": ["sân gôn", "câu lạc bộ golf"],
+      "aliases_en": ["golf club", "golfing course"],
+      "examples_vi": ["muốn đặt giờ chơi đủ 18 hố", "tìm nơi có fairway và khu phát bóng"],
+      "examples_en": ["book a tee time for eighteen holes", "play a round on fairways and greens"]
+    },
+    "118": {
+      "description_vi": "Phòng luyện tập có máy thể hình, tạ và dụng cụ rèn sức mạnh.",
+      "description_en": "A workout room with exercise machines, weights, and strength-training equipment.",
+      "aliases_vi": ["phòng thể hình", "phòng tập tạ"],
+      "aliases_en": ["weight room", "workout gym"],
+      "examples_vi": ["cần chỗ tập máy chạy và nâng tạ", "muốn mua vé tập theo ngày"],
+      "examples_en": ["use treadmills and free weights", "get a day pass for a strength workout"]
+    },
+    "119": {
+      "description_vi": "Khu có thiết bị và khoảng trống an toàn để trẻ em vui chơi, vận động.",
+      "description_en": "An area with equipment and safe open space for children to play and move.",
+      "aliases_vi": ["khu vui chơi trẻ em", "sân chơi trẻ nhỏ"],
+      "aliases_en": ["children's play area", "kids' playpark"],
+      "examples_vi": ["đưa bé đi cầu trượt và xích đu", "cần chỗ để trẻ chạy nhảy an toàn"],
+      "examples_en": ["somewhere with swings and slides for the kids", "a safe area where children can run around"]
+    },
+    "120": {
+      "description_vi": "Quần thể có nhiều sân bãi và cơ sở phục vụ các môn thể thao khác nhau.",
+      "description_en": "A multi-facility site containing courts, fields, or venues for different sports.",
+      "aliases_vi": ["liên hợp thể thao", "tổ hợp thể thao"],
+      "aliases_en": ["athletic complex", "multi-sport center"],
+      "examples_vi": ["tìm nơi vừa có sân bóng vừa có nhà thi đấu", "cần địa điểm tổ chức giải nhiều môn"],
+      "examples_en": ["a site with both playing fields and indoor courts", "host a tournament across several sports"]
+    },
+    "121": {
+      "description_vi": "Công trình lớn có sân thi đấu trung tâm và khán đài cho đông khán giả.",
+      "description_en": "A large venue with a central field or arena and seating for many spectators.",
+      "aliases_vi": ["sân thi đấu", "đấu trường thể thao"],
+      "aliases_en": ["sports stadium", "arena ground"],
+      "examples_vi": ["đi xem trận đấu có hàng nghìn khán giả", "tìm khán đài quanh một sân thi đấu lớn"],
+      "examples_en": ["watch a match with thousands of spectators", "a major field surrounded by grandstands"]
+    },
+    "122": {
+      "description_vi": "Cơ sở có bể nước được thiết kế cho bơi lội, luyện tập hoặc thư giãn.",
+      "description_en": "A facility with a purpose-built pool for swimming, training, or recreation.",
+      "aliases_vi": ["bể bơi", "bể tập bơi"],
+      "aliases_en": ["swim center", "public pool"],
+      "examples_vi": ["muốn bơi vài vòng sau giờ làm", "tìm nơi cho trẻ học bơi"],
+      "examples_en": ["swim a few laps after work", "somewhere for a child to take swim lessons"]
+    },
+    "132": {
+      "description_vi": "Không gian trưng bày và giới thiệu tranh, tượng, ảnh hoặc tác phẩm nghệ thuật.",
+      "description_en": "A space that exhibits paintings, sculpture, photography, or other artworks.",
+      "aliases_vi": ["phòng tranh", "không gian mỹ thuật"],
+      "aliases_en": ["art space", "gallery"],
+      "examples_vi": ["muốn xem bộ sưu tập tranh đương đại", "tìm nơi đang trưng bày tác phẩm của họa sĩ địa phương"],
+      "examples_en": ["see a contemporary painting collection", "view work by local artists on display"]
+    },
+    "133": {
+      "description_vi": "Cơ sở sưu tầm, bảo quản và trưng bày hiện vật có giá trị lịch sử, văn hóa hoặc khoa học.",
+      "description_en": "An institution that collects, preserves, and displays objects of historical, cultural, or scientific value.",
+      "aliases_vi": ["nhà bảo tàng", "không gian hiện vật"],
+      "aliases_en": ["exhibition museum", "collections museum"],
+      "examples_vi": ["muốn xem hiện vật khảo cổ được lưu giữ", "tìm nơi kể câu chuyện địa phương qua bộ sưu tập"],
+      "examples_en": ["view preserved archaeological objects", "learn the area's story through curated collections"]
+    },
+    "134": {
+      "description_vi": "Nhà hát có sân khấu dành cho kịch, múa, nhạc và các chương trình biểu diễn trực tiếp.",
+      "description_en": "A theater with a stage for live drama, dance, music, and other performances.",
+      "aliases_vi": ["nhà hát biểu diễn", "sân khấu nghệ thuật"],
+      "aliases_en": ["playhouse", "performing arts venue"],
+      "examples_vi": ["muốn xem một vở diễn trực tiếp", "tìm sân khấu có chương trình múa tối nay"],
+      "examples_en": ["see a live stage production", "watch a dance performance this evening"]
+    },
+    "140": {
+      "description_vi": "Công trình thờ phượng Kitô giáo, nơi cộng đoàn dự lễ và cầu nguyện.",
+      "description_en": "A Christian place of worship where a congregation gathers for services and prayer.",
+      "aliases_vi": ["thánh đường", "giáo đường"],
+      "aliases_en": ["Christian church", "chapel"],
+      "examples_vi": ["muốn dự lễ cùng giáo dân vào chủ nhật", "tìm nơi có thánh giá và giờ cầu nguyện"],
+      "examples_en": ["attend a Sunday service with a congregation", "a place with a cross and scheduled prayers"]
+    },
+    "141": {
+      "description_vi": "Cơ sở thờ Phật, nơi thực hành nghi lễ và sinh hoạt Phật giáo.",
+      "description_en": "A Buddhist place of worship for rituals, meditation, and religious practice.",
+      "aliases_vi": ["tự viện", "chùa Phật giáo"],
+      "aliases_en": ["Buddhist temple", "Buddhist monastery"],
+      "examples_vi": ["muốn dâng hương và nghe tụng kinh", "tìm nơi sinh hoạt Phật giáo thanh tịnh"],
+      "examples_en": ["offer incense and listen to Buddhist chanting", "a peaceful place for Buddhist practice"]
+    },
+    "157": {
+      "description_vi": "Công trình truyền thống của làng Việt dùng để thờ thành hoàng và hội họp cộng đồng.",
+      "description_en": "A traditional Vietnamese village building for tutelary worship and community gatherings.",
+      "aliases_vi": ["đình làng", "đình cổ"],
+      "aliases_en": ["Vietnamese communal house", "village đình"],
+      "examples_vi": ["muốn thăm nơi làng tổ chức lễ thành hoàng", "tìm công trình cổ dùng cho việc chung của dân làng"],
+      "examples_en": ["visit where a village honors its tutelary deity", "see a traditional hall used for village affairs"]
+    },
+    "158": {
+      "description_vi": "Nơi thờ thần linh, anh hùng hoặc nhân vật được tôn kính trong tín ngưỡng truyền thống.",
+      "description_en": "A traditional place honoring deities, heroes, or other revered figures.",
+      "aliases_vi": ["đền thờ", "đền linh thiêng"],
+      "aliases_en": ["traditional temple", "worship temple"],
+      "examples_vi": ["muốn dâng lễ tưởng nhớ một vị anh hùng", "tìm nơi thờ vị thần bảo hộ vùng này"],
+      "examples_en": ["make an offering to a revered hero", "visit a site honoring the area's guardian deity"]
+    },
+    "159": {
+      "description_vi": "Công trình thờ tự nhỏ dành cho thần linh, vong linh hoặc nhân vật được tôn kính.",
+      "description_en": "A small sacred structure dedicated to a deity, spirit, or revered figure.",
+      "aliases_vi": ["miếu thờ", "am thờ"],
+      "aliases_en": ["small shrine", "wayside shrine"],
+      "examples_vi": ["tìm am nhỏ để thắp hương ven đường", "muốn ghé nơi dân địa phương thờ một vị thần"],
+      "examples_en": ["stop at a small roadside sacred site", "visit where locals honor a particular spirit"]
+    },
+    "160": {
+      "description_vi": "Cơ sở thờ tự của đạo Cao Đài, nơi tín đồ hành lễ và sinh hoạt tôn giáo.",
+      "description_en": "A Cao Dai place of worship where followers hold ceremonies and religious gatherings.",
+      "aliases_vi": ["thánh thất Cao Đài", "nhà thờ Cao Đài"],
+      "aliases_en": ["Cao Dai temple", "Cao Dai holy house"],
+      "examples_vi": ["muốn xem giờ hành lễ của tín đồ Cao Đài", "tìm nơi có kiến trúc và biểu tượng Thiên Nhãn"],
+      "examples_en": ["attend a Cao Dai prayer ceremony", "see a sacred building marked by the Divine Eye"]
+    },
+    "161": {
+      "description_vi": "Cơ sở thờ phượng Hồi giáo, nơi tín đồ thực hiện các buổi cầu nguyện.",
+      "description_en": "An Islamic place of worship where Muslims gather for prayer.",
+      "aliases_vi": ["thánh đường Hồi giáo", "giáo đường Islam"],
+      "aliases_en": ["masjid", "Islamic prayer hall"],
+      "examples_vi": ["cần nơi thực hiện lễ nguyện thứ sáu", "tìm phòng cầu nguyện dành cho tín đồ Hồi giáo"],
+      "examples_en": ["join the Friday congregational prayer", "a prayer space for Muslim worshippers"]
+    },
+    "162": {
+      "description_vi": "Công trình của một dòng họ dùng để thờ tổ tiên và tổ chức nghi lễ gia tộc.",
+      "description_en": "A clan building used to honor ancestors and hold lineage ceremonies.",
+      "aliases_vi": ["từ đường", "nhà thờ tộc"],
+      "aliases_en": ["clan ancestral hall", "lineage hall"],
+      "examples_vi": ["muốn về nơi dòng họ làm lễ giỗ tổ", "tìm từ đường lưu gia phả và bài vị"],
+      "examples_en": ["visit where a clan holds ancestor rites", "find the hall preserving a lineage's tablets and records"]
+    },
+    "163": {
+      "description_vi": "Cơ sở chung phục vụ hội họp, sinh hoạt văn hóa và hoạt động của cư dân địa phương.",
+      "description_en": "A shared local facility for meetings, cultural programs, and neighborhood activities.",
+      "aliases_vi": ["nhà văn hóa", "nhà sinh hoạt cộng đồng"],
+      "aliases_en": ["community hall", "neighborhood center"],
+      "examples_vi": ["cần phòng họp cho tổ dân phố", "tìm nơi có lớp sinh hoạt cho cư dân quanh đây"],
+      "examples_en": ["a meeting room for neighborhood residents", "local classes and activities for the community"]
+    },
+    "184": {
+      "description_vi": "Khu đất dành cho an táng, phần mộ và tưởng niệm người đã khuất.",
+      "description_en": "Land designated for burials, graves, and remembrance of the deceased.",
+      "aliases_vi": ["nghĩa địa", "khu an táng"],
+      "aliases_en": ["graveyard", "burial ground"],
+      "examples_vi": ["đi viếng phần mộ của người thân", "tìm khu an táng của địa phương"],
+      "examples_en": ["visit a relative's grave", "locate the local burial grounds"]
+    },
+    "215": {
+      "description_vi": "Cơ sở quy mô lớn có hội trường và khu trưng bày cho hội nghị, hội chợ hoặc triển lãm.",
+      "description_en": "A large facility with halls and display areas for conferences, trade fairs, or exhibitions.",
+      "aliases_vi": ["trung tâm hội nghị", "trung tâm triển lãm"],
+      "aliases_en": ["convention center", "exhibition centre"],
+      "examples_vi": ["tham dự hội chợ có nhiều gian hàng doanh nghiệp", "cần hội trường lớn cho đại hội chuyên ngành"],
+      "examples_en": ["attend a trade fair with many exhibitor booths", "a large hall for an industry congress"]
+    },
+    "237": {
+      "description_vi": "Cơ sở có bàn bida và thiết bị để chơi các môn bi-a.",
+      "description_en": "A venue with cue-sport tables and equipment for billiards games.",
+      "aliases_vi": ["quán bi-a", "câu lạc bộ bida"],
+      "aliases_en": ["billiard club", "pool hall"],
+      "examples_vi": ["muốn thuê bàn đánh vài ván với bạn", "tìm chỗ có bàn carom và cơ bida"],
+      "examples_en": ["rent a table for a few games with friends", "somewhere with cue tables and equipment"]
+    },
+    "239": {
+      "description_vi": "Khu vực cho phép dựng lều và lưu lại ngoài trời, thường có tiện ích cơ bản.",
+      "description_en": "An area where visitors may pitch tents and stay outdoors, often with basic amenities.",
+      "aliases_vi": ["bãi cắm trại", "khu dựng lều"],
+      "aliases_en": ["campground", "campsite"],
+      "examples_vi": ["muốn dựng lều qua đêm gần thiên nhiên", "tìm bãi có chỗ nhóm lửa và khu vệ sinh"],
+      "examples_en": ["pitch a tent for a night in nature", "a site with fire areas and basic wash facilities"]
+    },
+    "240": {
+      "description_vi": "Công trình vệ sinh dùng chung, mở cho người dân hoặc khách vãng lai.",
+      "description_en": "A shared sanitation facility open to the public or passing visitors.",
+      "aliases_vi": ["toilet công cộng", "WC công cộng"],
+      "aliases_en": ["public restroom", "public lavatory"],
+      "examples_vi": ["cần chỗ rửa tay và đi vệ sinh gấp", "tìm tiện ích vệ sinh dành cho khách qua đường"],
+      "examples_en": ["need somewhere nearby to wash up and use the facilities", "a restroom available to passersby"]
+    },
+    "241": {
+      "description_vi": "Điểm phục vụ khách dừng nghỉ trong hành trình, có thể có chỗ ngồi, ăn uống và tiện ích thiết yếu.",
+      "description_en": "A stopping place for travelers, potentially offering seating, refreshments, and essential amenities.",
+      "aliases_vi": ["trạm nghỉ", "điểm nghỉ chân"],
+      "aliases_en": ["traveler rest area", "roadside break area"],
+      "examples_vi": ["muốn nghỉ một lát giữa chặng đường dài", "cần chỗ có ghế ngồi và nước uống dọc tuyến"],
+      "examples_en": ["take a short break during a long journey", "stop along the route for seating and refreshments"]
+    },
+    "68": {
+      "description_vi": "Trụ sở hoặc đơn vị của lực lượng công an tiếp nhận trình báo và thực hiện nhiệm vụ giữ gìn an ninh.",
+      "description_en": "An office or station where police receive reports and carry out public-safety duties.",
+      "aliases_vi": ["đồn công an", "trạm công an"],
+      "aliases_en": ["police station", "law enforcement office"],
+      "examples_vi": ["cần trình báo việc mất giấy tờ", "muốn gặp cán bộ để báo một vụ việc an ninh"],
+      "examples_en": ["report stolen identification documents", "speak to an officer about a safety incident"]
+    },
+    "70": {
+      "description_vi": "Cơ quan hành chính của chính quyền địa phương giải quyết thủ tục và công việc công tại địa bàn.",
+      "description_en": "A local administrative office handling public services and government matters for its area.",
+      "aliases_vi": ["ủy ban địa phương", "trụ sở hành chính địa phương"],
+      "aliases_en": ["municipal office", "local authority office"],
+      "examples_vi": ["cần xác nhận giấy tờ tại phường", "muốn hỏi thủ tục hành chính của quận"],
+      "examples_en": ["get a document certified by the ward authority", "ask the district administration about a local procedure"]
+    },
+    "71": {
+      "description_vi": "Cơ sở trực chiến của lực lượng chữa cháy, đặt xe và thiết bị ứng cứu hỏa hoạn.",
+      "description_en": "An emergency base housing firefighters, fire engines, and fire-response equipment.",
+      "aliases_vi": ["đội chữa cháy", "trụ sở cứu hỏa"],
+      "aliases_en": ["firehouse", "fire brigade station"],
+      "examples_vi": ["cần liên hệ đơn vị ứng cứu cháy gần nhất", "tìm nơi xe chữa cháy xuất phát"],
+      "examples_en": ["contact the nearest fire response unit", "locate the base where fire engines are stationed"]
+    },
+    "72": {
+      "description_vi": "Cơ quan đại diện ngoại giao chính thức của một quốc gia tại quốc gia khác.",
+      "description_en": "The official diplomatic mission of one country in another country.",
+      "aliases_vi": ["cơ quan đại diện ngoại giao", "sứ quán"],
+      "aliases_en": ["diplomatic mission", "foreign embassy"],
+      "examples_vi": ["cần hỗ trợ lãnh sự từ nước mình", "muốn nộp hồ sơ thị thực tại cơ quan ngoại giao"],
+      "examples_en": ["seek consular help from my home country", "submit visa papers to a diplomatic mission"]
+    },
+    "73": {
+      "description_vi": "Công trình nơi tòa án xét xử vụ án và thực hiện các hoạt động tư pháp.",
+      "description_en": "A building where courts hear cases and conduct judicial proceedings.",
+      "aliases_vi": ["trụ sở tòa án", "pháp đình"],
+      "aliases_en": ["court building", "court of law"],
+      "examples_vi": ["đến dự phiên xét xử theo giấy triệu tập", "cần nộp hồ sơ cho cơ quan xét xử"],
+      "examples_en": ["attend a scheduled legal hearing", "file documents with the court handling a case"]
+    },
+    "173": {
+      "description_vi": "Cơ quan thuộc bộ máy nhà nước thực hiện chức năng quản lý hoặc cung cấp dịch vụ công.",
+      "description_en": "A public-sector body performing government administration or delivering public services.",
+      "aliases_vi": ["cơ quan công quyền", "đơn vị nhà nước"],
+      "aliases_en": ["government agency", "public authority"],
+      "examples_vi": ["cần làm việc với đơn vị quản lý chuyên ngành", "tìm trụ sở cơ quan công quyền phụ trách hồ sơ này"],
+      "examples_en": ["visit the public body responsible for this sector", "locate the authority that processes this application"]
+    },
+    "192": {
+      "description_vi": "Địa điểm làm việc hành chính, điều hành hoặc giao dịch của một doanh nghiệp.",
+      "description_en": "A business location used for a company's administration, management, or client meetings.",
+      "aliases_vi": ["trụ sở doanh nghiệp", "văn phòng doanh nghiệp"],
+      "aliases_en": ["corporate office", "business office"],
+      "examples_vi": ["đến gặp bộ phận hành chính của doanh nghiệp", "tìm trụ sở làm việc chứ không phải cửa hàng"],
+      "examples_en": ["meet the company's administrative team", "find the business workplace rather than its retail outlet"]
+    },
+    "200": {
+      "description_vi": "Địa điểm có máy móc, dây chuyền hoặc nhân công để chế tạo, gia công hay tạo ra sản phẩm.",
+      "description_en": "A site using machinery, production lines, or labor to make, process, or assemble goods.",
+      "aliases_vi": ["nhà máy", "xưởng sản xuất"],
+      "aliases_en": ["manufacturing facility", "production plant"],
+      "examples_vi": ["cần đến nơi hàng hóa được gia công", "tìm xưởng có dây chuyền chế tạo sản phẩm"],
+      "examples_en": ["visit the site where goods are manufactured", "locate a plant with an assembly line"]
+    },
+    "217": {
+      "description_vi": "Doanh nghiệp tổ chức chương trình tham quan, kỳ nghỉ và các dịch vụ du lịch liên quan.",
+      "description_en": "A company that organizes tours, holidays, and related travel services.",
+      "aliases_vi": ["công ty lữ hành", "doanh nghiệp du lịch"],
+      "aliases_en": ["tour operator", "travel firm"],
+      "examples_vi": ["muốn đặt tour trọn gói nhiều ngày", "cần đơn vị tổ chức lịch trình cho đoàn"],
+      "examples_en": ["book a multi-day package tour", "hire a firm to arrange an itinerary for a group"]
+    },
+    "231": {
+      "description_vi": "Địa điểm thuộc thương hiệu Vinhomes, gắn với phát triển và vận hành khu đô thị hoặc nhà ở.",
+      "description_en": "A Vinhomes-branded location associated with residential or urban development and operations.",
+      "aliases_vi": ["khu đô thị Vinhomes", "Vinhomes"],
+      "aliases_en": ["Vinhomes property", "Vinhomes development"],
+      "examples_vi": ["muốn đến khu nhà ở do thương hiệu này phát triển", "tìm văn phòng vận hành của một đại đô thị cùng hệ sinh thái"],
+      "examples_en": ["visit a residential development operated under this brand", "locate the management office of one of its urban communities"]
+    },
+    "232": {
+      "description_vi": "Địa điểm thuộc thương hiệu Vinpearl, thường cung cấp nghỉ dưỡng, vui chơi hoặc dịch vụ du lịch.",
+      "description_en": "A Vinpearl-branded location typically offering resort, leisure, or tourism services.",
+      "aliases_vi": ["khu nghỉ dưỡng Vinpearl", "Vinpearl"],
+      "aliases_en": ["Vinpearl resort", "Vinpearl destination"],
+      "examples_vi": ["muốn nghỉ tại điểm du lịch biển của thương hiệu này", "tìm khu vui chơi nghỉ dưỡng thuộc hệ sinh thái tập đoàn"],
+      "examples_en": ["stay at this brand's seaside holiday destination", "visit a leisure resort within the group's ecosystem"]
+    },
+    "233": {
+      "description_vi": "Địa điểm thuộc thương hiệu Vincom, thường là trung tâm thương mại hoặc không gian bán lẻ.",
+      "description_en": "A Vincom-branded location, usually a shopping mall or retail property.",
+      "aliases_vi": ["trung tâm thương mại Vincom", "Vincom"],
+      "aliases_en": ["Vincom mall", "Vincom shopping center"],
+      "examples_vi": ["muốn mua sắm tại trung tâm thương mại của thương hiệu này", "tìm tòa nhà có nhiều cửa hàng thuộc hệ thống bán lẻ tập đoàn"],
+      "examples_en": ["shop at this brand's multi-store retail center", "visit the group's mall with shops and restaurants"]
+    },
+    "234": {
+      "description_vi": "Cơ sở giáo dục thuộc hệ thống Vinschool.",
+      "description_en": "An educational facility operated under the Vinschool system.",
+      "aliases_vi": ["trường Vinschool", "hệ thống Vinschool"],
+      "aliases_en": ["Vinschool campus", "Vinschool school"],
+      "examples_vi": ["đưa học sinh đến cơ sở của hệ thống giáo dục này", "tìm khuôn viên trường thuộc tập đoàn"],
+      "examples_en": ["take a student to a campus in this education system", "locate one of the group's school facilities"]
+    },
+    "235": {
+      "description_vi": "Cơ sở y tế thuộc hệ thống chăm sóc sức khỏe Vinmec.",
+      "description_en": "A medical facility operated under the Vinmec healthcare system.",
+      "aliases_vi": ["bệnh viện Vinmec", "phòng khám Vinmec"],
+      "aliases_en": ["Vinmec hospital", "Vinmec clinic"],
+      "examples_vi": ["cần khám tại cơ sở y tế của hệ thống này", "tìm bệnh viện thuộc mảng chăm sóc sức khỏe của tập đoàn"],
+      "examples_en": ["book care at a facility in this medical network", "find the group's healthcare hospital or clinic"]
+    },
+    "236": {
+      "description_vi": "Khuôn viên hoặc cơ sở thuộc Trường Đại học VinUniversity.",
+      "description_en": "A campus or facility belonging to VinUniversity.",
+      "aliases_vi": ["Đại học VinUni", "VinUniversity"],
+      "aliases_en": ["VinUniversity", "VinUni campus"],
+      "examples_vi": ["đến khuôn viên đại học do tập đoàn sáng lập", "tìm tòa nhà giảng dạy của trường này"],
+      "examples_en": ["visit the university campus founded by the group", "locate one of this institution's teaching buildings"]
+    },
+    "214": {
+      "description_vi": "Công trình và hệ thống kỹ thuật thiết yếu hỗ trợ vận hành đô thị hoặc khu chức năng.",
+      "description_en": "Essential engineering works and utility systems supporting an urban or functional area.",
+      "aliases_vi": ["hạ tầng kỹ thuật", "công trình kỹ thuật"],
+      "aliases_en": ["utility infrastructure", "engineering infrastructure"],
+      "examples_vi": ["tìm khu công trình phục vụ cấp thoát nước", "cần xác định hệ thống kỹ thuật hỗ trợ vận hành đô thị"],
+      "examples_en": ["locate works supporting water supply and drainage", "identify the utility systems that keep an urban area operating"]
+    }
+  }
+}

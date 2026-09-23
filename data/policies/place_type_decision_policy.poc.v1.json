@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "policy_version": "place-type-decision-poc-v2",
+  "selectability": "leaves_only",
+  "fallback_language": "vi",
+  "max_options": 4,
+  "ambiguity_delta_mode": "adaptive",
+  "thresholds": {
+    "default": {"reject_min_score": 0.45, "clarify_min_score": 0.55, "accept_min_score": 0.60, "accept_min_margin": 0.035, "ambiguity_delta": 0.06, "coherent_cluster_delta": 0.02, "cluster_rescue_min_count": 2, "cluster_rescue_max_rank": 10, "group_accept_min_margin": 0.07},
+    "e5-small-multilingual": {"reject_min_score": 0.78, "clarify_min_score": 0.82, "accept_min_score": 0.84, "accept_min_margin": 0.018, "ambiguity_delta": 0.035, "coherent_cluster_delta": 0.012, "group_accept_min_margin": 0.036},
+    "e5-base-multilingual": {"reject_min_score": 0.77, "clarify_min_score": 0.81, "accept_min_score": 0.83, "accept_min_margin": 0.016, "ambiguity_delta": 0.032, "coherent_cluster_delta": 0.012, "group_accept_min_margin": 0.032},
+    "bge-m3": {"reject_min_score": 0.45, "clarify_min_score": 0.46, "accept_min_score": 0.46, "accept_min_margin": 0.02, "ambiguity_delta": 0.02, "coherent_cluster_delta": 0.02, "group_accept_min_margin": 0.04},
+    "minilm-multilingual": {"reject_min_score": 0.35, "clarify_min_score": 0.48, "accept_min_score": 0.55, "accept_min_margin": 0.05, "ambiguity_delta": 0.08, "coherent_cluster_delta": 0.025, "group_accept_min_margin": 0.10}
+  },
+  "questions": {
+    "vi": {
+      "generic": "Bạn đang muốn tìm loại địa điểm nào?",
+      "parent": "Nhu cầu của bạn thuộc nhóm này, bạn muốn loại cụ thể nào?"
+    },
+    "en": {
+      "generic": "Which type of place are you looking for?",
+      "parent": "Your request matches this broad group. Which specific place type do you need?"
+    }
+  },
+  "groups": [
+    {"id":"healthcare_need","members":["34","42","77","142","144","145","201","38"],"question_vi":"Bạn muốn mua thuốc, gặp bác sĩ, đến phòng khám hay cần bệnh viện?","question_en":"Do you need medicine, a doctor, a clinic, or a hospital?"},
+    {"id":"lodging_type","members":["7","212","136","137","189","135","138"],"question_vi":"Bạn muốn khách sạn, nhà nghỉ, hostel, nhà khách hay khu nghỉ dưỡng?","question_en":"Do you want a hotel, motel, hostel, guesthouse, or resort?"},
+    {"id":"food_venue","members":["20","23","208","24","22","26","75","218","168"],"question_vi":"Bạn muốn ăn một bữa, uống cà phê, uống trà hay tìm đồ ăn nhanh?","question_en":"Do you want a full meal, coffee, tea, drinks, or fast food?"},
+    {"id":"grocery_venue","members":["28","29","176","13","205","207"],"question_vi":"Bạn muốn siêu thị, chợ, cửa hàng tạp hóa hay cửa hàng tiện lợi?","question_en":"Do you want a supermarket, market, grocery store, or convenience store?"},
+    {"id":"vehicle_need","members":["85","83","84","86","19","229","220","224","225","227","226","17"],"question_vi":"Bạn cần đổ nhiên liệu, sạc điện, sửa xe, rửa xe hay tìm chỗ đỗ?","question_en":"Do you need fuel, charging, repair, a car wash, or parking?"},
+    {"id":"bus_location","members":["114","18","155","238","211"],"question_vi":"Bạn cần điểm dừng xe buýt, bến xe, nhà xe hay điểm đón?","question_en":"Do you need a bus stop, bus station, coach station, or pickup point?"},
+    {"id":"shoe_store_duplicate","members":["36","129"],"question_vi":"Bạn muốn chọn loại cửa hàng giày nào trong hệ thống?","question_en":"Which shoe-store type in the system do you mean?"},
+    {"id":"jewelry_duplicate","members":["33","126"],"question_vi":"Bạn muốn danh mục trang sức hay cửa hàng trang sức?","question_en":"Do you mean jewelry or a jewelry store?"},
+    {"id":"cosmetics_duplicate","members":["32","154"],"question_vi":"Bạn muốn shop mỹ phẩm - làm đẹp hay cửa hàng mỹ phẩm?","question_en":"Do you mean a beauty/cosmetics shop or a cosmetics store?"},
+    {"id":"sports_facility","members":["118","116","120","122","119","121"],"question_vi":"Bạn muốn phòng gym, trung tâm thể thao, hồ bơi, sân chơi hay sân vận động?","question_en":"Do you want a gym, sports center, swimming pool, playground, or stadium?"},
+    {"id":"park_attraction","members":["74","93","89","88","95","199"],"question_vi":"Bạn muốn công viên thường, công viên quốc gia, khu vui chơi hay khu du lịch?","question_en":"Do you want a park, national park, amusement venue, or tourist attraction?"},
+    {"id":"event_venue","members":["90","96","215","198"],"question_vi":"Bạn cần địa điểm sự kiện, trung tâm tiệc cưới, trung tâm hội nghị hay studio cưới?","question_en":"Do you need an event venue, wedding venue, convention center, or wedding studio?"},
+    {"id":"workplace_choice","members":["23","5","192","50"],"question_vi":"Bạn muốn ngồi làm việc ở quán cà phê, tòa nhà văn phòng, văn phòng công ty hay thư viện?","question_en":"Do you want to work from a cafe, office building, company office, or library?"},
+    {"id":"worship_type","members":["140","141","157","158","159","160","161","162"],"question_vi":"Bạn muốn tìm nhà thờ, chùa, đình, đền, miếu hay địa điểm thờ cúng khác?","question_en":"Do you need a church, pagoda, communal house, temple, shrine, or another worship place?"}
+  ]
+}
