@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "gold_policy_version": "backtest-gold-audit-v1",
+  "unsupported_or_proxy_labels": {
+    "bank": "target id 52 is ATM, not a bank branch",
+    "ev_charging": "targets 19/229/220 are branded or motorbike/battery-swap categories, not generic EV charging",
+    "tire_repair": "target id 83 is generic car repair, not tire repair",
+    "motorcycle_repair": "target id 83 is car repair, not an independently mapped motorcycle service",
+    "homestay": "no dedicated homestay category or OSM mapping",
+    "school": "grade-specific target IDs do not establish a generic school POI category",
+    "sport_facility": "broad sport goal lacks a single selectable generic sports-facility leaf"
+  },
+  "notes": "Other synthetic group labels must be reviewed before they are treated as production gold. This file excludes known-invalid proxies from adjudicated-category metrics; it does not make remaining labels human-reviewed."
+}

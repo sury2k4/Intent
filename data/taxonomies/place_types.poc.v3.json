@@ -1,0 +1,3612 @@
+{
+  "schema_version": 1,
+  "taxonomy_version": "place-types-poc-v3",
+  "status": "partial_poc_osm_expansion_provisional",
+  "source": "user_provided_internal_extract",
+  "languages": [
+    "vi",
+    "en"
+  ],
+  "items": [
+    {
+      "id": "212",
+      "parent_id": "110",
+      "code": "guesthouse",
+      "names": {
+        "en": "Guesthouse",
+        "vi": "Nhà khách"
+      }
+    },
+    {
+      "id": "213",
+      "parent_id": "4",
+      "code": "porridge_shop",
+      "names": {
+        "en": "Porridge shop",
+        "vi": "Cửa hàng cháo"
+      }
+    },
+    {
+      "id": "214",
+      "parent_id": "0",
+      "code": "technical_infrastructure",
+      "names": {
+        "en": "Technical Infrastructure",
+        "vi": "Cơ sở hạ tầng kỹ thuật"
+      }
+    },
+    {
+      "id": "215",
+      "parent_id": "131",
+      "code": "convention_center",
+      "names": {
+        "en": "Convention and Exhibition Center",
+        "vi": "Trung tâm hội nghị triển lãm"
+      }
+    },
+    {
+      "id": "216",
+      "parent_id": "0",
+      "code": "a80",
+      "names": {
+        "en": "A80",
+        "vi": "A80"
+      }
+    },
+    {
+      "id": "217",
+      "parent_id": "185",
+      "code": "travel_company",
+      "names": {
+        "en": "Travel company",
+        "vi": "Công ty du lịch"
+      }
+    },
+    {
+      "id": "218",
+      "parent_id": "4",
+      "code": "snack_shop",
+      "names": {
+        "en": "Snack shop",
+        "vi": "Quán ăn vặt"
+      }
+    },
+    {
+      "id": "219",
+      "parent_id": "6",
+      "code": "eyeglasses_shop",
+      "names": {
+        "en": "Eyeglasses shop",
+        "vi": "Cửa hàng mắt kính"
+      }
+    },
+    {
+      "id": "220",
+      "parent_id": "221",
+      "code": "battery_swapping_station",
+      "names": {
+        "en": "Battery Swapping Station",
+        "vi": "Tủ đổi pin"
+      }
+    },
+    {
+      "id": "221",
+      "parent_id": "0",
+      "code": "vinfast",
+      "names": {
+        "en": "VinFast",
+        "vi": "VinFast"
+      }
+    },
+    {
+      "id": "222",
+      "parent_id": "221",
+      "code": "auto_showroom",
+      "names": {
+        "en": "Auto Showroom",
+        "vi": "Showroom Ô tô"
+      }
+    },
+    {
+      "id": "223",
+      "parent_id": "221",
+      "code": "ev_moto_showroom",
+      "names": {
+        "en": "Electric Motorbike Showroom",
+        "vi": "Showroom Xe máy điện"
+      }
+    },
+    {
+      "id": "224",
+      "parent_id": "221",
+      "code": "car_service_center",
+      "names": {
+        "en": "Auto Service Center",
+        "vi": "Xưởng dịch vụ Ô tô"
+      }
+    },
+    {
+      "id": "225",
+      "parent_id": "221",
+      "code": "partner_auto_service",
+      "names": {
+        "en": "Partner Auto Service",
+        "vi": "Xưởng dịch vụ Ô tô - Đối tác"
+      }
+    },
+    {
+      "id": "226",
+      "parent_id": "221",
+      "code": "bus_service_center",
+      "names": {
+        "en": "Bus Service Center",
+        "vi": "Xưởng dịch vụ Bus"
+      }
+    },
+    {
+      "id": "227",
+      "parent_id": "221",
+      "code": "ev_motorbike_service",
+      "names": {
+        "en": "EV Motorbike Service Center",
+        "vi": "Xưởng dịch vụ Xe máy điện"
+      }
+    },
+    {
+      "id": "229",
+      "parent_id": "221",
+      "code": "ev_motorbike_charging",
+      "names": {
+        "en": "EV Motorbike Charging Station",
+        "vi": "Trạm sạc xe máy điện"
+      }
+    },
+    {
+      "id": "230",
+      "parent_id": "0",
+      "code": "vingroup",
+      "names": {
+        "en": "Vingroup",
+        "vi": "Vingroup"
+      }
+    },
+    {
+      "id": "231",
+      "parent_id": "230",
+      "code": "vinhomes",
+      "names": {
+        "en": "Vinhomes",
+        "vi": "Vinhomes"
+      }
+    },
+    {
+      "id": "232",
+      "parent_id": "230",
+      "code": "vinpearl",
+      "names": {
+        "en": "Vinpearl",
+        "vi": "Vinpearl"
+      }
+    },
+    {
+      "id": "233",
+      "parent_id": "230",
+      "code": "vincom",
+      "names": {
+        "en": "Vincom",
+        "vi": "Vincom"
+      }
+    },
+    {
+      "id": "234",
+      "parent_id": "230",
+      "code": "vinschool",
+      "names": {
+        "en": "Vinschool",
+        "vi": "Vinschool"
+      }
+    },
+    {
+      "id": "235",
+      "parent_id": "230",
+      "code": "vinmec",
+      "names": {
+        "en": "Vinmec",
+        "vi": "Vinmec"
+      }
+    },
+    {
+      "id": "236",
+      "parent_id": "230",
+      "code": "vinuni",
+      "names": {
+        "en": "VinUni",
+        "vi": "VinUni"
+      }
+    },
+    {
+      "id": "237",
+      "parent_id": "9",
+      "code": "billiards_hall",
+      "names": {
+        "en": "Billiards hall",
+        "vi": "Quán bida"
+      }
+    },
+    {
+      "id": "238",
+      "parent_id": "79",
+      "code": "private_coach_station",
+      "names": {
+        "en": "Private coach station",
+        "vi": "Nhà xe, chành xe"
+      }
+    },
+    {
+      "id": "239",
+      "parent_id": "9",
+      "code": "camping_area",
+      "names": {
+        "en": "Camping Area",
+        "vi": "Khu cắm trại"
+      }
+    },
+    {
+      "id": "240",
+      "parent_id": "9",
+      "code": "public_toilet",
+      "names": {
+        "en": "Public toilet",
+        "vi": "Nhà vệ sinh công cộng"
+      }
+    },
+    {
+      "id": "241",
+      "parent_id": "9",
+      "code": "rest_area",
+      "names": {
+        "en": "Rest area",
+        "vi": "Điểm dừng chân"
+      }
+    },
+    {
+      "id": "211",
+      "parent_id": "79",
+      "code": "xanhsm_pickup",
+      "names": {
+        "en": "Xanh SM Pick-up Point",
+        "vi": "Điểm đón Xanh SM"
+      }
+    },
+    {
+      "id": "183",
+      "parent_id": "8",
+      "code": "photography",
+      "names": {
+        "en": "Photography",
+        "vi": "Chụp ảnh"
+      }
+    },
+    {
+      "id": "189",
+      "parent_id": "110",
+      "code": "dormitory",
+      "names": {
+        "en": "Dormitory",
+        "vi": "Ký túc xá"
+      }
+    },
+    {
+      "id": "50",
+      "parent_id": "2",
+      "code": "library",
+      "names": {
+        "en": "Library",
+        "vi": "Thư viện"
+      }
+    },
+    {
+      "id": "52",
+      "parent_id": "8",
+      "code": "atm",
+      "names": {
+        "en": "ATM",
+        "vi": "ATM"
+      }
+    },
+    {
+      "id": "53",
+      "parent_id": "4",
+      "code": "barbecue_restaurant",
+      "names": {
+        "en": "BBQ restaurant",
+        "vi": "Nhà hàng BBQ"
+      }
+    },
+    {
+      "id": "54",
+      "parent_id": "4",
+      "code": "chinese_restaurant",
+      "names": {
+        "en": "Chinese Restaurant",
+        "vi": "Nhà hàng Hoa"
+      }
+    },
+    {
+      "id": "55",
+      "parent_id": "4",
+      "code": "vegan_restaurant",
+      "names": {
+        "en": "Vegan restaurant",
+        "vi": "Nhà hàng chay"
+      }
+    },
+    {
+      "id": "56",
+      "parent_id": "4",
+      "code": "indian_restaurant",
+      "names": {
+        "en": "Indian Restaurant",
+        "vi": "Nhà hàng Ấn"
+      }
+    },
+    {
+      "id": "57",
+      "parent_id": "4",
+      "code": "japanese_restaurant",
+      "names": {
+        "en": "Japanese Restaurant",
+        "vi": "Nhà hàng Nhật"
+      }
+    },
+    {
+      "id": "58",
+      "parent_id": "4",
+      "code": "banh_mi_vietnam",
+      "names": {
+        "en": "Banh Mi Viet Nam",
+        "vi": "Cửa hàng bánh mì"
+      }
+    },
+    {
+      "id": "59",
+      "parent_id": "4",
+      "code": "korean_restaurant",
+      "names": {
+        "en": "Korean Restaurant",
+        "vi": "Nhà hàng Hàn Quốc"
+      }
+    },
+    {
+      "id": "60",
+      "parent_id": "4",
+      "code": "pizza_restaurant",
+      "names": {
+        "en": "Pizza Restaurant",
+        "vi": "Nhà hàng Pizza"
+      }
+    },
+    {
+      "id": "61",
+      "parent_id": "4",
+      "code": "ramen_restaurant",
+      "names": {
+        "en": "Ramen Restaurant",
+        "vi": "Nhà hàng Ramen"
+      }
+    },
+    {
+      "id": "62",
+      "parent_id": "4",
+      "code": "seafood_restaurant",
+      "names": {
+        "en": "Seafood Restaurant",
+        "vi": "Nhà hàng hải sản"
+      }
+    },
+    {
+      "id": "63",
+      "parent_id": "4",
+      "code": "steak_house",
+      "names": {
+        "en": "Steak House",
+        "vi": "Nhà hàng bít tết"
+      }
+    },
+    {
+      "id": "64",
+      "parent_id": "4",
+      "code": "thai_restaurant",
+      "names": {
+        "en": "Thai Restaurant",
+        "vi": "Nhà hàng Thái"
+      }
+    },
+    {
+      "id": "65",
+      "parent_id": "4",
+      "code": "sushi_restaurant",
+      "names": {
+        "en": "Sushi Restaurant",
+        "vi": "Nhà hàng Sushi"
+      }
+    },
+    {
+      "id": "66",
+      "parent_id": "4",
+      "code": "vietnamese_restaurant",
+      "names": {
+        "en": "Vietnamese Restaurant",
+        "vi": "Nhà hàng món Việt"
+      }
+    },
+    {
+      "id": "186",
+      "parent_id": "4",
+      "code": "french_restaurant",
+      "names": {
+        "en": "French Restaurant",
+        "vi": "Nhà hàng Pháp"
+      }
+    },
+    {
+      "id": "179",
+      "parent_id": "4",
+      "code": "taiwanese_restaurant",
+      "names": {
+        "en": "Taiwanese Restaurant",
+        "vi": "Nhà hàng Đài Loan"
+      }
+    },
+    {
+      "id": "180",
+      "parent_id": "4",
+      "code": "brazilian_restaurant",
+      "names": {
+        "en": "Brazilian Restaurant",
+        "vi": "Nhà hàng Brazil"
+      }
+    },
+    {
+      "id": "181",
+      "parent_id": "4",
+      "code": "italian_restaurant",
+      "names": {
+        "en": "Italian Restaurant",
+        "vi": "Nhà hàng Ý"
+      }
+    },
+    {
+      "id": "4",
+      "parent_id": "0",
+      "code": "food-drink",
+      "names": {
+        "en": "Food & drink",
+        "vi": "Ăn uống"
+      }
+    },
+    {
+      "id": "20",
+      "parent_id": "4",
+      "code": "restaurant",
+      "names": {
+        "en": "Restaurant",
+        "vi": "Nhà hàng"
+      }
+    },
+    {
+      "id": "21",
+      "parent_id": "4",
+      "code": "bakery",
+      "names": {
+        "en": "Bakery",
+        "vi": "Tiệm bánh"
+      }
+    },
+    {
+      "id": "22",
+      "parent_id": "4",
+      "code": "bar",
+      "names": {
+        "en": "Bar",
+        "vi": "Quán bar"
+      }
+    },
+    {
+      "id": "23",
+      "parent_id": "4",
+      "code": "coffee",
+      "names": {
+        "en": "Coffee",
+        "vi": "Quán cà phê"
+      }
+    },
+    {
+      "id": "24",
+      "parent_id": "4",
+      "code": "tea_milk_tea",
+      "names": {
+        "en": "Tea, milk tea",
+        "vi": "Trà, trà sữa"
+      }
+    },
+    {
+      "id": "25",
+      "parent_id": "4",
+      "code": "ice-cream",
+      "names": {
+        "en": "Ice Cream Shop",
+        "vi": "Cửa hàng Kem"
+      }
+    },
+    {
+      "id": "26",
+      "parent_id": "4",
+      "code": "pub",
+      "names": {
+        "en": "pub",
+        "vi": "Quán nhậu"
+      }
+    },
+    {
+      "id": "75",
+      "parent_id": "4",
+      "code": "fast_food",
+      "names": {
+        "en": "Fast Food",
+        "vi": "Thức ăn nhanh"
+      }
+    },
+    {
+      "id": "168",
+      "parent_id": "4",
+      "code": "cheap_eatery",
+      "names": {
+        "en": "Cheap eatery",
+        "vi": "Quán ăn bình dân"
+      }
+    },
+    {
+      "id": "208",
+      "parent_id": "4",
+      "code": "beverage_shop",
+      "names": {
+        "en": "Beverage shop",
+        "vi": "Quán giải khát"
+      }
+    },
+    {
+      "id": "209",
+      "parent_id": "4",
+      "code": "asian_european_restaurant",
+      "names": {
+        "en": "Asian European restaurant",
+        "vi": "Nhà hàng Á Âu"
+      }
+    },
+    {
+      "id": "6",
+      "parent_id": "0",
+      "code": "shopping",
+      "names": {
+        "en": "Shopping",
+        "vi": "Mua sắm"
+      }
+    },
+    {
+      "id": "10",
+      "parent_id": "6",
+      "code": "book_shop",
+      "names": {
+        "en": "Book Shop",
+        "vi": "Nhà sách"
+      }
+    },
+    {
+      "id": "11",
+      "parent_id": "6",
+      "code": "clothing_shop",
+      "names": {
+        "en": "Clothing Shop",
+        "vi": "Cửa hàng thời trang"
+      }
+    },
+    {
+      "id": "12",
+      "parent_id": "6",
+      "code": "computer_shop",
+      "names": {
+        "en": "Computer Shop",
+        "vi": "Cửa hàng máy tính"
+      }
+    },
+    {
+      "id": "13",
+      "parent_id": "6",
+      "code": "convenience_store",
+      "names": {
+        "en": "Convenience Store",
+        "vi": "Cửa hàng tiện lợi"
+      }
+    },
+    {
+      "id": "14",
+      "parent_id": "6",
+      "code": "florist",
+      "names": {
+        "en": "Florist",
+        "vi": "Cửa hàng hoa"
+      }
+    },
+    {
+      "id": "15",
+      "parent_id": "6",
+      "code": "gift_shop",
+      "names": {
+        "en": "Gift shop",
+        "vi": "Cửa hàng quà tặng"
+      }
+    },
+    {
+      "id": "16",
+      "parent_id": "6",
+      "code": "building_materials_store",
+      "names": {
+        "en": "Building materials store",
+        "vi": "Cửa hàng vật liệu xây dựng"
+      }
+    },
+    {
+      "id": "27",
+      "parent_id": "6",
+      "code": "shopping_mall",
+      "names": {
+        "en": "Shopping mall",
+        "vi": "Trung tâm mua sắm"
+      }
+    },
+    {
+      "id": "28",
+      "parent_id": "6",
+      "code": "supermarket",
+      "names": {
+        "en": "Supermarket",
+        "vi": "Siêu thị"
+      }
+    },
+    {
+      "id": "29",
+      "parent_id": "6",
+      "code": "market",
+      "names": {
+        "en": "Market",
+        "vi": "Chợ"
+      }
+    },
+    {
+      "id": "30",
+      "parent_id": "6",
+      "code": "butcher-shop",
+      "names": {
+        "en": "Butcher shop",
+        "vi": "Cửa hàng thịt"
+      }
+    },
+    {
+      "id": "31",
+      "parent_id": "6",
+      "code": "milk-shop",
+      "names": {
+        "en": "Milk Shop",
+        "vi": "Cửa hàng sữa"
+      }
+    },
+    {
+      "id": "32",
+      "parent_id": "6",
+      "code": "cosmetics-beauty",
+      "names": {
+        "en": "Cosmetics - Beauty",
+        "vi": "Shop mỹ phẩm - làm đẹp"
+      }
+    },
+    {
+      "id": "33",
+      "parent_id": "6",
+      "code": "jewelry",
+      "names": {
+        "en": "Jewelry",
+        "vi": "Trang sức"
+      }
+    },
+    {
+      "id": "35",
+      "parent_id": "6",
+      "code": "car-motorcycle-dealership",
+      "names": {
+        "en": "Car and Motorcycle Dealership",
+        "vi": "Đại lý Ô tô, Xe máy"
+      }
+    },
+    {
+      "id": "36",
+      "parent_id": "6",
+      "code": "shoe-store",
+      "names": {
+        "en": "Shoe Store",
+        "vi": "Cửa hàng Giày"
+      }
+    },
+    {
+      "id": "37",
+      "parent_id": "6",
+      "code": "phone_store",
+      "names": {
+        "en": "Phone store",
+        "vi": "Cửa hàng điện thoại"
+      }
+    },
+    {
+      "id": "109",
+      "parent_id": "6",
+      "code": "bicycle_store",
+      "names": {
+        "en": "Bicycle store",
+        "vi": "Cửa hàng xe đạp"
+      }
+    },
+    {
+      "id": "123",
+      "parent_id": "6",
+      "code": "electronics_store",
+      "names": {
+        "en": "Electronics store",
+        "vi": "Cửa hàng điện tử"
+      }
+    },
+    {
+      "id": "124",
+      "parent_id": "6",
+      "code": "hardware_store",
+      "names": {
+        "en": "Hardware store",
+        "vi": "Cửa hàng dụng cụ"
+      }
+    },
+    {
+      "id": "125",
+      "parent_id": "6",
+      "code": "home_goods_store",
+      "names": {
+        "en": "Home goods store",
+        "vi": "Cửa hàng đồ gia dụng"
+      }
+    },
+    {
+      "id": "126",
+      "parent_id": "6",
+      "code": "jewelry_store",
+      "names": {
+        "en": "Jewelry store",
+        "vi": "Cửa hàng trang sức"
+      }
+    },
+    {
+      "id": "127",
+      "parent_id": "6",
+      "code": "liquor_store",
+      "names": {
+        "en": "Liquor store",
+        "vi": "Cửa hàng rượu"
+      }
+    },
+    {
+      "id": "128",
+      "parent_id": "6",
+      "code": "pet_store",
+      "names": {
+        "en": "Pet store",
+        "vi": "Cửa hàng thú cưng"
+      }
+    },
+    {
+      "id": "129",
+      "parent_id": "6",
+      "code": "shoe_store",
+      "names": {
+        "en": "Shoe store",
+        "vi": "Cửa hàng giày dép"
+      }
+    },
+    {
+      "id": "130",
+      "parent_id": "6",
+      "code": "sporting_goods_store",
+      "names": {
+        "en": "Sporting goods store",
+        "vi": "Cửa hàng dụng cụ thể thao"
+      }
+    },
+    {
+      "id": "154",
+      "parent_id": "6",
+      "code": "cosmetics_store",
+      "names": {
+        "en": "Cosmetics store",
+        "vi": "Cửa hàng mỹ phẩm"
+      }
+    },
+    {
+      "id": "167",
+      "parent_id": "6",
+      "code": "shophouse",
+      "names": {
+        "en": "Shophouse",
+        "vi": "Shophouse"
+      }
+    },
+    {
+      "id": "169",
+      "parent_id": "6",
+      "code": "electronics_shopping",
+      "names": {
+        "en": "Electronics shopping center",
+        "vi": "Trung tâm điện máy"
+      }
+    },
+    {
+      "id": "174",
+      "parent_id": "6",
+      "code": "children_fashion",
+      "names": {
+        "en": "Children's fashion",
+        "vi": "Thời trang trẻ em"
+      }
+    },
+    {
+      "id": "175",
+      "parent_id": "6",
+      "code": "home_furniture_store",
+      "names": {
+        "en": "Home furniture store",
+        "vi": "Cửa hàng nội thất"
+      }
+    },
+    {
+      "id": "176",
+      "parent_id": "6",
+      "code": "grocery_store",
+      "names": {
+        "en": "Grocery store",
+        "vi": "Cửa hàng tạp hóa"
+      }
+    },
+    {
+      "id": "178",
+      "parent_id": "6",
+      "code": "functional_food_store",
+      "names": {
+        "en": "Functional Food Store",
+        "vi": "Cửa hàng Thực phẩm Chức năng"
+      }
+    },
+    {
+      "id": "182",
+      "parent_id": "6",
+      "code": "beer_store",
+      "names": {
+        "en": "Beer Store",
+        "vi": "Cửa hàng Bia"
+      }
+    },
+    {
+      "id": "204",
+      "parent_id": "6",
+      "code": "seafood_shop",
+      "names": {
+        "en": "Seafood shop",
+        "vi": "Cửa hàng thủy, hải sản"
+      }
+    },
+    {
+      "id": "205",
+      "parent_id": "6",
+      "code": "vegetable_shop",
+      "names": {
+        "en": "Vegetable shop",
+        "vi": "Cửa hàng rau"
+      }
+    },
+    {
+      "id": "206",
+      "parent_id": "6",
+      "code": "lottery_shop",
+      "names": {
+        "en": "Lottery shop",
+        "vi": "Cửa hàng xổ số"
+      }
+    },
+    {
+      "id": "207",
+      "parent_id": "6",
+      "code": "fruit_shop",
+      "names": {
+        "en": "Fruit shop",
+        "vi": "Cửa hàng trái cây"
+      }
+    },
+    {
+      "id": "8",
+      "parent_id": "0",
+      "code": "services",
+      "names": {
+        "en": "Services",
+        "vi": "Dịch vụ"
+      }
+    },
+    {
+      "id": "39",
+      "parent_id": "8",
+      "code": "beauty-salon",
+      "names": {
+        "en": "Beauty Salon",
+        "vi": "Salon làm đẹp"
+      }
+    },
+    {
+      "id": "40",
+      "parent_id": "8",
+      "code": "hair_salon",
+      "names": {
+        "en": "Hair Salon",
+        "vi": "Tiệm tóc"
+      }
+    },
+    {
+      "id": "98",
+      "parent_id": "8",
+      "code": "consultant",
+      "names": {
+        "en": "Consultant",
+        "vi": "Tư vấn"
+      }
+    },
+    {
+      "id": "99",
+      "parent_id": "8",
+      "code": "courier_service",
+      "names": {
+        "en": "Courier service",
+        "vi": "Chuyển phát nhanh"
+      }
+    },
+    {
+      "id": "100",
+      "parent_id": "8",
+      "code": "laundry",
+      "names": {
+        "en": "Laundry",
+        "vi": "Giặt ủi"
+      }
+    },
+    {
+      "id": "101",
+      "parent_id": "8",
+      "code": "lawyer",
+      "names": {
+        "en": "Lawyer",
+        "vi": "Văn phòng luật"
+      }
+    },
+    {
+      "id": "102",
+      "parent_id": "8",
+      "code": "locksmith",
+      "names": {
+        "en": "Locksmith",
+        "vi": "Thợ khóa"
+      }
+    },
+    {
+      "id": "103",
+      "parent_id": "8",
+      "code": "moving_company",
+      "names": {
+        "en": "Moving company",
+        "vi": "Dịch vụ chuyển nhà"
+      }
+    },
+    {
+      "id": "104",
+      "parent_id": "8",
+      "code": "real_estate_agency",
+      "names": {
+        "en": "Real estate agency",
+        "vi": "Công ty bất động sản"
+      }
+    },
+    {
+      "id": "105",
+      "parent_id": "8",
+      "code": "tailor",
+      "names": {
+        "en": "Tailor",
+        "vi": "Thợ may"
+      }
+    },
+    {
+      "id": "106",
+      "parent_id": "8",
+      "code": "telecom_service",
+      "names": {
+        "en": "Telecom service",
+        "vi": "Dịch vụ viễn thông"
+      }
+    },
+    {
+      "id": "107",
+      "parent_id": "8",
+      "code": "travel_agency",
+      "names": {
+        "en": "Travel agency",
+        "vi": "Đại lý du lịch"
+      }
+    },
+    {
+      "id": "177",
+      "parent_id": "8",
+      "code": "printing",
+      "names": {
+        "en": "Printing",
+        "vi": "In ấn"
+      }
+    },
+    {
+      "id": "198",
+      "parent_id": "8",
+      "code": "wedding_studio",
+      "names": {
+        "en": "Wedding Studio",
+        "vi": "Ảnh viện áo cưới"
+      }
+    },
+    {
+      "id": "41",
+      "parent_id": "0",
+      "code": "health_wellness",
+      "names": {
+        "en": "Health and Wellness",
+        "vi": "Sức khỏe"
+      }
+    },
+    {
+      "id": "34",
+      "parent_id": "41",
+      "code": "pharmacy",
+      "names": {
+        "en": "Pharmacy",
+        "vi": "Nhà thuốc"
+      }
+    },
+    {
+      "id": "38",
+      "parent_id": "41",
+      "code": "medical-health-services",
+      "names": {
+        "en": "Medical and health services",
+        "vi": "Dịch vụ y tế, sức khỏe"
+      }
+    },
+    {
+      "id": "42",
+      "parent_id": "41",
+      "code": "hospital",
+      "names": {
+        "en": "Hospital",
+        "vi": "Bệnh viện"
+      }
+    },
+    {
+      "id": "76",
+      "parent_id": "41",
+      "code": "dental clinic",
+      "names": {
+        "en": "Dental clinic",
+        "vi": "Phòng khám nha khoa"
+      }
+    },
+    {
+      "id": "77",
+      "parent_id": "41",
+      "code": "doctor",
+      "names": {
+        "en": "Doctor",
+        "vi": "Bác sĩ"
+      }
+    },
+    {
+      "id": "78",
+      "parent_id": "41",
+      "code": "spa",
+      "names": {
+        "en": "Spa",
+        "vi": "Spa"
+      }
+    },
+    {
+      "id": "108",
+      "parent_id": "41",
+      "code": "veterinary_care",
+      "names": {
+        "en": "Veterinary care",
+        "vi": "Chăm sóc thú cưng"
+      }
+    },
+    {
+      "id": "142",
+      "parent_id": "41",
+      "code": "health_station",
+      "names": {
+        "en": "Health Station",
+        "vi": "Trạm y tế"
+      }
+    },
+    {
+      "id": "143",
+      "parent_id": "41",
+      "code": "preventive_health_center",
+      "names": {
+        "en": "Preventive health center",
+        "vi": "Trung tâm y tế dự phòng"
+      }
+    },
+    {
+      "id": "144",
+      "parent_id": "41",
+      "code": "general_clinic",
+      "names": {
+        "en": "General clinic",
+        "vi": "Phòng khám đa khoa"
+      }
+    },
+    {
+      "id": "145",
+      "parent_id": "41",
+      "code": "specialty_clinic",
+      "names": {
+        "en": "Specialty clinic",
+        "vi": "Phòng khám chuyên khoa"
+      }
+    },
+    {
+      "id": "146",
+      "parent_id": "41",
+      "code": "aesthetic_clinic",
+      "names": {
+        "en": "Aesthetic clinic",
+        "vi": "Thẩm mỹ viện"
+      }
+    },
+    {
+      "id": "147",
+      "parent_id": "41",
+      "code": "traditional_medicine",
+      "names": {
+        "en": "Traditional medicine",
+        "vi": "Y học cổ truyền"
+      }
+    },
+    {
+      "id": "148",
+      "parent_id": "41",
+      "code": "nutrition_center",
+      "names": {
+        "en": "Nutrition center",
+        "vi": "Trung tâm dinh dưỡng"
+      }
+    },
+    {
+      "id": "149",
+      "parent_id": "41",
+      "code": "physical_therapy_center",
+      "names": {
+        "en": "Physical therapy center",
+        "vi": "Cơ sở vật lí trị liệu"
+      }
+    },
+    {
+      "id": "150",
+      "parent_id": "41",
+      "code": "medical_laboratory",
+      "names": {
+        "en": "Medical laboratory",
+        "vi": "Cơ sở xét nghiệm"
+      }
+    },
+    {
+      "id": "193",
+      "parent_id": "41",
+      "code": "nursing_home",
+      "names": {
+        "en": "Nursing Home",
+        "vi": "Cơ sở dưỡng lão"
+      }
+    },
+    {
+      "id": "201",
+      "parent_id": "41",
+      "code": "health_center",
+      "names": {
+        "en": "Health Center",
+        "vi": "Trung tâm y tế"
+      }
+    },
+    {
+      "id": "2",
+      "parent_id": "0",
+      "code": "eductional_facility",
+      "names": {
+        "en": "Educational Facility",
+        "vi": "Cơ sở giáo dục"
+      }
+    },
+    {
+      "id": "44",
+      "parent_id": "2",
+      "code": "primary_school",
+      "names": {
+        "en": "Primary school",
+        "vi": "Trường cấp 1"
+      }
+    },
+    {
+      "id": "45",
+      "parent_id": "2",
+      "code": "secondary_school",
+      "names": {
+        "en": "Secondary School",
+        "vi": "Trường cấp 2"
+      }
+    },
+    {
+      "id": "46",
+      "parent_id": "2",
+      "code": "high_school",
+      "names": {
+        "en": "High School",
+        "vi": "Trường cấp 3"
+      }
+    },
+    {
+      "id": "47",
+      "parent_id": "2",
+      "code": "university",
+      "names": {
+        "en": "University",
+        "vi": "Trường đại học"
+      }
+    },
+    {
+      "id": "48",
+      "parent_id": "2",
+      "code": "college",
+      "names": {
+        "en": "College",
+        "vi": "Trường cao đẳng"
+      }
+    },
+    {
+      "id": "49",
+      "parent_id": "2",
+      "code": "kindergarten",
+      "names": {
+        "en": "Kindergarten",
+        "vi": "Trường mầm non"
+      }
+    },
+    {
+      "id": "151",
+      "parent_id": "2",
+      "code": "vocational_school",
+      "names": {
+        "en": "Vocational school",
+        "vi": "Trường trung cấp"
+      }
+    },
+    {
+      "id": "152",
+      "parent_id": "2",
+      "code": "language_center",
+      "names": {
+        "en": "Language center",
+        "vi": "Trung tâm ngoại ngữ"
+      }
+    },
+    {
+      "id": "153",
+      "parent_id": "2",
+      "code": "driving_school",
+      "names": {
+        "en": "Driving school",
+        "vi": "Trường dạy lái xe"
+      }
+    },
+    {
+      "id": "195",
+      "parent_id": "2",
+      "code": "college_preparatory",
+      "names": {
+        "en": "College Preparatory Course",
+        "vi": "Trường dự bị đại học"
+      }
+    },
+    {
+      "id": "203",
+      "parent_id": "2",
+      "code": "training_center",
+      "names": {
+        "en": "Training center",
+        "vi": "Trung tâm huấn luyện"
+      }
+    },
+    {
+      "id": "165",
+      "parent_id": "2",
+      "code": "inter_level_school",
+      "names": {
+        "en": "Inter-level school",
+        "vi": "Trường liên cấp"
+      }
+    },
+    {
+      "id": "110",
+      "parent_id": "0",
+      "code": "accommodation",
+      "names": {
+        "en": "Accommodation",
+        "vi": "Nơi lưu trú"
+      }
+    },
+    {
+      "id": "7",
+      "parent_id": "110",
+      "code": "hotel_lodging",
+      "names": {
+        "en": "Hotel",
+        "vi": "Khách sạn"
+      }
+    },
+    {
+      "id": "135",
+      "parent_id": "110",
+      "code": "resort",
+      "names": {
+        "en": "Resort",
+        "vi": "Khu nghỉ dưỡng"
+      }
+    },
+    {
+      "id": "136",
+      "parent_id": "110",
+      "code": "hostel",
+      "names": {
+        "en": "Hostel",
+        "vi": "Nhà trọ"
+      }
+    },
+    {
+      "id": "137",
+      "parent_id": "110",
+      "code": "motel",
+      "names": {
+        "en": "Motel",
+        "vi": "Nhà nghỉ"
+      }
+    },
+    {
+      "id": "138",
+      "parent_id": "110",
+      "code": "resort_hotel",
+      "names": {
+        "en": "Resort hotel",
+        "vi": "Khách sạn nghỉ dưỡng"
+      }
+    },
+    {
+      "id": "43",
+      "parent_id": "110",
+      "code": "apartment",
+      "names": {
+        "en": "Apartment",
+        "vi": "Chung cư"
+      }
+    },
+    {
+      "id": "164",
+      "parent_id": "110",
+      "code": "residence",
+      "names": {
+        "en": "Residence",
+        "vi": "Nhà ở"
+      }
+    },
+    {
+      "id": "166",
+      "parent_id": "110",
+      "code": "villa_area",
+      "names": {
+        "en": "Villa area",
+        "vi": "Khu biệt thự"
+      }
+    },
+    {
+      "id": "3",
+      "parent_id": "110",
+      "code": "residential_area",
+      "names": {
+        "en": "Residential Area",
+        "vi": "Khu dân cư"
+      }
+    },
+    {
+      "id": "80",
+      "parent_id": "0",
+      "code": "car",
+      "names": {
+        "en": "Car",
+        "vi": "Ô tô xe máy"
+      }
+    },
+    {
+      "id": "81",
+      "parent_id": "80",
+      "code": "car_dealer",
+      "names": {
+        "en": "Car dealer",
+        "vi": "Đại lý xe"
+      }
+    },
+    {
+      "id": "82",
+      "parent_id": "80",
+      "code": "car_rental",
+      "names": {
+        "en": "Car Rental",
+        "vi": "Cho thuê xe"
+      }
+    },
+    {
+      "id": "83",
+      "parent_id": "80",
+      "code": "car_repair",
+      "names": {
+        "en": "Car repair",
+        "vi": "Sửa chữa xe"
+      }
+    },
+    {
+      "id": "84",
+      "parent_id": "80",
+      "code": "car_wash",
+      "names": {
+        "en": "Car Wash",
+        "vi": "Rửa xe"
+      }
+    },
+    {
+      "id": "85",
+      "parent_id": "80",
+      "code": "gas_station",
+      "names": {
+        "en": "Gas station",
+        "vi": "Cây xăng"
+      }
+    },
+    {
+      "id": "86",
+      "parent_id": "80",
+      "code": "parking",
+      "names": {
+        "en": "Parking",
+        "vi": "Bãi đậu xe"
+      }
+    },
+    {
+      "id": "87",
+      "parent_id": "80",
+      "code": "rest_stop",
+      "names": {
+        "en": "Rest stop",
+        "vi": "Trạm dừng nghỉ"
+      }
+    },
+    {
+      "id": "19",
+      "parent_id": "221",
+      "code": "charging-station",
+      "names": {
+        "en": "Vinfast Charging Station",
+        "vi": "Trạm sạc Vinfast"
+      }
+    },
+    {
+      "id": "171",
+      "parent_id": "79",
+      "code": "toll_plaza",
+      "names": {
+        "en": "Toll plaza",
+        "vi": "Trạm thu phí"
+      }
+    },
+    {
+      "id": "79",
+      "parent_id": "0",
+      "code": "transportation",
+      "names": {
+        "en": "Transportation",
+        "vi": "Vận tải"
+      }
+    },
+    {
+      "id": "1",
+      "parent_id": "79",
+      "code": "airport",
+      "names": {
+        "en": "Airport",
+        "vi": "Sân bay"
+      }
+    },
+    {
+      "id": "18",
+      "parent_id": "79",
+      "code": "bus_station",
+      "names": {
+        "en": "Bus Station",
+        "vi": "Trạm xe buýt"
+      }
+    },
+    {
+      "id": "69",
+      "parent_id": "79",
+      "code": "post_office",
+      "names": {
+        "en": "Post Office",
+        "vi": "Bưu điện"
+      }
+    },
+    {
+      "id": "111",
+      "parent_id": "79",
+      "code": "train_station",
+      "names": {
+        "en": "Train station",
+        "vi": "Ga tàu hỏa"
+      }
+    },
+    {
+      "id": "112",
+      "parent_id": "79",
+      "code": "mrt_station",
+      "names": {
+        "en": "MRT Station",
+        "vi": "Ga tàu điện"
+      }
+    },
+    {
+      "id": "113",
+      "parent_id": "79",
+      "code": "ferry_terminal",
+      "names": {
+        "en": "Ferry terminal",
+        "vi": "Bến phà"
+      }
+    },
+    {
+      "id": "114",
+      "parent_id": "79",
+      "code": "bus_stop",
+      "names": {
+        "en": "Bus stop",
+        "vi": "Điểm dừng xe buýt"
+      }
+    },
+    {
+      "id": "155",
+      "parent_id": "79",
+      "code": "coach_station",
+      "names": {
+        "en": "Coach station",
+        "vi": "Bến xe"
+      }
+    },
+    {
+      "id": "156",
+      "parent_id": "79",
+      "code": "harbor",
+      "names": {
+        "en": "Harbor",
+        "vi": "Bến cảng"
+      }
+    },
+    {
+      "id": "17",
+      "parent_id": "79",
+      "code": "gsm-car-parking",
+      "names": {
+        "en": "GSM Car Parking",
+        "vi": "Điểm đậu đỗ GSM"
+      }
+    },
+    {
+      "id": "9",
+      "parent_id": "0",
+      "code": "outdoor_recreation",
+      "names": {
+        "en": "Outdoor & recreation",
+        "vi": "Ngoài trời & giải trí"
+      }
+    },
+    {
+      "id": "74",
+      "parent_id": "9",
+      "code": "park",
+      "names": {
+        "en": "Park",
+        "vi": "Công viên"
+      }
+    },
+    {
+      "id": "88",
+      "parent_id": "9",
+      "code": "amusement_center",
+      "names": {
+        "en": "Amusement center",
+        "vi": "Trung tâm giải trí"
+      }
+    },
+    {
+      "id": "89",
+      "parent_id": "9",
+      "code": "amusement_park",
+      "names": {
+        "en": "Amusement park",
+        "vi": "Công viên giải trí"
+      }
+    },
+    {
+      "id": "90",
+      "parent_id": "9",
+      "code": "event_venue",
+      "names": {
+        "en": "Event Venue",
+        "vi": "Địa điểm tổ chức sự kiện"
+      }
+    },
+    {
+      "id": "91",
+      "parent_id": "9",
+      "code": "historical_landmark",
+      "names": {
+        "en": "Historical landmark",
+        "vi": "Di tích lịch sử"
+      }
+    },
+    {
+      "id": "92",
+      "parent_id": "9",
+      "code": "movie_theater",
+      "names": {
+        "en": "Movie theater",
+        "vi": "Rạp chiếu phim"
+      }
+    },
+    {
+      "id": "93",
+      "parent_id": "9",
+      "code": "national_park",
+      "names": {
+        "en": "National park",
+        "vi": "Công viên quốc gia"
+      }
+    },
+    {
+      "id": "94",
+      "parent_id": "9",
+      "code": "night_club",
+      "names": {
+        "en": "Night club",
+        "vi": "Hộp đêm"
+      }
+    },
+    {
+      "id": "95",
+      "parent_id": "9",
+      "code": "tourist_attraction",
+      "names": {
+        "en": "Tourist attraction",
+        "vi": "Khu du lịch"
+      }
+    },
+    {
+      "id": "96",
+      "parent_id": "9",
+      "code": "wedding_venue",
+      "names": {
+        "en": "Wedding venue",
+        "vi": "Trung tâm tiệc cưới"
+      }
+    },
+    {
+      "id": "97",
+      "parent_id": "9",
+      "code": "zoo",
+      "names": {
+        "en": "Zoo",
+        "vi": "Sở thú"
+      }
+    },
+    {
+      "id": "117",
+      "parent_id": "115",
+      "code": "golf_course",
+      "names": {
+        "en": "Golf course",
+        "vi": "Sân golf"
+      }
+    },
+    {
+      "id": "118",
+      "parent_id": "115",
+      "code": "gym",
+      "names": {
+        "en": "Gym",
+        "vi": "Phòng tập gym"
+      }
+    },
+    {
+      "id": "119",
+      "parent_id": "115",
+      "code": "playground",
+      "names": {
+        "en": "Playground",
+        "vi": "Sân chơi"
+      }
+    },
+    {
+      "id": "120",
+      "parent_id": "115",
+      "code": "sports_complex",
+      "names": {
+        "en": "Sports complex",
+        "vi": "Khu phức hợp thể thao"
+      }
+    },
+    {
+      "id": "121",
+      "parent_id": "115",
+      "code": "stadium",
+      "names": {
+        "en": "Stadium",
+        "vi": "Sân vận động"
+      }
+    },
+    {
+      "id": "122",
+      "parent_id": "115",
+      "code": "swimming_pool",
+      "names": {
+        "en": "Swimming pool",
+        "vi": "Hồ bơi"
+      }
+    },
+    {
+      "id": "115",
+      "parent_id": "0",
+      "code": "sport",
+      "names": {
+        "en": "Sport",
+        "vi": "Thể thao"
+      }
+    },
+    {
+      "id": "116",
+      "parent_id": "115",
+      "code": "fitness_center",
+      "names": {
+        "en": "Fitness center",
+        "vi": "Trung tâm thể dục thể thao"
+      }
+    },
+    {
+      "id": "131",
+      "parent_id": "0",
+      "code": "culture",
+      "names": {
+        "en": "Culture",
+        "vi": "Văn hóa"
+      }
+    },
+    {
+      "id": "132",
+      "parent_id": "131",
+      "code": "art_gallery",
+      "names": {
+        "en": "Art gallery",
+        "vi": "Phòng trưng bày nghệ thuật"
+      }
+    },
+    {
+      "id": "133",
+      "parent_id": "131",
+      "code": "museum",
+      "names": {
+        "en": "Museum",
+        "vi": "Bảo tàng"
+      }
+    },
+    {
+      "id": "134",
+      "parent_id": "131",
+      "code": "performing_arts_theater",
+      "names": {
+        "en": "Performing arts theater",
+        "vi": "Nhà hát"
+      }
+    },
+    {
+      "id": "139",
+      "parent_id": "0",
+      "code": "place_of_worship",
+      "names": {
+        "en": "Place of worship",
+        "vi": "Địa điểm thờ cúng"
+      }
+    },
+    {
+      "id": "140",
+      "parent_id": "139",
+      "code": "church",
+      "names": {
+        "en": "Church",
+        "vi": "Nhà thờ"
+      }
+    },
+    {
+      "id": "141",
+      "parent_id": "139",
+      "code": "pagoda",
+      "names": {
+        "en": "Pagoda",
+        "vi": "Chùa"
+      }
+    },
+    {
+      "id": "157",
+      "parent_id": "139",
+      "code": "communal_house",
+      "names": {
+        "en": "Communal house",
+        "vi": "Đình"
+      }
+    },
+    {
+      "id": "158",
+      "parent_id": "139",
+      "code": "temple",
+      "names": {
+        "en": "Temple",
+        "vi": "Đền"
+      }
+    },
+    {
+      "id": "159",
+      "parent_id": "139",
+      "code": "shrine",
+      "names": {
+        "en": "Shrine",
+        "vi": "Miếu"
+      }
+    },
+    {
+      "id": "160",
+      "parent_id": "139",
+      "code": "holy_see",
+      "names": {
+        "en": "Holy see",
+        "vi": "Thánh thất"
+      }
+    },
+    {
+      "id": "161",
+      "parent_id": "139",
+      "code": "mosque",
+      "names": {
+        "en": "Mosque",
+        "vi": "Nhà thờ Hồi giáo"
+      }
+    },
+    {
+      "id": "162",
+      "parent_id": "139",
+      "code": "ancestral_house",
+      "names": {
+        "en": "Ancestral house",
+        "vi": "Nhà thờ họ"
+      }
+    },
+    {
+      "id": "67",
+      "parent_id": "0",
+      "code": "government",
+      "names": {
+        "en": "Government",
+        "vi": "Chính quyền"
+      }
+    },
+    {
+      "id": "68",
+      "parent_id": "67",
+      "code": "police",
+      "names": {
+        "en": "Police",
+        "vi": "Trụ sở công an"
+      }
+    },
+    {
+      "id": "70",
+      "parent_id": "67",
+      "code": "local_government_office",
+      "names": {
+        "en": "Local Government Office",
+        "vi": "Văn phòng chính quyền địa phương"
+      }
+    },
+    {
+      "id": "71",
+      "parent_id": "67",
+      "code": "fire_station",
+      "names": {
+        "en": "Fire Station",
+        "vi": "Trạm cứu hỏa"
+      }
+    },
+    {
+      "id": "72",
+      "parent_id": "67",
+      "code": "embassy",
+      "names": {
+        "en": "Embassy",
+        "vi": "Đại sứ quán"
+      }
+    },
+    {
+      "id": "73",
+      "parent_id": "67",
+      "code": "courthouse",
+      "names": {
+        "en": "Courthouse",
+        "vi": "Tòa án"
+      }
+    },
+    {
+      "id": "173",
+      "parent_id": "67",
+      "code": "state_agencies",
+      "names": {
+        "en": "State agencies",
+        "vi": "Cơ quan nhà nước"
+      }
+    },
+    {
+      "id": "163",
+      "parent_id": "9",
+      "code": "community_center",
+      "names": {
+        "en": "Community center",
+        "vi": "Nhà văn hoá - Nhà sinh hoạt cộng đồng"
+      }
+    },
+    {
+      "id": "184",
+      "parent_id": "139",
+      "code": "cemetery",
+      "names": {
+        "en": "Cemetery",
+        "vi": "Nghĩa trang"
+      }
+    },
+    {
+      "id": "185",
+      "parent_id": "0",
+      "code": "company",
+      "names": {
+        "en": "Company",
+        "vi": "Công ty"
+      }
+    },
+    {
+      "id": "192",
+      "parent_id": "185",
+      "code": "company_office",
+      "names": {
+        "en": "Company Office",
+        "vi": "Văn phòng công ty"
+      }
+    },
+    {
+      "id": "200",
+      "parent_id": "185",
+      "code": "production_facility",
+      "names": {
+        "en": "Production facility",
+        "vi": "Cơ sở sản xuất"
+      }
+    },
+    {
+      "id": "170",
+      "parent_id": "41",
+      "code": "massage",
+      "names": {
+        "en": "Massage",
+        "vi": "Mát xa"
+      }
+    },
+    {
+      "id": "172",
+      "parent_id": "110",
+      "code": "residential_gate",
+      "names": {
+        "en": "Residential Gate",
+        "vi": "Cổng vào khu dân cư"
+      }
+    },
+    {
+      "id": "187",
+      "parent_id": "9",
+      "code": "club",
+      "names": {
+        "en": "Club",
+        "vi": "Câu lạc bộ"
+      }
+    },
+    {
+      "id": "188",
+      "parent_id": "9",
+      "code": "karaoke",
+      "names": {
+        "en": "Karaoke",
+        "vi": "Karaoke"
+      }
+    },
+    {
+      "id": "190",
+      "parent_id": "9",
+      "code": "square",
+      "names": {
+        "en": "Square",
+        "vi": "Quảng trường"
+      }
+    },
+    {
+      "id": "191",
+      "parent_id": "0",
+      "code": "charitable_facility",
+      "names": {
+        "en": "Charitable Facility",
+        "vi": "Cơ sở từ thiện"
+      }
+    },
+    {
+      "id": "194",
+      "parent_id": "131",
+      "code": "monument",
+      "names": {
+        "en": "Monument",
+        "vi": "Công trình kỷ niệm"
+      }
+    },
+    {
+      "id": "196",
+      "parent_id": "139",
+      "code": "funeral_hall",
+      "names": {
+        "en": "Funeral Hall",
+        "vi": "Nhà tang lễ"
+      }
+    },
+    {
+      "id": "197",
+      "parent_id": "139",
+      "code": "cremation_facility",
+      "names": {
+        "en": "Cremation Facility",
+        "vi": "Cơ sở hỏa táng"
+      }
+    },
+    {
+      "id": "199",
+      "parent_id": "9",
+      "code": "water_park",
+      "names": {
+        "en": "Water Park",
+        "vi": "Công viên nước"
+      }
+    },
+    {
+      "id": "202",
+      "parent_id": "115",
+      "code": "arena",
+      "names": {
+        "en": "Arena",
+        "vi": "Nhà thi đấu"
+      }
+    },
+    {
+      "id": "5",
+      "parent_id": "8",
+      "code": "office_building",
+      "names": {
+        "en": "Office Building",
+        "vi": "Tòa nhà văn phòng"
+      }
+    },
+    {
+      "id": "242",
+      "parent_id": "80",
+      "code": "ev_charging",
+      "names": {
+        "en": "Electric vehicle charging station",
+        "vi": "Trạm sạc xe điện"
+      }
+    },
+    {
+      "id": "243",
+      "parent_id": "8",
+      "code": "bank",
+      "names": {
+        "en": "Bank branch",
+        "vi": "Ngân hàng"
+      }
+    },
+    {
+      "id": "244",
+      "parent_id": "2",
+      "code": "school",
+      "names": {
+        "en": "School",
+        "vi": "Trường học"
+      }
+    },
+    {
+      "id": "245",
+      "parent_id": "80",
+      "code": "motorcycle_repair",
+      "names": {
+        "en": "Motorcycle repair",
+        "vi": "Sửa xe máy"
+      }
+    },
+    {
+      "id": "246",
+      "parent_id": "9",
+      "code": "drinking_water_point",
+      "names": {
+        "en": "Drinking water point",
+        "vi": "Điểm nước uống công cộng"
+      }
+    },
+    {
+      "id": "247",
+      "parent_id": "9",
+      "code": "public_bench",
+      "names": {
+        "en": "Public bench",
+        "vi": "Ghế ngồi công cộng"
+      }
+    },
+    {
+      "id": "248",
+      "parent_id": "6",
+      "code": "vending_machine",
+      "names": {
+        "en": "Vending machine",
+        "vi": "Máy bán hàng tự động"
+      }
+    },
+    {
+      "id": "249",
+      "parent_id": "79",
+      "code": "taxi_stand",
+      "names": {
+        "en": "Taxi stand",
+        "vi": "Điểm đón taxi"
+      }
+    },
+    {
+      "id": "250",
+      "parent_id": "79",
+      "code": "bicycle_parking_facility",
+      "names": {
+        "en": "Bicycle parking facility",
+        "vi": "Bãi đỗ xe đạp"
+      }
+    },
+    {
+      "id": "251",
+      "parent_id": "115",
+      "code": "sports_pitch",
+      "names": {
+        "en": "Sports pitch",
+        "vi": "Sân thể thao"
+      }
+    },
+    {
+      "id": "252",
+      "parent_id": "115",
+      "code": "outdoor_fitness_station",
+      "names": {
+        "en": "Outdoor fitness station",
+        "vi": "Điểm tập thể dục ngoài trời"
+      }
+    },
+    {
+      "id": "253",
+      "parent_id": "9",
+      "code": "viewpoint",
+      "names": {
+        "en": "Viewpoint",
+        "vi": "Điểm ngắm cảnh"
+      }
+    },
+    {
+      "id": "254",
+      "parent_id": "131",
+      "code": "visitor_information",
+      "names": {
+        "en": "Visitor information point",
+        "vi": "Điểm thông tin du khách"
+      }
+    },
+    {
+      "id": "255",
+      "parent_id": "131",
+      "code": "public_artwork",
+      "names": {
+        "en": "Public artwork",
+        "vi": "Tác phẩm nghệ thuật công cộng"
+      }
+    },
+    {
+      "id": "256",
+      "parent_id": "9",
+      "code": "picnic_site",
+      "names": {
+        "en": "Picnic site",
+        "vi": "Khu dã ngoại"
+      }
+    },
+    {
+      "id": "257",
+      "parent_id": "79",
+      "code": "metro_entrance",
+      "names": {
+        "en": "Metro entrance",
+        "vi": "Lối vào ga tàu điện"
+      }
+    },
+    {
+      "id": "258",
+      "parent_id": "79",
+      "code": "dock",
+      "names": {
+        "en": "Dock",
+        "vi": "Bến cập tàu"
+      }
+    },
+    {
+      "id": "259",
+      "parent_id": "9",
+      "code": "beach",
+      "names": {
+        "en": "Beach",
+        "vi": "Bãi biển"
+      }
+    },
+    {
+      "id": "260",
+      "parent_id": "8",
+      "code": "accountant",
+      "names": {
+        "en": "Accounting office",
+        "vi": "Văn phòng kế toán"
+      }
+    },
+    {
+      "id": "261",
+      "parent_id": "41",
+      "code": "unspecified_clinic",
+      "names": {
+        "en": "Clinic (unspecified specialty)",
+        "vi": "Phòng khám chưa rõ chuyên khoa"
+      }
+    },
+    {
+      "id": "262",
+      "parent_id": "8",
+      "code": "shoe_repair",
+      "names": {
+        "en": "Shoe repair",
+        "vi": "Tiệm sửa giày"
+      }
+    },
+    {
+      "id": "263",
+      "parent_id": "110",
+      "code": "homestay",
+      "names": {
+        "en": "Homestay",
+        "vi": "Lưu trú homestay"
+      }
+    },
+    {
+      "id": "264",
+      "parent_id": "9",
+      "code": "dog_park",
+      "names": {
+        "en": "Dog park",
+        "vi": "Công viên cho chó"
+      }
+    },
+    {
+      "id": "265",
+      "parent_id": "80",
+      "code": "motorcycle_parking_facility",
+      "names": {
+        "en": "Motorcycle parking",
+        "vi": "Bãi đỗ xe máy"
+      }
+    },
+    {
+      "id": "266",
+      "parent_id": "9",
+      "code": "public_fountain",
+      "names": {
+        "en": "Fountain",
+        "vi": "Đài phun nước"
+      }
+    },
+    {
+      "id": "267",
+      "parent_id": "9",
+      "code": "public_play_area",
+      "names": {
+        "en": "Indoor play centre",
+        "vi": "Khu vui chơi trong nhà"
+      }
+    },
+    {
+      "id": "268",
+      "parent_id": "79",
+      "code": "ferry_boarding_point",
+      "names": {
+        "en": "Ferry boarding point",
+        "vi": "Điểm lên phà"
+      }
+    },
+    {
+      "id": "269",
+      "parent_id": "9",
+      "code": "public_shelter",
+      "names": {
+        "en": "Public shelter",
+        "vi": "Nhà chờ công cộng"
+      }
+    },
+    {
+      "id": "270",
+      "parent_id": "79",
+      "code": "transit_stop_position",
+      "names": {
+        "en": "Transit stop position",
+        "vi": "Vị trí dừng phương tiện công cộng"
+      }
+    },
+    {
+      "id": "271",
+      "parent_id": "8",
+      "code": "commercial_building",
+      "names": {
+        "en": "Commercial building",
+        "vi": "Tòa nhà thương mại"
+      }
+    },
+    {
+      "id": "272",
+      "parent_id": "6",
+      "code": "retail_building",
+      "names": {
+        "en": "Retail building",
+        "vi": "Tòa nhà bán lẻ"
+      }
+    },
+    {
+      "id": "273",
+      "parent_id": "4",
+      "code": "food_court",
+      "names": {
+        "en": "Food court",
+        "vi": "Khu ẩm thực"
+      }
+    },
+    {
+      "id": "274",
+      "parent_id": "110",
+      "code": "short_stay_apartment",
+      "names": {
+        "en": "Short-stay apartment",
+        "vi": "Căn hộ lưu trú ngắn hạn"
+      }
+    },
+    {
+      "id": "275",
+      "parent_id": "139",
+      "code": "worship_unspecified",
+      "names": {
+        "en": "Place of worship (unspecified)",
+        "vi": "Nơi thờ tự chưa rõ loại"
+      }
+    },
+    {
+      "id": "276",
+      "parent_id": "9",
+      "code": "public_garden",
+      "names": {
+        "en": "Garden",
+        "vi": "Khu vườn"
+      }
+    },
+    {
+      "id": "277",
+      "parent_id": "6",
+      "code": "variety_store",
+      "names": {
+        "en": "Variety store",
+        "vi": "Cửa hàng hàng tổng hợp"
+      }
+    },
+    {
+      "id": "278",
+      "parent_id": "6",
+      "code": "beverage_retail",
+      "names": {
+        "en": "Beverage retailer",
+        "vi": "Cửa hàng đồ uống"
+      }
+    },
+    {
+      "id": "279",
+      "parent_id": "6",
+      "code": "stationery_store",
+      "names": {
+        "en": "Stationery store",
+        "vi": "Cửa hàng văn phòng phẩm"
+      }
+    },
+    {
+      "id": "280",
+      "parent_id": "79",
+      "code": "transit_platform",
+      "names": {
+        "en": "Transit platform",
+        "vi": "Sân ga hoặc điểm chờ phương tiện"
+      }
+    },
+    {
+      "id": "281",
+      "parent_id": "79",
+      "code": "helipad",
+      "names": {
+        "en": "Helipad",
+        "vi": "Bãi đáp trực thăng"
+      }
+    },
+    {
+      "id": "282",
+      "parent_id": "9",
+      "code": "recreation_ground",
+      "names": {
+        "en": "Recreation ground",
+        "vi": "Khu vui chơi ngoài trời"
+      }
+    },
+    {
+      "id": "283",
+      "parent_id": "79",
+      "code": "transit_station_unspecified",
+      "names": {
+        "en": "Transit station (mode unspecified)",
+        "vi": "Ga giao thông công cộng chưa rõ loại"
+      }
+    },
+    {
+      "id": "284",
+      "parent_id": "79",
+      "code": "osm_aeroway_terminal_49f29832",
+      "names": {
+        "en": "Airport terminal",
+        "vi": "Nhà ga sân bay"
+      }
+    },
+    {
+      "id": "285",
+      "parent_id": "79",
+      "code": "osm_amenity_bicycle_rental_5c62f984",
+      "names": {
+        "en": "Bicycle rental point",
+        "vi": "Điểm thuê xe đạp"
+      }
+    },
+    {
+      "id": "286",
+      "parent_id": "8",
+      "code": "osm_amenity_bureau_de_change_9d5ccfe4",
+      "names": {
+        "en": "OSM amenity=bureau_de_change location",
+        "vi": "Địa điểm OSM amenity=bureau_de_change"
+      }
+    },
+    {
+      "id": "287",
+      "parent_id": "8",
+      "code": "osm_amenity_canteen_146ce2a8",
+      "names": {
+        "en": "OSM amenity=canteen location",
+        "vi": "Địa điểm OSM amenity=canteen"
+      }
+    },
+    {
+      "id": "288",
+      "parent_id": "9",
+      "code": "osm_amenity_casino_7a97491c",
+      "names": {
+        "en": "Casino",
+        "vi": "Sòng bạc"
+      }
+    },
+    {
+      "id": "289",
+      "parent_id": "2",
+      "code": "osm_amenity_childcare_2e493d07",
+      "names": {
+        "en": "Childcare centre",
+        "vi": "Trung tâm chăm sóc trẻ"
+      }
+    },
+    {
+      "id": "290",
+      "parent_id": "8",
+      "code": "osm_amenity_clock_09aecee0",
+      "names": {
+        "en": "OSM amenity=clock location",
+        "vi": "Địa điểm OSM amenity=clock"
+      }
+    },
+    {
+      "id": "291",
+      "parent_id": "8",
+      "code": "osm_amenity_dressing_room_b1288fb8",
+      "names": {
+        "en": "OSM amenity=dressing_room location",
+        "vi": "Địa điểm OSM amenity=dressing_room"
+      }
+    },
+    {
+      "id": "292",
+      "parent_id": "8",
+      "code": "osm_amenity_driver_training_dc62d23d",
+      "names": {
+        "en": "OSM amenity=driver_training location",
+        "vi": "Địa điểm OSM amenity=driver_training"
+      }
+    },
+    {
+      "id": "293",
+      "parent_id": "8",
+      "code": "osm_amenity_exhibition_centre_d3c1fb0d",
+      "names": {
+        "en": "OSM amenity=exhibition_centre location",
+        "vi": "Địa điểm OSM amenity=exhibition_centre"
+      }
+    },
+    {
+      "id": "294",
+      "parent_id": "8",
+      "code": "osm_amenity_hunting_stand_afe8c5c3",
+      "names": {
+        "en": "OSM amenity=hunting_stand location",
+        "vi": "Địa điểm OSM amenity=hunting_stand"
+      }
+    },
+    {
+      "id": "295",
+      "parent_id": "8",
+      "code": "osm_amenity_internet_cafe_e056f472",
+      "names": {
+        "en": "OSM amenity=internet_cafe location",
+        "vi": "Địa điểm OSM amenity=internet_cafe"
+      }
+    },
+    {
+      "id": "296",
+      "parent_id": "8",
+      "code": "osm_amenity_money_transfer_ac7d1bc3",
+      "names": {
+        "en": "OSM amenity=money_transfer location",
+        "vi": "Địa điểm OSM amenity=money_transfer"
+      }
+    },
+    {
+      "id": "297",
+      "parent_id": "8",
+      "code": "osm_amenity_motorcycle_rental_b00dccd7",
+      "names": {
+        "en": "OSM amenity=motorcycle_rental location",
+        "vi": "Địa điểm OSM amenity=motorcycle_rental"
+      }
+    },
+    {
+      "id": "298",
+      "parent_id": "8",
+      "code": "osm_amenity_music_school_34efdc71",
+      "names": {
+        "en": "OSM amenity=music_school location",
+        "vi": "Địa điểm OSM amenity=music_school"
+      }
+    },
+    {
+      "id": "299",
+      "parent_id": "8",
+      "code": "osm_amenity_nursing_home_4a0543cd",
+      "names": {
+        "en": "OSM amenity=nursing_home location",
+        "vi": "Địa điểm OSM amenity=nursing_home"
+      }
+    },
+    {
+      "id": "300",
+      "parent_id": "80",
+      "code": "osm_amenity_parking_entrance_688f0eb1",
+      "names": {
+        "en": "Parking entrance",
+        "vi": "Lối vào bãi đậu xe"
+      }
+    },
+    {
+      "id": "301",
+      "parent_id": "80",
+      "code": "osm_amenity_parking_space_7f1e5a06",
+      "names": {
+        "en": "Parking space",
+        "vi": "Chỗ đậu xe đơn lẻ"
+      }
+    },
+    {
+      "id": "302",
+      "parent_id": "79",
+      "code": "osm_amenity_post_box_ce884387",
+      "names": {
+        "en": "Post box",
+        "vi": "Hòm thư công cộng"
+      }
+    },
+    {
+      "id": "303",
+      "parent_id": "8",
+      "code": "osm_amenity_prep_school_50b45e64",
+      "names": {
+        "en": "OSM amenity=prep_school location",
+        "vi": "Địa điểm OSM amenity=prep_school"
+      }
+    },
+    {
+      "id": "304",
+      "parent_id": "8",
+      "code": "osm_amenity_prison_d59de0aa",
+      "names": {
+        "en": "OSM amenity=prison location",
+        "vi": "Địa điểm OSM amenity=prison"
+      }
+    },
+    {
+      "id": "305",
+      "parent_id": "8",
+      "code": "osm_amenity_public_building_d020eb4c",
+      "names": {
+        "en": "OSM amenity=public_building location",
+        "vi": "Địa điểm OSM amenity=public_building"
+      }
+    },
+    {
+      "id": "306",
+      "parent_id": "8",
+      "code": "osm_amenity_recycling_3a4b4998",
+      "names": {
+        "en": "OSM amenity=recycling location",
+        "vi": "Địa điểm OSM amenity=recycling"
+      }
+    },
+    {
+      "id": "307",
+      "parent_id": "2",
+      "code": "osm_amenity_research_institute_6a886667",
+      "names": {
+        "en": "Research institute",
+        "vi": "Viện nghiên cứu"
+      }
+    },
+    {
+      "id": "308",
+      "parent_id": "8",
+      "code": "osm_amenity_security_booth_9fbac746",
+      "names": {
+        "en": "OSM amenity=security_booth location",
+        "vi": "Địa điểm OSM amenity=security_booth"
+      }
+    },
+    {
+      "id": "309",
+      "parent_id": "8",
+      "code": "osm_amenity_shower_fd41cb8f",
+      "names": {
+        "en": "OSM amenity=shower location",
+        "vi": "Địa điểm OSM amenity=shower"
+      }
+    },
+    {
+      "id": "310",
+      "parent_id": "8",
+      "code": "osm_amenity_smoking_area_44c8e03b",
+      "names": {
+        "en": "OSM amenity=smoking_area location",
+        "vi": "Địa điểm OSM amenity=smoking_area"
+      }
+    },
+    {
+      "id": "311",
+      "parent_id": "8",
+      "code": "osm_amenity_studio_4d0d13ce",
+      "names": {
+        "en": "OSM amenity=studio location",
+        "vi": "Địa điểm OSM amenity=studio"
+      }
+    },
+    {
+      "id": "312",
+      "parent_id": "8",
+      "code": "osm_amenity_vehicle_inspection_a2de2ead",
+      "names": {
+        "en": "OSM amenity=vehicle_inspection location",
+        "vi": "Địa điểm OSM amenity=vehicle_inspection"
+      }
+    },
+    {
+      "id": "313",
+      "parent_id": "9",
+      "code": "osm_amenity_waste_basket_dcdd9db5",
+      "names": {
+        "en": "Public waste bin",
+        "vi": "Thùng rác công cộng"
+      }
+    },
+    {
+      "id": "314",
+      "parent_id": "8",
+      "code": "osm_amenity_waste_disposal_3e3b8e2d",
+      "names": {
+        "en": "OSM amenity=waste_disposal location",
+        "vi": "Địa điểm OSM amenity=waste_disposal"
+      }
+    },
+    {
+      "id": "315",
+      "parent_id": "9",
+      "code": "osm_club_sport_be848314",
+      "names": {
+        "en": "OSM club=sport location",
+        "vi": "Địa điểm OSM club=sport"
+      }
+    },
+    {
+      "id": "316",
+      "parent_id": "8",
+      "code": "osm_craft_electrician_380c74a4",
+      "names": {
+        "en": "OSM craft=electrician location",
+        "vi": "Địa điểm OSM craft=electrician"
+      }
+    },
+    {
+      "id": "317",
+      "parent_id": "8",
+      "code": "osm_craft_electronics_repair_826c3f1c",
+      "names": {
+        "en": "OSM craft=electronics_repair location",
+        "vi": "Địa điểm OSM craft=electronics_repair"
+      }
+    },
+    {
+      "id": "318",
+      "parent_id": "8",
+      "code": "osm_craft_handicraft_e443e0cf",
+      "names": {
+        "en": "OSM craft=handicraft location",
+        "vi": "Địa điểm OSM craft=handicraft"
+      }
+    },
+    {
+      "id": "319",
+      "parent_id": "8",
+      "code": "osm_craft_metal_construction_34590f62",
+      "names": {
+        "en": "OSM craft=metal_construction location",
+        "vi": "Địa điểm OSM craft=metal_construction"
+      }
+    },
+    {
+      "id": "320",
+      "parent_id": "67",
+      "code": "osm_emergency_fire_hydrant_bd2bf2cc",
+      "names": {
+        "en": "OSM emergency=fire_hydrant location",
+        "vi": "Địa điểm OSM emergency=fire_hydrant"
+      }
+    },
+    {
+      "id": "321",
+      "parent_id": "67",
+      "code": "osm_emergency_lifeguard_tower_da36ab3a",
+      "names": {
+        "en": "OSM emergency=lifeguard_tower location",
+        "vi": "Địa điểm OSM emergency=lifeguard_tower"
+      }
+    },
+    {
+      "id": "322",
+      "parent_id": "131",
+      "code": "osm_historic_aircraft_bd6ec3ff",
+      "names": {
+        "en": "OSM historic=aircraft location",
+        "vi": "Địa điểm OSM historic=aircraft"
+      }
+    },
+    {
+      "id": "323",
+      "parent_id": "131",
+      "code": "osm_historic_cannon_7fe50ffa",
+      "names": {
+        "en": "OSM historic=cannon location",
+        "vi": "Địa điểm OSM historic=cannon"
+      }
+    },
+    {
+      "id": "324",
+      "parent_id": "131",
+      "code": "osm_historic_city_gate_18d79ea1",
+      "names": {
+        "en": "OSM historic=city_gate location",
+        "vi": "Địa điểm OSM historic=city_gate"
+      }
+    },
+    {
+      "id": "325",
+      "parent_id": "131",
+      "code": "osm_historic_tank_9e4608d0",
+      "names": {
+        "en": "OSM historic=tank location",
+        "vi": "Địa điểm OSM historic=tank"
+      }
+    },
+    {
+      "id": "326",
+      "parent_id": "131",
+      "code": "osm_historic_tomb_8b9b0621",
+      "names": {
+        "en": "OSM historic=tomb location",
+        "vi": "Địa điểm OSM historic=tomb"
+      }
+    },
+    {
+      "id": "327",
+      "parent_id": "9",
+      "code": "osm_leisure_beach_resort_d1124f5e",
+      "names": {
+        "en": "OSM leisure=beach_resort location",
+        "vi": "Địa điểm OSM leisure=beach_resort"
+      }
+    },
+    {
+      "id": "328",
+      "parent_id": "9",
+      "code": "osm_leisure_fishing_5584642d",
+      "names": {
+        "en": "OSM leisure=fishing location",
+        "vi": "Địa điểm OSM leisure=fishing"
+      }
+    },
+    {
+      "id": "329",
+      "parent_id": "79",
+      "code": "osm_leisure_marina_5aa0a27f",
+      "names": {
+        "en": "Marina",
+        "vi": "Bến du thuyền"
+      }
+    },
+    {
+      "id": "330",
+      "parent_id": "9",
+      "code": "osm_leisure_nature_reserve_a9ff4c2d",
+      "names": {
+        "en": "OSM leisure=nature_reserve location",
+        "vi": "Địa điểm OSM leisure=nature_reserve"
+      }
+    },
+    {
+      "id": "331",
+      "parent_id": "9",
+      "code": "osm_leisure_outdoor_seating_392df466",
+      "names": {
+        "en": "OSM leisure=outdoor_seating location",
+        "vi": "Địa điểm OSM leisure=outdoor_seating"
+      }
+    },
+    {
+      "id": "332",
+      "parent_id": "9",
+      "code": "osm_leisure_picnic_table_dcd22ad3",
+      "names": {
+        "en": "OSM leisure=picnic_table location",
+        "vi": "Địa điểm OSM leisure=picnic_table"
+      }
+    },
+    {
+      "id": "333",
+      "parent_id": "115",
+      "code": "osm_leisure_track_20ad49d8",
+      "names": {
+        "en": "Sports track",
+        "vi": "Đường chạy thể thao"
+      }
+    },
+    {
+      "id": "334",
+      "parent_id": "9",
+      "code": "osm_man_made_lighthouse_85a0c976",
+      "names": {
+        "en": "OSM man_made=lighthouse location",
+        "vi": "Địa điểm OSM man_made=lighthouse"
+      }
+    },
+    {
+      "id": "335",
+      "parent_id": "9",
+      "code": "osm_man_made_tower_f46350c1",
+      "names": {
+        "en": "Tower",
+        "vi": "Tháp"
+      }
+    },
+    {
+      "id": "336",
+      "parent_id": "9",
+      "code": "osm_man_made_water_tower_c750263f",
+      "names": {
+        "en": "Water tower",
+        "vi": "Tháp nước"
+      }
+    },
+    {
+      "id": "337",
+      "parent_id": "9",
+      "code": "osm_natural_cave_entrance_ac05ae02",
+      "names": {
+        "en": "OSM natural=cave_entrance location",
+        "vi": "Địa điểm OSM natural=cave_entrance"
+      }
+    },
+    {
+      "id": "338",
+      "parent_id": "9",
+      "code": "osm_natural_peak_044675cd",
+      "names": {
+        "en": "Mountain summit",
+        "vi": "Đỉnh núi"
+      }
+    },
+    {
+      "id": "339",
+      "parent_id": "185",
+      "code": "osm_office_advertising_agency_a6cbb321",
+      "names": {
+        "en": "OSM office=advertising_agency location",
+        "vi": "Địa điểm OSM office=advertising_agency"
+      }
+    },
+    {
+      "id": "340",
+      "parent_id": "185",
+      "code": "osm_office_architect_d6e025f2",
+      "names": {
+        "en": "OSM office=architect location",
+        "vi": "Địa điểm OSM office=architect"
+      }
+    },
+    {
+      "id": "341",
+      "parent_id": "185",
+      "code": "osm_office_association_0968304e",
+      "names": {
+        "en": "OSM office=association location",
+        "vi": "Địa điểm OSM office=association"
+      }
+    },
+    {
+      "id": "342",
+      "parent_id": "185",
+      "code": "osm_office_diplomatic_8e721c87",
+      "names": {
+        "en": "OSM office=diplomatic location",
+        "vi": "Địa điểm OSM office=diplomatic"
+      }
+    },
+    {
+      "id": "343",
+      "parent_id": "185",
+      "code": "osm_office_educational_institution_10b31c15",
+      "names": {
+        "en": "OSM office=educational_institution location",
+        "vi": "Địa điểm OSM office=educational_institution"
+      }
+    },
+    {
+      "id": "344",
+      "parent_id": "185",
+      "code": "osm_office_energy_supplier_fdcb63e2",
+      "names": {
+        "en": "OSM office=energy_supplier location",
+        "vi": "Địa điểm OSM office=energy_supplier"
+      }
+    },
+    {
+      "id": "345",
+      "parent_id": "185",
+      "code": "osm_office_financial_83dd6b31",
+      "names": {
+        "en": "OSM office=financial location",
+        "vi": "Địa điểm OSM office=financial"
+      }
+    },
+    {
+      "id": "346",
+      "parent_id": "185",
+      "code": "osm_office_insurance_c3c294d6",
+      "names": {
+        "en": "OSM office=insurance location",
+        "vi": "Địa điểm OSM office=insurance"
+      }
+    },
+    {
+      "id": "347",
+      "parent_id": "185",
+      "code": "osm_office_it_4d223992",
+      "names": {
+        "en": "OSM office=it location",
+        "vi": "Địa điểm OSM office=it"
+      }
+    },
+    {
+      "id": "348",
+      "parent_id": "185",
+      "code": "osm_office_newspaper_c0a59acc",
+      "names": {
+        "en": "OSM office=newspaper location",
+        "vi": "Địa điểm OSM office=newspaper"
+      }
+    },
+    {
+      "id": "349",
+      "parent_id": "185",
+      "code": "osm_office_ngo_5e194023",
+      "names": {
+        "en": "OSM office=ngo location",
+        "vi": "Địa điểm OSM office=ngo"
+      }
+    },
+    {
+      "id": "350",
+      "parent_id": "185",
+      "code": "osm_office_notary_5bd7fb5a",
+      "names": {
+        "en": "OSM office=notary location",
+        "vi": "Địa điểm OSM office=notary"
+      }
+    },
+    {
+      "id": "351",
+      "parent_id": "185",
+      "code": "osm_office_political_party_95f0b2e3",
+      "names": {
+        "en": "OSM office=political_party location",
+        "vi": "Địa điểm OSM office=political_party"
+      }
+    },
+    {
+      "id": "352",
+      "parent_id": "185",
+      "code": "osm_office_research_f6b645ab",
+      "names": {
+        "en": "OSM office=research location",
+        "vi": "Địa điểm OSM office=research"
+      }
+    },
+    {
+      "id": "353",
+      "parent_id": "185",
+      "code": "osm_office_telecommunication_d8a8029a",
+      "names": {
+        "en": "OSM office=telecommunication location",
+        "vi": "Địa điểm OSM office=telecommunication"
+      }
+    },
+    {
+      "id": "354",
+      "parent_id": "185",
+      "code": "osm_office_water_utility_5884554b",
+      "names": {
+        "en": "OSM office=water_utility location",
+        "vi": "Địa điểm OSM office=water_utility"
+      }
+    },
+    {
+      "id": "355",
+      "parent_id": "79",
+      "code": "osm_public_transport_platform_7277b973",
+      "names": {
+        "en": "OSM public_transport=platform location",
+        "vi": "Địa điểm OSM public_transport=platform"
+      }
+    },
+    {
+      "id": "356",
+      "parent_id": "79",
+      "code": "osm_public_transport_station_c13b8268",
+      "names": {
+        "en": "OSM public_transport=station location",
+        "vi": "Địa điểm OSM public_transport=station"
+      }
+    },
+    {
+      "id": "357",
+      "parent_id": "79",
+      "code": "osm_public_transport_stop_position_aeae89bd",
+      "names": {
+        "en": "OSM public_transport=stop_position location",
+        "vi": "Địa điểm OSM public_transport=stop_position"
+      }
+    },
+    {
+      "id": "358",
+      "parent_id": "6",
+      "code": "osm_shop_accessories_9b44bd4c",
+      "names": {
+        "en": "OSM shop=accessories location",
+        "vi": "Địa điểm OSM shop=accessories"
+      }
+    },
+    {
+      "id": "359",
+      "parent_id": "6",
+      "code": "osm_shop_appliance_855f3c70",
+      "names": {
+        "en": "OSM shop=appliance location",
+        "vi": "Địa điểm OSM shop=appliance"
+      }
+    },
+    {
+      "id": "360",
+      "parent_id": "6",
+      "code": "osm_shop_art_7ad6ac7e",
+      "names": {
+        "en": "OSM shop=art location",
+        "vi": "Địa điểm OSM shop=art"
+      }
+    },
+    {
+      "id": "361",
+      "parent_id": "6",
+      "code": "osm_shop_baby_goods_243dff18",
+      "names": {
+        "en": "Baby goods store",
+        "vi": "Cửa hàng đồ dùng trẻ em"
+      }
+    },
+    {
+      "id": "362",
+      "parent_id": "6",
+      "code": "osm_shop_bag_e2754f92",
+      "names": {
+        "en": "OSM shop=bag location",
+        "vi": "Địa điểm OSM shop=bag"
+      }
+    },
+    {
+      "id": "363",
+      "parent_id": "6",
+      "code": "osm_shop_bookmaker_21ac8436",
+      "names": {
+        "en": "OSM shop=bookmaker location",
+        "vi": "Địa điểm OSM shop=bookmaker"
+      }
+    },
+    {
+      "id": "364",
+      "parent_id": "80",
+      "code": "osm_shop_car_parts_58dcb9fe",
+      "names": {
+        "en": "Car parts store",
+        "vi": "Cửa hàng phụ tùng ô tô"
+      }
+    },
+    {
+      "id": "365",
+      "parent_id": "6",
+      "code": "osm_shop_chemist_2ad9e1ae",
+      "names": {
+        "en": "OSM shop=chemist location",
+        "vi": "Địa điểm OSM shop=chemist"
+      }
+    },
+    {
+      "id": "366",
+      "parent_id": "6",
+      "code": "osm_shop_chocolate_e7663545",
+      "names": {
+        "en": "OSM shop=chocolate location",
+        "vi": "Địa điểm OSM shop=chocolate"
+      }
+    },
+    {
+      "id": "367",
+      "parent_id": "6",
+      "code": "osm_shop_coffee_93951deb",
+      "names": {
+        "en": "Coffee retail shop",
+        "vi": "Cửa hàng cà phê đóng gói"
+      }
+    },
+    {
+      "id": "368",
+      "parent_id": "6",
+      "code": "osm_shop_confectionery_7f9821f9",
+      "names": {
+        "en": "Confectionery shop",
+        "vi": "Cửa hàng bánh kẹo"
+      }
+    },
+    {
+      "id": "369",
+      "parent_id": "6",
+      "code": "osm_shop_craft_5873dfc7",
+      "names": {
+        "en": "OSM shop=craft location",
+        "vi": "Địa điểm OSM shop=craft"
+      }
+    },
+    {
+      "id": "370",
+      "parent_id": "6",
+      "code": "osm_shop_curtain_df4613fe",
+      "names": {
+        "en": "OSM shop=curtain location",
+        "vi": "Địa điểm OSM shop=curtain"
+      }
+    },
+    {
+      "id": "371",
+      "parent_id": "6",
+      "code": "osm_shop_deli_6c340aa7",
+      "names": {
+        "en": "OSM shop=deli location",
+        "vi": "Địa điểm OSM shop=deli"
+      }
+    },
+    {
+      "id": "372",
+      "parent_id": "6",
+      "code": "osm_shop_doityourself_a4df1155",
+      "names": {
+        "en": "OSM shop=doityourself location",
+        "vi": "Địa điểm OSM shop=doityourself"
+      }
+    },
+    {
+      "id": "373",
+      "parent_id": "6",
+      "code": "osm_shop_electrical_5c56ad74",
+      "names": {
+        "en": "OSM shop=electrical location",
+        "vi": "Địa điểm OSM shop=electrical"
+      }
+    },
+    {
+      "id": "374",
+      "parent_id": "6",
+      "code": "osm_shop_fabric_dc3596ae",
+      "names": {
+        "en": "OSM shop=fabric location",
+        "vi": "Địa điểm OSM shop=fabric"
+      }
+    },
+    {
+      "id": "375",
+      "parent_id": "6",
+      "code": "osm_shop_food_c6380e02",
+      "names": {
+        "en": "OSM shop=food location",
+        "vi": "Địa điểm OSM shop=food"
+      }
+    },
+    {
+      "id": "376",
+      "parent_id": "6",
+      "code": "osm_shop_funeral_directors_c2260144",
+      "names": {
+        "en": "OSM shop=funeral_directors location",
+        "vi": "Địa điểm OSM shop=funeral_directors"
+      }
+    },
+    {
+      "id": "377",
+      "parent_id": "6",
+      "code": "osm_shop_garden_centre_807d53b5",
+      "names": {
+        "en": "OSM shop=garden_centre location",
+        "vi": "Địa điểm OSM shop=garden_centre"
+      }
+    },
+    {
+      "id": "378",
+      "parent_id": "6",
+      "code": "osm_shop_gas_5c75a6f3",
+      "names": {
+        "en": "OSM shop=gas location",
+        "vi": "Địa điểm OSM shop=gas"
+      }
+    },
+    {
+      "id": "379",
+      "parent_id": "6",
+      "code": "osm_shop_health_food_04587a1c",
+      "names": {
+        "en": "OSM shop=health_food location",
+        "vi": "Địa điểm OSM shop=health_food"
+      }
+    },
+    {
+      "id": "380",
+      "parent_id": "6",
+      "code": "osm_shop_herbalist_c94a6527",
+      "names": {
+        "en": "OSM shop=herbalist location",
+        "vi": "Địa điểm OSM shop=herbalist"
+      }
+    },
+    {
+      "id": "381",
+      "parent_id": "6",
+      "code": "osm_shop_hifi_5240eaa7",
+      "names": {
+        "en": "OSM shop=hifi location",
+        "vi": "Địa điểm OSM shop=hifi"
+      }
+    },
+    {
+      "id": "382",
+      "parent_id": "6",
+      "code": "osm_shop_household_e6771a4a",
+      "names": {
+        "en": "OSM shop=household location",
+        "vi": "Địa điểm OSM shop=household"
+      }
+    },
+    {
+      "id": "383",
+      "parent_id": "6",
+      "code": "osm_shop_kiosk_ed6bc16f",
+      "names": {
+        "en": "OSM shop=kiosk location",
+        "vi": "Địa điểm OSM shop=kiosk"
+      }
+    },
+    {
+      "id": "384",
+      "parent_id": "6",
+      "code": "osm_shop_kitchen_0f736ff3",
+      "names": {
+        "en": "OSM shop=kitchen location",
+        "vi": "Địa điểm OSM shop=kitchen"
+      }
+    },
+    {
+      "id": "385",
+      "parent_id": "6",
+      "code": "osm_shop_medical_supply_ba61b388",
+      "names": {
+        "en": "Medical supply shop",
+        "vi": "Cửa hàng vật tư y tế"
+      }
+    },
+    {
+      "id": "386",
+      "parent_id": "6",
+      "code": "osm_shop_money_lender_08a86475",
+      "names": {
+        "en": "OSM shop=money_lender location",
+        "vi": "Địa điểm OSM shop=money_lender"
+      }
+    },
+    {
+      "id": "387",
+      "parent_id": "6",
+      "code": "osm_shop_music_48ffc9bf",
+      "names": {
+        "en": "OSM shop=music location",
+        "vi": "Địa điểm OSM shop=music"
+      }
+    },
+    {
+      "id": "388",
+      "parent_id": "6",
+      "code": "osm_shop_musical_instrument_2c3cd733",
+      "names": {
+        "en": "OSM shop=musical_instrument location",
+        "vi": "Địa điểm OSM shop=musical_instrument"
+      }
+    },
+    {
+      "id": "389",
+      "parent_id": "6",
+      "code": "osm_shop_nutrition_supplements_0a8796c8",
+      "names": {
+        "en": "OSM shop=nutrition_supplements location",
+        "vi": "Địa điểm OSM shop=nutrition_supplements"
+      }
+    },
+    {
+      "id": "390",
+      "parent_id": "6",
+      "code": "osm_shop_offerings_f0008a5e",
+      "names": {
+        "en": "OSM shop=offerings location",
+        "vi": "Địa điểm OSM shop=offerings"
+      }
+    },
+    {
+      "id": "391",
+      "parent_id": "6",
+      "code": "osm_shop_outdoor_4c12800d",
+      "names": {
+        "en": "Outdoor goods shop",
+        "vi": "Cửa hàng đồ dã ngoại"
+      }
+    },
+    {
+      "id": "392",
+      "parent_id": "6",
+      "code": "osm_shop_pawnbroker_16892c67",
+      "names": {
+        "en": "OSM shop=pawnbroker location",
+        "vi": "Địa điểm OSM shop=pawnbroker"
+      }
+    },
+    {
+      "id": "393",
+      "parent_id": "6",
+      "code": "osm_shop_photo_d61505df",
+      "names": {
+        "en": "Photography supply shop",
+        "vi": "Cửa hàng thiết bị ảnh"
+      }
+    },
+    {
+      "id": "394",
+      "parent_id": "6",
+      "code": "osm_shop_repair_3ded2f00",
+      "names": {
+        "en": "OSM shop=repair location",
+        "vi": "Địa điểm OSM shop=repair"
+      }
+    },
+    {
+      "id": "395",
+      "parent_id": "6",
+      "code": "osm_shop_second_hand_ac6a131e",
+      "names": {
+        "en": "OSM shop=second_hand location",
+        "vi": "Địa điểm OSM shop=second_hand"
+      }
+    },
+    {
+      "id": "396",
+      "parent_id": "8",
+      "code": "osm_shop_tattoo_9be650d4",
+      "names": {
+        "en": "Tattoo studio",
+        "vi": "Tiệm xăm"
+      }
+    },
+    {
+      "id": "397",
+      "parent_id": "8",
+      "code": "osm_shop_ticket_f678bb05",
+      "names": {
+        "en": "Ticket shop",
+        "vi": "Cửa hàng bán vé"
+      }
+    },
+    {
+      "id": "398",
+      "parent_id": "6",
+      "code": "osm_shop_toys_462feea7",
+      "names": {
+        "en": "Toy store",
+        "vi": "Cửa hàng đồ chơi"
+      }
+    },
+    {
+      "id": "399",
+      "parent_id": "6",
+      "code": "osm_shop_tyres_3ee9779e",
+      "names": {
+        "en": "Tyre shop",
+        "vi": "Cửa hàng lốp xe"
+      }
+    },
+    {
+      "id": "400",
+      "parent_id": "6",
+      "code": "osm_shop_watches_d982cf90",
+      "names": {
+        "en": "OSM shop=watches location",
+        "vi": "Địa điểm OSM shop=watches"
+      }
+    },
+    {
+      "id": "401",
+      "parent_id": "6",
+      "code": "osm_shop_wholesale_90690c21",
+      "names": {
+        "en": "OSM shop=wholesale location",
+        "vi": "Địa điểm OSM shop=wholesale"
+      }
+    },
+    {
+      "id": "402",
+      "parent_id": "131",
+      "code": "osm_tourism_wilderness_hut_28790d47",
+      "names": {
+        "en": "OSM tourism=wilderness_hut location",
+        "vi": "Địa điểm OSM tourism=wilderness_hut"
+      }
+    },
+    {
+      "id": "403",
+      "parent_id": "79",
+      "code": "osm_waterway_waterfall_1e43acc0",
+      "names": {
+        "en": "OSM waterway=waterfall location",
+        "vi": "Địa điểm OSM waterway=waterfall"
+      }
+    }
+  ]
+}

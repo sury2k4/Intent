@@ -1,0 +1,35 @@
+seed: 17
+threads: 2
+retrieval_backend: pgvector
+retrieval_mode: pg_exact
+require_explicit_database_url: true
+expected_database_name: model_intent_unified
+expected_database_port: 5433
+db_pool_min_size: 1
+db_pool_max_size: 8
+db_pool_timeout_seconds: 10
+db_statement_timeout_ms: 5000
+cache_dir: .cache/model-intent-poi
+output_dir: artifacts/benchmark-poi-unified
+enrichment_path: data/taxonomies/place_type_enrichment.rich.poc.v2.json
+policy_path: data/policies/place_type_decision_policy.poc.v1.json
+confidence_calibration_path: data/policies/e5_base_confidence_calibration.v2.json
+languages: [vi, en]
+top_k: 5
+models:
+  - key: e5-base-multilingual
+    model_id: intfloat/multilingual-e5-base
+    expected_dimension: 768
+    revision: d128750597153bb5987e10b1c3493a34e5a4502a
+    query_prefix: "query: "
+    document_prefix: "passage: "
+    batch_size: 16
+    max_seq_length: 128
+    enabled: true
+    stretch: false
+poi_search:
+  backend: postgres
+  dataset_key: hcmc-osm
+  property_path: data/properties/poi_properties.poc.v4.json
+  ranking_policy_path: data/policies/poi_ranking.poc.v2.json
+  mapping_path: data/osm/mappings/place_types.poc.v2.json

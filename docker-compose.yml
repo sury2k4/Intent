@@ -1,21 +1,23 @@
+name: model-intent-unified
+
 services:
   db:
     image: pgvector/pgvector:0.8.1-pg16
     command: ["postgres", "-c", "shared_preload_libraries=pg_stat_statements"]
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-model_intent}
-      POSTGRES_USER: ${POSTGRES_USER:-model_intent}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-model_intent_dev}
+      POSTGRES_DB: model_intent_unified
+      POSTGRES_USER: ${UNIFIED_POSTGRES_USER:-model_intent}
+      POSTGRES_PASSWORD: ${UNIFIED_POSTGRES_PASSWORD:-model_intent_dev}
     ports:
-      - "${POSTGRES_PORT:-5432}:5432"
+      - "127.0.0.1:${UNIFIED_POSTGRES_PORT:-5433}:5432"
     volumes:
-      - model_intent_pgdata:/var/lib/postgresql/data
+      - model_intent_unified_pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-model_intent} -d ${POSTGRES_DB:-model_intent}"]
+      test: ["CMD-SHELL", "pg_isready -U ${UNIFIED_POSTGRES_USER:-model_intent} -d model_intent_unified"]
       interval: 2s
       timeout: 5s
       retries: 30
       start_period: 5s
 
 volumes:
-  model_intent_pgdata:
+  model_intent_unified_pgdata:

@@ -2,15 +2,17 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 import numpy as np
 
 from .benchmark import _configure_runtime, load_yaml, make_embedder, profiles_from_config
-from .db import Database
+from .db import Database, validate_database_target
 from .rendering import (
     PROFILE_RENDERER_VERSION,
     PROFILE_SCHEMA_VERSION,
@@ -164,11 +166,15 @@ def sync_embeddings(
     taxonomy_path: str | Path,
     local_files_only: bool = False,
     batch_size: int | None = None,
+    activate: bool = False,
 ) -> SyncResult:
+    if activate:
+        raise RuntimeError("unilateral E5 activation is disabled on unified DB; use paired POI promotion")
     started = time.perf_counter()
     config_path = Path(config_path).resolve()
     project_root = config_path.parent.parent
     config = load_yaml(config_path)
+    validate_database_target(config, database.database_url)
     _configure_runtime(config, local_files_only)
     taxonomy = Taxonomy.load(taxonomy_path)
     enrichment = load_enrichment(_resolve_path(project_root, config.get("enrichment_path")))
@@ -200,16 +206,17 @@ def sync_embeddings(
     with database.connection() as (connection, _):
         connection.execute("SELECT pg_advisory_lock(hashtext(%s))", (ADVISORY_LOCK_NAME,))
         generation_id: int | None = None
+        building_generation = False
         try:
             with connection.transaction():
-                model_id = connection.execute(
+                model_row = connection.execute(
                     """
                     INSERT INTO embedding_model_configs(
                         model_key, model_id, revision, adapter_version, dimension,
                         query_prefix, document_prefix, normalize_embeddings,
                         max_seq_length, config_hash
                     ) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-                    ON CONFLICT (config_hash) DO UPDATE SET config_hash = EXCLUDED.config_hash
+                    ON CONFLICT (config_hash) DO NOTHING
                     RETURNING id
                     """,
                     (
@@ -217,20 +224,50 @@ def sync_embeddings(
                         int(metadata["dimension"]), metadata["query_prefix"], metadata["document_prefix"],
                         bool(metadata["normalize_embeddings"]), int(metadata["max_seq_length"]), model_config_hash,
                     ),
-                ).fetchone()[0]
-                snapshot_id = connection.execute(
+                ).fetchone()
+                if model_row is None:
+                    model_row = connection.execute(
+                        """
+                        SELECT id, model_key, model_id, revision, adapter_version, dimension,
+                               query_prefix, document_prefix, normalize_embeddings, max_seq_length
+                        FROM embedding_model_configs WHERE config_hash=%s
+                        """,
+                        (model_config_hash,),
+                    ).fetchone()
+                    if model_row is None or tuple(model_row[1:]) != (
+                        MODEL_KEY, metadata["model_id"], metadata["revision"], metadata["adapter"],
+                        int(metadata["dimension"]), metadata["query_prefix"], metadata["document_prefix"],
+                        bool(metadata["normalize_embeddings"]), int(metadata["max_seq_length"]),
+                    ):
+                        raise RuntimeError("existing embedding model config conflicts with pinned metadata")
+                model_id = int(model_row[0])
+                snapshot_row = connection.execute(
                     """
                     INSERT INTO taxonomy_snapshots(taxonomy_version, fingerprint, schema_version, source)
                     VALUES (%s,%s,%s,%s)
-                    ON CONFLICT (fingerprint) DO UPDATE SET fingerprint = EXCLUDED.fingerprint
+                    ON CONFLICT (fingerprint) DO NOTHING
                     RETURNING id
                     """,
                     (
                         taxonomy.document.taxonomy_version, taxonomy.fingerprint(),
                         taxonomy.document.schema_version, taxonomy.document.source,
                     ),
-                ).fetchone()[0]
-                profile_set_id = connection.execute(
+                ).fetchone()
+                if snapshot_row is None:
+                    snapshot_row = connection.execute(
+                        """
+                        SELECT id, taxonomy_version, schema_version, source
+                        FROM taxonomy_snapshots WHERE fingerprint=%s
+                        """,
+                        (taxonomy.fingerprint(),),
+                    ).fetchone()
+                    if snapshot_row is None or tuple(snapshot_row[1:]) != (
+                        taxonomy.document.taxonomy_version, taxonomy.document.schema_version,
+                        taxonomy.document.source,
+                    ):
+                        raise RuntimeError("existing taxonomy snapshot conflicts with pinned taxonomy")
+                snapshot_id = int(snapshot_row[0])
+                profile_set_row = connection.execute(
                     """
                     INSERT INTO category_profile_sets(
                         taxonomy_snapshot_id, profile_schema_version, source_fingerprint,
@@ -239,14 +276,29 @@ def sync_embeddings(
                     ON CONFLICT (
                         taxonomy_snapshot_id, profile_schema_version, source_fingerprint,
                         renderer_version, content_set_hash
-                    ) DO UPDATE SET profile_count = EXCLUDED.profile_count
+                    ) DO NOTHING
                     RETURNING id
                     """,
                     (
                         snapshot_id, PROFILE_SCHEMA_VERSION, source_fingerprint,
                         PROFILE_RENDERER_VERSION, content_set_hash, len(category_ids), len(profile_rows),
                     ),
-                ).fetchone()[0]
+                ).fetchone()
+                if profile_set_row is None:
+                    profile_set_row = connection.execute(
+                        """
+                        SELECT id, category_count, profile_count FROM category_profile_sets
+                        WHERE taxonomy_snapshot_id=%s AND profile_schema_version=%s
+                          AND source_fingerprint=%s AND renderer_version=%s AND content_set_hash=%s
+                        """,
+                        (snapshot_id, PROFILE_SCHEMA_VERSION, source_fingerprint,
+                         PROFILE_RENDERER_VERSION, content_set_hash),
+                    ).fetchone()
+                    if profile_set_row is None or tuple(profile_set_row[1:]) != (
+                        len(category_ids), len(profile_rows),
+                    ):
+                        raise RuntimeError("existing category profile set conflicts with rendered corpus")
+                profile_set_id = int(profile_set_row[0])
                 generation = connection.execute(
                     """
                     INSERT INTO embedding_generations(
@@ -254,17 +306,30 @@ def sync_embeddings(
                         content_set_hash, state, expected_count, artifact_kind, profile_set_id
                     ) VALUES (%s,%s,%s,%s,'building',%s,%s,%s)
                     ON CONFLICT (model_config_id, taxonomy_snapshot_id, renderer_version, content_set_hash)
-                    DO UPDATE SET expected_count=EXCLUDED.expected_count,
-                                  artifact_kind=EXCLUDED.artifact_kind,
-                                  profile_set_id=EXCLUDED.profile_set_id
-                    RETURNING id, state
+                    DO NOTHING
+                    RETURNING id, state, expected_count, artifact_kind, profile_set_id
                     """,
                     (
                         model_id, snapshot_id, PROFILE_RENDERER_VERSION, content_set_hash,
                         len(profile_rows), ARTIFACT_KIND, profile_set_id,
                     ),
                 ).fetchone()
+                if generation is None:
+                    generation = connection.execute(
+                        """
+                        SELECT id, state, expected_count, artifact_kind, profile_set_id
+                        FROM embedding_generations
+                        WHERE model_config_id=%s AND taxonomy_snapshot_id=%s
+                          AND renderer_version=%s AND content_set_hash=%s
+                        FOR UPDATE
+                        """,
+                        (model_id, snapshot_id, PROFILE_RENDERER_VERSION, content_set_hash),
+                    ).fetchone()
                 generation_id, state = int(generation[0]), str(generation[1])
+                if (int(generation[2]) != len(profile_rows)
+                        or str(generation[3]) != ARTIFACT_KIND
+                        or int(generation[4] or 0) != int(profile_set_id)):
+                    raise RuntimeError("existing embedding generation conflicts with the rendered profile corpus")
 
             active_row = connection.execute(
                 "SELECT generation_id FROM active_category_profile_generation_v3 WHERE model_key=%s",
@@ -274,25 +339,36 @@ def sync_embeddings(
                 "SELECT count(*) FROM category_search_profiles_v3 WHERE generation_id=%s",
                 (generation_id,),
             ).fetchone()[0]
-            if state == "ready" and existing == len(profile_rows):
-                if not active_row or int(active_row[0]) != generation_id:
-                    with connection.transaction():
-                        connection.execute(
-                            """
-                            INSERT INTO active_category_profile_generation_v3(model_key, generation_id)
-                            VALUES (%s,%s)
-                            ON CONFLICT (model_key) DO UPDATE
-                            SET generation_id=EXCLUDED.generation_id, activated_at=now()
-                            """,
-                            (MODEL_KEY, generation_id),
-                        )
+            if state == "ready":
+                if existing != len(profile_rows):
+                    raise RuntimeError("ready embedding generation is incomplete and immutable")
+                stored_profiles = {
+                    (int(place_type_id), str(language)): (str(content_hash), str(search_text))
+                    for place_type_id, language, content_hash, search_text in connection.execute(
+                        """
+                        SELECT place_type_id, language, content_hash, search_text
+                        FROM category_search_profiles_v3 WHERE generation_id=%s
+                        """,
+                        (generation_id,),
+                    ).fetchall()
+                }
+                if stored_profiles != {
+                    (int(row["profile"].item_id), row["profile"].language):
+                    (row["content_hash"], row["profile"].text)
+                    for row in profile_rows
+                }:
+                    raise RuntimeError("ready embedding generation content hashes/text do not match the profile corpus")
                 return SyncResult(
-                    generation_id, "ready", len(profile_rows), 0, True, True,
+                    generation_id, "ready", len(profile_rows), 0, True,
+                    bool(active_row and int(active_row[0]) == generation_id),
                     model_config_hash, taxonomy.fingerprint(), content_set_hash,
                     time.perf_counter() - started, int(profile_set_id), len(profile_rows),
                     len(category_ids), source_fingerprint, ARTIFACT_KIND,
                 )
 
+            if active_row and int(active_row[0]) == generation_id:
+                raise RuntimeError("refusing to rebuild an active embedding generation")
+            building_generation = True
             with connection.transaction():
                 connection.execute(
                     "UPDATE embedding_generations SET state='building', error=NULL WHERE id=%s",
@@ -388,27 +464,18 @@ def sync_embeddings(
                     """,
                     (final_count, generation_id),
                 )
-                connection.execute(
-                    """
-                    INSERT INTO active_category_profile_generation_v3(model_key, generation_id)
-                    VALUES (%s,%s)
-                    ON CONFLICT (model_key) DO UPDATE
-                    SET generation_id=EXCLUDED.generation_id, activated_at=now()
-                    """,
-                    (MODEL_KEY, generation_id),
-                )
             return SyncResult(
-                generation_id, "ready", len(profile_rows), embedded_count, False, True,
+                generation_id, "ready", len(profile_rows), embedded_count, False, False,
                 model_config_hash, taxonomy.fingerprint(), content_set_hash,
                 time.perf_counter() - started, int(profile_set_id), len(profile_rows),
                 len(category_ids), source_fingerprint, ARTIFACT_KIND,
             )
         except Exception as exc:
-            if generation_id is not None:
+            if building_generation and generation_id is not None:
                 try:
                     with connection.transaction():
                         connection.execute(
-                            "UPDATE embedding_generations SET state='failed', error=%s WHERE id=%s",
+                            "UPDATE embedding_generations SET state='failed', error=%s WHERE id=%s AND state='building'",
                             (f"{type(exc).__name__}: {exc}", generation_id),
                         )
                 except Exception:
@@ -469,7 +536,26 @@ def embedding_status(database: Database) -> dict[str, Any]:
     }
 
 
-def cleanup_generations(database: Database, keep: int = 3) -> list[int]:
+def cleanup_generations(
+    database: Database, keep: int = 3, *, allow_disposable_scratch: bool = False,
+) -> list[int]:
+    """Never delete rollback candidates on unified; opt in only on isolated scratch."""
+    url = getattr(database, "database_url", None)
+    if not allow_disposable_scratch or not url or url != os.getenv("MODEL_INTENT_WRITE_TEST_DATABASE_URL"):
+        raise RuntimeError("E5 generation cleanup is disabled on unified DB; disposable scratch opt-in required")
+    try:
+        parsed = urlparse(url)
+        valid = (
+            parsed.scheme in ("postgres", "postgresql")
+            and parsed.hostname == "127.0.0.1"
+            and parsed.port not in (None, 5432, 5433)
+            and parsed.path == "/model_intent_write_test"
+            and not parsed.query and not parsed.fragment and not parsed.params
+        )
+    except ValueError:
+        valid = False
+    if not valid:
+        raise RuntimeError("E5 generation cleanup requires isolated disposable scratch DB, never unified")
     if keep < 1:
         raise ValueError("keep must be at least one")
     with database.connection() as (connection, _):
@@ -501,29 +587,5 @@ def cleanup_generations(database: Database, keep: int = 3) -> list[int]:
 
 
 def activate_generation(database: Database, generation_id: int) -> None:
-    with database.connection() as (connection, _):
-        row = connection.execute(
-            """
-            SELECT g.state, g.artifact_kind, g.expected_count, g.completed_count,
-                   m.model_key, count(csp.id)
-            FROM embedding_generations g
-            JOIN embedding_model_configs m ON m.id=g.model_config_id
-            LEFT JOIN category_search_profiles_v3 csp ON csp.generation_id=g.id
-            WHERE g.id=%s GROUP BY g.id, m.model_key
-            """,
-            (generation_id,),
-        ).fetchone()
-        if not row or row[0] != "ready" or row[1] != ARTIFACT_KIND or row[4] != MODEL_KEY:
-            raise ValueError("generation must be a ready category profile v3 generation")
-        if int(row[2]) != int(row[3]) or int(row[2]) != int(row[5]):
-            raise ValueError("generation is incomplete and cannot be activated")
-        with connection.transaction():
-            connection.execute(
-                """
-                INSERT INTO active_category_profile_generation_v3(model_key, generation_id)
-                VALUES (%s,%s)
-                ON CONFLICT (model_key) DO UPDATE
-                SET generation_id=EXCLUDED.generation_id, activated_at=now()
-                """,
-                (MODEL_KEY, generation_id),
-            )
+    """Unilateral E5 activation is unsafe; paired promotion owns both pointers."""
+    raise RuntimeError("unilateral E5 activation is disabled on unified DB; use paired POI promotion")

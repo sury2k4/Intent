@@ -1,0 +1,5 @@
+{"type":"node","id":101,"lat":10.78,"lon":106.69,"version":1,"timestamp":"2025-01-01T00:00:00Z","tags":{"amenity":"cafe","name":"Cafe Có Máy Lạnh","air_conditioning":"yes","internet_access":"wlan"}}
+{"type":"node","id":102,"lat":10.781,"lon":106.691,"tags":{"amenity":"cafe","name":"Sidewalk Cafe","outdoor_seating":"yes","air_conditioning":"no"}}
+{"type":"node","id":103,"lat":10.78,"lon":106.69,"tags":{"amenity":"cafe","name":"Unknown AC Cafe","air_conditioning":"customers"}}
+{"type":"node","id":104,"lat":10.78,"lon":106.69,"tags":{"amenity":"pharmacy","name":"Nhà thuốc POC"}}
+{"type":"node","id":105,"lat":12.0,"lon":106.69,"tags":{"amenity":"cafe","name":"Outside Boundary"}}

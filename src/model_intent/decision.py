@@ -175,8 +175,11 @@ def decide_intent(
     language: str | None = None,
     overrides: dict[str, float] | None = None,
     confidence_calibration: Mapping[str, Any] | None = None,
+    *,
+    policy_prevalidated: bool = False,
 ) -> IntentDecision:
-    validate_decision_policy(policy, taxonomy)
+    if not policy_prevalidated:
+        validate_decision_policy(policy, taxonomy)
     enrichment = enrichment or {}
     language = language or str(policy.get("fallback_language", "vi"))
     values = _thresholds(policy, prediction.model_key, overrides)

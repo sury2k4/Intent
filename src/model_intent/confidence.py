@@ -41,6 +41,7 @@ def load_confidence_calibration(
     model_key: str | None = None,
     model_revision: str | None = None,
     renderer_version: str | None = None,
+    taxonomy_fingerprint: str | None = None,
 ) -> dict[str, Any]:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
     if payload.get("kind") != "logistic-evidence-v1":
@@ -54,6 +55,9 @@ def load_confidence_calibration(
         raise ConfidenceCalibrationError("confidence calibration revision mismatch")
     if renderer_version is not None and payload.get("renderer_version") != renderer_version:
         raise ConfidenceCalibrationError("confidence calibration renderer mismatch")
+    pinned_taxonomy = payload.get("taxonomy_fingerprint")
+    if taxonomy_fingerprint is not None and pinned_taxonomy is not None and pinned_taxonomy != taxonomy_fingerprint:
+        raise ConfidenceCalibrationError("confidence calibration taxonomy mismatch")
     for name in ("top_correct", "in_domain", "ambiguity"):
         model = payload.get(name)
         if not isinstance(model, dict):

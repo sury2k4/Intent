@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Run intent disambiguation evaluation benchmark on 1000 ambiguous queries."""
 import json
-import os
 import sys
 import time
 from collections import Counter, defaultdict
@@ -15,9 +14,6 @@ CONFIG_PATH = ROOT / "configs/benchmark.cpu.yaml"
 TAXONOMY_PATH = ROOT / "data/taxonomies/place_types.poc.v1.json"
 OUTPUT_REPORT = ROOT / "artifacts/benchmark/intent_disambiguation_1000_results.json"
 OUTPUT_REPORT.parent.mkdir(parents=True, exist_ok=True)
-
-if "DATABASE_URL" not in os.environ:
-    os.environ["DATABASE_URL"] = "postgresql://model_intent:model_intent_dev@localhost:5432/model_intent"
 
 
 def main():

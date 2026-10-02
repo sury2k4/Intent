@@ -1,4 +1,5 @@
 import math
+from pathlib import Path
 
 import pytest
 
@@ -64,6 +65,21 @@ def test_variant_disagreement_lowers_evidence():
     agree = evaluate_confidence(prediction([0.84, 0.78, 0.74], ("1", "1")), calibration)
     disagree = evaluate_confidence(prediction([0.84, 0.78, 0.74], ("1", "2")), calibration)
     assert agree.top_correct_confidence > disagree.top_correct_confidence
+
+
+def test_calibration_taxonomy_fingerprint_is_checked_when_present(tmp_path):
+    import json
+
+    from model_intent.taxonomy import Taxonomy
+
+    current = Taxonomy.load("data/taxonomies/place_types.poc.v2.json")
+    payload = json.loads(Path("data/policies/e5_base_confidence_calibration.v2.json").read_text(encoding="utf-8"))
+    assert payload["taxonomy_fingerprint"] == current.fingerprint()
+    path = tmp_path / "calibration.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    with pytest.raises(ConfidenceCalibrationError, match="taxonomy mismatch"):
+        load_confidence_calibration(path, taxonomy_fingerprint="bad-hash")
+    assert load_confidence_calibration(path, taxonomy_fingerprint=current.fingerprint())["calibration_version"] == "e5-base-confidence-v2"
 
 
 def test_calibration_model_mismatch_fails_closed(tmp_path):

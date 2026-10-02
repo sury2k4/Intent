@@ -57,3 +57,10 @@ models:
     max_seq_length: 128
     enabled: true
     stretch: true
+poi_search:
+  backend: postgres
+  dataset_key: hcmc-osm
+  artifact_path: artifacts/osm/hcmc-poc-v1/pois.jsonl
+  property_path: data/properties/poi_properties.poc.v1.json
+  ranking_policy_path: data/policies/poi_ranking.poc.v1.json
+  mapping_path: data/osm/mappings/place_types.poc.v1.json

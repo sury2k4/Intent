@@ -1,0 +1,1311 @@
+{
+  "schema_version": 4,
+  "property_taxonomy_version": "poi-properties-poc-v4",
+  "base_catalog": "poi_properties.poc.v1.json",
+  "minimum_known_properties": 5,
+  "property_overrides": {
+    "parking": {
+      "osm_tags": [
+        "parking"
+      ]
+    },
+    "toilets": {
+      "osm_tags": [
+        "toilets"
+      ]
+    },
+    "delivery": {
+      "osm_tags": [
+        "delivery"
+      ]
+    },
+    "cuisine": {
+      "queryable": false
+    },
+    "fast_charging": {
+      "osm_tags": [
+        "socket:ccs:output",
+        "socket:chademo:output",
+        "charging_station:output"
+      ]
+    }
+  },
+  "properties": [
+    {
+      "id": "indoor_seating",
+      "facet": "seating",
+      "value_type": "boolean",
+      "osm_tags": [
+        "indoor_seating"
+      ],
+      "aliases": {
+        "vi": [
+          "chỗ ngồi trong nhà"
+        ],
+        "en": [
+          "indoor seating"
+        ]
+      }
+    },
+    {
+      "id": "accepts_cards",
+      "facet": "payment",
+      "value_type": "boolean",
+      "osm_tags": [
+        "payment:credit_cards",
+        "payment:debit_cards"
+      ],
+      "aliases": {
+        "vi": [
+          "thanh toán thẻ",
+          "quẹt thẻ"
+        ],
+        "en": [
+          "card payments",
+          "accepts cards"
+        ]
+      }
+    },
+    {
+      "id": "accessible_toilet",
+      "facet": "accessibility",
+      "value_type": "boolean",
+      "osm_tags": [
+        "toilets:wheelchair"
+      ],
+      "aliases": {
+        "vi": [
+          "toilet cho xe lăn"
+        ],
+        "en": [
+          "accessible restroom"
+        ]
+      }
+    },
+    {
+      "id": "covered_area",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "osm_tags": [
+        "covered"
+      ],
+      "aliases": {
+        "vi": [
+          "có mái che"
+        ],
+        "en": [
+          "covered area"
+        ]
+      }
+    },
+    {
+      "id": "lighting",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "osm_tags": [
+        "lit"
+      ],
+      "aliases": {
+        "vi": [
+          "có đèn chiếu sáng"
+        ],
+        "en": [
+          "well lit"
+        ]
+      }
+    },
+    {
+      "id": "seating",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "osm_tags": [
+        "bench"
+      ],
+      "aliases": {
+        "vi": [
+          "có ghế ngồi"
+        ],
+        "en": [
+          "seating available"
+        ]
+      }
+    },
+    {
+      "id": "shelter",
+      "facet": "transport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "shelter"
+      ],
+      "aliases": {
+        "vi": [
+          "trạm có mái che"
+        ],
+        "en": [
+          "sheltered stop"
+        ]
+      }
+    },
+    {
+      "id": "tactile_paving",
+      "facet": "accessibility",
+      "value_type": "boolean",
+      "osm_tags": [
+        "tactile_paving"
+      ],
+      "aliases": {
+        "vi": [
+          "gạch dẫn đường"
+        ],
+        "en": [
+          "tactile paving"
+        ]
+      }
+    },
+    {
+      "id": "route_information",
+      "facet": "transport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "passenger_information_display"
+      ],
+      "aliases": {
+        "vi": [
+          "bảng thông tin tuyến"
+        ],
+        "en": [
+          "route information"
+        ]
+      }
+    },
+    {
+      "id": "realtime_arrivals",
+      "facet": "transport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "passenger_information_display"
+      ],
+      "aliases": {
+        "vi": [
+          "bảng giờ đến trực tiếp"
+        ],
+        "en": [
+          "real time arrivals"
+        ]
+      }
+    },
+    {
+      "id": "ticketing",
+      "facet": "transport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "ticket_machine"
+      ],
+      "aliases": {
+        "vi": [
+          "bán vé tại chỗ"
+        ],
+        "en": [
+          "ticketing on site"
+        ]
+      }
+    },
+    {
+      "id": "waiting_area",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "osm_tags": [
+        "waiting_room"
+      ],
+      "aliases": {
+        "vi": [
+          "khu chờ"
+        ],
+        "en": [
+          "waiting area"
+        ]
+      }
+    },
+    {
+      "id": "appointment",
+      "facet": "service",
+      "value_type": "boolean",
+      "osm_tags": [
+        "appointment"
+      ],
+      "aliases": {
+        "vi": [
+          "cần đặt lịch"
+        ],
+        "en": [
+          "appointment available"
+        ]
+      }
+    },
+    {
+      "id": "open_late",
+      "facet": "hours",
+      "value_type": "boolean",
+      "osm_tags": [],
+      "aliases": {
+        "vi": [
+          "mở khuya"
+        ],
+        "en": [
+          "open late"
+        ]
+      }
+    },
+    {
+      "id": "open_24h",
+      "facet": "hours",
+      "value_type": "boolean",
+      "osm_tags": [],
+      "aliases": {
+        "vi": [
+          "mở 24 giờ",
+          "24/7"
+        ],
+        "en": [
+          "open 24 hours"
+        ]
+      }
+    },
+    {
+      "id": "breakfast",
+      "facet": "service",
+      "value_type": "boolean",
+      "osm_tags": [
+        "breakfast"
+      ],
+      "aliases": {
+        "vi": [
+          "có bữa sáng"
+        ],
+        "en": [
+          "breakfast included"
+        ]
+      }
+    },
+    {
+      "id": "reception_24h",
+      "facet": "service",
+      "value_type": "boolean",
+      "osm_tags": [
+        "reception:opening_hours"
+      ],
+      "aliases": {
+        "vi": [
+          "lễ tân 24 giờ"
+        ],
+        "en": [
+          "24 hour reception"
+        ]
+      }
+    },
+    {
+      "id": "laundry_service",
+      "facet": "service",
+      "value_type": "boolean",
+      "osm_tags": [
+        "laundry_service"
+      ],
+      "aliases": {
+        "vi": [
+          "dịch vụ giặt ủi"
+        ],
+        "en": [
+          "laundry service"
+        ]
+      }
+    },
+    {
+      "id": "pool",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "osm_tags": [
+        "swimming_pool"
+      ],
+      "aliases": {
+        "vi": [
+          "có hồ bơi"
+        ],
+        "en": [
+          "swimming pool available"
+        ]
+      }
+    },
+    {
+      "id": "locker_rooms",
+      "facet": "sport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "changing_rooms"
+      ],
+      "aliases": {
+        "vi": [
+          "phòng thay đồ"
+        ],
+        "en": [
+          "changing rooms"
+        ]
+      }
+    },
+    {
+      "id": "showers",
+      "facet": "sport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "shower"
+      ],
+      "aliases": {
+        "vi": [
+          "có phòng tắm"
+        ],
+        "en": [
+          "showers available"
+        ]
+      }
+    },
+    {
+      "id": "equipment_rental",
+      "facet": "sport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "rental"
+      ],
+      "aliases": {
+        "vi": [
+          "cho thuê dụng cụ"
+        ],
+        "en": [
+          "equipment rental"
+        ]
+      }
+    },
+    {
+      "id": "shade",
+      "facet": "outdoors",
+      "value_type": "boolean",
+      "osm_tags": [
+        "shaded"
+      ],
+      "aliases": {
+        "vi": [
+          "nhiều bóng mát"
+        ],
+        "en": [
+          "shaded"
+        ]
+      }
+    },
+    {
+      "id": "drinking_water",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "osm_tags": [
+        "drinking_water"
+      ],
+      "aliases": {
+        "vi": [
+          "nước uống công cộng"
+        ],
+        "en": [
+          "drinking water"
+        ]
+      }
+    },
+    {
+      "id": "playground",
+      "facet": "outdoors",
+      "value_type": "boolean",
+      "osm_tags": [
+        "playground"
+      ],
+      "aliases": {
+        "vi": [
+          "khu vui chơi trẻ em"
+        ],
+        "en": [
+          "playground available"
+        ]
+      }
+    },
+    {
+      "id": "bicycle_parking",
+      "facet": "transport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "bicycle_parking"
+      ],
+      "aliases": {
+        "vi": [
+          "chỗ đậu xe đạp"
+        ],
+        "en": [
+          "bicycle parking"
+        ]
+      }
+    },
+    {
+      "id": "pet_friendly",
+      "facet": "policy",
+      "value_type": "boolean",
+      "osm_tags": [
+        "dog"
+      ],
+      "aliases": {
+        "vi": [
+          "cho thú cưng"
+        ],
+        "en": [
+          "pet friendly"
+        ]
+      }
+    },
+    {
+      "id": "free_entry",
+      "facet": "pricing",
+      "value_type": "boolean",
+      "osm_tags": [
+        "fee"
+      ],
+      "aliases": {
+        "vi": [
+          "vào cửa miễn phí"
+        ],
+        "en": [
+          "free entry"
+        ]
+      }
+    },
+    {
+      "id": "guided_tours",
+      "facet": "culture",
+      "value_type": "boolean",
+      "osm_tags": [
+        "guided_tours"
+      ],
+      "aliases": {
+        "vi": [
+          "có hướng dẫn tham quan"
+        ],
+        "en": [
+          "guided tours"
+        ]
+      }
+    },
+    {
+      "id": "audio_guide",
+      "facet": "culture",
+      "value_type": "boolean",
+      "osm_tags": [
+        "audio_guide"
+      ],
+      "aliases": {
+        "vi": [
+          "thuyết minh tự động"
+        ],
+        "en": [
+          "audio guide"
+        ]
+      }
+    },
+    {
+      "id": "gift_shop",
+      "facet": "culture",
+      "value_type": "boolean",
+      "osm_tags": [
+        "gift_shop"
+      ],
+      "aliases": {
+        "vi": [
+          "quầy lưu niệm"
+        ],
+        "en": [
+          "gift shop on site"
+        ]
+      }
+    },
+    {
+      "id": "security_guard",
+      "facet": "service",
+      "value_type": "boolean",
+      "osm_tags": [
+        "security"
+      ],
+      "aliases": {
+        "vi": [
+          "có bảo vệ"
+        ],
+        "en": [
+          "security staff"
+        ]
+      }
+    },
+    {
+      "id": "service_counter",
+      "facet": "government",
+      "value_type": "boolean",
+      "osm_tags": [],
+      "aliases": {
+        "vi": [
+          "quầy dịch vụ"
+        ],
+        "en": [
+          "service counter"
+        ]
+      }
+    },
+    {
+      "id": "queue_ticket",
+      "facet": "government",
+      "value_type": "boolean",
+      "osm_tags": [],
+      "aliases": {
+        "vi": [
+          "phát số thứ tự"
+        ],
+        "en": [
+          "queue tickets"
+        ]
+      }
+    },
+    {
+      "id": "cash_withdrawal",
+      "facet": "finance",
+      "value_type": "boolean",
+      "osm_tags": [
+        "cash_out"
+      ],
+      "aliases": {
+        "vi": [
+          "rút tiền"
+        ],
+        "en": [
+          "cash withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "cash_deposit",
+      "facet": "finance",
+      "value_type": "boolean",
+      "osm_tags": [
+        "cash_in"
+      ],
+      "aliases": {
+        "vi": [
+          "nộp tiền mặt"
+        ],
+        "en": [
+          "cash deposit"
+        ]
+      }
+    },
+    {
+      "id": "contactless",
+      "facet": "payment",
+      "value_type": "boolean",
+      "osm_tags": [
+        "payment:contactless"
+      ],
+      "aliases": {
+        "vi": [
+          "thanh toán không chạm"
+        ],
+        "en": [
+          "contactless payment"
+        ]
+      }
+    },
+    {
+      "id": "cashless",
+      "facet": "payment",
+      "value_type": "boolean",
+      "osm_tags": [
+        "cashless"
+      ],
+      "aliases": {
+        "vi": [
+          "không cần tiền mặt"
+        ],
+        "en": [
+          "cashless"
+        ]
+      }
+    },
+    {
+      "id": "canopy",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "osm_tags": [
+        "canopy"
+      ],
+      "aliases": {
+        "vi": [
+          "mái che rộng"
+        ],
+        "en": [
+          "canopy"
+        ]
+      }
+    },
+    {
+      "id": "fuel_petrol",
+      "facet": "fuel",
+      "value_type": "boolean",
+      "osm_tags": [
+        "fuel:octane_95"
+      ],
+      "aliases": {
+        "vi": [
+          "có xăng"
+        ],
+        "en": [
+          "petrol"
+        ]
+      }
+    },
+    {
+      "id": "fuel_diesel",
+      "facet": "fuel",
+      "value_type": "boolean",
+      "osm_tags": [
+        "fuel:diesel"
+      ],
+      "aliases": {
+        "vi": [
+          "có dầu diesel"
+        ],
+        "en": [
+          "diesel"
+        ]
+      }
+    },
+    {
+      "id": "air_compressor",
+      "facet": "vehicle",
+      "value_type": "boolean",
+      "osm_tags": [
+        "compressed_air"
+      ],
+      "aliases": {
+        "vi": [
+          "bơm lốp xe"
+        ],
+        "en": [
+          "tire air pump"
+        ]
+      }
+    },
+    {
+      "id": "convenience_shop",
+      "facet": "vehicle",
+      "value_type": "boolean",
+      "osm_tags": [
+        "shop"
+      ],
+      "aliases": {
+        "vi": [
+          "cửa hàng tiện lợi tại trạm"
+        ],
+        "en": [
+          "on-site convenience shop"
+        ]
+      }
+    },
+    {
+      "id": "fast_charging",
+      "facet": "vehicle",
+      "value_type": "boolean",
+      "osm_tags": [
+        "socket:ccs"
+      ],
+      "aliases": {
+        "vi": [
+          "sạc nhanh"
+        ],
+        "en": [
+          "fast charging"
+        ]
+      }
+    },
+    {
+      "id": "motorbike_parking",
+      "facet": "transport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "motorcycle_parking"
+      ],
+      "aliases": {
+        "vi": [
+          "chỗ đậu xe máy"
+        ],
+        "en": [
+          "motorcycle parking"
+        ]
+      }
+    },
+    {
+      "id": "covered_parking",
+      "facet": "transport",
+      "value_type": "boolean",
+      "osm_tags": [
+        "covered"
+      ],
+      "aliases": {
+        "vi": [
+          "bãi xe có mái che"
+        ],
+        "en": [
+          "covered parking"
+        ]
+      }
+    },
+    {
+      "id": "disabled_parking",
+      "facet": "accessibility",
+      "value_type": "boolean",
+      "osm_tags": [
+        "capacity:disabled"
+      ],
+      "aliases": {
+        "vi": [
+          "chỗ đậu xe cho người khuyết tật"
+        ],
+        "en": [
+          "accessible parking"
+        ]
+      }
+    },
+    {
+      "id": "baby_changing",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "osm_tags": [
+        "changing_table"
+      ],
+      "aliases": {
+        "vi": [
+          "bàn thay tã"
+        ],
+        "en": [
+          "baby changing table"
+        ]
+      }
+    },
+    {
+      "id": "handwashing",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "osm_tags": [
+        "handwashing"
+      ],
+      "aliases": {
+        "vi": [
+          "bồn rửa tay"
+        ],
+        "en": [
+          "handwashing facilities"
+        ]
+      }
+    },
+    {
+      "id": "gender_neutral",
+      "facet": "accessibility",
+      "value_type": "boolean",
+      "osm_tags": [
+        "unisex"
+      ],
+      "aliases": {
+        "vi": [
+          "nhà vệ sinh chung"
+        ],
+        "en": [
+          "gender-neutral toilet"
+        ]
+      }
+    },
+    {
+      "id": "family_friendly",
+      "facet": "suitability",
+      "value_type": "boolean",
+      "osm_tags": [
+        "family"
+      ],
+      "aliases": {
+        "vi": [
+          "phù hợp gia đình"
+        ],
+        "en": [
+          "family friendly"
+        ]
+      }
+    },
+    {
+      "id": "emergency_care",
+      "facet": "health",
+      "value_type": "boolean",
+      "osm_tags": [
+        "emergency"
+      ],
+      "aliases": {
+        "vi": [
+          "cấp cứu"
+        ],
+        "en": [
+          "emergency care"
+        ]
+      }
+    },
+    {
+      "id": "pharmacy_in_house",
+      "facet": "health",
+      "value_type": "boolean",
+      "osm_tags": [
+        "dispensing"
+      ],
+      "aliases": {
+        "vi": [
+          "quầy thuốc tại chỗ"
+        ],
+        "en": [
+          "on-site pharmacy"
+        ]
+      }
+    },
+    {
+      "id": "online_ordering",
+      "facet": "service",
+      "value_type": "boolean",
+      "osm_tags": [
+        "website:orders"
+      ],
+      "aliases": {
+        "vi": [
+          "đặt hàng trực tuyến"
+        ],
+        "en": [
+          "online ordering"
+        ]
+      }
+    },
+    {
+      "id": "home_delivery",
+      "facet": "service",
+      "value_type": "boolean",
+      "osm_tags": [
+        "delivery"
+      ],
+      "aliases": {
+        "vi": [
+          "giao đến nhà"
+        ],
+        "en": [
+          "home delivery"
+        ]
+      }
+    },
+    {
+      "id": "study_space",
+      "facet": "education",
+      "value_type": "boolean",
+      "osm_tags": [
+        "study_space"
+      ],
+      "aliases": {
+        "vi": [
+          "không gian học tập"
+        ],
+        "en": [
+          "study space"
+        ]
+      }
+    },
+    {
+      "id": "cafeteria",
+      "facet": "education",
+      "value_type": "boolean",
+      "osm_tags": [
+        "cafeteria"
+      ],
+      "aliases": {
+        "vi": [
+          "căng tin"
+        ],
+        "en": [
+          "cafeteria"
+        ]
+      }
+    }
+  ],
+  "family_profiles": [
+    {
+      "ancestor_id": "4",
+      "property_ids": [
+        "indoor_seating",
+        "outdoor_seating",
+        "air_conditioning",
+        "internet_access",
+        "takeaway",
+        "delivery",
+        "toilets",
+        "accepts_cards",
+        "parking",
+        "airy",
+        "quiet",
+        "family_friendly"
+      ]
+    },
+    {
+      "ancestor_id": "6",
+      "property_ids": [
+        "accepts_cards",
+        "contactless",
+        "wheelchair",
+        "parking",
+        "air_conditioning",
+        "online_ordering",
+        "home_delivery",
+        "security_guard",
+        "open_late",
+        "toilets"
+      ]
+    },
+    {
+      "ancestor_id": "8",
+      "property_ids": [
+        "accepts_cards",
+        "wheelchair",
+        "waiting_area",
+        "appointment",
+        "parking",
+        "air_conditioning",
+        "toilets",
+        "security_guard"
+      ]
+    },
+    {
+      "ancestor_id": "41",
+      "property_ids": [
+        "wheelchair",
+        "accessible_toilet",
+        "waiting_area",
+        "appointment",
+        "air_conditioning",
+        "accepts_cards",
+        "parking",
+        "toilets",
+        "emergency_care",
+        "pharmacy_in_house"
+      ]
+    },
+    {
+      "ancestor_id": "2",
+      "property_ids": [
+        "wheelchair",
+        "parking",
+        "internet_access",
+        "cafeteria",
+        "security_guard",
+        "study_space",
+        "air_conditioning",
+        "toilets"
+      ]
+    },
+    {
+      "ancestor_id": "110",
+      "property_ids": [
+        "internet_access",
+        "air_conditioning",
+        "parking",
+        "wheelchair",
+        "accepts_cards",
+        "breakfast",
+        "laundry_service",
+        "reception_24h",
+        "pool",
+        "toilets"
+      ]
+    },
+    {
+      "ancestor_id": "80",
+      "property_ids": [
+        "parking",
+        "accepts_cards",
+        "covered_area",
+        "toilets",
+        "air_conditioning",
+        "wheelchair",
+        "waiting_area",
+        "open_late"
+      ]
+    },
+    {
+      "ancestor_id": "79",
+      "property_ids": [
+        "shelter",
+        "seating",
+        "lighting",
+        "wheelchair",
+        "tactile_paving",
+        "route_information",
+        "ticketing",
+        "waiting_area",
+        "toilets"
+      ]
+    },
+    {
+      "ancestor_id": "9",
+      "property_ids": [
+        "lighting",
+        "seating",
+        "toilets",
+        "bicycle_parking",
+        "drinking_water",
+        "shade",
+        "pet_friendly",
+        "free_entry",
+        "playground"
+      ]
+    },
+    {
+      "ancestor_id": "115",
+      "property_ids": [
+        "parking",
+        "wheelchair",
+        "toilets",
+        "locker_rooms",
+        "showers",
+        "equipment_rental",
+        "lighting",
+        "accepts_cards"
+      ]
+    },
+    {
+      "ancestor_id": "131",
+      "property_ids": [
+        "wheelchair",
+        "guided_tours",
+        "accepts_cards",
+        "toilets",
+        "audio_guide",
+        "air_conditioning",
+        "parking",
+        "gift_shop"
+      ]
+    },
+    {
+      "ancestor_id": "139",
+      "property_ids": [
+        "free_entry",
+        "wheelchair",
+        "toilets",
+        "parking",
+        "covered_area",
+        "quiet",
+        "seating",
+        "lighting"
+      ]
+    },
+    {
+      "ancestor_id": "67",
+      "property_ids": [
+        "wheelchair",
+        "parking",
+        "accessible_toilet",
+        "waiting_area",
+        "security_guard",
+        "service_counter",
+        "queue_ticket",
+        "air_conditioning"
+      ]
+    },
+    {
+      "ancestor_id": "185",
+      "property_ids": [
+        "wheelchair",
+        "parking",
+        "accepts_cards",
+        "appointment",
+        "air_conditioning",
+        "waiting_area",
+        "toilets",
+        "internet_access"
+      ]
+    },
+    {
+      "ancestor_id": "221",
+      "property_ids": [
+        "parking",
+        "accepts_cards",
+        "wheelchair",
+        "covered_area",
+        "toilets",
+        "waiting_area",
+        "lighting",
+        "security_guard"
+      ]
+    }
+  ],
+  "category_profiles": [
+    {
+      "category_id": "52",
+      "replace": true,
+      "property_ids": [
+        "cash_withdrawal",
+        "cash_deposit",
+        "open_24h",
+        "wheelchair",
+        "covered_area",
+        "lighting",
+        "contactless",
+        "cashless"
+      ]
+    },
+    {
+      "category_id": "85",
+      "replace": true,
+      "property_ids": [
+        "fuel_petrol",
+        "fuel_diesel",
+        "accepts_cards",
+        "toilets",
+        "air_compressor",
+        "convenience_shop",
+        "canopy",
+        "open_24h"
+      ]
+    },
+    {
+      "category_id": "19",
+      "replace": true,
+      "property_ids": [
+        "fast_charging",
+        "covered_parking",
+        "motorbike_parking",
+        "accepts_cards",
+        "toilets",
+        "waiting_area",
+        "lighting",
+        "open_24h"
+      ]
+    },
+    {
+      "category_id": "114",
+      "replace": true,
+      "property_ids": [
+        "shelter",
+        "seating",
+        "lighting",
+        "wheelchair",
+        "tactile_paving",
+        "route_information",
+        "realtime_arrivals",
+        "covered_area"
+      ]
+    },
+    {
+      "category_id": "86",
+      "replace": true,
+      "property_ids": [
+        "covered_parking",
+        "disabled_parking",
+        "lighting",
+        "security_guard",
+        "accepts_cards",
+        "motorbike_parking",
+        "bicycle_parking",
+        "wheelchair"
+      ]
+    },
+    {
+      "category_id": "74",
+      "replace": true,
+      "property_ids": [
+        "lighting",
+        "seating",
+        "playground",
+        "toilets",
+        "bicycle_parking",
+        "drinking_water",
+        "shade",
+        "pet_friendly",
+        "free_entry"
+      ]
+    },
+    {
+      "category_id": "240",
+      "replace": true,
+      "property_ids": [
+        "wheelchair",
+        "accessible_toilet",
+        "baby_changing",
+        "free_entry",
+        "handwashing",
+        "gender_neutral",
+        "lighting",
+        "drinking_water"
+      ]
+    },
+    {
+      "category_id": "34",
+      "replace": true,
+      "property_ids": [
+        "wheelchair",
+        "waiting_area",
+        "accepts_cards",
+        "parking",
+        "open_late",
+        "delivery",
+        "air_conditioning",
+        "toilets"
+      ]
+    },
+    {
+      "category_id": "242",
+      "replace": true,
+      "property_ids": [
+        "fast_charging",
+        "parking",
+        "covered_parking",
+        "wheelchair",
+        "toilets",
+        "waiting_area",
+        "lighting",
+        "open_24h",
+        "accepts_cards"
+      ]
+    },
+    {
+      "category_id": "243",
+      "replace": true,
+      "property_ids": [
+        "wheelchair",
+        "waiting_area",
+        "cash_withdrawal",
+        "cash_deposit",
+        "accepts_cards",
+        "parking",
+        "air_conditioning",
+        "toilets",
+        "open_late"
+      ]
+    },
+    {
+      "category_id": "245",
+      "replace": true,
+      "property_ids": [
+        "parking",
+        "accepts_cards",
+        "covered_area",
+        "toilets",
+        "air_compressor",
+        "waiting_area",
+        "open_late",
+        "lighting"
+      ]
+    }
+  ]
+}

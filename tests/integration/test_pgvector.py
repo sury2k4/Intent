@@ -1,9 +1,11 @@
 import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 import numpy as np
 import pytest
 
+import model_intent.db as db_module
 from model_intent.db import Database
 from model_intent.embedding_sync import embedding_status, sync_embeddings
 from model_intent.migrations import apply_migrations
@@ -12,13 +14,47 @@ from model_intent.runtime import MatcherRuntime
 from model_intent.schemas import CategorySearchProfile
 
 ROOT = Path(__file__).parents[2]
-pytestmark = pytest.mark.pgvector
+pytestmark = [pytest.mark.pgvector, pytest.mark.pgvector_write]
+
+
+@pytest.fixture(autouse=True)
+def disposable_database_only(monkeypatch):
+    url = os.getenv("MODEL_INTENT_WRITE_TEST_DATABASE_URL")
+    if not url:
+        pytest.skip("write tests require MODEL_INTENT_WRITE_TEST_DATABASE_URL pointing to a disposable DB")
+    parsed = urlparse(url)
+    try:
+        valid = (
+            parsed.scheme in ("postgres", "postgresql")
+            and parsed.hostname == "127.0.0.1"
+            and parsed.port not in (5432, 5433, None)
+            and parsed.path == "/model_intent_write_test"
+            and not parsed.query
+            and not parsed.fragment
+        )
+    except ValueError:
+        valid = False
+    if not valid:
+        pytest.fail("write tests require a separate 127.0.0.1 port and model_intent_write_test database")
+
+    def scratch_url(database_url=None):
+        if database_url is not None and database_url != url:
+            raise RuntimeError("write tests cannot connect outside the disposable database")
+        return url
+
+    monkeypatch.setenv("DATABASE_URL", url)
+    monkeypatch.setattr(db_module, "require_database_url", scratch_url)
 
 
 def database_or_skip():
     if not os.getenv("DATABASE_URL"):
         pytest.skip("DATABASE_URL is not set")
-    database = Database(statement_timeout_ms=120000)
+    try:
+        database = Database(statement_timeout_ms=120000)
+    except RuntimeError as exc:
+        if "optional 'db' dependencies" in str(exc):
+            pytest.skip("optional database dependencies are not installed")
+        raise
     database.open()
     return database
 
@@ -27,7 +63,10 @@ def test_profile_migrations_and_sync_are_idempotent():
     database = database_or_skip()
     try:
         applied = apply_migrations(database, ROOT / "migrations")
-        assert "005_category_search_profiles_v3" in applied or applied == []
+        assert not applied or any(
+            name in applied
+            for name in ("005_category_search_profiles_v3", "006_category_search_profiles_bge_m3", "007_poi_dataset_generations")
+        )
         result = sync_embeddings(
             database,
             config_path=ROOT / "configs/benchmark.cpu.yaml",

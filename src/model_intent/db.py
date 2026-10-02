@@ -2,9 +2,50 @@ from __future__ import annotations
 
 import os
 import time
+from urllib.parse import urlparse
 from contextlib import contextmanager
 from dataclasses import dataclass
-from typing import Iterator
+from typing import Iterator, Mapping, Any
+
+
+UNIFIED_DATABASE_HOST = "127.0.0.1"
+UNIFIED_DATABASE_PORT = 5433
+UNIFIED_DATABASE_NAME = "model_intent_unified"
+
+
+def require_database_url(database_url: str | None = None) -> str:
+    """Allow only the explicit local unified database, never the legacy instance."""
+    url = database_url if database_url is not None else os.getenv("DATABASE_URL")
+    if not url:
+        raise RuntimeError("unified Postgres serving requires explicit DATABASE_URL; refusing the legacy default database")
+    try:
+        parsed = urlparse(url)
+        valid = (
+            parsed.scheme in ("postgres", "postgresql")
+            and parsed.hostname == UNIFIED_DATABASE_HOST
+            and parsed.port == UNIFIED_DATABASE_PORT
+            and parsed.path == f"/{UNIFIED_DATABASE_NAME}"
+            and not parsed.query
+            and not parsed.fragment
+            and not parsed.params
+        )
+    except ValueError:
+        valid = False
+    if not valid:
+        raise RuntimeError("DATABASE_URL must target the isolated unified database at 127.0.0.1:5433/model_intent_unified")
+    return url
+
+
+def validate_database_target(config: Mapping[str, Any], database_url: str | None = None) -> str | None:
+    """Reject an unsafe target before loading a database-backed runtime."""
+    poi_config = config.get("poi_search") or {}
+    if (
+        config.get("require_explicit_database_url")
+        or config.get("retrieval_backend") == "pgvector"
+        or poi_config.get("backend") == "postgres"
+    ):
+        return require_database_url(database_url)
+    return database_url if database_url is not None else os.getenv("DATABASE_URL")
 
 
 @dataclass(frozen=True)
@@ -22,14 +63,12 @@ class Database:
         timeout: float = 10.0,
         statement_timeout_ms: int = 5000,
     ) -> None:
+        self.database_url = require_database_url(database_url)
         try:
             from pgvector.psycopg import register_vector
             from psycopg_pool import ConnectionPool
         except ImportError as exc:
             raise RuntimeError("Install the optional 'db' dependencies") from exc
-        self.database_url = database_url or os.getenv("DATABASE_URL") or "postgresql://model_intent:model_intent_dev@localhost:5432/model_intent"
-        if not self.database_url:
-            raise ValueError("DATABASE_URL is required")
         self.min_size = int(min_size)
         self.max_size = int(max_size)
         self.pool_timeout = float(timeout)
@@ -57,9 +96,18 @@ class Database:
         )
 
     def open(self, wait: bool = True, timeout: float = 30.0) -> None:
-        self.pool.open(wait=wait)
-        if wait:
+        if not wait:
+            raise ValueError("database target verification requires wait=True")
+        self.pool.open(wait=True)
+        try:
             self.pool.wait(timeout=timeout)
+            with self.connection() as (connection, _):
+                current_database = connection.execute("SELECT current_database()").fetchone()[0]
+            if current_database != UNIFIED_DATABASE_NAME:
+                raise RuntimeError("connected database is not model_intent_unified")
+        except Exception:
+            self.pool.close()
+            raise
 
     def close(self) -> None:
         self.pool.close()

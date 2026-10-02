@@ -4,6 +4,7 @@ from pathlib import Path
 from model_intent.decision import load_decision_policy, validate_decision_policy
 from model_intent.evaluation import load_cases, validate_cases
 from model_intent.rendering import load_enrichment, render_category_profiles, validate_enrichment
+from model_intent.osm_ingest import validate_catalogs
 from model_intent.taxonomy import Taxonomy
 
 ROOT = Path(__file__).parents[1]
@@ -26,6 +27,12 @@ def test_full_data_references_are_valid_and_leaf_coverage_is_high():
         set(profile) == {"description_vi", "description_en", "aliases_vi", "aliases_en"}
         for profile in enrichment.values()
     )
+    poi_catalogs = validate_catalogs(
+        taxonomy,
+        ROOT / "data/osm/mappings/place_types.poc.v1.json",
+        ROOT / "data/properties/poi_properties.poc.v1.json",
+    )
+    assert poi_catalogs["coverage"]["complete"]
 
 
 def test_rendered_profile_corpus_is_bounded_and_bilingual():

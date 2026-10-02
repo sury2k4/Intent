@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "property_taxonomy_version": "poi-properties-poc-v1",
+  "status": "poc",
+  "properties": [
+    {
+      "id": "air_conditioning",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["air_conditioning"],
+      "aliases": {"vi": ["máy lạnh", "điều hòa", "điều hoà", "phòng lạnh"], "en": ["air conditioning", "air-conditioned", "air conditioned", "aircon", "ac"]},
+      "mock_applicable_codes": ["coffee", "tea_milk_tea", "restaurant", "fast_food", "bar", "pub", "hotel_lodging", "library", "shopping_mall", "supermarket", "movie_theater", "gym", "spa", "office_building"],
+      "mock_true_rate_by_code": {"coffee": 0.68, "tea_milk_tea": 0.58, "restaurant": 0.78, "fast_food": 0.72, "bar": 0.52, "pub": 0.48, "hotel_lodging": 0.92, "library": 0.85, "shopping_mall": 0.96, "supermarket": 0.90, "movie_theater": 0.98, "gym": 0.75, "spa": 0.88, "office_building": 0.95}
+    },
+    {
+      "id": "internet_access",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["internet_access"],
+      "aliases": {"vi": ["wifi", "wi-fi", "mạng wifi", "internet"], "en": ["wifi", "wi-fi", "internet"]},
+      "mock_applicable_codes": ["coffee", "tea_milk_tea", "restaurant", "fast_food", "bar", "pub", "hotel_lodging", "hostel", "library", "shopping_mall", "office_building"],
+      "mock_true_rate_by_code": {"coffee": 0.78, "tea_milk_tea": 0.65, "restaurant": 0.58, "fast_food": 0.42, "bar": 0.46, "pub": 0.40, "hotel_lodging": 0.82, "hostel": 0.66, "library": 0.80, "shopping_mall": 0.52, "office_building": 0.75}
+    },
+    {
+      "id": "outdoor_seating",
+      "facet": "seating",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["outdoor_seating"],
+      "aliases": {"vi": ["chỗ ngồi ngoài trời", "ngồi ngoài trời", "sân ngoài trời", "không gian ngoài trời"], "en": ["outdoor seating", "outdoor seats", "outside seating"]},
+      "mock_applicable_codes": ["coffee", "tea_milk_tea", "restaurant", "bar", "pub", "hotel_lodging"],
+      "mock_true_rate_by_code": {"coffee": 0.42, "tea_milk_tea": 0.28, "restaurant": 0.36, "bar": 0.30, "pub": 0.32, "hotel_lodging": 0.26}
+    },
+    {
+      "id": "wheelchair",
+      "facet": "accessibility",
+      "value_type": "enum",
+      "values": ["yes", "no", "limited"],
+      "queryable": true,
+      "osm_tags": ["wheelchair"],
+      "aliases": {"vi": ["xe lăn", "tiếp cận xe lăn", "người dùng xe lăn"], "en": ["wheelchair accessible", "wheelchair access", "accessible"]},
+      "mock_applicable_codes": ["coffee", "restaurant", "hotel_lodging", "hospital", "library", "shopping_mall", "movie_theater", "museum"]
+    },
+    {
+      "id": "delivery",
+      "facet": "service",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["delivery", "delivery:covid19"],
+      "aliases": {"vi": ["giao hàng", "có giao hàng", "giao tận nơi"], "en": ["delivery", "delivers", "home delivery"]},
+      "mock_applicable_codes": ["restaurant", "coffee", "tea_milk_tea", "bakery", "fast_food", "supermarket", "convenience_store"]
+    },
+    {
+      "id": "takeaway",
+      "facet": "service",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["takeaway"],
+      "aliases": {"vi": ["mang đi", "mua mang đi", "bán mang đi"], "en": ["takeaway", "take out", "takeout"]},
+      "mock_applicable_codes": ["restaurant", "coffee", "tea_milk_tea", "bakery", "fast_food", "ice-cream", "beverage_shop"]
+    },
+    {
+      "id": "parking",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["parking", "parking:lane", "parking:condition"],
+      "aliases": {"vi": ["chỗ đậu xe", "bãi đỗ xe", "đậu xe", "gửi xe"], "en": ["parking", "parking lot", "car park"]},
+      "mock_applicable_codes": ["coffee", "tea_milk_tea", "restaurant", "shopping_mall", "supermarket", "hotel_lodging", "hospital", "gym", "movie_theater"]
+    },
+    {
+      "id": "toilets",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["toilets", "toilets:wheelchair"],
+      "aliases": {"vi": ["nhà vệ sinh", "toilet", "wc"], "en": ["toilet", "toilets", "restroom", "bathroom"]},
+      "mock_applicable_codes": ["coffee", "restaurant", "shopping_mall", "supermarket", "hotel_lodging", "library", "movie_theater", "museum", "gym"]
+    },
+    {
+      "id": "reservation",
+      "facet": "service",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["reservation"],
+      "aliases": {"vi": ["đặt bàn", "đặt chỗ", "đặt trước"], "en": ["reservation", "reservations", "booking"]},
+      "mock_applicable_codes": ["restaurant", "bar", "pub", "hotel_lodging", "resort", "movie_theater"]
+    },
+    {
+      "id": "smoking",
+      "facet": "policy",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["smoking"],
+      "aliases": {"vi": ["được hút thuốc", "hút thuốc", "cho hút thuốc"], "en": ["smoking", "smoking allowed", "smoke-friendly"]},
+      "mock_applicable_codes": ["coffee", "bar", "pub", "night_club", "restaurant"]
+    },
+    {
+      "id": "drive_through",
+      "facet": "service",
+      "value_type": "boolean",
+      "queryable": true,
+      "osm_tags": ["drive_through"],
+      "aliases": {"vi": ["mua hàng không cần xuống xe", "drive thru"], "en": ["drive-through", "drive thru"]},
+      "mock_applicable_codes": ["fast_food", "coffee"]
+    },
+    {
+      "id": "cuisine",
+      "facet": "food",
+      "value_type": "string",
+      "queryable": true,
+      "osm_tags": ["cuisine"],
+      "aliases": {"vi": ["món ăn", "ẩm thực", "đồ ăn"], "en": ["cuisine", "food"]},
+      "mock_applicable_codes": ["restaurant", "fast_food", "coffee", "bakery"]
+    },
+    {
+      "id": "airy",
+      "facet": "ambience",
+      "value_type": "ordinal",
+      "values": ["low", "medium", "high"],
+      "queryable": true,
+      "osm_tags": [],
+      "aliases": {"vi": ["thoáng mát", "thoáng", "rộng rãi", "không gian mở"], "en": ["airy", "open and airy", "spacious", "well ventilated"]},
+      "mock_applicable_codes": ["coffee", "tea_milk_tea", "restaurant", "bar", "pub", "library", "hotel_lodging", "shopping_mall", "park", "museum"]
+    },
+    {
+      "id": "quiet",
+      "facet": "ambience",
+      "value_type": "ordinal",
+      "values": ["low", "medium", "high"],
+      "queryable": true,
+      "osm_tags": [],
+      "aliases": {"vi": ["yên tĩnh", "ít ồn", "không ồn"], "en": ["quiet", "peaceful", "not noisy"]},
+      "mock_applicable_codes": ["coffee", "tea_milk_tea", "library", "museum", "hotel_lodging", "park"]
+    }
+  ]
+}

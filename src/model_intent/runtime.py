@@ -17,7 +17,7 @@ from .decision import (
     load_decision_policy,
     validate_decision_policy,
 )
-from .db import Database
+from .db import Database, validate_database_target
 from .embedding_sync import (
     profile_content_hash,
     profile_hash,
@@ -109,6 +109,7 @@ class MatcherRuntime:
         taxonomy_path = Path(taxonomy_path).resolve()
         project_root = config_path.parent.parent
         config = load_yaml(config_path)
+        validate_database_target(config)
         _configure_runtime(config, local_files_only)
         taxonomy = Taxonomy.load(taxonomy_path)
 
@@ -142,6 +143,7 @@ class MatcherRuntime:
                     model_key=model_key,
                     model_revision=str(embedder_metadata.get("revision") or ""),
                     renderer_version=PROFILE_RENDERER_VERSION,
+                    taxonomy_fingerprint=taxonomy.fingerprint(),
                 )
             except Exception:
                 confidence_calibration = None

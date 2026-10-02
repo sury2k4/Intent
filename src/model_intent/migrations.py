@@ -42,9 +42,8 @@ def ensure_ledger(connection) -> None:
 def migration_status(database: Database, directory: str | Path) -> list[dict[str, object]]:
     migrations = discover_migrations(directory)
     with database.connection() as (connection, _):
-        ensure_ledger(connection)
-        connection.commit()
-        applied = dict(connection.execute("SELECT version, checksum FROM schema_migrations").fetchall())
+        ledger = connection.execute("SELECT to_regclass('schema_migrations')").fetchone()[0]
+        applied = dict(connection.execute("SELECT version, checksum FROM schema_migrations").fetchall()) if ledger else {}
     return [
         {
             "version": migration.version,
