@@ -43,6 +43,21 @@ def test_hyphenated_category_alias_matches_normalized_phrase():
     assert [match.item_id for match in resolve("ice-cream shop")] == ["25"]
 
 
+def test_gym_name_is_short_but_still_a_place_and_negated_types_are_ignored():
+    taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
+    matches = explicit_categories("I meant a gym, not a swimming pool", taxonomy, enrichment)
+    assert [match.item_id for match in matches] == ["118"]
+    garden = explicit_categories("Vườn có ghế ngồi, không cần khu vui chơi trẻ em", taxonomy, enrichment)
+    assert "119" not in {match.item_id for match in garden}
+    family = explicit_categories("Tìm tòa căn hộ cho gia đình có hồ bơi", taxonomy, enrichment)
+    assert "157" not in {match.item_id for match in family}
+    corrected = explicit_categories("Không phải phòng gym, tìm hồ bơi để bơi", taxonomy, enrichment)
+    assert [match.item_id for match in corrected] == ["122"]
+    but_corrected = explicit_categories("không phải nhà thuốc nhưng tôi muốn tìm quán cà phê", taxonomy, enrichment)
+    assert [match.item_id for match in but_corrected] == ["23"]
+
+
 def test_explicit_category_fallback_can_skip_property_spans():
     taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v1.json")
     enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v1.json")

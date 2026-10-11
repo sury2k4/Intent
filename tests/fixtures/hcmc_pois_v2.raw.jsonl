@@ -1,9 +1,0 @@
-{"type":"node","id":101,"lat":10.78,"lon":106.69,"tags":{"amenity":"charging_station","name":"Trạm sạc điện EV One","socket:ccs:output":"150 kW","toilets":"yes"}}
-{"type":"node","id":102,"lat":10.781,"lon":106.691,"tags":{"amenity":"charging_station","name":"Trạm sạc VinFast","brand":"VinFast","socket:ccs:output":"22 kW","toilets":"no"}}
-{"type":"node","id":103,"lat":10.782,"lon":106.692,"tags":{"amenity":"bank","name":"Ngân hàng POC","wheelchair":"yes"}}
-{"type":"node","id":104,"lat":10.783,"lon":106.693,"tags":{"amenity":"atm","name":"ATM POC"}}
-{"type":"node","id":105,"lat":10.784,"lon":106.694,"tags":{"amenity":"school","name":"Trường học chưa ghi cấp"}}
-{"type":"node","id":106,"lat":10.785,"lon":106.695,"tags":{"amenity":"school","name":"Trường tiểu học","isced:level":"1"}}
-{"type":"node","id":107,"lat":10.786,"lon":106.696,"tags":{"shop":"motorcycle_repair","name":"Tiệm sửa xe máy POC"}}
-{"type":"node","id":108,"lat":10.787,"lon":106.697,"tags":{"shop":"car_repair","name":"Garage ô tô POC"}}
-{"type":"node","id":109,"lat":10.788,"lon":106.698,"tags":{"shop":"tyres","name":"Cửa hàng lốp xe bán lẻ"}}

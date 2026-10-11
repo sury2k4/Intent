@@ -7,24 +7,66 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping
 
 from .normalization import fold_vietnamese, normalize_text
-from .osm_ingest import load_property_catalog
-from .poi_properties import PropertyProfiles
-from .poi_schemas import ExtractedProperty, PropertyExtraction
+from .poi_properties import PropertyProfiles, load_property_definitions
+from .property_schemas import ExtractedProperty, PropertyExtraction
 from .taxonomy import Taxonomy
 
 EXTRACTOR_VERSION = "poi-property-extractor-v2"
 
 # Search aliases only: these do not change the immutable catalog/artifact hash.
 _QUERY_ALIASES = {
-    "seating": ("ghế ngồi", "ghe ngoi", "ghế đá", "ghe da", "có ghế", "benches", "park bench"),
-    "shade": ("bóng mát", "bong mat", "có bóng mát", "shady"),
-    "shelter": ("nhà chờ xe buýt", "nha cho xe buyt", "bus shelter"),
-    "delivery": ("giao đến nhà", "giao den nha"),
+    "seating": (
+        "ghế ngồi", "ghe ngoi", "ghế đá", "ghe da", "có ghế", "benches", "park bench",
+        "chỗ ngồi", "somewhere to sit", "a place to sit",
+    ),
+    "shade": ("bóng mát", "bong mat", "có bóng mát", "shady", "bóng cây", "shade", "shaded"),
+    "shelter": ("nhà chờ xe buýt", "nha cho xe buyt", "bus shelter", "shelter"),
+    "waiting_area": ("phòng chờ", "khu ngồi chờ", "chỗ ngồi chờ", "waiting room"),
+    "wheelchair": (
+        "lối tiếp cận xe lăn", "loi tiep can xe lan",
+        "chỗ cho xe lăn", "chỗ cho xe lăng", "lối tiếp cận xe lăng",
+    ),
+    "delivery": ("giao đồ ăn", "giao đồ uống", "food delivery"),
+    "home_delivery": ("giao đến nhà", "giao den nha", "giao tận nhà", "giao tới nhà", "ship tận nhà"),
+    "appointment": ("đặt lịch khám", "đặt lịch trước", "book an appointment", "make an appointment"),
+    "parking": (
+        "chỗ gửi ô tô", "chỗ gửi xe", "bãi đậu xe", "bãi xe", "bãi giữ xe",
+        "bãi đỗ ô tô", "bãi đỗ xe ô tô", "bãi đậu ô tô", "chỗ đỗ ô tô", "car parking",
+    ),
+    "lighting": ("sáng đèn", "đủ sáng", "well-lit"),
+    "accepts_cards": ("pay by card", "pay with a bank card", "thanh toán bằng thẻ"),
+    "free_entry": ("vào xem miễn phí", "miễn phí vào cửa", "không thu phí vào cửa", "free admission"),
 }
+_QUERY_PRIORITY = {"home_delivery": 2, "waiting_area": 1, "shelter": 1}
 _CLAUSE_BREAK = re.compile(r"[,;.!?\n]|\b(?:nhưng|nhung|but|và|va|and)\b", re.IGNORECASE)
-_NOT_NEEDED = re.compile(r"(?:^|\s)(?:khong can|dont need|do not need|not need)\s*$")
-_EXCLUDED = re.compile(r"(?:^|\s)(?:khong co|khong muon|khong ngoi|without|no)\s*$")
+_PROPERTY_CONNECTOR = r"(?:\s+(?:cho|loi|di|duong|tiep|can|de)){0,4}"
+_NOT_NEEDED = re.compile(rf"(?:^|\s)(?:khong can(?: co)?{_PROPERTY_CONNECTOR}|khong bat buoc|khong quan trong|dont need|do not need|not need|not required|isnt required|doesnt matter)\s*$")
+_EXCLUDED = re.compile(rf"(?:^|\s)(?:khong co{_PROPERTY_CONNECTOR}|khong muon|khong ngoi|khong cho|dung co|without(?: a| an)?|no|do not want|dont want)\s*$")
+_VI_DONT = re.compile(r"(?:^|\s)đừng(?:\s+có)?\s*$", re.IGNORECASE)
+_EXCLUDED_BARE = re.compile(r"(?:^|\s)khong\s*$")
 _PREFERRED = re.compile(r"(?:^|\s)(?:uu tien(?: co)?|neu co|tot nhat|prefer|ideally|if possible)\s*$")
+_PREFERRED_ABSENCE = re.compile(
+    rf"(?:^|\s)(?:uu tien|prefer)\s+(?:khong co{_PROPERTY_CONNECTOR}|khong muon|without(?: a| an)?|no)\s*$"
+)
+_TRAILING_NOT_NEEDED = re.compile(r"^(?:khong (?:can|bat buoc|quan trong)|co hay khong cung duoc|not (?:required|needed|essential)|isnt required|doesnt matter|optional)\s*$")
+_TRAILING_PREFERRED = re.compile(r"^(?:neu co|if possible|would be nice|would be great)\s*$")
+
+
+def semantic_property_cue(text: str) -> tuple[str, bool]:
+    """Suggest a UI mode from an unmatched clause; never create a filter by itself."""
+    normalized = normalize_text(fold_vietnamese(text))
+    raw = normalize_text(unicodedata.normalize("NFC", text))
+    if re.match(r"^(?:khong can|khong bat buoc|khong quan trong|dont need|do not need|not need|not required|isnt required|doesnt matter)\b", normalized):
+        return "not_requested", False
+    preferred = bool(re.match(r"^(?:uu tien|neu co|tot nhat|prefer|ideally|if possible)\b", normalized))
+    negative = bool(re.match(r"^(?:khong co|khong muon|khong cho|khong ngoi|without|no|do not want|dont want|dung co)\b", normalized))
+    negative = negative or bool(re.match(r"^đừng(?:\s+có)?\b", raw))
+    if preferred:
+        negative = negative or bool(re.match(r"^(?:uu tien|prefer)\s+(?:khong co|khong muon|without|no)\b", normalized))
+        return "preferred", negative
+    if negative and re.search(r"\b(?:neu co|if possible|would be nice)\s*$", normalized):
+        return "preferred", True
+    return ("excluded", False) if negative else ("required", False)
 
 
 def _fold_with_offsets(text: str) -> tuple[str, list[int], list[int]]:
@@ -61,11 +103,30 @@ class PropertyExtractor:
                     if str(alias).strip():
                         aliases.append((property_id, str(alias).strip()))
             aliases.extend((property_id, alias) for alias in _QUERY_ALIASES.get(property_id, ()))
-        self.aliases = tuple(sorted(set(aliases), key=lambda row: (-len(row[1]), row[0], row[1])))
+        self.aliases = tuple(sorted(set(aliases), key=lambda row: (
+            -len(row[1]), -_QUERY_PRIORITY.get(row[0], 0), row[0], row[1],
+        )))
 
     @classmethod
     def from_path(cls, path: str | Path) -> "PropertyExtractor":
-        return cls(load_property_catalog(path))
+        return cls(load_property_definitions(path))
+
+    def unique_typo_alias(self, word: str) -> tuple[str, str] | None:
+        """Find one uniquely owned, one-substitution property alias for a cue-bound word."""
+        folded = normalize_text(fold_vietnamese(word))
+        if not 4 <= len(folded) <= 16 or len(folded.split()) != 1:
+            return None
+        owners: dict[str, str] = {}
+        for property_id, alias in self.aliases:
+            candidate = normalize_text(fold_vietnamese(alias))
+            if (
+                len(candidate) == len(folded) and len(candidate.split()) == 1
+                and sum(left != right for left, right in zip(candidate, folded)) == 1
+            ):
+                owners.setdefault(property_id, alias)
+        if len(owners) != 1:
+            return None
+        return next(iter(owners.items()))
 
     def extract(self, query: str) -> PropertyExtraction:
         text = str(query)
@@ -81,7 +142,9 @@ class PropertyExtractor:
                     candidates.append((starts[start], ends[end - 1], property_id, alias, end - start))
             # Match the longest phrase across overlaps, then restore query order.
             selected: list[tuple[int, int, str, str, int]] = []
-            for candidate in sorted(candidates, key=lambda row: (-row[4], row[0], row[2], row[3])):
+            for candidate in sorted(candidates, key=lambda row: (
+                -row[4], -_QUERY_PRIORITY.get(row[2], 0), row[0], row[2], row[3],
+            )):
                 start, end = candidate[:2]
                 if not any(start < previous[1] and end > previous[0] for previous in selected):
                     selected.append(candidate)
@@ -99,6 +162,10 @@ class PropertyExtractor:
 
     def _constraint(self, text: str, item: tuple[int, int, str, str, int], previous_end: int) -> ExtractedProperty:
         start, end, property_id, alias, _length = item
+        raw_prefix = text[previous_end:start]
+        raw_breaks = list(_CLAUSE_BREAK.finditer(raw_prefix))
+        if raw_breaks:
+            raw_prefix = raw_prefix[raw_breaks[-1].end():]
         prefix = fold_vietnamese(text[previous_end:start]).casefold()
         breaks = list(_CLAUSE_BREAK.finditer(prefix))
         if breaks:
@@ -107,11 +174,21 @@ class PropertyExtractor:
         # "có" can belong to the alias: "không có mái che", "nếu có ghế ngồi".
         folded_alias = normalize_text(fold_vietnamese(text[start:end]))
         context = f"{prefix} {folded_alias.split()[0]}".strip()
-        not_needed = _NOT_NEEDED.search(prefix) or _NOT_NEEDED.search(context)
-        excluded = _EXCLUDED.search(prefix) or _EXCLUDED.search(context)
-        preferred = _PREFERRED.search(prefix) or _PREFERRED.search(context)
+        trailing = fold_vietnamese(text[end:]).casefold().lstrip(" ,;")
+        next_break = _CLAUSE_BREAK.search(trailing)
+        if next_break:
+            trailing = trailing[:next_break.start()]
+        trailing = normalize_text(trailing)
+        not_needed = _NOT_NEEDED.search(prefix) or _NOT_NEEDED.search(context) or _TRAILING_NOT_NEEDED.match(trailing)
+        excluded = (_EXCLUDED.search(prefix) or _EXCLUDED.search(context)
+                    or _EXCLUDED_BARE.search(prefix)
+                    or _VI_DONT.search(unicodedata.normalize("NFC", raw_prefix)))
+        preferred = _PREFERRED.search(prefix) or _PREFERRED.search(context) or _TRAILING_PREFERRED.match(trailing)
+        preferred_absence = _PREFERRED_ABSENCE.search(prefix) or _PREFERRED_ABSENCE.search(context)
         if not_needed:
             mode, applied, ignored_reason, cue = "preferred", False, "not_requested", not_needed.group(0).strip()
+        elif preferred_absence or (excluded and preferred):
+            mode, applied, ignored_reason, cue = "preferred", True, None, "prefer_absence"
         elif excluded:
             mode, applied, ignored_reason, cue = "excluded", True, None, excluded.group(0).strip()
         elif preferred:
@@ -128,6 +205,11 @@ class PropertyExtractor:
             value, operator, applied, ignored_reason = None, "eq", False, "value_unspecified"
         else:
             value, operator = True, "eq"
+        if cue == "prefer_absence":
+            if value_type == "boolean":
+                value = False
+            else:
+                applied, ignored_reason = False, "unsupported_negative_preference"
         return ExtractedProperty(
             property_id=property_id, mode=mode, operator=operator, value=value,
             evidence_text=text[start:end], start_offset=start, end_offset=end,

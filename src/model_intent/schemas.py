@@ -134,6 +134,8 @@ class IntentDecision:
     ambiguity_score: float | None = None
     confidence_features: Mapping[str, float] = field(default_factory=dict)
     calibration_version: str = "none"
+    confidence_quality: str = "none"
+    confidence_target: str = "none"
     policy_version: str = "unknown"
 
 

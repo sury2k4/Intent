@@ -3,7 +3,7 @@ import unicodedata
 
 import pytest
 
-from model_intent.osm_ingest import load_property_catalog
+from model_intent.poi_properties import load_property_definitions as load_property_catalog
 from model_intent.property_extraction import PropertyExtractor, active_constraints, reconcile_for_category
 from model_intent.poi_properties import load_property_profiles
 from model_intent.taxonomy import Taxonomy
@@ -123,6 +123,7 @@ def test_short_ac_alias_does_not_match_inside_other_words(query):
     ("quán cà phê không có wifi, có máy lạnh", [("internet_access", "excluded"), ("air_conditioning", "required")]),
     ("quán cà phê không cần wifi nhưng có máy lạnh", [("internet_access", "preferred"), ("air_conditioning", "required")]),
     ("điểm dừng xe buýt có mái che và ghế ngồi", [("covered_area", "required"), ("seating", "required")]),
+    ("bệnh viện có lối tiếp cận xe lăn", [("wheelchair", "required")]),
     ("ATM rút tiền có mái che", [("cash_withdrawal", "required"), ("covered_area", "required")]),
 ])
 def test_queried_cues_and_properties_are_scoped(query, expected):
@@ -154,6 +155,78 @@ def test_duplicate_aliases_do_not_create_duplicate_constraints():
     catalog = load_property_catalog(ROOT / "data/properties/poi_properties.poc.v3.json")
     rows = PropertyExtractor(catalog).extract("bảo tàng có thuyết minh tự động audio guide").properties
     assert sum(row.property_id == "audio_guide" for row in rows) == 1
+
+
+def test_natural_user_phrases_and_negation_are_scoped_with_v5_catalog():
+    catalog = load_property_catalog(ROOT / "data/properties/poi_properties.poc.v5.json")
+    extractor = PropertyExtractor(catalog)
+    cases = [
+        ("Tìm cây xăng có xăng, nhưng đừng có dầu diesel", "fuel_diesel", "excluded", True),
+        ("Chỗ nào không wifi cho mình ngồi?", "internet_access", "excluded", True),
+        ("Không cần bãi đậu xe, chỉ cần nhà thuốc", "parking", "preferred", False),
+        ("Wifi không cần nhưng máy lạnh phải có", "internet_access", "preferred", False),
+        ("Cần phòng chờ cho người già", "waiting_area", "required", True),
+        ("Phòng khám đặt lịch khám trước", "appointment", "required", True),
+        ("Bank branch where I can pay by card", "accepts_cards", "required", True),
+        ("Có bảng thông tin tuyến để mình xem", "route_information", "required", True),
+        ("Cửa hàng có chỗ đậu xe không?", "parking", "required", True),
+        ("Shop giao đến nhà", "home_delivery", "required", True),
+    ]
+    for query, prop_id, mode, applied in cases:
+        properties = extractor.extract(query).properties
+        row = next(row for row in properties if row.property_id == prop_id)
+        assert row.mode == mode and row.applied is applied, (query, row)
+    negative_preference = extractor.extract("Motel without a car park, if possible").properties
+    parking = next(row for row in negative_preference if row.property_id == "parking")
+    assert parking.mode == "preferred" and parking.value is False and parking.applied
+
+
+def test_lodging_parking_and_wheelchair_cues_include_bounded_misspellings():
+    parser = PropertyExtractor(load_property_catalog(ROOT / "data/properties/poi_properties.poc.v5.json"))
+    for query in (
+        "nhà nghĩ có bãi đỗ ô tô, không có chỗ cho xe lăng",
+        "nhà nghỉ có bãi đỗ ô tô không có chỗ cho xe lăn",
+        "nha nghi co bai do o to khong co cho cho xe lang",
+        "Motel with car parking, no wheelchair access",
+    ):
+        rows = parser.extract(query).properties
+        assert [(row.property_id, row.mode) for row in rows] == [
+            ("parking", "required"), ("wheelchair", "excluded"),
+        ], query
+        assert all(row.applied and query[row.start_offset:row.end_offset] == row.evidence_text for row in rows)
+
+    not_needed = parser.extract("nhà nghỉ có bãi đỗ ô tô, không cần chỗ cho xe lăn").properties
+    assert not_needed[0].mode == "required"
+    assert not_needed[1].mode == "preferred" and not_needed[1].applied is False
+    assert not_needed[1].ignored_reason == "not_requested"
+    wider_cue = parser.extract("nhà nghỉ không có lối đi cho xe lăn").properties
+    assert [(row.property_id, row.mode) for row in wider_cue] == [("wheelchair", "excluded")]
+    used = parser.extract("nhà nghỉ có dùng máy lạnh").properties
+    assert [(row.property_id, row.mode) for row in used] == [("air_conditioning", "required")]
+    excluded_wifi = parser.extract("nhà nghỉ đừng wifi").properties
+    assert [(row.property_id, row.mode) for row in excluded_wifi] == [("internet_access", "excluded")]
+    decomposed = parser.extract(unicodedata.normalize("NFD", "nhà nghỉ đừng wifi")).properties
+    assert [(row.property_id, row.mode) for row in decomposed] == [("internet_access", "excluded")]
+    optional_access = parser.extract("nhà nghỉ không cần lối đi cho xe lăn").properties
+    assert optional_access[0].ignored_reason == "not_requested"
+    assert all(row.property_id != "wheelchair" for row in parser.extract("nhà lăng tẩm có bãi đỗ xe").properties)
+    motorbike_rows = parser.extract("bãi đỗ xe máy có mái che").properties
+    assert all(row.matched_alias != "bãi đỗ ô tô" for row in motorbike_rows)
+
+
+def test_natural_property_cues_do_not_retroactively_modify_previous_requirement():
+    catalog = load_property_catalog(ROOT / "data/properties/poi_properties.poc.v5.json")
+    parser = PropertyExtractor(catalog)
+    cases = [
+        ("Homestay có wifi, không cần bữa sáng", "internet_access", "required"),
+        ("Quán cà phê cần có máy lạnh, nếu có wifi càng tốt", "air_conditioning", "required"),
+        ("Bãi đỗ xe máy có mái che, không cần nhà vệ sinh", "covered_area", "required"),
+        ("Quán cà phê có máy lạnh, không cần wifi", "air_conditioning", "required"),
+        ("Quán cà phê có máy lạnh, không cần wifi", "internet_access", "preferred"),
+    ]
+    for query, prop_id, mode in cases:
+        row = next(row for row in parser.extract(query).properties if row.property_id == prop_id)
+        assert row.mode == mode, (query, prop_id, row.mode)
 
 
 def test_rating_strict_and_inclusive_comparators():

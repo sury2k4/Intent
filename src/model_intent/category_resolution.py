@@ -8,8 +8,19 @@ from .normalization import fold_vietnamese, normalize_text
 from .property_extraction import _fold_with_offsets
 from .taxonomy import Taxonomy
 
-_SHORT_PLACE_NAMES = {"atm"}
-_CONTEXT_IGNORED = re.compile(r"(?:\b(?:gan|near|around|khong phai|not a|not an)\s*)$", re.IGNORECASE)
+_SHORT_PLACE_NAMES = {"atm", "gym"}
+_CONTEXT_IGNORED = re.compile(
+    r"(?:\b(?:gan|near|around|khong phai|not a|not an|khong can|khong tim|khong muon|"
+    r"dung dua|dung cho|not looking for|not the|instead of)\s*)$", re.IGNORECASE,
+)
+_NEGATED_CLAUSE = re.compile(
+    r"^(?:(?:tui|toi|minh|i)\s+)?(?:khong phai|khong (?:can )?(?:tim|kiem|muon)|"
+    r"not (?:a |an |looking for|want|need))\b"
+)
+_HOMONYM_CONTEXT = {
+    "dinh": re.compile(r"\bgia\s*$", re.IGNORECASE),
+    "dinh co": re.compile(r"\bgia\s*$", re.IGNORECASE),
+}
 
 
 @dataclass(frozen=True)
@@ -18,6 +29,29 @@ class ExplicitCategory:
     evidence: str
     start_offset: int | None = None
     end_offset: int | None = None
+
+
+def unique_leaf_name(
+    category_text: str,
+    taxonomy: Taxonomy,
+    matches: tuple[ExplicitCategory, ...],
+) -> ExplicitCategory | None:
+    """Match an entire leaf name, not a category mentioned within another request."""
+    if len(matches) != 1:
+        return None
+    normalized = normalize_text(category_text)
+    for prefix in ("tôi muốn tìm ", "cho tôi tìm ", "tìm ", "toi muon tim ", "cho toi tim ", "tim ", "find ", "search for "):
+        if normalized.startswith(prefix):
+            normalized = normalized[len(prefix):]
+            break
+    if not normalized:
+        return None
+    named_ids = {
+        item_id for item_id, item in taxonomy.items.items()
+        if not taxonomy.has_children(item_id)
+        and any(normalize_text(name) == normalized for name in item.names.values())
+    }
+    return matches[0] if named_ids == {matches[0].item_id} else None
 
 
 def explicit_categories(
@@ -50,7 +84,18 @@ def explicit_categories(
                 if any(start < prop_end and end > prop_start for prop_start, prop_end in property_spans):
                     continue
                 preceding = normalize_text(fold_vietnamese(query[max(0, start - 24):start]))
-                if _CONTEXT_IGNORED.search(preceding):
+                clause_start = max(
+                    query.rfind(",", 0, start), query.rfind(";", 0, start), query.rfind(".", 0, start),
+                ) + 1
+                clause_prefix = normalize_text(fold_vietnamese(query[clause_start:start]))
+                if _NEGATED_CLAUSE.match(clause_prefix) and not any(
+                    cue in clause_prefix for cue in ("ma la", "nhung", "but", "instead")
+                ):
+                    continue
+                if _CONTEXT_IGNORED.search(preceding) or (
+                    (homonym := _HOMONYM_CONTEXT.get(normalized)) is not None
+                    and homonym.search(preceding)
+                ):
                     continue
                 matches.append((start, end, item_id, query[start:end]))
 

@@ -1,0 +1,3534 @@
+{
+  "schema_version": 2,
+  "version": "property-semantic-poc-v2",
+  "catalog_version": "poi-properties-poc-v8-osm-only",
+  "profiles": [
+    {
+      "property_id": "air_conditioning",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Điều hòa",
+        "en": "Air conditioning"
+      },
+      "definitions": {
+        "vi": "Không gian có hệ thống làm mát bằng máy lạnh hoặc điều hòa; cảm giác thoáng hay mát tự nhiên không đồng nghĩa với tiện nghi này.",
+        "en": "A space cooled by an air-conditioning system, rather than merely feeling breezy or shaded."
+      },
+      "embedding_definitions": {
+        "vi": "Có máy lạnh hoặc điều hòa làm mát phòng cho khách.",
+        "en": "The room has air conditioning or aircon for cooling."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có máy lạnh",
+          "ngồi phòng điều hòa",
+          "có bật máy lạnh",
+          "phòng chạy điều hòa"
+        ],
+        "en": [
+          "air-conditioned room",
+          "place with air conditioning",
+          "AC inside",
+          "aircon running"
+        ]
+      },
+      "confusable_with": [
+        "airy",
+        "shade",
+        "covered_area"
+      ]
+    },
+    {
+      "property_id": "internet_access",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Truy cập internet",
+        "en": "Internet access"
+      },
+      "definitions": {
+        "vi": "Có kết nối internet dành cho khách hoặc người sử dụng tại địa điểm, thường được hỏi dưới dạng Wi-Fi.",
+        "en": "Internet connectivity available to visitors at the place, commonly requested as Wi-Fi."
+      },
+      "embedding_definitions": {
+        "vi": "Có kết nối internet hoặc Wi-Fi cho khách truy cập.",
+        "en": "Visitors can access the internet or connect to Wi-Fi."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có wifi cho khách",
+          "quán có mạng wifi",
+          "chỗ dùng được internet"
+        ],
+        "en": [
+          "Wi-Fi available",
+          "internet access for guests",
+          "place with wifi"
+        ]
+      },
+      "confusable_with": []
+    },
+    {
+      "property_id": "outdoor_seating",
+      "facet": "seating",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Chỗ ngồi ngoài trời",
+        "en": "Outdoor seating"
+      },
+      "definitions": {
+        "vi": "Có bàn ghế hoặc chỗ ngồi dành cho khách ở khu vực ngoài trời; khác với ghế trong nhà hay ghế chờ chung.",
+        "en": "Guest seating in an outdoor area, distinct from indoor tables or general-purpose benches."
+      },
+      "embedding_definitions": {
+        "vi": "Có bàn ghế dành cho khách ngồi ngoài trời ở sân hoặc hiên.",
+        "en": "Guest tables and seats are available outdoors on a patio or terrace."
+      },
+      "positive_phrases": {
+        "vi": [
+          "ngồi ngoài trời",
+          "bàn ngoài sân",
+          "quán có chỗ ngồi ngoài trời"
+        ],
+        "en": [
+          "outdoor tables",
+          "sit outside",
+          "patio seating"
+        ]
+      },
+      "confusable_with": [
+        "indoor_seating",
+        "seating",
+        "shade",
+        "covered_area"
+      ]
+    },
+    {
+      "property_id": "wheelchair",
+      "facet": "accessibility",
+      "value_type": "enum",
+      "labels": {
+        "vi": "Tiếp cận bằng xe lăn",
+        "en": "Wheelchair access"
+      },
+      "definitions": {
+        "vi": "Khả năng người dùng xe lăn tiếp cận địa điểm nói chung; mức độ tiếp cận có thể đầy đủ hoặc hạn chế, không tự suy ra nhà vệ sinh hay bãi đỗ phù hợp.",
+        "en": "General wheelchair accessibility of the place; access may be full or limited and does not establish accessible restrooms or parking."
+      },
+      "embedding_definitions": {
+        "vi": "Địa điểm có lối tiếp cận phù hợp cho người sử dụng xe lăn.",
+        "en": "The place provides wheelchair access for wheelchair users."
+      },
+      "positive_phrases": {
+        "vi": [
+          "lối vào cho xe lăn",
+          "người ngồi xe lăn vào được",
+          "địa điểm tiếp cận bằng xe lăn"
+        ],
+        "en": [
+          "wheelchair accessible entrance",
+          "wheelchair access to the place",
+          "accessible for wheelchair users"
+        ]
+      },
+      "confusable_with": [
+        "accessible_toilet",
+        "disabled_parking",
+        "tactile_paving"
+      ]
+    },
+    {
+      "property_id": "delivery",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Dịch vụ giao hàng",
+        "en": "Delivery service"
+      },
+      "definitions": {
+        "vi": "Địa điểm có dịch vụ chuyển hàng hoặc món đã mua đến địa chỉ nhận; không đồng nghĩa với tự đến lấy hay chỉ đặt hàng qua mạng.",
+        "en": "A service that sends purchased goods or food to a recipient's address, distinct from pickup or online ordering alone."
+      },
+      "embedding_definitions": {
+        "vi": "Có dịch vụ giao đồ ăn hoặc hàng đã mua đến địa chỉ khách yêu cầu.",
+        "en": "The business delivers food or purchased goods to a requested address."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có giao hàng",
+          "quán giao đồ ăn",
+          "đặt món được ship"
+        ],
+        "en": [
+          "delivery available",
+          "delivers orders",
+          "food delivery service"
+        ]
+      },
+      "confusable_with": [
+        "home_delivery",
+        "takeaway",
+        "online_ordering"
+      ]
+    },
+    {
+      "property_id": "takeaway",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mua mang đi",
+        "en": "Takeaway"
+      },
+      "definitions": {
+        "vi": "Có thể mua thức ăn hoặc đồ uống tại nơi bán rồi tự mang đi; không hàm ý có nhân viên giao đến địa chỉ.",
+        "en": "Food or drinks can be bought for the customer to carry away, without implying a delivery service."
+      },
+      "embedding_definitions": {
+        "vi": "Khách mua đồ ăn hoặc thức uống rồi tự mang đi.",
+        "en": "Customers can order food or drinks for takeaway or takeout."
+      },
+      "positive_phrases": {
+        "vi": [
+          "mua mang đi",
+          "bán đồ ăn mang về",
+          "lấy đồ uống đem đi"
+        ],
+        "en": [
+          "takeaway food",
+          "takeout available",
+          "order to go"
+        ]
+      },
+      "confusable_with": [
+        "delivery",
+        "home_delivery",
+        "drive_through"
+      ]
+    },
+    {
+      "property_id": "parking",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Chỗ đỗ xe",
+        "en": "Vehicle parking"
+      },
+      "definitions": {
+        "vi": "Có nơi đỗ xe nói chung, kể cả yêu cầu đỗ ô tô; không tự suy ra chỗ chuyên dụng cho xe máy, xe đạp, người khuyết tật hoặc mái che.",
+        "en": "General vehicle parking, including requests for car parking; does not by itself specify motorcycle, bicycle, accessible, or covered spaces."
+      },
+      "embedding_definitions": {
+        "vi": "Có chỗ đậu xe nói chung, gồm chỗ đỗ ô tô và xe hơi.",
+        "en": "General vehicle parking is available, including places to park a car."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có chỗ đỗ ô tô",
+          "bãi đậu xe",
+          "chỗ gửi xe hơi"
+        ],
+        "en": [
+          "car parking available",
+          "place to park a car",
+          "vehicle parking"
+        ]
+      },
+      "confusable_with": [
+        "motorbike_parking",
+        "bicycle_parking",
+        "covered_parking",
+        "disabled_parking"
+      ]
+    },
+    {
+      "property_id": "toilets",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Nhà vệ sinh",
+        "en": "Restroom"
+      },
+      "definitions": {
+        "vi": "Có nhà vệ sinh để sử dụng; không tự khẳng định phù hợp xe lăn, dùng chung mọi giới hay có bàn thay tã.",
+        "en": "A restroom is available; wheelchair access, gender-neutral facilities, and baby-changing provision are separate attributes."
+      },
+      "embedding_definitions": {
+        "vi": "Có nhà vệ sinh, toilet hoặc WC cho khách sử dụng.",
+        "en": "A restroom, bathroom, or toilet is available for visitors."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có nhà vệ sinh",
+          "có toilet",
+          "chỗ có WC"
+        ],
+        "en": [
+          "restroom available",
+          "has a toilet",
+          "bathroom on site"
+        ]
+      },
+      "confusable_with": [
+        "accessible_toilet",
+        "gender_neutral",
+        "baby_changing",
+        "handwashing"
+      ]
+    },
+    {
+      "property_id": "reservation",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Đặt chỗ trước",
+        "en": "Reservations"
+      },
+      "definitions": {
+        "vi": "Có thể giữ chỗ, đặt bàn hoặc đặt suất sử dụng trước khi đến; khác với đặt lịch hẹn làm việc hay đặt mua hàng.",
+        "en": "A seat, table, or visit slot can be reserved in advance; distinct from an appointment for service or an order for goods."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có thể đặt bàn, đặt chỗ hoặc giữ suất trước khi đến.",
+        "en": "Guests can make a reservation or book a table or place in advance."
+      },
+      "positive_phrases": {
+        "vi": [
+          "đặt bàn trước",
+          "có nhận đặt chỗ",
+          "giữ chỗ trước khi đến"
+        ],
+        "en": [
+          "reserve a table",
+          "reservations accepted",
+          "book a seat ahead"
+        ]
+      },
+      "confusable_with": [
+        "appointment",
+        "online_ordering"
+      ]
+    },
+    {
+      "property_id": "smoking",
+      "facet": "policy",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Cho phép hút thuốc",
+        "en": "Smoking permitted"
+      },
+      "definitions": {
+        "vi": "Chính sách cho phép hút thuốc tại địa điểm hoặc khu được bố trí; chỉ nói về quyền hút thuốc, không phải không khí thoáng.",
+        "en": "Smoking is permitted at the place or in a designated area; this is a policy, not a description of ventilation."
+      },
+      "embedding_definitions": {
+        "vi": "Địa điểm cho phép khách hút thuốc tại khu vực được bố trí.",
+        "en": "Smoking is permitted in an area provided for visitors."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ cho hút thuốc",
+          "quán được hút thuốc",
+          "có khu hút thuốc"
+        ],
+        "en": [
+          "smoking allowed",
+          "smoking permitted",
+          "has a smoking area"
+        ]
+      },
+      "confusable_with": [
+        "airy",
+        "outdoor_seating"
+      ]
+    },
+    {
+      "property_id": "drive_through",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mua hàng qua làn xe",
+        "en": "Drive-through"
+      },
+      "definitions": {
+        "vi": "Có làn phục vụ khách mua và nhận hàng ngay khi vẫn ở trên xe; không chỉ là mua mang đi hay có bãi đỗ xe.",
+        "en": "Customers can order and collect goods from a vehicle at a drive-through lane, rather than merely parking or buying to go."
+      },
+      "embedding_definitions": {
+        "vi": "Có làn drive-thru để khách gọi món và nhận hàng ngay trên xe.",
+        "en": "A drive-through lane lets customers order and collect goods from a vehicle."
+      },
+      "positive_phrases": {
+        "vi": [
+          "mua hàng ngay trên xe",
+          "có làn drive-thru",
+          "đặt món qua cửa xe"
+        ],
+        "en": [
+          "drive-through service",
+          "drive-thru lane",
+          "order from the car"
+        ]
+      },
+      "confusable_with": [
+        "takeaway",
+        "parking"
+      ]
+    },
+    {
+      "property_id": "airy",
+      "facet": "ambience",
+      "value_type": "ordinal",
+      "labels": {
+        "vi": "Không gian thoáng",
+        "en": "Airy atmosphere"
+      },
+      "definitions": {
+        "vi": "Mức độ thoáng đãng, thông gió hoặc cảm giác rộng mở của không gian; chữ 'thoáng mát' đơn lẻ không chứng minh có điều hòa hay bóng râm.",
+        "en": "How open, well-ventilated, or spacious a place feels; a breezy atmosphere does not imply air conditioning or shade."
+      },
+      "embedding_definitions": {
+        "vi": "Địa điểm thoáng đãng, rộng rãi và thông gió dễ chịu.",
+        "en": "The place feels airy, breezy, open, spacious, and well ventilated."
+      },
+      "positive_phrases": {
+        "vi": [
+          "không gian thoáng đãng",
+          "quán thoáng mát",
+          "ngồi chỗ thoáng khí",
+          "rộng rãi dễ thở"
+        ],
+        "en": [
+          "airy space",
+          "open and breezy",
+          "well-ventilated place",
+          "spacious atmosphere"
+        ]
+      },
+      "confusable_with": [
+        "air_conditioning",
+        "shade",
+        "covered_area"
+      ]
+    },
+    {
+      "property_id": "quiet",
+      "facet": "ambience",
+      "value_type": "ordinal",
+      "labels": {
+        "vi": "Yên tĩnh",
+        "en": "Quiet atmosphere"
+      },
+      "definitions": {
+        "vi": "Mức độ yên tĩnh, ít tiếng ồn của không gian để nghỉ ngơi, đọc sách hoặc tập trung.",
+        "en": "How quiet the surroundings are for rest, reading, or concentration."
+      },
+      "embedding_definitions": {
+        "vi": "Địa điểm yên tĩnh, êm ắng, phù hợp nghỉ ngơi hoặc tập trung.",
+        "en": "The surroundings feel quiet, calm, and peaceful for rest or focus."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ yên tĩnh",
+          "không gian êm ắng",
+          "ngồi học yên tĩnh"
+        ],
+        "en": [
+          "quiet place",
+          "peaceful atmosphere",
+          "calm spot for reading"
+        ]
+      },
+      "confusable_with": [
+        "study_space"
+      ]
+    },
+    {
+      "property_id": "indoor_seating",
+      "facet": "seating",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Chỗ ngồi trong nhà",
+        "en": "Indoor seating"
+      },
+      "definitions": {
+        "vi": "Có bàn ghế hoặc chỗ ngồi dành cho khách trong không gian bên trong, không mặc nhiên có điều hòa.",
+        "en": "Guest seating inside the premises, without implying air conditioning."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có bàn ghế và chỗ ngồi bên trong nhà hoặc bên trong quán.",
+        "en": "Guest tables and indoor seating are available inside the premises."
+      },
+      "positive_phrases": {
+        "vi": [
+          "ngồi trong nhà",
+          "bàn trong quán",
+          "có chỗ ngồi bên trong"
+        ],
+        "en": [
+          "indoor seating",
+          "tables inside",
+          "sit indoors"
+        ]
+      },
+      "confusable_with": [
+        "outdoor_seating",
+        "seating",
+        "air_conditioning"
+      ]
+    },
+    {
+      "property_id": "accepts_cards",
+      "facet": "payment",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Nhận thanh toán bằng thẻ",
+        "en": "Card payments accepted"
+      },
+      "definitions": {
+        "vi": "Có thể trả tiền bằng thẻ ngân hàng; không tự khẳng định hỗ trợ chạm thẻ hay mọi hình thức thanh toán điện tử.",
+        "en": "Bank card payments are accepted; contactless taps and other electronic payment methods are separate capabilities."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có thể quẹt thẻ hoặc thanh toán bằng thẻ ngân hàng.",
+        "en": "Customers can pay by bank card, debit card, or credit card."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quẹt thẻ được",
+          "thanh toán bằng thẻ ngân hàng",
+          "có nhận thẻ tín dụng"
+        ],
+        "en": [
+          "pay by card",
+          "accepts bank cards",
+          "credit card payment"
+        ]
+      },
+      "confusable_with": [
+        "contactless",
+        "cashless"
+      ]
+    },
+    {
+      "property_id": "accessible_toilet",
+      "facet": "accessibility",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Nhà vệ sinh tiếp cận xe lăn",
+        "en": "Wheelchair-accessible restroom"
+      },
+      "definitions": {
+        "vi": "Nhà vệ sinh có bố trí phù hợp để người dùng xe lăn tiếp cận; khác với việc chỉ có nhà vệ sinh hoặc lối vào tiếp cận xe lăn.",
+        "en": "A restroom designed for wheelchair access, beyond merely having a restroom or a wheelchair-accessible entrance."
+      },
+      "embedding_definitions": {
+        "vi": "Có nhà vệ sinh thiết kế phù hợp cho người sử dụng xe lăn.",
+        "en": "A wheelchair-accessible toilet or restroom is available for visitors."
+      },
+      "positive_phrases": {
+        "vi": [
+          "nhà vệ sinh cho xe lăn",
+          "WC tiếp cận xe lăn",
+          "toilet phù hợp người dùng xe lăn"
+        ],
+        "en": [
+          "wheelchair-accessible toilet",
+          "accessible restroom for wheelchair users",
+          "wheelchair-friendly bathroom"
+        ]
+      },
+      "confusable_with": [
+        "toilets",
+        "wheelchair",
+        "gender_neutral"
+      ]
+    },
+    {
+      "property_id": "covered_area",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Khu vực có mái che",
+        "en": "Covered area"
+      },
+      "definitions": {
+        "vi": "Một khu vực có mái hoặc kết cấu che phía trên nói chung; không nhất thiết là mái che trạm, tán che chuyên dụng, bãi xe có mái hay bóng cây.",
+        "en": "An area has overhead structural cover; this does not specifically mean a sheltered stop, canopy, covered parking, or tree shade."
+      },
+      "embedding_definitions": {
+        "vi": "Có khu vực nằm dưới mái hoặc kết cấu che phía trên.",
+        "en": "An area has a roof or overhead structural cover."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có khu vực mái che",
+          "chỗ trú dưới mái",
+          "khu có mái che phía trên"
+        ],
+        "en": [
+          "covered area",
+          "space under a roof",
+          "overhead cover available"
+        ]
+      },
+      "confusable_with": [
+        "shade",
+        "canopy",
+        "shelter",
+        "covered_parking",
+        "outdoor_seating"
+      ]
+    },
+    {
+      "property_id": "lighting",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Đèn chiếu sáng",
+        "en": "Lighting"
+      },
+      "definitions": {
+        "vi": "Có đèn chiếu sáng phục vụ khu vực sử dụng, nhất là khi trời tối; không hàm ý địa điểm mở cửa suốt đêm.",
+        "en": "Artificial lighting serves the area, especially after dark; lighting does not imply overnight opening."
+      },
+      "embedding_definitions": {
+        "vi": "Khu vực có đèn chiếu sáng để khách sử dụng lúc trời tối.",
+        "en": "The area has artificial lighting or lights for use after dark."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có đèn chiếu sáng",
+          "khu vực được thắp đèn",
+          "đường đi có đèn"
+        ],
+        "en": [
+          "well-lit area",
+          "lighting provided",
+          "lights along the path"
+        ]
+      },
+      "confusable_with": [
+        "open_late",
+        "open_24h"
+      ]
+    },
+    {
+      "property_id": "seating",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Ghế ngồi công cộng",
+        "en": "General seating"
+      },
+      "definitions": {
+        "vi": "Có ghế dài hoặc chỗ ngồi chung để nghỉ chân tại khu vực công cộng; không chỉ định bàn ghế phục vụ trong hay ngoài quán.",
+        "en": "Benches or shared places to sit and rest, rather than guest tables specifically indoors or outdoors."
+      },
+      "embedding_definitions": {
+        "vi": "Có băng ghế hoặc ghế ngồi công cộng dành cho người nghỉ chân.",
+        "en": "Public benches or general-purpose seating are available for resting."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có ghế nghỉ chân",
+          "có băng ghế ngồi",
+          "chỗ có ghế ngồi công cộng"
+        ],
+        "en": [
+          "benches available",
+          "public seating",
+          "place to sit and rest"
+        ]
+      },
+      "confusable_with": [
+        "indoor_seating",
+        "outdoor_seating",
+        "waiting_area"
+      ]
+    },
+    {
+      "property_id": "shelter",
+      "facet": "transport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mái che trạm chờ",
+        "en": "Sheltered transit stop"
+      },
+      "definitions": {
+        "vi": "Trạm hoặc điểm chờ phương tiện công cộng có chỗ trú dưới mái; chuyên biệt hơn mái che của một khu vực bất kỳ.",
+        "en": "A public transport stop has a shelter for passengers waiting under cover, rather than just any covered area."
+      },
+      "embedding_definitions": {
+        "vi": "Trạm chờ phương tiện có mái che để hành khách đứng trú và chờ xe.",
+        "en": "A bus or transit stop has a passenger shelter with overhead cover."
+      },
+      "positive_phrases": {
+        "vi": [
+          "trạm xe buýt có mái che",
+          "chỗ đứng chờ xe dưới mái",
+          "trạm chờ có chỗ trú mưa"
+        ],
+        "en": [
+          "sheltered bus stop",
+          "covered transit stop",
+          "passenger shelter at the stop"
+        ]
+      },
+      "confusable_with": [
+        "covered_area",
+        "canopy",
+        "waiting_area",
+        "shade"
+      ]
+    },
+    {
+      "property_id": "tactile_paving",
+      "facet": "accessibility",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Gạch dẫn hướng xúc giác",
+        "en": "Tactile paving"
+      },
+      "definitions": {
+        "vi": "Có dải gạch hoặc bề mặt xúc giác trên lối đi để hỗ trợ định hướng cho người khiếm thị; không phải chỉ là lối đi cho xe lăn.",
+        "en": "Textured guidance paving along a path for people with visual impairments, distinct from wheelchair access."
+      },
+      "embedding_definitions": {
+        "vi": "Lối đi có dải gạch xúc giác dẫn hướng cho người khiếm thị.",
+        "en": "A path has tactile paving and textured guidance tiles for visually impaired visitors."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có gạch dẫn đường cho người khiếm thị",
+          "lối đi lát gạch xúc giác",
+          "dải chỉ hướng nổi trên nền"
+        ],
+        "en": [
+          "tactile paving",
+          "textured guidance tiles",
+          "raised guide path for visually impaired visitors"
+        ]
+      },
+      "confusable_with": [
+        "wheelchair"
+      ]
+    },
+    {
+      "property_id": "route_information",
+      "facet": "transport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Thông tin tuyến",
+        "en": "Route information"
+      },
+      "definitions": {
+        "vi": "Có bảng, sơ đồ hoặc màn hình cung cấp thông tin về tuyến và điểm dừng; không nhất thiết hiển thị giờ xe đến trực tiếp.",
+        "en": "Signs, maps, or displays provide route and stop details; they need not show live arrival times."
+      },
+      "embedding_definitions": {
+        "vi": "Tại trạm có bảng hoặc màn hình hiển thị sơ đồ và thông tin tuyến xe.",
+        "en": "A sign, route map, or display shows transit routes and stop information."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có sơ đồ tuyến xe",
+          "bảng thông tin các tuyến",
+          "xem tuyến tại trạm"
+        ],
+        "en": [
+          "route map at the stop",
+          "transit route information",
+          "display showing bus routes"
+        ]
+      },
+      "confusable_with": [
+        "realtime_arrivals",
+        "ticketing"
+      ]
+    },
+    {
+      "property_id": "realtime_arrivals",
+      "facet": "transport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Giờ xe đến trực tiếp",
+        "en": "Live arrival information"
+      },
+      "definitions": {
+        "vi": "Có thông tin cập nhật theo thời gian thực về thời điểm xe sắp đến; khác với lịch chạy hay sơ đồ tuyến cố định.",
+        "en": "Updated, live predictions of when vehicles will arrive, rather than a static timetable or route map."
+      },
+      "embedding_definitions": {
+        "vi": "Màn hình hiển thị giờ xe sắp đến được cập nhật trực tiếp tại trạm.",
+        "en": "A live display shows updated real-time arrivals for buses or other vehicles."
+      },
+      "positive_phrases": {
+        "vi": [
+          "bảng báo xe sắp đến",
+          "giờ xe đến thời gian thực",
+          "màn hình cập nhật chuyến đến"
+        ],
+        "en": [
+          "live arrival board",
+          "real-time bus arrivals",
+          "updated arrival times at the stop"
+        ]
+      },
+      "confusable_with": [
+        "route_information",
+        "ticketing"
+      ]
+    },
+    {
+      "property_id": "ticketing",
+      "facet": "transport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mua vé phương tiện tại chỗ",
+        "en": "On-site transit ticketing"
+      },
+      "definitions": {
+        "vi": "Có thể mua vé đi phương tiện tại trạm hoặc điểm phục vụ; không phải vé lấy số thứ tự chờ làm thủ tục.",
+        "en": "Passengers can obtain transport tickets at the stop or facility; not the numbered slips used to join a service queue."
+      },
+      "embedding_definitions": {
+        "vi": "Hành khách có thể mua vé phương tiện tại máy hoặc quầy vé ở trạm.",
+        "en": "Passengers can buy transport tickets at a machine or ticket counter on site."
+      },
+      "positive_phrases": {
+        "vi": [
+          "mua vé xe ngay tại trạm",
+          "có máy bán vé",
+          "quầy vé phương tiện tại chỗ"
+        ],
+        "en": [
+          "buy transit tickets on site",
+          "ticket machine at the station",
+          "on-site bus ticketing"
+        ]
+      },
+      "confusable_with": [
+        "queue_ticket",
+        "route_information"
+      ]
+    },
+    {
+      "property_id": "waiting_area",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Khu vực chờ",
+        "en": "Waiting area"
+      },
+      "definitions": {
+        "vi": "Có khu vực dành cho khách hoặc hành khách đứng, ngồi chờ đến lượt hay chờ phương tiện; không tự suy ra có mái che hoặc ghế.",
+        "en": "A designated area to wait for a service or transport, without necessarily providing cover or seats."
+      },
+      "embedding_definitions": {
+        "vi": "Có khu vực hoặc phòng chờ dành cho khách trước khi được phục vụ.",
+        "en": "A designated waiting room or waiting area is available for visitors."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có phòng chờ",
+          "khu ngồi chờ đến lượt",
+          "chỗ chờ dành cho khách"
+        ],
+        "en": [
+          "waiting area available",
+          "designated waiting room",
+          "space to wait for service"
+        ]
+      },
+      "confusable_with": [
+        "seating",
+        "shelter",
+        "queue_ticket"
+      ]
+    },
+    {
+      "property_id": "appointment",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Đặt lịch hẹn",
+        "en": "Appointments"
+      },
+      "definitions": {
+        "vi": "Có quy trình hẹn giờ trước cho một buổi làm việc, khám hoặc sử dụng dịch vụ; khác với giữ bàn hoặc đặt món.",
+        "en": "A time can be arranged in advance for a consultation, visit, or service, distinct from reserving a table or placing an order."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có thể đặt lịch hẹn và chọn giờ tới khám hoặc làm việc.",
+        "en": "Visitors can schedule an appointment or book a consultation time."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có nhận đặt lịch hẹn",
+          "hẹn giờ khám trước",
+          "đặt lịch làm việc"
+        ],
+        "en": [
+          "appointments available",
+          "book a consultation slot",
+          "schedule a visit"
+        ]
+      },
+      "confusable_with": [
+        "reservation",
+        "online_ordering",
+        "queue_ticket"
+      ]
+    },
+    {
+      "property_id": "open_late",
+      "facet": "hours",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mở cửa khuya",
+        "en": "Open late"
+      },
+      "definitions": {
+        "vi": "Địa điểm phục vụ vào giờ tối muộn hoặc khuya; không nhất thiết mở liên tục cả ngày đêm.",
+        "en": "The place serves visitors late in the evening or at night, without necessarily operating around the clock."
+      },
+      "embedding_definitions": {
+        "vi": "Địa điểm mở cửa và phục vụ khách tới tối muộn hoặc khuya.",
+        "en": "The place stays open late in the evening or at night."
+      },
+      "positive_phrases": {
+        "vi": [
+          "mở tới khuya",
+          "tối muộn còn mở cửa",
+          "bán hàng đêm khuya"
+        ],
+        "en": [
+          "open late at night",
+          "late-night opening",
+          "still open late in the evening"
+        ]
+      },
+      "confusable_with": [
+        "open_24h",
+        "reception_24h",
+        "lighting"
+      ]
+    },
+    {
+      "property_id": "open_24h",
+      "facet": "hours",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mở cửa 24 giờ",
+        "en": "Open 24 hours"
+      },
+      "definitions": {
+        "vi": "Bản thân địa điểm mở cửa và phục vụ xuyên suốt 24 giờ trong ngày; khác với chỉ lễ tân làm việc suốt ngày đêm.",
+        "en": "The place itself stays open throughout the day and night; this is distinct from round-the-clock reception at a facility."
+      },
+      "embedding_definitions": {
+        "vi": "Địa điểm mở cửa và phục vụ khách xuyên suốt 24 giờ mỗi ngày.",
+        "en": "The place is open 24 hours a day, around the clock."
+      },
+      "positive_phrases": {
+        "vi": [
+          "mở cửa 24/24",
+          "hoạt động suốt ngày đêm",
+          "cửa hàng mở 24 giờ"
+        ],
+        "en": [
+          "open 24 hours",
+          "open around the clock",
+          "24-hour store"
+        ]
+      },
+      "confusable_with": [
+        "open_late",
+        "reception_24h",
+        "lighting"
+      ]
+    },
+    {
+      "property_id": "breakfast",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Phục vụ bữa sáng",
+        "en": "Breakfast service"
+      },
+      "definitions": {
+        "vi": "Có phục vụ bữa sáng cho khách; không khẳng định bữa ăn được miễn phí hoặc tính sẵn trong giá.",
+        "en": "Breakfast is provided as a service; it is not necessarily complimentary or included in a booking."
+      },
+      "embedding_definitions": {
+        "vi": "Địa điểm có phục vụ bữa sáng cho khách vào buổi sáng.",
+        "en": "Breakfast service and morning meals are available for guests."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có phục vụ bữa sáng",
+          "chỗ ở có ăn sáng",
+          "có suất ăn buổi sáng"
+        ],
+        "en": [
+          "breakfast served",
+          "breakfast available",
+          "place offering morning meals"
+        ]
+      },
+      "confusable_with": [
+        "cafeteria",
+        "free_entry"
+      ]
+    },
+    {
+      "property_id": "reception_24h",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Lễ tân 24 giờ",
+        "en": "24-hour reception"
+      },
+      "definitions": {
+        "vi": "Quầy lễ tân hoặc nhân viên tiếp đón trực suốt ngày đêm; không có nghĩa mọi dịch vụ của địa điểm đều mở 24 giờ.",
+        "en": "Reception staff or the front desk are available around the clock, without implying that every service is open 24 hours."
+      },
+      "embedding_definitions": {
+        "vi": "Nhân viên lễ tân hoặc quầy tiếp tân trực suốt 24 giờ.",
+        "en": "The reception desk or front desk is staffed around the clock."
+      },
+      "positive_phrases": {
+        "vi": [
+          "lễ tân trực 24/24",
+          "quầy tiếp tân suốt đêm",
+          "có nhân viên lễ tân cả ngày đêm"
+        ],
+        "en": [
+          "24-hour front desk",
+          "reception staffed overnight",
+          "round-the-clock reception"
+        ]
+      },
+      "confusable_with": [
+        "open_24h",
+        "open_late",
+        "security_guard"
+      ]
+    },
+    {
+      "property_id": "laundry_service",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Dịch vụ giặt ủi",
+        "en": "Laundry service"
+      },
+      "definitions": {
+        "vi": "Có dịch vụ giặt quần áo cho khách tại hoặc qua địa điểm; không chỉ là nơi thay đồ hay phòng tắm.",
+        "en": "Clothing can be laundered through a service at the place, rather than merely offering a changing room or shower."
+      },
+      "embedding_definitions": {
+        "vi": "Có dịch vụ giặt ủi quần áo cho khách tại cơ sở.",
+        "en": "The place provides a laundry service to wash guests’ clothes."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có dịch vụ giặt ủi",
+          "giặt đồ cho khách",
+          "chỗ ở nhận giặt quần áo"
+        ],
+        "en": [
+          "laundry service available",
+          "guest clothes washing",
+          "hotel laundry service"
+        ]
+      },
+      "confusable_with": [
+        "locker_rooms",
+        "showers"
+      ]
+    },
+    {
+      "property_id": "pool",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Hồ bơi",
+        "en": "Swimming pool"
+      },
+      "definitions": {
+        "vi": "Có bể hoặc hồ bơi phục vụ hoạt động bơi lội tại địa điểm.",
+        "en": "A pool for swimming is available at the place."
+      },
+      "embedding_definitions": {
+        "vi": "Có hồ bơi hoặc bể bơi dành cho hoạt động bơi lội.",
+        "en": "A swimming pool is available for guests to swim."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có hồ bơi",
+          "chỗ có bể bơi",
+          "khách sạn có hồ bơi"
+        ],
+        "en": [
+          "swimming pool available",
+          "has a pool for swimming",
+          "hotel with a pool"
+        ]
+      },
+      "confusable_with": [
+        "showers"
+      ]
+    },
+    {
+      "property_id": "locker_rooms",
+      "facet": "sport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Phòng thay đồ",
+        "en": "Changing rooms"
+      },
+      "definitions": {
+        "vi": "Có khu hoặc phòng để thay trang phục trước và sau khi tập luyện, bơi hay hoạt động thể thao; không nhất thiết có tủ khóa đồ hoặc vòi tắm.",
+        "en": "A room for changing clothes before or after sports or swimming; lockers and showers are not implied."
+      },
+      "embedding_definitions": {
+        "vi": "Có phòng thay đồ dành cho người tập luyện hoặc bơi lội.",
+        "en": "Changing rooms are available for athletes or swimmers to change clothes."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có phòng thay đồ",
+          "khu thay quần áo cho người tập",
+          "chỗ thay đồ trước khi bơi"
+        ],
+        "en": [
+          "changing rooms available",
+          "sports changing area",
+          "place to change before swimming"
+        ]
+      },
+      "confusable_with": [
+        "showers",
+        "baby_changing"
+      ]
+    },
+    {
+      "property_id": "showers",
+      "facet": "sport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Vòi tắm",
+        "en": "Showers"
+      },
+      "definitions": {
+        "vi": "Có vòi hoặc phòng tắm để tắm tráng sau khi vận động; không chỉ là bồn rửa tay hay phòng thay đồ.",
+        "en": "Shower facilities for washing after activity, distinct from handwashing sinks and changing rooms."
+      },
+      "embedding_definitions": {
+        "vi": "Có vòi tắm hoặc phòng tắm tráng cho khách sau khi vận động.",
+        "en": "Showers are available for washing after exercise or swimming."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có vòi tắm tráng",
+          "phòng tắm sau khi tập",
+          "có chỗ tắm sau bơi"
+        ],
+        "en": [
+          "showers available",
+          "shower after a workout",
+          "rinse-off showers"
+        ]
+      },
+      "confusable_with": [
+        "locker_rooms",
+        "handwashing",
+        "pool"
+      ]
+    },
+    {
+      "property_id": "equipment_rental",
+      "facet": "sport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Cho thuê dụng cụ thể thao",
+        "en": "Sports equipment rental"
+      },
+      "definitions": {
+        "vi": "Có dịch vụ cho mượn hoặc cho thuê dụng cụ dùng cho hoạt động thể thao tại địa điểm; không phải bán dụng cụ.",
+        "en": "Equipment for a sporting activity can be rented or borrowed at the place, rather than only purchased."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có thể thuê hoặc mượn dụng cụ thể thao tại chỗ.",
+        "en": "Visitors can rent or borrow sports equipment and gear on site."
+      },
+      "positive_phrases": {
+        "vi": [
+          "thuê dụng cụ chơi thể thao",
+          "có cho thuê đồ tập",
+          "mượn thiết bị thể thao tại chỗ"
+        ],
+        "en": [
+          "sports equipment rental",
+          "rent gear on site",
+          "borrow sports equipment"
+        ]
+      },
+      "confusable_with": []
+    },
+    {
+      "property_id": "shade",
+      "facet": "outdoors",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bóng râm",
+        "en": "Shade"
+      },
+      "definitions": {
+        "vi": "Có bóng mát che nắng ở không gian ngoài trời, từ cây hoặc vật che nắng; không tự suy ra có mái kết cấu hay máy lạnh.",
+        "en": "An outdoor area offers relief from direct sunlight, for example beneath trees; this does not necessarily mean a structural roof or AC."
+      },
+      "embedding_definitions": {
+        "vi": "Khu ngoài trời có bóng râm và bóng mát từ cây hoặc vật chắn nắng.",
+        "en": "An outdoor area has shade from trees or sun-shading features."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ có bóng râm",
+          "nhiều bóng cây",
+          "ngồi dưới tán cây mát"
+        ],
+        "en": [
+          "shady spot",
+          "tree shade",
+          "place out of the sun"
+        ]
+      },
+      "confusable_with": [
+        "airy",
+        "air_conditioning",
+        "covered_area",
+        "canopy",
+        "shelter"
+      ]
+    },
+    {
+      "property_id": "drinking_water",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Nước uống tại chỗ",
+        "en": "Drinking water"
+      },
+      "definitions": {
+        "vi": "Có nguồn nước uống dành cho người sử dụng tại địa điểm, chẳng hạn vòi hoặc điểm lấy nước uống; khác với bồn chỉ dùng rửa tay.",
+        "en": "A source of potable water for visitors, such as a drinking fountain or refill point, distinct from a handwashing sink."
+      },
+      "embedding_definitions": {
+        "vi": "Có vòi hoặc điểm lấy nước uống dành cho khách.",
+        "en": "Potable drinking water is available from a fountain or refill point."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có vòi nước uống",
+          "điểm lấy nước uống",
+          "chỗ lấy nước uống công cộng"
+        ],
+        "en": [
+          "drinking water available",
+          "water refill point",
+          "public drinking fountain"
+        ]
+      },
+      "confusable_with": [
+        "handwashing"
+      ]
+    },
+    {
+      "property_id": "playground",
+      "facet": "outdoors",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Sân chơi trẻ em",
+        "en": "Children's playground"
+      },
+      "definitions": {
+        "vi": "Có khu vui chơi hoặc thiết bị chơi dành cho trẻ em; không chỉ đơn thuần là địa điểm thân thiện với gia đình.",
+        "en": "A designated play area or play equipment for children, more specific than general family suitability."
+      },
+      "embedding_definitions": {
+        "vi": "Có khu vui chơi trẻ em với sân chơi hoặc thiết bị chơi.",
+        "en": "A children’s playground or kids’ play area has play equipment."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có sân chơi trẻ em",
+          "khu vui chơi cho bé",
+          "có cầu trượt xích đu"
+        ],
+        "en": [
+          "children's playground",
+          "kids' play area",
+          "play equipment for children"
+        ]
+      },
+      "confusable_with": [
+        "family_friendly"
+      ]
+    },
+    {
+      "property_id": "bicycle_parking",
+      "facet": "transport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Chỗ đỗ xe đạp",
+        "en": "Bicycle parking"
+      },
+      "definitions": {
+        "vi": "Có chỗ hoặc giá để xe đạp; khác với nơi đỗ ô tô hay chỗ gửi xe máy.",
+        "en": "A designated spot or rack for bicycles, separate from general car or motorcycle parking."
+      },
+      "embedding_definitions": {
+        "vi": "Có chỗ đỗ xe đạp hoặc giá khóa xe đạp.",
+        "en": "Bicycle parking spaces or bike racks are available."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ gửi xe đạp",
+          "giá khóa xe đạp",
+          "bãi đỗ xe đạp"
+        ],
+        "en": [
+          "bicycle parking",
+          "bike racks available",
+          "place to park a bicycle"
+        ]
+      },
+      "confusable_with": [
+        "parking",
+        "motorbike_parking",
+        "covered_parking"
+      ]
+    },
+    {
+      "property_id": "pet_friendly",
+      "facet": "policy",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Cho phép thú cưng",
+        "en": "Pet-friendly"
+      },
+      "definitions": {
+        "vi": "Địa điểm có chính sách đón khách đi cùng thú cưng; không mặc nhiên có khu vui chơi hay chăm sóc thú cưng.",
+        "en": "Visitors may bring pets under the venue's policy; a pet play or care facility is not implied."
+      },
+      "embedding_definitions": {
+        "vi": "Khách được mang thú cưng hoặc chó tới địa điểm.",
+        "en": "The place welcomes visitors bringing pets or dogs."
+      },
+      "positive_phrases": {
+        "vi": [
+          "được dẫn thú cưng vào",
+          "quán cho mang chó theo",
+          "địa điểm thân thiện với thú cưng"
+        ],
+        "en": [
+          "pet-friendly place",
+          "dogs welcome",
+          "bring a pet along"
+        ]
+      },
+      "confusable_with": [
+        "family_friendly"
+      ]
+    },
+    {
+      "property_id": "free_entry",
+      "facet": "pricing",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Vào cửa miễn phí",
+        "en": "Free admission"
+      },
+      "definitions": {
+        "vi": "Không thu phí vào cửa để tham quan hoặc tiếp cận địa điểm; đồ ăn, hàng hóa và các dịch vụ riêng vẫn có thể tính tiền.",
+        "en": "Admission to the place is free; purchases and other services may still have a charge."
+      },
+      "embedding_definitions": {
+        "vi": "Khách được vào cửa hoặc tham quan miễn phí.",
+        "en": "Visitors can enter with free admission or free entry."
+      },
+      "positive_phrases": {
+        "vi": [
+          "vào cửa miễn phí",
+          "tham quan miễn vé",
+          "miễn phí vé vào"
+        ],
+        "en": [
+          "free entry",
+          "complimentary admission",
+          "free to enter"
+        ]
+      },
+      "confusable_with": [
+        "ticketing",
+        "breakfast"
+      ]
+    },
+    {
+      "property_id": "guided_tours",
+      "facet": "culture",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Tham quan có người hướng dẫn",
+        "en": "Guided tours"
+      },
+      "definitions": {
+        "vi": "Có tour tham quan với người hướng dẫn trực tiếp; khác với thiết bị nghe thuyết minh tự động.",
+        "en": "A person leads visitors through a tour, unlike a self-guided audio narration."
+      },
+      "embedding_definitions": {
+        "vi": "Có tour tham quan do hướng dẫn viên dẫn đoàn và thuyết minh.",
+        "en": "A guide leads visitors on an in-person guided tour."
+      },
+      "positive_phrases": {
+        "vi": [
+          "tham quan có hướng dẫn viên",
+          "có tour dẫn đoàn",
+          "người thuyết minh dẫn đi xem"
+        ],
+        "en": [
+          "guided tour available",
+          "tour with a guide",
+          "staff-led visit"
+        ]
+      },
+      "confusable_with": [
+        "audio_guide"
+      ]
+    },
+    {
+      "property_id": "audio_guide",
+      "facet": "culture",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Thuyết minh âm thanh",
+        "en": "Audio guide"
+      },
+      "definitions": {
+        "vi": "Có bản ghi âm hoặc thiết bị phát thuyết minh cho khách tự nghe khi tham quan; không phải tour có người dẫn.",
+        "en": "Recorded narration or an audio device for self-guided visits, rather than an in-person guide."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có thể nghe bản ghi âm thuyết minh khi tự tham quan.",
+        "en": "Visitors can listen to recorded narration through an audio guide."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có máy thuyết minh tự động",
+          "nghe thuyết minh khi tham quan",
+          "hướng dẫn tham quan bằng âm thanh"
+        ],
+        "en": [
+          "audio guide available",
+          "recorded tour narration",
+          "self-guided audio tour"
+        ]
+      },
+      "confusable_with": [
+        "guided_tours"
+      ]
+    },
+    {
+      "property_id": "gift_shop",
+      "facet": "culture",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Quầy lưu niệm",
+        "en": "Gift shop"
+      },
+      "definitions": {
+        "vi": "Có quầy hoặc cửa hàng bán quà lưu niệm ngay tại điểm tham quan.",
+        "en": "A shop selling souvenirs or gifts is available at a visitor attraction."
+      },
+      "embedding_definitions": {
+        "vi": "Điểm tham quan có quầy bán quà tặng và đồ lưu niệm tại chỗ.",
+        "en": "An attraction has an on-site gift shop selling souvenirs."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có quầy lưu niệm",
+          "mua quà kỷ niệm tại điểm tham quan",
+          "cửa hàng quà tặng tại chỗ"
+        ],
+        "en": [
+          "on-site gift shop",
+          "souvenir shop at the attraction",
+          "buy souvenirs there"
+        ]
+      },
+      "confusable_with": [
+        "convenience_shop"
+      ]
+    },
+    {
+      "property_id": "security_guard",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Nhân viên bảo vệ",
+        "en": "Security guard"
+      },
+      "definitions": {
+        "vi": "Có nhân viên làm nhiệm vụ bảo vệ hoặc kiểm soát an ninh tại địa điểm; không chỉ là khu vực có đèn.",
+        "en": "Personnel provide security at the site, distinct from lighting or front-desk staffing."
+      },
+      "embedding_definitions": {
+        "vi": "Có nhân viên bảo vệ hoặc nhân viên an ninh trực tại địa điểm.",
+        "en": "Security guards or security staff are present on site."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có bảo vệ trực",
+          "nhân viên an ninh tại chỗ",
+          "có người trông coi an ninh"
+        ],
+        "en": [
+          "security guard on duty",
+          "security staff present",
+          "staffed security"
+        ]
+      },
+      "confusable_with": [
+        "reception_24h",
+        "lighting"
+      ]
+    },
+    {
+      "property_id": "service_counter",
+      "facet": "government",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Quầy tiếp nhận dịch vụ",
+        "en": "Service counter"
+      },
+      "definitions": {
+        "vi": "Có quầy để người dân hoặc khách trực tiếp nộp hồ sơ, hỏi thông tin hoặc làm thủ tục; không chỉ là phát số thứ tự.",
+        "en": "A staffed counter where visitors submit forms, ask questions, or receive services; not merely a queue-number dispenser."
+      },
+      "embedding_definitions": {
+        "vi": "Có quầy tiếp nhận hồ sơ và phục vụ khách trực tiếp.",
+        "en": "A staffed service counter assists visitors and accepts forms in person."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có quầy tiếp nhận hồ sơ",
+          "làm thủ tục tại quầy",
+          "quầy giao dịch trực tiếp"
+        ],
+        "en": [
+          "in-person service counter",
+          "submit forms at the counter",
+          "staffed public service desk"
+        ]
+      },
+      "confusable_with": [
+        "queue_ticket",
+        "waiting_area"
+      ]
+    },
+    {
+      "property_id": "queue_ticket",
+      "facet": "government",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Lấy số thứ tự",
+        "en": "Queue numbers"
+      },
+      "definitions": {
+        "vi": "Có hệ thống hoặc phiếu cấp số để chờ đến lượt phục vụ; không phải vé đi xe hay lịch hẹn trước.",
+        "en": "Numbered slips or a number-issuing system organize the service queue, unlike transit tickets or prebooked appointments."
+      },
+      "embedding_definitions": {
+        "vi": "Khách được lấy số thứ tự hoặc phiếu chờ để tới lượt phục vụ.",
+        "en": "Visitors can take a queue number or numbered ticket for their turn in line."
+      },
+      "positive_phrases": {
+        "vi": [
+          "lấy số thứ tự",
+          "có máy phát số chờ",
+          "bốc số chờ tới lượt"
+        ],
+        "en": [
+          "take a queue number",
+          "numbered queue tickets",
+          "ticket for turn in line"
+        ]
+      },
+      "confusable_with": [
+        "ticketing",
+        "appointment",
+        "waiting_area",
+        "service_counter"
+      ]
+    },
+    {
+      "property_id": "cash_withdrawal",
+      "facet": "finance",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Rút tiền mặt",
+        "en": "Cash withdrawal"
+      },
+      "definitions": {
+        "vi": "Có dịch vụ rút tiền mặt từ tài khoản hoặc thẻ; khác với nộp tiền vào tài khoản hay trả tiền mặt khi mua hàng.",
+        "en": "Cash can be taken out of an account or card, as opposed to depositing cash or paying for a purchase."
+      },
+      "embedding_definitions": {
+        "vi": "Có thể rút tiền mặt từ tài khoản tại máy hoặc quầy.",
+        "en": "Customers can withdraw cash from an account at a machine or counter."
+      },
+      "positive_phrases": {
+        "vi": [
+          "rút tiền mặt",
+          "cây ATM rút tiền",
+          "rút tiền từ tài khoản"
+        ],
+        "en": [
+          "withdraw cash",
+          "cash withdrawal at ATM",
+          "take money out of an account"
+        ]
+      },
+      "confusable_with": [
+        "cash_deposit",
+        "cashless"
+      ]
+    },
+    {
+      "property_id": "cash_deposit",
+      "facet": "finance",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Nộp tiền mặt",
+        "en": "Cash deposit"
+      },
+      "definitions": {
+        "vi": "Có thể nộp tiền mặt vào tài khoản tại điểm giao dịch hoặc máy phù hợp; không phải rút tiền mặt.",
+        "en": "Cash can be paid into an account at a suitable counter or machine, rather than withdrawn."
+      },
+      "embedding_definitions": {
+        "vi": "Có thể nộp tiền mặt vào tài khoản tại máy hoặc quầy.",
+        "en": "Customers can deposit cash into an account at a machine or counter."
+      },
+      "positive_phrases": {
+        "vi": [
+          "nộp tiền mặt vào tài khoản",
+          "máy ATM nhận tiền nộp",
+          "gửi tiền mặt vào ngân hàng"
+        ],
+        "en": [
+          "deposit cash",
+          "cash deposit machine",
+          "pay cash into an account"
+        ]
+      },
+      "confusable_with": [
+        "cash_withdrawal",
+        "cashless"
+      ]
+    },
+    {
+      "property_id": "contactless",
+      "facet": "payment",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Thanh toán chạm",
+        "en": "Contactless payment"
+      },
+      "definitions": {
+        "vi": "Hỗ trợ thanh toán bằng thao tác chạm thẻ hoặc thiết bị gần đầu đọc; cụ thể hơn việc chỉ nhận thẻ hay thanh toán điện tử nói chung.",
+        "en": "Payment by tapping a card or device near a reader, more specific than accepting cards or electronic payments generally."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có thể chạm thẻ hoặc thiết bị NFC vào đầu đọc để trả tiền.",
+        "en": "Customers can tap a card or NFC device on a reader to pay."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chạm thẻ để trả tiền",
+          "có thanh toán không chạm",
+          "quẹt thẻ NFC"
+        ],
+        "en": [
+          "tap to pay",
+          "contactless card payment",
+          "NFC payment accepted"
+        ]
+      },
+      "confusable_with": [
+        "accepts_cards",
+        "cashless"
+      ]
+    },
+    {
+      "property_id": "cashless",
+      "facet": "payment",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Thanh toán phi tiền mặt",
+        "en": "Cashless payment"
+      },
+      "definitions": {
+        "vi": "Có phương thức thanh toán không dùng tiền mặt, như thanh toán điện tử; không tự chỉ định loại thẻ, thao tác chạm hay việc cấm trả tiền mặt.",
+        "en": "A non-cash way to pay is supported; this does not specify a card type, tap-to-pay, or a prohibition on cash."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có thể thanh toán điện tử bằng phương thức phi tiền mặt.",
+        "en": "Customers can use a digital or cashless payment option."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có thanh toán điện tử",
+          "thanh toán phi tiền mặt",
+          "trả bằng phương thức cashless"
+        ],
+        "en": [
+          "cashless payment option",
+          "pay electronically",
+          "digital payment available"
+        ]
+      },
+      "confusable_with": [
+        "accepts_cards",
+        "contactless",
+        "cash_withdrawal",
+        "cash_deposit"
+      ]
+    },
+    {
+      "property_id": "canopy",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mái tán che",
+        "en": "Canopy"
+      },
+      "definitions": {
+        "vi": "Có kết cấu mái tán hoặc mái vươn che phía trên một khu vực như làn bơm nhiên liệu; cụ thể hơn mái che nói chung và khác bóng cây.",
+        "en": "A purpose-built overhead canopy, such as above fuel pumps, rather than general cover or tree shade."
+      },
+      "embedding_definitions": {
+        "vi": "Có mái tán che chuyên dụng phía trên khu vực như làn bơm nhiên liệu.",
+        "en": "A purpose-built canopy covers an area such as fuel pump lanes."
+      },
+      "positive_phrases": {
+        "vi": [
+          "mái tán che trụ bơm",
+          "trạm xăng có mái che rộng",
+          "mái vươn che làn xe"
+        ],
+        "en": [
+          "canopy over fuel pumps",
+          "wide overhead canopy",
+          "forecourt canopy"
+        ]
+      },
+      "confusable_with": [
+        "covered_area",
+        "shade",
+        "shelter",
+        "covered_parking"
+      ]
+    },
+    {
+      "property_id": "fuel_petrol",
+      "facet": "fuel",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bán xăng",
+        "en": "Petrol available"
+      },
+      "definitions": {
+        "vi": "Có bán nhiên liệu xăng cho phương tiện; không chỉ định chỉ số octan hoặc khẳng định có dầu diesel.",
+        "en": "Petrol fuel is sold for vehicles, without specifying an octane grade or implying diesel is available."
+      },
+      "embedding_definitions": {
+        "vi": "Trạm có bán xăng để khách đổ nhiên liệu cho phương tiện.",
+        "en": "A filling station sells petrol or gasoline for vehicles."
+      },
+      "positive_phrases": {
+        "vi": [
+          "cây xăng có bán xăng",
+          "đổ xăng tại đây",
+          "trạm có xăng cho xe"
+        ],
+        "en": [
+          "petrol available",
+          "fill up with petrol",
+          "station selling gasoline"
+        ]
+      },
+      "confusable_with": [
+        "fuel_diesel",
+        "fast_charging"
+      ]
+    },
+    {
+      "property_id": "fuel_diesel",
+      "facet": "fuel",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bán dầu diesel",
+        "en": "Diesel available"
+      },
+      "definitions": {
+        "vi": "Có bán nhiên liệu diesel cho phương tiện; không chỉ là bán xăng.",
+        "en": "Diesel fuel is sold for vehicles, distinct from petrol."
+      },
+      "embedding_definitions": {
+        "vi": "Trạm có bán dầu diesel để khách đổ nhiên liệu cho phương tiện.",
+        "en": "A filling station sells diesel fuel for vehicles."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có bán dầu diesel",
+          "đổ dầu diesel",
+          "trạm có dầu cho xe tải"
+        ],
+        "en": [
+          "diesel fuel available",
+          "fill up with diesel",
+          "station selling diesel"
+        ]
+      },
+      "confusable_with": [
+        "fuel_petrol",
+        "fast_charging"
+      ]
+    },
+    {
+      "property_id": "air_compressor",
+      "facet": "vehicle",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bơm hơi lốp",
+        "en": "Tire air pump"
+      },
+      "definitions": {
+        "vi": "Có thiết bị cấp khí nén để bơm lốp xe; không phải trạm sạc điện hay bơm nhiên liệu.",
+        "en": "Compressed-air equipment is available for inflating vehicle tires, not for fuel or electric charging."
+      },
+      "embedding_definitions": {
+        "vi": "Có máy nén khí hoặc vòi bơm hơi để bơm lốp xe.",
+        "en": "A compressed-air pump is available to inflate vehicle tires."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có vòi bơm lốp",
+          "bơm hơi bánh xe tại trạm",
+          "máy nén khí bơm lốp"
+        ],
+        "en": [
+          "tire inflation pump",
+          "air compressor for tires",
+          "inflate car tires there"
+        ]
+      },
+      "confusable_with": [
+        "fast_charging",
+        "fuel_petrol"
+      ]
+    },
+    {
+      "property_id": "convenience_shop",
+      "facet": "vehicle",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Cửa hàng tiện lợi tại trạm",
+        "en": "On-site convenience shop"
+      },
+      "definitions": {
+        "vi": "Có cửa hàng bán đồ thiết yếu trong khuôn viên trạm dịch vụ phương tiện; khác với chính trạm nhiên liệu hay quầy lưu niệm.",
+        "en": "A shop selling everyday items on a vehicle-service site, distinct from the fuel pumps or a souvenir shop."
+      },
+      "embedding_definitions": {
+        "vi": "Trong khuôn viên trạm dịch vụ xe có cửa hàng bán đồ thiết yếu.",
+        "en": "A vehicle-service station has an on-site convenience shop selling essentials."
+      },
+      "positive_phrases": {
+        "vi": [
+          "cây xăng có cửa hàng tiện lợi",
+          "mua đồ lặt vặt ngay trong trạm",
+          "quầy tạp hóa tại trạm xăng"
+        ],
+        "en": [
+          "convenience shop at the station",
+          "fuel station with a shop",
+          "on-site shop for essentials"
+        ]
+      },
+      "confusable_with": [
+        "gift_shop",
+        "fuel_petrol"
+      ]
+    },
+    {
+      "property_id": "fast_charging",
+      "facet": "vehicle",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Sạc nhanh xe điện",
+        "en": "Fast EV charging"
+      },
+      "definitions": {
+        "vi": "Có thiết bị sạc công suất cao cho xe điện; yêu cầu sạc điện thông thường không đủ để xác định khả năng sạc nhanh.",
+        "en": "High-power charging is available for electric vehicles, more specific than generic charging availability."
+      },
+      "embedding_definitions": {
+        "vi": "Có trạm sạc nhanh công suất cao dành cho xe điện.",
+        "en": "High-power fast charging or rapid charging is available for electric vehicles."
+      },
+      "positive_phrases": {
+        "vi": [
+          "trạm sạc nhanh xe điện",
+          "có cổng sạc nhanh ô tô điện",
+          "sạc xe điện công suất cao"
+        ],
+        "en": [
+          "fast EV charging",
+          "rapid charger for electric cars",
+          "high-power vehicle charging"
+        ]
+      },
+      "confusable_with": [
+        "air_compressor",
+        "fuel_petrol",
+        "fuel_diesel"
+      ]
+    },
+    {
+      "property_id": "motorbike_parking",
+      "facet": "transport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Chỗ đỗ xe máy",
+        "en": "Motorcycle parking"
+      },
+      "definitions": {
+        "vi": "Có khu hoặc chỗ gửi dành cho xe máy, xe mô tô; không mặc nhiên là bãi đỗ ô tô hay xe đạp.",
+        "en": "Designated parking for motorbikes or motorcycles, not automatically car or bicycle parking."
+      },
+      "embedding_definitions": {
+        "vi": "Có chỗ đậu xe máy, xe tay ga hoặc xe mô tô dành riêng.",
+        "en": "Designated parking is available for motorbikes, scooters, or motorcycles."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ gửi xe máy",
+          "bãi đỗ xe mô tô",
+          "có chỗ đậu xe máy"
+        ],
+        "en": [
+          "motorbike parking",
+          "motorcycle parking spaces",
+          "place to park a scooter"
+        ]
+      },
+      "confusable_with": [
+        "parking",
+        "bicycle_parking",
+        "covered_parking"
+      ]
+    },
+    {
+      "property_id": "covered_parking",
+      "facet": "transport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bãi đỗ xe có mái che",
+        "en": "Covered parking"
+      },
+      "definitions": {
+        "vi": "Chỗ hoặc bãi đỗ xe được che phía trên; cụ thể hơn bãi đỗ xe nói chung và không phải mọi khu vực có mái che.",
+        "en": "Parking spaces have overhead cover, more specific than general parking or a covered area unrelated to vehicles."
+      },
+      "embedding_definitions": {
+        "vi": "Có bãi xe hoặc chỗ đỗ xe nằm dưới mái che.",
+        "en": "Vehicles can park in covered spaces under a roof."
+      },
+      "positive_phrases": {
+        "vi": [
+          "bãi xe có mái che",
+          "đỗ ô tô dưới mái",
+          "chỗ gửi xe trong nhà"
+        ],
+        "en": [
+          "covered car parking",
+          "park under a roof",
+          "sheltered parking spaces"
+        ]
+      },
+      "confusable_with": [
+        "parking",
+        "covered_area",
+        "canopy",
+        "motorbike_parking"
+      ]
+    },
+    {
+      "property_id": "disabled_parking",
+      "facet": "accessibility",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Chỗ đỗ xe cho người khuyết tật",
+        "en": "Accessible parking"
+      },
+      "definitions": {
+        "vi": "Có chỗ đỗ xe dành riêng hoặc phù hợp cho người khuyết tật; lối vào cho xe lăn hay bãi xe thông thường không thay thế thuộc tính này.",
+        "en": "Parking spaces are designated or adapted for disabled visitors; general wheelchair access or ordinary parking is not equivalent."
+      },
+      "embedding_definitions": {
+        "vi": "Có ô đỗ xe dành cho người khuyết tật tại bãi xe.",
+        "en": "Accessible parking bays are designated for disabled visitors."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ đậu xe cho người khuyết tật",
+          "ô đỗ xe ưu tiên tiếp cận",
+          "bãi xe có chỗ dành cho người dùng xe lăn"
+        ],
+        "en": [
+          "accessible parking space",
+          "disabled parking bay",
+          "parking reserved for disabled visitors"
+        ]
+      },
+      "confusable_with": [
+        "parking",
+        "covered_parking",
+        "wheelchair"
+      ]
+    },
+    {
+      "property_id": "baby_changing",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bàn thay tã",
+        "en": "Baby-changing station"
+      },
+      "definitions": {
+        "vi": "Có bàn hoặc khu dành để thay tã cho em bé; việc chỉ có nhà vệ sinh hay phòng thay đồ người lớn không đủ.",
+        "en": "A dedicated table or station for changing a baby's diaper, beyond a general restroom or adult changing room."
+      },
+      "embedding_definitions": {
+        "vi": "Có bàn thay tã hoặc khu thay bỉm dành cho em bé.",
+        "en": "A baby-changing table or diaper-changing station is available."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có bàn thay tã cho bé",
+          "chỗ thay bỉm em bé",
+          "khu thay tã trẻ nhỏ"
+        ],
+        "en": [
+          "baby-changing table",
+          "diaper-changing station",
+          "place to change a baby"
+        ]
+      },
+      "confusable_with": [
+        "toilets",
+        "locker_rooms",
+        "family_friendly"
+      ]
+    },
+    {
+      "property_id": "handwashing",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Chỗ rửa tay",
+        "en": "Handwashing facilities"
+      },
+      "definitions": {
+        "vi": "Có bồn hoặc vòi nước phục vụ rửa tay; khác với nguồn nước uống và vòi tắm.",
+        "en": "A sink or tap is available for washing hands, distinct from drinking-water points and showers."
+      },
+      "embedding_definitions": {
+        "vi": "Có bồn hoặc vòi nước để khách rửa tay.",
+        "en": "A handwashing sink or handwashing station is available."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có bồn rửa tay",
+          "vòi nước rửa tay",
+          "chỗ rửa tay cho khách"
+        ],
+        "en": [
+          "handwashing facilities",
+          "sink for washing hands",
+          "handwashing station"
+        ]
+      },
+      "confusable_with": [
+        "drinking_water",
+        "showers",
+        "toilets"
+      ]
+    },
+    {
+      "property_id": "gender_neutral",
+      "facet": "accessibility",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Nhà vệ sinh dùng chung mọi giới",
+        "en": "Gender-neutral restroom"
+      },
+      "definitions": {
+        "vi": "Có nhà vệ sinh dành cho người thuộc mọi giới sử dụng; không tự chứng minh nhà vệ sinh tiếp cận xe lăn.",
+        "en": "A restroom is available to people of any gender; wheelchair accessibility is a separate feature."
+      },
+      "embedding_definitions": {
+        "vi": "Có nhà vệ sinh dùng chung dành cho người thuộc mọi giới.",
+        "en": "An all-gender or gender-neutral restroom is available."
+      },
+      "positive_phrases": {
+        "vi": [
+          "nhà vệ sinh dùng chung mọi giới",
+          "toilet unisex",
+          "WC chung cho mọi giới"
+        ],
+        "en": [
+          "gender-neutral restroom",
+          "all-gender toilet",
+          "unisex bathroom"
+        ]
+      },
+      "confusable_with": [
+        "toilets",
+        "accessible_toilet"
+      ]
+    },
+    {
+      "property_id": "family_friendly",
+      "facet": "suitability",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Phù hợp với gia đình",
+        "en": "Family-friendly"
+      },
+      "definitions": {
+        "vi": "Không gian hoặc dịch vụ phù hợp cho gia đình đến cùng nhau, kể cả trẻ nhỏ; không tự suy ra có sân chơi hay bàn thay tã.",
+        "en": "The place suits family visits, including with children, without implying a playground or baby-changing station."
+      },
+      "embedding_definitions": {
+        "vi": "Địa điểm phù hợp để gia đình cùng trẻ nhỏ đến chơi hoặc sử dụng dịch vụ.",
+        "en": "The place is family-friendly and suitable for families visiting with children."
+      },
+      "positive_phrases": {
+        "vi": [
+          "phù hợp cho gia đình",
+          "đi cùng trẻ nhỏ tiện",
+          "địa điểm thân thiện với gia đình"
+        ],
+        "en": [
+          "family-friendly place",
+          "suitable for families with kids",
+          "good for a family visit"
+        ]
+      },
+      "confusable_with": [
+        "playground",
+        "baby_changing",
+        "pet_friendly"
+      ]
+    },
+    {
+      "property_id": "emergency_care",
+      "facet": "health",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Chăm sóc cấp cứu",
+        "en": "Emergency medical care"
+      },
+      "definitions": {
+        "vi": "Có dịch vụ tiếp nhận và xử lý trường hợp cần chăm sóc y tế khẩn cấp; không chỉ là khám bệnh theo lịch.",
+        "en": "Urgent medical cases can be received and treated, rather than only scheduled routine consultations."
+      },
+      "embedding_definitions": {
+        "vi": "Có dịch vụ cấp cứu và tiếp nhận ca cần điều trị khẩn cấp.",
+        "en": "Emergency medical care is available for urgent cases."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có khoa cấp cứu",
+          "tiếp nhận ca cấp cứu",
+          "chỗ khám cấp cứu khẩn"
+        ],
+        "en": [
+          "emergency medical care",
+          "emergency department available",
+          "urgent treatment on site"
+        ]
+      },
+      "confusable_with": [
+        "appointment",
+        "pharmacy_in_house"
+      ]
+    },
+    {
+      "property_id": "pharmacy_in_house",
+      "facet": "health",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Quầy thuốc trong cơ sở",
+        "en": "On-site pharmacy"
+      },
+      "definitions": {
+        "vi": "Có quầy cấp phát hoặc bán thuốc ngay bên trong cơ sở chăm sóc sức khỏe; khác với một tiệm thuốc độc lập.",
+        "en": "A pharmacy or medication-dispensing counter is inside a healthcare facility, distinct from a standalone drugstore."
+      },
+      "embedding_definitions": {
+        "vi": "Có quầy cấp phát thuốc hoặc nhà thuốc ngay trong cơ sở y tế.",
+        "en": "A pharmacy or medicine-dispensing counter is available inside the healthcare facility."
+      },
+      "positive_phrases": {
+        "vi": [
+          "bệnh viện có quầy thuốc",
+          "lấy thuốc ngay trong cơ sở khám",
+          "nhà thuốc trong phòng khám"
+        ],
+        "en": [
+          "on-site pharmacy at the clinic",
+          "hospital pharmacy counter",
+          "medicine dispensing in the facility"
+        ]
+      },
+      "confusable_with": [
+        "emergency_care"
+      ]
+    },
+    {
+      "property_id": "online_ordering",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Đặt hàng trực tuyến",
+        "en": "Online ordering"
+      },
+      "definitions": {
+        "vi": "Có kênh đặt mua hàng hoặc món qua website hay nền tảng trực tuyến; cách nhận hàng có thể khác nhau, không tự suy ra có giao hàng.",
+        "en": "Customers can place orders through an online channel; fulfillment may vary and delivery is not implied."
+      },
+      "embedding_definitions": {
+        "vi": "Khách có thể đặt món hoặc đặt mua hàng qua website và nền tảng trực tuyến.",
+        "en": "Customers can place food or product orders online through a website."
+      },
+      "positive_phrases": {
+        "vi": [
+          "đặt hàng qua mạng",
+          "đặt món online",
+          "mua trên website của cửa hàng"
+        ],
+        "en": [
+          "order online",
+          "place an order on the website",
+          "online food ordering"
+        ]
+      },
+      "confusable_with": [
+        "delivery",
+        "home_delivery",
+        "takeaway",
+        "reservation",
+        "appointment"
+      ]
+    },
+    {
+      "property_id": "home_delivery",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Giao hàng tới nhà",
+        "en": "Home delivery"
+      },
+      "definitions": {
+        "vi": "Đơn hàng được chuyển đến tận nhà khách; cụ thể hơn dịch vụ giao hàng nói chung và không chỉ là đặt đơn trực tuyến.",
+        "en": "Orders are delivered to the customer's home, a more specific destination than generic delivery and separate from online ordering."
+      },
+      "embedding_definitions": {
+        "vi": "Đơn hàng được giao tận nhà hoặc tới cửa nhà khách.",
+        "en": "Orders can be delivered to the customer’s home or doorstep."
+      },
+      "positive_phrases": {
+        "vi": [
+          "giao hàng tận nhà",
+          "ship tới cửa nhà",
+          "mua rồi giao về nhà"
+        ],
+        "en": [
+          "home delivery available",
+          "delivered to my home",
+          "deliver to the doorstep"
+        ]
+      },
+      "confusable_with": [
+        "delivery",
+        "online_ordering",
+        "takeaway"
+      ]
+    },
+    {
+      "property_id": "study_space",
+      "facet": "education",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Không gian học tập",
+        "en": "Study space"
+      },
+      "definitions": {
+        "vi": "Có khu vực bố trí để học, đọc hoặc làm bài; sự yên tĩnh đơn thuần không khẳng định có chỗ học chuyên dụng.",
+        "en": "An area is provided for studying, reading, or doing coursework; quietness alone does not establish a dedicated study space."
+      },
+      "embedding_definitions": {
+        "vi": "Có khu vực tự học, đọc sách hoặc làm bài dành cho người học.",
+        "en": "A dedicated study area supports reading, studying, and coursework."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có khu tự học",
+          "chỗ ngồi học bài",
+          "không gian dành cho học tập"
+        ],
+        "en": [
+          "dedicated study area",
+          "space for studying",
+          "place to do coursework"
+        ]
+      },
+      "confusable_with": [
+        "quiet",
+        "seating",
+        "waiting_area"
+      ]
+    },
+    {
+      "property_id": "cafeteria",
+      "facet": "education",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Căng tin",
+        "en": "Cafeteria"
+      },
+      "definitions": {
+        "vi": "Có khu ăn uống hoặc căng tin phục vụ trong cơ sở như trường học; khác với việc chỉ phục vụ bữa sáng.",
+        "en": "An on-site cafeteria or canteen serves meals in a facility such as a school; distinct from breakfast provision alone."
+      },
+      "embedding_definitions": {
+        "vi": "Trong cơ sở có căng tin hoặc nhà ăn phục vụ bữa ăn.",
+        "en": "An on-site cafeteria or canteen serves meals inside the facility."
+      },
+      "positive_phrases": {
+        "vi": [
+          "trường có căng tin",
+          "có nhà ăn trong khuôn viên",
+          "mua đồ ăn ở căng tin"
+        ],
+        "en": [
+          "cafeteria on campus",
+          "on-site canteen",
+          "school dining hall"
+        ]
+      },
+      "confusable_with": [
+        "breakfast",
+        "convenience_shop"
+      ]
+    },
+    {
+      "property_id": "vegetarian",
+      "facet": "dining",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Món chay",
+        "en": "Vegetarian food"
+      },
+      "definitions": {
+        "vi": "Địa điểm phục vụ các món ăn chay hoặc có thực đơn riêng biệt dành cho người ăn chay thanh tịnh.",
+        "en": "The place serves vegetarian dishes or provides a dedicated vegetarian menu for customers."
+      },
+      "embedding_definitions": {
+        "vi": "Có phục vụ món chay thanh tịnh hoặc thực đơn các món ăn chay phong phú cho thực khách.",
+        "en": "Serves vegetarian dishes or a diverse vegetarian food menu for diners and visitors."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có món chay",
+          "thực đơn đồ chay thanh đạm",
+          "phục vụ cơm chay",
+          "chỗ ăn chay ngon"
+        ],
+        "en": [
+          "vegetarian food available",
+          "serves vegetarian options",
+          "place with vegetarian menu",
+          "vegetarian friendly"
+        ]
+      },
+      "confusable_with": [
+        "vegan",
+        "halal"
+      ]
+    },
+    {
+      "property_id": "vegan",
+      "facet": "dining",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Món thuần chay",
+        "en": "Vegan food"
+      },
+      "definitions": {
+        "vi": "Địa điểm phục vụ thực phẩm hoàn toàn từ nguồn gốc thực vật thanh khiết, lành mạnh cho sức khỏe.",
+        "en": "The place serves plant-based food prepared entirely without animal products for vegan lifestyle."
+      },
+      "embedding_definitions": {
+        "vi": "Phục vụ các món ăn thuần chay chế biến từ rau củ thực vật tươi ngon thanh khiết cho khách hàng.",
+        "en": "Serves plant-based vegan dishes prepared from fresh healthy ingredients for dining guests."
+      },
+      "positive_phrases": {
+        "vi": [
+          "món ăn thuần chay",
+          "quán thuần chay thanh khiết",
+          "thực đơn thuần chay tươi ngon"
+        ],
+        "en": [
+          "vegan food available",
+          "pure vegan dishes",
+          "strictly vegan menu options"
+        ]
+      },
+      "confusable_with": [
+        "vegetarian"
+      ]
+    },
+    {
+      "property_id": "halal",
+      "facet": "dining",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Món ăn Halal",
+        "en": "Halal food"
+      },
+      "definitions": {
+        "vi": "Thực phẩm được chế biến theo đúng tiêu chuẩn quy định luật Hồi giáo Halal cho người theo đạo.",
+        "en": "Food prepared in accordance with Islamic dietary laws and certified Halal culinary standards."
+      },
+      "embedding_definitions": {
+        "vi": "Cung cấp các món ăn đạt chuẩn Halal phục vụ cộng đồng người Hồi giáo dùng bữa an tâm.",
+        "en": "Provides Halal certified dishes prepared according to Islamic dietary rules for diners."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có đồ ăn halal",
+          "món ăn chuẩn halal",
+          "chứng nhận thực phẩm halal"
+        ],
+        "en": [
+          "halal certified food",
+          "serves halal food dishes",
+          "halal dining options available"
+        ]
+      },
+      "confusable_with": [
+        "vegetarian"
+      ]
+    },
+    {
+      "property_id": "private_room",
+      "facet": "seating",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Phòng riêng",
+        "en": "Private room"
+      },
+      "definitions": {
+        "vi": "Có không gian phòng riêng biệt để tiếp khách quý, họp nhóm công việc hoặc tổ chức tiệc gia đình.",
+        "en": "Offers private dining rooms suitable for business meetings, celebrations, or family gatherings."
+      },
+      "embedding_definitions": {
+        "vi": "Có phòng riêng tư khép kín dành cho khách họp mặt hoặc dùng bữa thân mật yên tĩnh.",
+        "en": "Provides closed private rooms for private dining, business meetings, or quiet meals."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có phòng riêng",
+          "đặt phòng vip tiếp khách",
+          "không gian phòng riêng kín đáo"
+        ],
+        "en": [
+          "private dining rooms available",
+          "place with VIP rooms",
+          "private room for meetings"
+        ]
+      },
+      "confusable_with": [
+        "indoor_seating",
+        "reservation"
+      ]
+    },
+    {
+      "property_id": "power_outlets",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Ổ cắm điện",
+        "en": "Power outlets"
+      },
+      "definitions": {
+        "vi": "Trang bị nhiều ổ cắm điện tại bàn thuận tiện để sạc pin laptop và điện thoại khi ngồi làm việc.",
+        "en": "Equipped with power outlets near tables for charging laptops and phones while working comfortably."
+      },
+      "embedding_definitions": {
+        "vi": "Có sẵn nhiều ổ cắm điện tại vị trí ngồi giúp khách sạc máy tính và điện thoại tiện lợi.",
+        "en": "Offers accessible power sockets at guest tables for charging laptops and electronic devices."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có nhiều ổ điện",
+          "chỗ ngồi có ổ cắm sạc",
+          "bàn có ổ điện cắm laptop"
+        ],
+        "en": [
+          "tables with power outlets",
+          "laptop charging sockets",
+          "power plugs available"
+        ]
+      },
+      "confusable_with": [
+        "fast_charging",
+        "study_space"
+      ]
+    },
+    {
+      "property_id": "rooftop_view",
+      "facet": "ambience",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Tầm nhìn sân thượng",
+        "en": "Rooftop view"
+      },
+      "definitions": {
+        "vi": "Vị trí trên tầng thượng hoặc có tầm nhìn toàn cảnh thoáng đãng ngắm trọn vẹn thành phố từ trên cao.",
+        "en": "Located on an upper rooftop terrace with scenic panoramic views over the surrounding city."
+      },
+      "embedding_definitions": {
+        "vi": "Khu vực sân thượng trên cao có tầm nhìn đẹp bao quát phong cảnh thành phố lung linh lộng gió.",
+        "en": "Elevated rooftop terrace offering scenic panoramic views over the vibrant city landscape."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán cà phê rooftop",
+          "ngồi sân thượng ngắm view",
+          "chỗ ngắm cảnh thành phố trên cao"
+        ],
+        "en": [
+          "rooftop cafe with view",
+          "scenic rooftop seating",
+          "place with panoramic terrace view"
+        ]
+      },
+      "confusable_with": [
+        "outdoor_seating",
+        "airy"
+      ]
+    },
+    {
+      "property_id": "free_parking",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Giữ xe miễn phí",
+        "en": "Free parking"
+      },
+      "definitions": {
+        "vi": "Dịch vụ trông giữ xe máy hoặc ô tô an toàn hoàn toàn miễn phí dành cho khách hàng ghé thăm.",
+        "en": "Complimentary vehicle or motorcycle parking provided free of charge for visiting patrons."
+      },
+      "embedding_definitions": {
+        "vi": "Khách hàng được hỗ trợ trông giữ xe máy và ô tô an toàn hoàn toàn miễn phí chu đáo.",
+        "en": "Offers complimentary secure vehicle and motorbike parking free of charge for visiting guests."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán giữ xe miễn phí",
+          "chỗ đậu xe free tiền",
+          "gửi xe an toàn miễn phí"
+        ],
+        "en": [
+          "free parking available",
+          "complimentary guest parking",
+          "place with free vehicle parking"
+        ]
+      },
+      "confusable_with": [
+        "parking",
+        "valet_parking"
+      ]
+    },
+    {
+      "property_id": "invoice",
+      "facet": "payment",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Xuất hóa đơn VAT",
+        "en": "VAT invoice"
+      },
+      "definitions": {
+        "vi": "Cơ sở kinh doanh có khả năng xuất hóa đơn giá trị gia tăng VAT hợp lệ cho công ty quyết toán.",
+        "en": "Business provides valid official VAT tax invoices for corporate or personal billing claims."
+      },
+      "embedding_definitions": {
+        "vi": "Hỗ trợ xuất hóa đơn tài chính đỏ và hóa đơn điện tử VAT đầy đủ cho doanh nghiệp thanh toán.",
+        "en": "Provides official VAT tax invoices and financial electronic receipts for company payments."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có xuất hóa đơn đỏ",
+          "hỗ trợ hóa đơn vat",
+          "xuất hóa đơn công ty"
+        ],
+        "en": [
+          "provides VAT invoice",
+          "official tax invoice available",
+          "business invoice provided"
+        ]
+      },
+      "confusable_with": [
+        "accepts_cards",
+        "cashless"
+      ]
+    },
+    {
+      "property_id": "live_music",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Nhạc sống",
+        "en": "Live music"
+      },
+      "definitions": {
+        "vi": "Địa điểm có các buổi biểu diễn âm nhạc sống, ban nhạc acoustic phục vụ khách nghe nghệ thuật.",
+        "en": "Venue features live music performances, acoustic singers, or bands entertaining guests."
+      },
+      "embedding_definitions": {
+        "vi": "Tổ chức biểu diễn nhạc sống và đêm nhạc acoustic nghệ thuật phục vụ khách thưởng thức say mê.",
+        "en": "Hosts live music performances, acoustic bands, and musical entertainment for guests to enjoy."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán cà phê nhạc sống",
+          "đêm nhạc acoustic",
+          "có ban nhạc biểu diễn"
+        ],
+        "en": [
+          "place with live music",
+          "acoustic live performance",
+          "venue hosting live band"
+        ]
+      },
+      "confusable_with": [
+        "karaoke_room"
+      ]
+    },
+    {
+      "property_id": "kids_menu",
+      "facet": "dining",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Tiện ích cho trẻ em",
+        "en": "Children amenities"
+      },
+      "definitions": {
+        "vi": "Trang bị ghế ăn dặm hoặc thực đơn các món ăn dinh dưỡng thiết kế riêng cho các bé dùng bữa.",
+        "en": "Provides children high chairs and customized meal options designed for young kids dining."
+      },
+      "embedding_definitions": {
+        "vi": "Có sẵn ghế ăn cho trẻ nhỏ và các phần ăn dinh dưỡng phù hợp cho bé đi cùng bố mẹ ngon miệng.",
+        "en": "Equipped with baby high chairs and kid friendly meal choices for young children dining."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có ghế trẻ em",
+          "thực đơn dành cho bé",
+          "chỗ ngồi phù hợp em bé"
+        ],
+        "en": [
+          "high chairs available",
+          "kids menu offered",
+          "amenities for young children"
+        ]
+      },
+      "confusable_with": [
+        "family_friendly",
+        "baby_changing"
+      ]
+    },
+    {
+      "property_id": "buffet",
+      "facet": "dining",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Tiệc Buffet",
+        "en": "Buffet dining"
+      },
+      "definitions": {
+        "vi": "Hình thức ăn uống tự chọn đa dạng món với mức giá cố định trọn gói cho thực khách thoải mái chọn.",
+        "en": "All-you-can-eat self-service meal format offering diverse dishes for a fixed price package."
+      },
+      "embedding_definitions": {
+        "vi": "Phục vụ đại tiệc buffet tự chọn thỏa thích với nhiều món ngon nướng lẩu hấp dẫn vị giác.",
+        "en": "Serves an extensive all-you-can-eat buffet with diverse hotpot and grilled food selections."
+      },
+      "positive_phrases": {
+        "vi": [
+          "nhà hàng có buffet",
+          "quán ăn buffet nướng lẩu",
+          "thưởng thức buffet tự chọn"
+        ],
+        "en": [
+          "all you can eat buffet",
+          "buffet restaurant",
+          "self service buffet dining"
+        ]
+      },
+      "confusable_with": [
+        "takeaway",
+        "delivery"
+      ]
+    },
+    {
+      "property_id": "qr_payment",
+      "facet": "payment",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Thanh toán mã QR",
+        "en": "QR code payment"
+      },
+      "definitions": {
+        "vi": "Chấp nhận quét mã QR qua ứng dụng ngân hàng hoặc ví điện tử để thanh toán tiền nhanh chóng.",
+        "en": "Accepts QR code scanning via mobile banking or digital wallets for convenient payment checkout."
+      },
+      "embedding_definitions": {
+        "vi": "Hỗ trợ quét mã QR tiện lợi qua các ứng dụng ngân hàng điện tử và ví số thịnh hành hiện nay.",
+        "en": "Supports convenient QR code scan payments through mobile banking and digital wallets securely."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán nhận quét mã qr",
+          "thanh toán chuyển khoản qr",
+          "chấp nhận ví điện tử qr"
+        ],
+        "en": [
+          "accepts QR code payment",
+          "pay by scanning QR",
+          "mobile QR wallet supported"
+        ]
+      },
+      "confusable_with": [
+        "contactless",
+        "accepts_cards",
+        "cashless"
+      ]
+    },
+    {
+      "property_id": "elevator",
+      "facet": "infrastructure",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Thang máy",
+        "en": "Elevator"
+      },
+      "definitions": {
+        "vi": "Tòa nhà hoặc cơ sở được trang bị thang máy vận chuyển người giữa các tầng lầu êm ái.",
+        "en": "Building or facility equipped with a passenger elevator operating smoothly between floors."
+      },
+      "embedding_definitions": {
+        "vi": "Tòa nhà lắp đặt thang máy hiện đại vận chuyển khách lên xuống các tầng thuận tiện an toàn.",
+        "en": "Equipped with passenger elevators providing convenient vertical access between building floors."
+      },
+      "positive_phrases": {
+        "vi": [
+          "tòa nhà có thang máy",
+          "di chuyển bằng thang máy",
+          "chỗ có thang máy lên lầu"
+        ],
+        "en": [
+          "passenger elevator available",
+          "building with lift access",
+          "place equipped with elevator"
+        ]
+      },
+      "confusable_with": [
+        "wheelchair",
+        "accessible_toilet"
+      ]
+    },
+    {
+      "property_id": "ev_charging",
+      "facet": "vehicle",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Trạm sạc xe điện",
+        "en": "EV charging"
+      },
+      "definitions": {
+        "vi": "Trạm sạc điện chuyên dụng để nạp năng lượng cho ô tô điện hoặc xe máy điện hiện đại.",
+        "en": "Dedicated charging station providing electric power for cars or modern electric scooters."
+      },
+      "embedding_definitions": {
+        "vi": "Cung cấp trụ sạc điện chuyên dụng giúp nạp pin cho các phương tiện ô tô và xe máy điện nhanh chóng.",
+        "en": "Provides dedicated charging points to recharge electric vehicles and electric scooters reliably."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ có trạm sạc xe điện",
+          "sạc pin ô tô điện",
+          "trụ sạc xe máy điện"
+        ],
+        "en": [
+          "EV charging station available",
+          "electric vehicle charger on site",
+          "place to charge electric car"
+        ]
+      },
+      "confusable_with": [
+        "fast_charging",
+        "parking"
+      ]
+    },
+    {
+      "property_id": "luggage_storage",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Giữ hành lý",
+        "en": "Luggage storage"
+      },
+      "definitions": {
+        "vi": "Dịch vụ nhận ký gửi và bảo quản vali, hành lý an toàn cho khách lưu trú hoặc tham quan thuận tiện.",
+        "en": "Secure luggage holding service for travelers before check-in or after departure exploring."
+      },
+      "embedding_definitions": {
+        "vi": "Cung cấp khu vực lưu giữ vali và hành lý an toàn cho du khách trước giờ nhận phòng thoải mái.",
+        "en": "Provides secure luggage storage facilities for travelers before checking in or after checkout."
+      },
+      "positive_phrases": {
+        "vi": [
+          "nhận giữ hành lý",
+          "chỗ gửi vali an toàn",
+          "dịch vụ lưu giữ đồ đạc"
+        ],
+        "en": [
+          "luggage storage service",
+          "hold bags for travelers",
+          "place to store suitcases"
+        ]
+      },
+      "confusable_with": [
+        "reception_24h",
+        "locker_rooms"
+      ]
+    },
+    {
+      "property_id": "valet_parking",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Dịch vụ đỗ xe hộ",
+        "en": "Valet parking"
+      },
+      "definitions": {
+        "vi": "Có nhân viên hỗ trợ dắt xe, nhận xe và đỗ xe hộ cho khách đến địa điểm dùng dịch vụ.",
+        "en": "Service where staff attendants park and retrieve vehicles for arriving patrons professionally."
+      },
+      "embedding_definitions": {
+        "vi": "Đội ngũ nhân viên trực tiếp hỗ trợ nhận chìa khóa dắt xe và đỗ xe an toàn cho quý khách chu đáo.",
+        "en": "Dedicated attendants assist with parking and retrieving customer vehicles securely and politely."
+      },
+      "positive_phrases": {
+        "vi": [
+          "có người dắt xe cho khách",
+          "dịch vụ đỗ xe hộ chuyên nghiệp",
+          "nhân viên hỗ trợ giữ xe"
+        ],
+        "en": [
+          "valet parking service available",
+          "attended car parking assistance",
+          "valet service for guests"
+        ]
+      },
+      "confusable_with": [
+        "parking",
+        "free_parking"
+      ]
+    },
+    {
+      "property_id": "fitting_room",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Phòng thử đồ",
+        "en": "Fitting room"
+      },
+      "definitions": {
+        "vi": "Khu vực buồng thử quần áo riêng tư dành cho khách mua sắm trang phục thời trang vừa vặn.",
+        "en": "Private changing cubicles where shoppers can try on clothing items before purchasing them."
+      },
+      "embedding_definitions": {
+        "vi": "Bố trí các buồng thử đồ kín đáo giúp khách hàng thuận tiện ướm thử trang phục yêu thích vừa vặn.",
+        "en": "Offers private dressing cubicles for customers to try on clothing comfortably and privately."
+      },
+      "positive_phrases": {
+        "vi": [
+          "cửa hàng có phòng thử đồ",
+          "buồng thử quần áo rộng rãi",
+          "chỗ thử đồ mua sắm"
+        ],
+        "en": [
+          "fitting rooms available",
+          "clothing dressing cabins",
+          "private fitting cubicles"
+        ]
+      },
+      "confusable_with": [
+        "locker_rooms"
+      ]
+    },
+    {
+      "property_id": "car_wash",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Dịch vụ rửa xe",
+        "en": "Car wash"
+      },
+      "definitions": {
+        "vi": "Dịch vụ chuyên vệ sinh, rửa sạch bề mặt và chăm sóc nội thất ô tô hoặc xe máy sáng bóng.",
+        "en": "Specialized service providing exterior cleaning and interior care for motor vehicles cleanly."
+      },
+      "embedding_definitions": {
+        "vi": "Cung cấp quy trình rửa xe chuyên nghiệp giúp làm sạch và bảo dưỡng các loại phương tiện sáng bóng.",
+        "en": "Provides professional car washing and vehicle detailing services for clean automobiles."
+      },
+      "positive_phrases": {
+        "vi": [
+          "tiệm có rửa xe",
+          "dịch vụ rửa ô tô chuyên nghiệp",
+          "chỗ vệ sinh làm sạch xe"
+        ],
+        "en": [
+          "car wash services available",
+          "vehicle cleaning center",
+          "place to get car washed"
+        ]
+      },
+      "confusable_with": [
+        "air_compressor",
+        "convenience_shop"
+      ]
+    },
+    {
+      "property_id": "sauna",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Phòng xông hơi",
+        "en": "Sauna"
+      },
+      "definitions": {
+        "vi": "Tiện ích phòng xông hơi khô hoặc ướt hỗ trợ thư giãn cơ thể và hồi phục sức khỏe sảng khoái.",
+        "en": "Heated room facilities providing dry or wet steam sessions for bodily relaxation and health."
+      },
+      "embedding_definitions": {
+        "vi": "Trang bị phòng xông hơi khô và ướt hiện đại giúp khách hàng thư giãn sảng khoái cơ thể khỏe khoắn.",
+        "en": "Equipped with dry sauna and steam room amenities for wellness and bodily relaxation sessions."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ có phòng xông hơi",
+          "thư giãn xông hơi khô",
+          "dịch vụ tắm hơi sauna"
+        ],
+        "en": [
+          "sauna amenities available",
+          "relaxing steam room access",
+          "place with sauna facilities"
+        ]
+      },
+      "confusable_with": [
+        "pool",
+        "showers"
+      ]
+    },
+    {
+      "property_id": "kids_pool",
+      "facet": "sport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Hồ bơi trẻ em",
+        "en": "Kids swimming pool"
+      },
+      "definitions": {
+        "vi": "Khu vực bể bơi nông có mực nước an toàn được thiết kế riêng cho các bé vui chơi thỏa thích.",
+        "en": "Shallow swimming pool designed specifically with safe water depths for children playing."
+      },
+      "embedding_definitions": {
+        "vi": "Khu vực hồ bơi nông an toàn với làn nước mát lành dành riêng cho các bé nô đùa thỏa thích.",
+        "en": "Safe shallow swimming pool area designed specifically for children to swim and play safely."
+      },
+      "positive_phrases": {
+        "vi": [
+          "khu có hồ bơi trẻ em",
+          "bể bơi an toàn cho bé",
+          "hồ bơi dành cho trẻ nhỏ"
+        ],
+        "en": [
+          "children swimming pool available",
+          "shallow kids pool",
+          "family pool with kids area"
+        ]
+      },
+      "confusable_with": [
+        "pool",
+        "playground"
+      ]
+    },
+    {
+      "property_id": "tennis_court",
+      "facet": "sport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Sân tennis",
+        "en": "Tennis court"
+      },
+      "definitions": {
+        "vi": "Sân thể thao chuyên dụng đạt tiêu chuẩn để tập luyện và thi đấu bộ môn quần vợt sôi nổi.",
+        "en": "Dedicated sports court meeting standard dimensions for practicing and playing tennis matches."
+      },
+      "embedding_definitions": {
+        "vi": "Hệ thống sân tennis mặt sân tiêu chuẩn phục vụ các buổi tập luyện và thi đấu sôi nổi hấp dẫn.",
+        "en": "Standard quality tennis court facilities catering to sports practice and competitive matches."
+      },
+      "positive_phrases": {
+        "vi": [
+          "chỗ có sân tennis",
+          "thuê sân quần vợt tập luyện",
+          "sân tennis đạt chuẩn"
+        ],
+        "en": [
+          "tennis court facilities available",
+          "rent tennis court",
+          "place to play tennis"
+        ]
+      },
+      "confusable_with": [
+        "pickleball_court",
+        "equipment_rental"
+      ]
+    },
+    {
+      "property_id": "pickleball_court",
+      "facet": "sport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Sân pickleball",
+        "en": "Pickleball court"
+      },
+      "definitions": {
+        "vi": "Sân chơi thể thao chuyên biệt dành cho bộ môn pickleball đang rất được ưa chuộng tập luyện.",
+        "en": "Dedicated court facility constructed specifically for playing the popular game of pickleball."
+      },
+      "embedding_definitions": {
+        "vi": "Cụm sân pickleball hiện đại đầy đủ lưới và kẻ vạch tiêu chuẩn cho các tay vợt trải nghiệm so tài.",
+        "en": "Modern pickleball courts equipped with standard nets and court markings for active players."
+      },
+      "positive_phrases": {
+        "vi": [
+          "sân tập pickleball",
+          "thuê sân pickleball giao lưu",
+          "chỗ chơi pickleball"
+        ],
+        "en": [
+          "pickleball courts available",
+          "rent pickleball court",
+          "place to play pickleball"
+        ]
+      },
+      "confusable_with": [
+        "tennis_court",
+        "equipment_rental"
+      ]
+    },
+    {
+      "property_id": "karaoke_room",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Phòng karaoke",
+        "en": "Karaoke room"
+      },
+      "definitions": {
+        "vi": "Phòng cách âm trang bị hệ thống âm thanh màn hình hiện đại để ca hát giải trí tưng bừng.",
+        "en": "Soundproof room equipped with audio systems and screens for singing entertainment parties."
+      },
+      "embedding_definitions": {
+        "vi": "Phòng hát cách âm cao cấp với dàn âm thanh sống động phục vụ giải trí ca hát tưng bừng hào hứng.",
+        "en": "Soundproof entertainment room with quality audio systems for enjoyable karaoke singing sessions."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có phòng karaoke",
+          "phòng hát gia đình",
+          "dàn âm thanh hát karaoke"
+        ],
+        "en": [
+          "karaoke room available",
+          "place with karaoke system",
+          "singing room for groups"
+        ]
+      },
+      "confusable_with": [
+        "live_music"
+      ]
+    },
+    {
+      "property_id": "billiards",
+      "facet": "sport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bàn bi-a",
+        "en": "Billiards pool table"
+      },
+      "definitions": {
+        "vi": "Trang bị các bàn bi-a, bàn pool hoặc snooker phục vụ khách giải trí thi đấu cơ thủ điêu luyện.",
+        "en": "Equipped with billiards or pool tables for recreational games and cue sports tournaments."
+      },
+      "embedding_definitions": {
+        "vi": "Bố trí các bàn bi-a phẳng chuẩn cùng gậy bi-a cao cấp cho các cơ thủ so tài thỏa thích đường cơ.",
+        "en": "Offers quality billiards and pool tables with cues for competitive cue sports entertainment play."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có bàn bida",
+          "chơi bi-a giải trí",
+          "bàn bi-a lỗ chất lượng"
+        ],
+        "en": [
+          "pool tables available",
+          "place with billiards",
+          "play pool cue sports"
+        ]
+      },
+      "confusable_with": [
+        "equipment_rental"
+      ]
+    },
+    {
+      "property_id": "kitchenette",
+      "facet": "amenity",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bếp nấu ăn",
+        "en": "Kitchenette"
+      },
+      "definitions": {
+        "vi": "Căn phòng hoặc căn hộ có bố trí bếp nấu, tủ lạnh và dụng cụ làm bếp tự túc thuận tiện.",
+        "en": "Room or apartment fitted with cooking appliances and utensils for self-catering convenience."
+      },
+      "embedding_definitions": {
+        "vi": "Cung cấp gian bếp tiện nghi với bếp điện và dụng cụ chế biến các bữa ăn gia đình ấm cúng ngon lành.",
+        "en": "Furnished with a kitchenette and cooking appliances for preparing self-catered meals comfortably."
+      },
+      "positive_phrases": {
+        "vi": [
+          "phòng có bếp nấu ăn",
+          "căn hộ có gian bếp",
+          "chỗ lưu trú tự nấu ăn"
+        ],
+        "en": [
+          "room with kitchenette",
+          "cooking facilities in room",
+          "apartment with kitchen"
+        ]
+      },
+      "confusable_with": [
+        "breakfast"
+      ]
+    },
+    {
+      "property_id": "health_insurance",
+      "facet": "health",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Bảo hiểm y tế",
+        "en": "Health insurance"
+      },
+      "definitions": {
+        "vi": "Cơ sở y tế tiếp nhận khám chữa bệnh thanh toán qua thẻ bảo hiểm y tế nhà nước hoặc tư nhân an tâm.",
+        "en": "Medical facility that accepts national or private health insurance for healthcare payments easily."
+      },
+      "embedding_definitions": {
+        "vi": "Tiếp nhận thanh toán chi phí khám chữa bệnh thuận tiện bằng thẻ bảo hiểm y tế theo đúng quy định.",
+        "en": "Accepts health insurance cards and coverage policies to support patient treatment costs reliably."
+      },
+      "positive_phrases": {
+        "vi": [
+          "nơi khám bảo hiểm y tế",
+          "chấp nhận thanh toán bhyt",
+          "khám chữa bệnh bằng bảo hiểm"
+        ],
+        "en": [
+          "accepts medical insurance",
+          "health insurance coverage accepted",
+          "direct billing health insurance"
+        ]
+      },
+      "confusable_with": [
+        "emergency_care"
+      ]
+    },
+    {
+      "property_id": "vaccination",
+      "facet": "health",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Dịch vụ tiêm chủng",
+        "en": "Vaccination"
+      },
+      "definitions": {
+        "vi": "Cơ sở cung cấp dịch vụ tiêm phòng các loại vắc xin bảo vệ sức khỏe cho trẻ em và người lớn chu đáo.",
+        "en": "Facility providing preventive immunization and vaccine inoculations for children and adults safely."
+      },
+      "embedding_definitions": {
+        "vi": "Cung ứng đầy đủ các gói vắc xin tiêm phòng bệnh an toàn theo phác đồ y khoa hiện đại chuẩn mực.",
+        "en": "Provides comprehensive immunization services and preventive vaccines for all ages safely."
+      },
+      "positive_phrases": {
+        "vi": [
+          "trung tâm tiêm chủng vắc xin",
+          "dịch vụ chích ngừa cho bé",
+          "tiêm phòng bệnh người lớn"
+        ],
+        "en": [
+          "vaccination clinic services",
+          "immunization available",
+          "place to get vaccinated"
+        ]
+      },
+      "confusable_with": [
+        "emergency_care",
+        "pharmacy_in_house"
+      ]
+    },
+    {
+      "property_id": "blood_test",
+      "facet": "health",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Xét nghiệm y khoa",
+        "en": "Medical blood testing"
+      },
+      "definitions": {
+        "vi": "Phòng xét nghiệm y khoa lấy mẫu máu và phân tích các chỉ số sinh hóa sức khỏe chuẩn xác.",
+        "en": "Medical laboratory performing blood collection and clinical diagnostic analysis accurately."
+      },
+      "embedding_definitions": {
+        "vi": "Thực hiện thu thập mẫu máu và phân tích xét nghiệm sinh hóa nhanh chóng bằng máy móc tân tiến chuẩn y.",
+        "en": "Conducts diagnostic blood testing and clinical laboratory examinations with modern lab equipment."
+      },
+      "positive_phrases": {
+        "vi": [
+          "phòng khám có xét nghiệm máu",
+          "dịch vụ xét nghiệm y khoa",
+          "chỗ lấy mẫu máu xét nghiệm"
+        ],
+        "en": [
+          "blood testing lab",
+          "clinical blood work available",
+          "place for medical lab tests"
+        ]
+      },
+      "confusable_with": [
+        "emergency_care"
+      ]
+    },
+    {
+      "property_id": "dental_implants",
+      "facet": "health",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Cấy ghép răng Implant",
+        "en": "Dental implants"
+      },
+      "definitions": {
+        "vi": "Dịch vụ nha khoa chuyên sâu cấy ghép trụ implant phục hình răng đã mất thẩm mỹ bền vững.",
+        "en": "Specialized dental service providing surgical implant placement for missing teeth restoration nicely."
+      },
+      "embedding_definitions": {
+        "vi": "Thực hiện kỹ thuật cấy ghép trụ răng implant hiện đại giúp khôi phục thẩm mỹ hàm răng chắc khỏe đẹp.",
+        "en": "Performs advanced dental implant procedures to restore missing teeth aesthetics and solid function."
+      },
+      "positive_phrases": {
+        "vi": [
+          "nha khoa trồng răng implant",
+          "cấy ghép răng thẩm mỹ",
+          "phục hình răng implant"
+        ],
+        "en": [
+          "dental implant clinic",
+          "tooth restoration implants",
+          "place for dental implants"
+        ]
+      },
+      "confusable_with": [
+        "appointment"
+      ]
+    },
+    {
+      "property_id": "pet_grooming",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Spa chăm sóc thú cưng",
+        "en": "Pet grooming"
+      },
+      "definitions": {
+        "vi": "Dịch vụ tắm rửa, cắt tỉa lông móng và làm đẹp chuyên nghiệp dành cho chó mèo cưng đáng yêu.",
+        "en": "Professional grooming service providing bathing, fur trimming, and styling for domestic pets warmly."
+      },
+      "embedding_definitions": {
+        "vi": "Cung cấp dịch vụ tắm gội cắt tỉa lông và vệ sinh làm đẹp chu đáo cho thú cưng cưng nựng thơm tho.",
+        "en": "Offers comprehensive pet grooming, bathing, and fur styling services for clean dogs and cats."
+      },
+      "positive_phrases": {
+        "vi": [
+          "dịch vụ spa cho thú cưng",
+          "tắm cắt lông chó mèo",
+          "chăm sóc làm đẹp thú cưng"
+        ],
+        "en": [
+          "pet grooming salon",
+          "dog and cat grooming services",
+          "place for pet spa"
+        ]
+      },
+      "confusable_with": [
+        "pet_friendly",
+        "pet_boarding"
+      ]
+    },
+    {
+      "property_id": "pet_boarding",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Trông giữ thú cưng",
+        "en": "Pet boarding hotel"
+      },
+      "definitions": {
+        "vi": "Dịch vụ nhận trông nom, chăm sóc và lưu trú an toàn cho thú cưng khi chủ vắng nhà an tâm.",
+        "en": "Temporary boarding and overnight accommodation service providing care for pets while owners travel."
+      },
+      "embedding_definitions": {
+        "vi": "Khách sạn lưu trú với chuồng trại thoáng sạch chăm lo bữa ăn sinh hoạt cho thú cưng khi gửi gắm an vui.",
+        "en": "Provides overnight pet hotel boarding and daily care supervision for cats and dogs comfortably."
+      },
+      "positive_phrases": {
+        "vi": [
+          "khách sạn gửi thú cưng",
+          "nhận trông giữ chó mèo an toàn",
+          "chỗ gửi thú cưng qua đêm"
+        ],
+        "en": [
+          "pet boarding hotel",
+          "overnight dog and cat boarding",
+          "place to board pets"
+        ]
+      },
+      "confusable_with": [
+        "pet_friendly",
+        "pet_grooming"
+      ]
+    },
+    {
+      "property_id": "personal_trainer",
+      "facet": "sport",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Huấn luyện viên cá nhân",
+        "en": "Personal trainer"
+      },
+      "definitions": {
+        "vi": "Phòng tập có đội ngũ huấn luyện viên thể hình cá nhân PT trực tiếp hướng dẫn bài tập bài bản.",
+        "en": "Fitness facility offering certified personal trainers for individualized workout coaching effectively."
+      },
+      "embedding_definitions": {
+        "vi": "Đội ngũ huấn luyện viên thể hình giàu kinh nghiệm hướng dẫn từng động tác tập luyện đạt kết quả cao.",
+        "en": "Certified personal trainers guide customized fitness routines and strength training workouts effectively."
+      },
+      "positive_phrases": {
+        "vi": [
+          "phòng tập có pt hướng dẫn",
+          "thuê huấn luyện viên cá nhân",
+          "tập gym có huấn luyện viên"
+        ],
+        "en": [
+          "personal trainer available",
+          "fitness coaching on site",
+          "place with personal training"
+        ]
+      },
+      "confusable_with": [
+        "locker_rooms",
+        "equipment_rental"
+      ]
+    },
+    {
+      "property_id": "open_early",
+      "facet": "hours",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mở cửa sớm",
+        "en": "Open early"
+      },
+      "definitions": {
+        "vi": "Địa điểm bắt đầu mở cửa phục vụ từ sáng sớm phù hợp cho khách ăn sáng hoặc uống cafe khởi đầu ngày mới.",
+        "en": "Place opens during early morning hours, catering to breakfast diners and early morning commuters."
+      },
+      "embedding_definitions": {
+        "vi": "Mở cửa đón khách từ sáng sớm tinh mơ với món điểm tâm và nước uống nóng hổi sẵn sàng khởi động ngày.",
+        "en": "Welcomes customers from early morning hours with fresh breakfast and morning beverages pleasantly."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán mở cửa từ sáng sớm",
+          "bán đồ ăn sáng sớm",
+          "chỗ mở cửa sớm đón khách"
+        ],
+        "en": [
+          "opens early in the morning",
+          "early morning opening",
+          "place open early for breakfast"
+        ]
+      },
+      "confusable_with": [
+        "open_24h",
+        "breakfast"
+      ]
+    },
+    {
+      "property_id": "open_weekend",
+      "facet": "hours",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Mở cửa cuối tuần",
+        "en": "Open weekends"
+      },
+      "definitions": {
+        "vi": "Cơ sở duy trì lịch làm việc mở cửa đón tiếp khách hàng vào các ngày thứ bảy và chủ nhật thuận lợi.",
+        "en": "Facility maintains active operational hours welcoming visitors on Saturdays and Sundays conveniently."
+      },
+      "embedding_definitions": {
+        "vi": "Hoạt động liên tục phục vụ nhu cầu tham quan giao dịch của quý khách trọn vẹn cả ngày cuối tuần vui vẻ.",
+        "en": "Remains open and fully operational to serve customer needs throughout the entire weekend periods."
+      },
+      "positive_phrases": {
+        "vi": [
+          "mở cửa cả thứ bảy chủ nhật",
+          "phục vụ ngày cuối tuần",
+          "làm việc suốt ngày nghỉ cuối tuần"
+        ],
+        "en": [
+          "open on weekends",
+          "operating on Saturday and Sunday",
+          "place open through the weekend"
+        ]
+      },
+      "confusable_with": [
+        "open_24h",
+        "open_late"
+      ]
+    },
+    {
+      "property_id": "garden_space",
+      "facet": "ambience",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Không gian sân vườn",
+        "en": "Garden space"
+      },
+      "definitions": {
+        "vi": "Không gian sinh thái xanh mát ngập tràn cây cảnh hoa lá đem lại cảm giác hòa mình cùng thiên nhiên an lành.",
+        "en": "Green ecological garden setting surrounded by plants and trees creating a natural outdoor feel."
+      },
+      "embedding_definitions": {
+        "vi": "Khu vườn xanh mướt ngập tràn cỏ cây râm mát mang đến không gian thư thái trọn vẹn giữa thiên nhiên an lành.",
+        "en": "Lush green garden surroundings providing a refreshing tranquil ambience immersed in nature delightfully."
+      },
+      "positive_phrases": {
+        "vi": [
+          "quán có không gian sân vườn",
+          "quán cà phê sân vườn thoáng mát",
+          "ngồi uống trà trong vườn cây"
+        ],
+        "en": [
+          "cafe with garden seating",
+          "peaceful garden setting",
+          "place with lush green garden"
+        ]
+      },
+      "confusable_with": [
+        "outdoor_seating",
+        "shade",
+        "airy"
+      ]
+    },
+    {
+      "property_id": "cinema_room",
+      "facet": "service",
+      "value_type": "boolean",
+      "labels": {
+        "vi": "Phòng chiếu phim",
+        "en": "Cinema screening room"
+      },
+      "definitions": {
+        "vi": "Phòng chiếu phim trang bị màn hình lớn máy chiếu và dàn loa vòm đáp ứng trải nghiệm điện ảnh sống động.",
+        "en": "Dedicated screening room fitted with large displays and surround sound for viewing films together."
+      },
+      "embedding_definitions": {
+        "vi": "Trang bị màn chiếu khổng lồ cùng hệ thống âm thanh vòm sống động mang lại trải nghiệm xem phim cuốn hút mê ly.",
+        "en": "Equipped with large projection screens and immersive surround sound for captivating movie viewings."
+      },
+      "positive_phrases": {
+        "vi": [
+          "nơi có phòng chiếu phim",
+          "phòng xem phim màn ảnh rộng",
+          "trải nghiệm phòng chiếu gia đình"
+        ],
+        "en": [
+          "movie screening room available",
+          "private cinema room",
+          "place with film projection"
+        ]
+      },
+      "confusable_with": [
+        "karaoke_room"
+      ]
+    }
+  ]
+}

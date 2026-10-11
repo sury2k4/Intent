@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "taxonomy_version": "place-types-poc-v3",
+  "aliases": [
+    {
+      "category_id": "42",
+      "language": "vi",
+      "phrase": "nhà thương",
+      "evidence": "Common Vietnamese name for a hospital, not a department or shop"
+    },
+    {
+      "category_id": "34",
+      "language": "vi",
+      "phrase": "tiệm thuốc tây",
+      "evidence": "Vietnamese place name for a pharmacy; present in legacy intent vocabulary"
+    },
+    {
+      "category_id": "243",
+      "language": "vi",
+      "phrase": "nhà băng",
+      "evidence": "Vietnamese place name for a bank branch, not an ATM"
+    },
+    {
+      "category_id": "1",
+      "language": "vi",
+      "phrase": "phi trường",
+      "evidence": "Vietnamese equivalent place name for an airport"
+    },
+    {
+      "category_id": "40",
+      "language": "vi",
+      "phrase": "tiệm hớt tóc",
+      "evidence": "Vietnamese place name for a hair salon or barbershop"
+    },
+    {
+      "category_id": "34",
+      "language": "en",
+      "phrase": "chemist",
+      "evidence": "British English place name for a pharmacy, not a chemistry laboratory"
+    },
+    {
+      "category_id": "26",
+      "language": "en",
+      "phrase": "public house",
+      "evidence": "English full name for a pub, not a communal house"
+    },
+    {
+      "category_id": "46",
+      "language": "en",
+      "phrase": "upper-secondary school",
+      "evidence": "English equivalent for upper-secondary/high school, not a middle school"
+    },
+    {
+      "category_id": "46",
+      "language": "vi",
+      "phrase": "trường trung học phổ thông",
+      "evidence": "Vietnamese full name for high school, not lower-secondary school"
+    },
+    {
+      "category_id": "23",
+      "language": "vi",
+      "phrase": "tiệm cf",
+      "evidence": "Common Vietnamese slang for a coffee shop"
+    },
+    {
+      "category_id": "23",
+      "language": "vi",
+      "phrase": "quán cf",
+      "evidence": "Common Vietnamese slang for a coffee shop"
+    }
+  ]
+}

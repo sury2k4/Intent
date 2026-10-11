@@ -1,10 +1,11 @@
-from pathlib import Path
 from dataclasses import replace
+from pathlib import Path
+from types import SimpleNamespace
 
-from model_intent.osm_ingest import load_property_catalog
-from model_intent.poi_ranking import load_ranking_policy
-from model_intent.poi_repository import PoiRepository
-from model_intent.poi_schemas import PoiRecord
+import pytest
+
+from model_intent.category_query_aliases import CategoryQueryAliases
+from model_intent.poi_properties import load_property_definitions
 from model_intent.property_extraction import PropertyExtractor
 from model_intent.rendering import load_enrichment
 from model_intent.search_runtime import SearchRuntime
@@ -30,316 +31,572 @@ class CategoryStub:
         return {"query": query, "decision": {"action": "accept", "accepted_item_id": selected_id}, "runtime": {}}
 
 
-class CountingRepository(PoiRepository):
-    def __init__(self, records):
-        super().__init__(records, generation_id=10)
-        self.calls = 0
-
-    def for_category(self, category_id):
-        self.calls += 1
-        return super().for_category(category_id)
-
-
-def make_poi(poi_id, has_ac=True):
-    return PoiRecord(
-        poi_id=poi_id,
-        osm_type="node",
-        osm_id=int(poi_id.rsplit(":", 1)[1]),
-        category_id="23",
-        category_code="coffee",
-        name="Cafe",
-        display_name="Cafe",
-        names={},
-        latitude=10.78,
-        longitude=106.69,
-        location_method="node",
-        mapping_rule_id="amenity-cafe",
-        mapping_version="v1",
-        effective_properties={"air_conditioning": {"value": has_ac, "status": "known", "source": "osm"}},
-        rating=4.6,
-        review_count=100,
-    )
-
-
 def runtime(action="accept"):
-    catalog = load_property_catalog(ROOT / "data/properties/poi_properties.poc.v1.json")
-    repo = CountingRepository([make_poi("osm:node:1", True), make_poi("osm:node:2", False)])
+    catalog = load_property_definitions(ROOT / "data/properties/poi_properties.poc.v1.json")
     category = CategoryStub(action=action)
     search = SearchRuntime(
         category_runtime=category,
         property_extractor=PropertyExtractor(catalog),
-        poi_repository=repo,
-        ranking_policy=load_ranking_policy(ROOT / "data/policies/poi_ranking.poc.v1.json"),
         property_catalog=catalog,
+        property_semantic_path=ROOT / "data/properties/property_semantic_profiles.poc.v2.json",
+        property_generation_id=4,
     )
-    return search, category, repo
+    return search, category, SimpleNamespace(calls=0)
 
 
-def test_osm_only_runtime_forces_verified_evidence_and_returns_null_rating():
-    search, _category, _repository = runtime()
-    search.ranking_policy = load_ranking_policy(ROOT / "data/policies/poi_ranking.poc.v3.json")
-    tagged = replace(make_poi("osm:node:1"), rating=None, review_count=0, rating_source="unknown")
-    generated = replace(make_poi("osm:node:3"), rating=None, review_count=0, rating_source="unknown",
-                        name=None, display_name="[Generated OSM label] coffee (osm:node:3)")
-    search.poi_repository.records = (tagged, generated)
-    accepted = search.search("quán cà phê có máy lạnh")
-    assert accepted["poi_search"]["verified_only"] is True
-    assert accepted["poi_search"]["ranking_schema_version"] == 3
-    assert {row["poi_id"] for row in accepted["poi_search"]["hits"]} == {"osm:node:1", "osm:node:3"}
-    assert all(hit["score"]["adjusted_rating"] is None for hit in accepted["poi_search"]["hits"])
-    assert next(hit for hit in accepted["poi_search"]["hits"] if hit["poi_id"] == "osm:node:3")["name"] is None
-    selected = search.resolve_selection_and_search(
-        query="quán cà phê hoặc nhà thuốc có máy lạnh", selected_id="23", allowed_option_ids=["23", "34"],
+def test_intent_analysis_returns_category_and_properties_without_poi_search():
+    search, category, repository = runtime()
+    query = "quán cà phê có máy lạnh"
+    result = search.analyze_intent(query)
+    assert category.queries == [query]
+    assert result["intent"]["decision"]["accepted_item_id"] == "23"
+    assert result["property_extraction"]["properties"][0]["property_id"] == "air_conditioning"
+    assert result["property_extraction"]["properties"][0]["applied"] is True
+    assert result["timing"]["path"] == "intent_analysis"
+    assert not any(row["name"].startswith("poi_") for row in result["timing"]["stages"])
+    assert "poi_search" not in result
+    assert repository.calls == 0
+
+
+def test_intent_analysis_uses_only_category_text_for_real_model_and_exposes_filter_candidates():
+    search, category, repository = runtime()
+    category.model_key = "e5-base-multilingual"
+    query = "quán cà phê có máy lạnh"
+    result = search.analyze_intent(query)
+    assert category.queries == ["quán cà phê"]
+    assert result["query_parts"]["category_text"] == "quán cà phê"
+    assert result["query_parts"]["pgvector_queries"] == ["quán cà phê"]
+    assert result["query_parts"]["vector_query_mode"] == "focused"
+    assert [(row["property_id"], row["mode"], row["value"]) for row in result["query_parts"]["filter_candidates"]] == [
+        ("air_conditioning", "required", True),
+    ]
+    assert "poi_search" not in result
+    assert repository.calls == 0
+
+
+
+def test_intent_filter_candidates_respect_negation_and_ignored_properties():
+    search, category, _repository = runtime()
+    category.model_key = "e5-base-multilingual"
+    excluded = search.analyze_intent("quán cà phê không có wifi, có máy lạnh")
+    assert category.queries == ["quán cà phê"]
+    assert {(row["property_id"], row["mode"]) for row in excluded["query_parts"]["filter_candidates"]} == {
+        ("internet_access", "excluded"), ("air_conditioning", "required"),
+    }
+    not_requested = search.analyze_intent("quán cà phê không cần wifi, có máy lạnh")
+    assert {row["property_id"] for row in not_requested["query_parts"]["filter_candidates"]} == {
+        "air_conditioning",
+    }
+    assert next(row for row in not_requested["property_extraction"]["properties"]
+                if row["property_id"] == "internet_access")["ignored_reason"] == "not_requested"
+    preferred = search.analyze_intent("quán cà phê ưu tiên máy lạnh")
+    assert preferred["query_parts"]["filter_candidates"] == []
+    assert [(row["property_id"], row["mode"]) for row in preferred["query_parts"]["preference_candidates"]] == [
+        ("air_conditioning", "preferred"),
+    ]
+
+
+def test_intent_analysis_does_not_vector_search_property_only_query():
+    search, category, repository = runtime()
+    category.model_key = "e5-base-multilingual"
+    result = search.analyze_intent("có máy lạnh")
+    assert category.queries == []
+    assert result["intent"]["decision"]["reason"] == "no_category_phrase"
+    assert result["query_parts"]["category_text"] is None
+    assert result["query_parts"]["pgvector_queries"] == []
+    assert result["query_parts"]["filter_candidates"][0]["property_id"] == "air_conditioning"
+    assert result["query_parts"]["applicability"] == "pending_category"
+    assert repository.calls == 0
+
+
+def test_intent_analysis_marks_original_query_fallback_when_focus_is_too_weak():
+    search, category, _repository = runtime()
+    category.model_key = "e5-base-multilingual"
+    result = search.analyze_intent("shop co may lanh")
+    assert category.queries == ["shop co may lanh"]
+    assert result["query_parts"]["category_text"] == "shop"
+    assert result["query_parts"]["pgvector_queries"] == ["shop co may lanh"]
+    assert result["query_parts"]["vector_query_mode"] == "original_fallback"
+
+
+def test_lodging_typo_splits_filters_and_requires_user_category_confirmation():
+    from model_intent.poi_properties import load_property_profiles
+
+    search, category, repository = runtime(action="reject")
+    category.taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    category.enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
+    category.model_key = "e5-base-multilingual"
+    profiles = load_property_profiles(ROOT / "data/properties/poi_properties.poc.v5.json", category.taxonomy)
+    search.property_profiles = profiles
+    search.property_catalog = profiles.definitions
+    search.property_extractor = PropertyExtractor(profiles.definitions)
+
+    def unrelated_top(text, **kwargs):
+        category.queries.append(text)
+        return {
+            "prediction": {"query": text, "hits": [{"item_id": "76", "score": .8078}]},
+            "decision": {"action": "reject", "reason": "low_calibrated_confidence",
+                         "accepted_item_id": None, "calibrated_confidence": .263},
+            "runtime": {},
+        }
+
+    category.query = unrelated_top
+    query = "nhà nghĩ có bãi đỗ ô tô, không có chỗ cho xe lăng"
+    result = search.analyze_intent(query)
+    decision = result["intent"]["decision"]
+    assert category.queries == ["nhà nghĩ"]
+    assert result["query_parts"]["category_boundary"]["cue"] == "có"
+    assert result["query_parts"]["unresolved_property_clauses"] == []
+    assert [(row["property_id"], row["mode"]) for row in result["query_parts"]["filter_candidates"]] == [
+        ("parking", "required"), ("wheelchair", "excluded"),
+    ]
+    assert decision["action"] == "clarify" and decision["reason"] == "folded_category_name_confirmation"
+    assert decision["accepted_item_id"] is None
+    assert [row["item_id"] for row in decision["options"]] == ["137"]
+    assert decision["calibrated_confidence"] == .263
+    assert result["intent"]["category_resolution"]["original_semantic_decision"]["action"] == "reject"
+    assert repository.calls == 0 and "poi_search" not in result
+
+    selected = search.resolve_selection_and_analyze_intent(
+        query=query, selected_id="137", allowed_option_ids=["137"],
     )
-    assert selected["poi_search"]["verified_only"] is True
+    assert selected["intent"]["decision"]["accepted_item_id"] == "137"
+    assert [(row["property_id"], row["mode"]) for row in selected["query_parts"]["filter_candidates"]] == [
+        ("parking", "required"), ("wheelchair", "excluded"),
+    ]
+    assert repository.calls == 0
+    assert search.analyze_intent("không phải nhà nghĩ")["intent"]["decision"]["action"] == "reject"
+    assert search.analyze_intent("cách mở nhà nghĩ")["intent"]["decision"]["action"] == "reject"
 
 
-def test_osm_only_filters_unknown_negatives_in_runtime():
-    search, _category, _repository = runtime()
-    search.ranking_policy = load_ranking_policy(ROOT / "data/policies/poi_ranking.poc.v3.json")
-    known_false = replace(make_poi("osm:node:3"), rating=None, review_count=0, rating_source="unknown",
-                          effective_properties={"internet_access": {
-        "value": False, "status": "known", "source": "osm",
-    }})
-    unknown = replace(make_poi("osm:node:4"), rating=None, review_count=0,
-                      rating_source="unknown", effective_properties={})
-    search.poi_repository.records = (known_false, unknown)
-    result = search.search("quán cà phê không có wifi")
-    assert [hit["poi_id"] for hit in result["poi_search"]["hits"]] == [known_false.poi_id]
-    assert result["poi_search"]["hard_filter_match_count"] == 1
+def test_short_wifi_typo_stays_a_suggestion_until_user_confirms():
+    from model_intent.poi_properties import load_property_profiles
+
+    search, category, repository = runtime()
+    category.taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    category.enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
+    category.model_key = "e5-base-multilingual"
+    profiles = load_property_profiles(ROOT / "data/properties/poi_properties.poc.v5.json", category.taxonomy)
+    search.property_profiles = profiles
+    search.property_catalog = profiles.definitions
+    search.property_extractor = PropertyExtractor(profiles.definitions)
+    query = "quán cà phê không có wifa"
+    result = search.analyze_intent(query)
+    assert category.queries == ["quán cà phê"]
+    assert result["query_parts"]["category_text"] == "quán cà phê"
+    assert result["query_parts"]["filter_candidates"] == []
+    assert result["query_parts"]["unresolved_property_clauses"][0]["text"] == "không có wifa"
+    assert "poi_search" not in result and repository.calls == 0
 
 
-def test_zero_minimum_profiles_reconcile_nonapplicable_filters_in_runtime():
+def test_intent_near_tie_offers_real_leaf_choices_without_accepting_top1():
+    search, category, repository = runtime(action="reject")
+    category.taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    category.enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
+    category.model_key = "e5-base-multilingual"
+    category.policy = {"max_options": 4, "thresholds": {"e5-base-multilingual": {
+        "clarify_min_score": .81, "coherent_cluster_delta": .012, "ambiguity_delta": .032,
+    }}}
+    category.confidence_calibration = {"action_thresholds": {
+        "clarify_min_in_domain_confidence": .695, "reject_min_top_confidence": .605,
+    }}
+    catalog = load_property_definitions(ROOT / "data/properties/poi_properties.poc.v5.json")
+    search.property_catalog = catalog
+    search.property_extractor = PropertyExtractor(catalog)
+    sample = {"top_id": "242", "second_id": "19", "third_id": "229", "score2": .8698, "score3": .8633,
+              "domain": .994, "confidence": .732, "reason": "insufficient_calibrated_evidence"}
+
+    def uncertain_query(text, **kwargs):
+        category.queries.append(text)
+        return {
+            "prediction": {"query": text, "hits": [
+                {"item_id": sample["top_id"], "score": .8719}, {"item_id": sample["second_id"], "score": sample["score2"]},
+                {"item_id": sample["third_id"], "score": sample["score3"]},
+            ]},
+            "decision": {
+                "action": "reject", "reason": sample["reason"], "accepted_item_id": None,
+                "calibrated_confidence": sample["confidence"],
+                "in_domain_confidence": sample["domain"], "ambiguity_score": .024,
+            },
+            "runtime": {},
+        }
+
+    category.query = uncertain_query
+    query = "trạm sạc có sạc nhanh, nhà vệ sinh"
+    result = search.analyze_intent(query)
+    decision = result["intent"]["decision"]
+    assert category.queries == ["trạm sạc"]
+    assert decision["action"] == "clarify"
+    assert decision["reason"] == "near_tied_category_candidates"
+    assert decision["accepted_item_id"] is None
+    assert [option["item_id"] for option in decision["options"]] == ["242", "19", "229"]
+    assert [option["score"] for option in decision["options"]] == [.8719, .8698, .8633]
+    assert decision["calibrated_confidence"] == .732
+    assert decision["ambiguity_score"] == .024
+    resolution = result["intent"]["category_resolution"]
+    assert resolution["original_semantic_decision"]["reason"] == "insufficient_calibrated_evidence"
+    assert resolution["source"] == "near_tie_clarification"
+    assert {row["property_id"] for row in result["query_parts"]["filter_candidates"]} == {"fast_charging", "toilets"}
+    assert "poi_search" not in result and repository.calls == 0
+
+    selected = search.resolve_selection_and_analyze_intent(
+        query=query, selected_id="242", allowed_option_ids=[option["item_id"] for option in decision["options"]],
+    )
+    assert selected["intent"]["decision"]["accepted_item_id"] == "242"
+    assert selected["query_parts"]["pgvector_queries"] == []
+    assert {row["property_id"] for row in selected["property_extraction"]["properties"]} == {"fast_charging", "toilets"}
+    assert repository.calls == 0
+
+    sample["score2"] = .83
+    sample["score3"] = .82
+    assert search.analyze_intent(query)["intent"]["decision"]["action"] == "reject"
+    sample["score2"] = .8698
+    sample["score3"] = .8633
+    sample["domain"] = .64
+    assert search.analyze_intent(query)["intent"]["decision"]["action"] == "reject"
+    sample["domain"] = .994
+    sample["reason"] = "low_calibrated_confidence"
+    assert search.analyze_intent(query)["intent"]["decision"]["action"] == "reject"
+    sample["reason"] = "insufficient_calibrated_evidence"
+    assert search.analyze_intent("cách mở trạm sạc")["intent"]["decision"]["reason"] == "informational_not_place_search"
+    assert search.analyze_intent("không phải trạm sạc")["intent"]["decision"]["reason"] == "negated_place_only"
+    assert repository.calls == 0
+    sample.update({"top_id": "34", "second_id": "154", "third_id": "242", "score3": .82})
+    unrelated = search.analyze_intent("Muộn rồi, tìm tiệm thuốc tây còn mở khuya giúp mình")
+    assert unrelated["intent"]["query_interpretation"]["category_matches"] == []
+    assert unrelated["intent"]["decision"]["action"] == "reject"
+    assert not unrelated["intent"]["decision"].get("options")
+
+
+def test_confirm_semantic_property_requires_explicit_valid_candidate_and_mode():
+    search, _category, repository = runtime()
+    query = "quán cà phê có mát rượi"
+    result = search.analyze_intent(query)
+    assert result["property_extraction"]["properties"] == []
+    span = {"text": "có mát rượi", "start_offset": query.index("có mát rượi"), "end_offset": len(query)}
+    result["query_parts"]["semantic_property_suggestions"] = [{
+        "span": span, "query_text": "mát rượi", "status": "needs_confirmation",
+        "candidates": [{"property_id": "air_conditioning", "cosine": .82, "applicable": True}],
+    }]
+    with pytest.raises(ValueError, match="not offered"):
+        search.confirm_semantic_property(result, span_index=0, property_id="parking", mode="required")
+    with pytest.raises(ValueError, match="choose"):
+        search.confirm_semantic_property(result, span_index=0, property_id="air_conditioning", mode="invalid")
+    assert result["query_parts"]["filter_candidates"] == []
+    confirmed = search.confirm_semantic_property(
+        result, span_index=0, property_id="air_conditioning", mode="excluded",
+    )
+    row = confirmed["query_parts"]["filter_candidates"][0]
+    assert (row["property_id"], row["mode"], row["value"]) == ("air_conditioning", "excluded", True)
+    assert row["evidence_text"] == query[span["start_offset"]:span["end_offset"]]
+    assert row["cue"] == "semantic_user_confirmed" and row["confidence"] == 0.0
+    assert confirmed["query_parts"]["confirmed_semantic_choices"][0]["mode"] == "excluded"
+    assert result["query_parts"]["semantic_property_suggestions"][0]["status"] == "needs_confirmation"
+    assert "poi_search" not in confirmed and repository.calls == 0
+    with pytest.raises(ValueError, match="not offered"):
+        search.confirm_semantic_property(confirmed, span_index=0, property_id="air_conditioning", mode="required")
+
+
+def test_semantic_selection_respects_category_applicability():
     from model_intent.poi_properties import load_property_profiles
 
     search, category, _repository = runtime()
+    profiles = load_property_profiles(ROOT / "data/properties/poi_properties.poc.v2.json", category.taxonomy)
+    search.property_profiles = profiles
+    search.property_catalog = profiles.definitions
+    search.property_extractor = PropertyExtractor(profiles.definitions)
+    query = "quán cà phê có mát rượi"
+    result = search.analyze_intent(query)
+    result["query_parts"]["semantic_property_suggestions"] = [{
+        "span": {"text": "có mát rượi", "start_offset": 12, "end_offset": len(query)},
+        "status": "needs_confirmation",
+        "candidates": [{"property_id": "wheelchair", "cosine": .85, "applicable": False}],
+    }]
+    with pytest.raises(ValueError, match="inapplicable"):
+        search.confirm_semantic_property(result, span_index=0, property_id="wheelchair", mode="required")
+
+
+def test_intent_analysis_exposes_properties_before_clarification_and_after_selection():
+    search, _category, repository = runtime(action="reject")
+    query = "quán cà phê hoặc nhà thuốc có máy lạnh"
+    result = search.analyze_intent(query)
+    assert result["intent"]["decision"]["action"] == "clarify"
+    assert any(row["property_id"] == "air_conditioning" for row in result["property_extraction"]["properties"])
+    allowed = [option["item_id"] for option in result["intent"]["decision"]["options"]]
+    selected = search.resolve_selection_and_analyze_intent(
+        query=query, selected_id="23", allowed_option_ids=allowed,
+    )
+    assert selected["intent"]["decision"]["accepted_item_id"] == "23"
+    assessment = selected["intent"]["confidence_assessment"]
+    assert assessment["final_decision_source"] == "explicit_user_selection"
+    assert assessment["semantic_top_item_id"] is None
+    assert assessment["quality"] == "none"
+    assert assessment["is_probability_of_final_category"] is False
+    assert selected["query_parts"]["pgvector_queries"] == []
+    assert selected["query_parts"]["vector_query_mode"] == "user_selection"
+    assert selected["query_parts"]["filter_candidates"]
+    assert any(row["property_id"] == "air_conditioning" for row in selected["property_extraction"]["properties"])
+    assert "poi_search" not in selected
+    assert repository.calls == 0
+
+
+def test_intent_analysis_marks_inapplicable_properties_without_poi_lookup():
+    from model_intent.poi_properties import load_property_profiles
+
+    search, category, repository = runtime()
     category.category_id = "114"
     profiles = load_property_profiles(ROOT / "data/properties/poi_properties.poc.v2.json", category.taxonomy)
     search.property_profiles = replace(profiles, minimum_known=0)
     search.property_catalog = profiles.definitions
     search.property_extractor = PropertyExtractor(profiles.definitions)
-    bus_stop = replace(make_poi("osm:node:5"), category_id="114", category_code="bus_stop", effective_properties={})
-    search.poi_repository.records = (bus_stop,)
-    result = search._search_from_category(
-        "điểm dừng xe buýt có máy lạnh", category.query("điểm dừng xe buýt"),
-        poi_top_k=5, language="vi", origin=None, radius_km=None, verified_only=False,
-    )
-    assert result["poi_search"]["returned_count"] == 1
+    result = search.analyze_intent("điểm dừng xe buýt có máy lạnh")
+    assert result["intent"]["decision"]["accepted_item_id"] == "114"
     assert result["property_extraction"]["properties"][0]["ignored_reason"] == "category_inapplicable"
+    assert "poi_search" not in result
+    assert repository.calls == 0
 
 
-def test_search_preserves_raw_category_query_and_filters_required_poi_property():
-    search, category, repo = runtime()
-    query = "quán cà phê có máy lạnh"
-    result = search.search(query)
-    assert category.queries == [query]
-    assert result["intent"]["decision"]["accepted_item_id"] == "23"
-    assert result["poi_search"]["status"] == "ok"
-    assert result["poi_search"]["hard_filter_match_count"] == 1
-    assert [hit["poi_id"] for hit in result["poi_search"]["hits"]] == ["osm:node:1"]
-    assert repo.calls == 1
-
-
-def test_single_query_resolves_category_then_returns_filtered_pois():
-    search, category, repo = runtime(action="reject")
-    query = "quán cà phê có máy lạnh, ưu tiên thoáng mát"
-    result = search.search(query)
-    assert category.queries == [query]
-    assert result["intent"]["decision"]["accepted_item_id"] == "23"
-    assert result["intent"]["category_resolution"]["source"] == "explicit_phrase"
-    assert result["poi_search"]["status"] == "ok"
-    assert [item["poi_id"] for item in result["poi_search"]["hits"]] == ["osm:node:1"]
-    assert repo.calls == 1
-
-
-def test_multiple_explicit_categories_require_clarification_before_pois():
-    search, _category, repo = runtime(action="reject")
-    query = "quán cà phê hoặc nhà thuốc"
-    result = search.search(query)
-    assert result["intent"]["decision"]["action"] == "clarify"
-    assert {item["item_id"] for item in result["intent"]["decision"]["options"]} == {"23", "34"}
-    assert result["poi_search"]["status"] == "skipped_category_clarify"
-    assert repo.calls == 0
-    selected = search.resolve_selection_and_search(
-        query=query, selected_id="23", allowed_option_ids=["23", "34"],
-    )
-    assert selected["intent"]["decision"]["accepted_item_id"] == "23"
-    assert selected["property_extraction"]["properties"] == []
-    assert selected["poi_search"]["category_candidate_count"] == 2
-    assert selected["poi_search"]["hard_filter_match_count"] == 2
-
-
-def test_clarification_selection_does_not_recast_an_alternative_category_as_property():
-    search, _category, repository = runtime(action="reject")
-    query = "quán cà phê hoặc bãi đỗ xe"
-    initial = search.search(query)
-    assert initial["intent"]["decision"]["action"] == "clarify"
-    assert initial["property_extraction"]["properties"][0]["ignored_reason"] == "category_component"
-    allowed = [option["item_id"] for option in initial["intent"]["decision"]["options"]]
-    selected = search.resolve_selection_and_search(
-        query=query, selected_id="23", allowed_option_ids=allowed,
-    )
-    assert selected["property_extraction"]["properties"][0]["ignored_reason"] == "category_component"
-    assert selected["poi_search"]["hard_filter_match_count"] == 2
-    assert selected["poi_search"]["returned_count"] == 2
-    assert repository.calls == 1
-
-
-def test_clarification_skips_poi_repository():
-    search, _category, repo = runtime(action="clarify")
-    result = search.search("chỗ ngồi uống gì đó")
-    assert result["poi_search"]["status"] == "skipped_category_clarify"
-    assert repo.calls == 0
-
-
-def test_conflicting_semantic_and_explicit_category_asks_instead_of_searching_wrong_pois():
-    search, _category, repo = runtime(action="accept")
-    search.category_runtime.category_id = "34"
-    result = search.search("quán cà phê có máy lạnh")
-    assert result["intent"]["decision"]["action"] == "clarify"
-    assert {item["item_id"] for item in result["intent"]["decision"]["options"]} == {"23", "34"}
-    assert repo.calls == 0
-
-
-def test_informational_query_with_category_name_is_rejected():
-    search, _category, repo = runtime(action="reject")
-    result = search.search("cách mở quán cà phê")
-    assert result["intent"]["decision"]["action"] == "reject"
-    assert result["poi_search"]["status"] == "skipped_category_reject"
-    assert repo.calls == 0
-
-
-def test_real_model_software_request_cannot_search_physical_pois():
-    search, category, repo = runtime(action="accept")
-    category.model_key = "e5-base-multilingual"
-    result = search.search("tìm phần mềm quản lý bán hàng cho laptop")
-    assert result["intent"]["decision"]["reason"] == "digital_product_not_place_search"
-    assert result["poi_search"]["status"] == "skipped_category_reject"
-    assert repo.calls == 0
-
-
-def test_missing_radius_origin_is_reported_as_not_applied():
-    search, _category, _repo = runtime()
-    result = search.search("quán cà phê trong 2 km")
-    radius = next(row for row in result["property_extraction"]["properties"] if row["property_id"] == "radius_km")
-    assert radius["applied"] is False
-    assert radius["ignored_reason"] == "missing_origin"
-    assert result["poi_search"]["hard_filter_match_count"] == 2
-    assert any("origin" in warning for warning in result["poi_search"]["warnings"])
-
-
-def test_sushi_query_includes_japanese_restaurant_with_explicit_sushi_cuisine_tag():
-    search, category, _repo = runtime(action="accept")
-    category.category_id = "65"
-    source = replace(
-        make_poi("osm:node:101"), category_id="57", category_code="japanese_restaurant",
-        osm_tags={"amenity": "restaurant", "cuisine": "japanese;sushi"},
-    )
-    other = replace(
-        make_poi("osm:node:102"), category_id="57", category_code="japanese_restaurant",
-        osm_tags={"amenity": "restaurant", "cuisine": "japanese"},
-    )
-    search.poi_repository.records = (source, other)
-    result = search.search("nhà hàng Sushi")
-    assert result["intent"]["decision"]["accepted_item_id"] == "65"
-    assert result["poi_search"]["category_candidate_count"] == 1
-    assert [hit["poi_id"] for hit in result["poi_search"]["hits"]] == [source.poi_id]
-
-
-def test_combined_radius_constraints_use_the_narrower_limit():
+def test_intent_only_runtime_rejects_poi_search():
     search, _category, _repository = runtime()
-    nearby = make_poi("osm:node:8")
-    farther = replace(make_poi("osm:node:9"), latitude=10.81)
-    search.poi_repository.records = (nearby, farther)
-    result = search.search("quán cà phê trong 1 km và trong 5 km", origin=(10.78, 106.69))
-    assert result["poi_search"]["effective_radius_km"] == 1.0
-    assert [hit["poi_id"] for hit in result["poi_search"]["hits"]] == [nearby.poi_id]
-    assert all(row["applied"] for row in result["property_extraction"]["properties"] if row["property_id"] == "radius_km")
+    result = search.analyze_intent("quán cà phê")
+    assert result["intent"]["decision"]["action"] == "accept"
+    assert "poi_search" not in result
+    assert not hasattr(search, "search")
+    assert not hasattr(search, "resolve_selection_and_search")
+    search.close()
 
 
-def test_explicit_radius_override_is_reported_without_claiming_query_radius_applied():
-    search, _category, _repo = runtime()
-    result = search.search("quán cà phê trong 2 km", origin=(10.78, 106.69), radius_km=10)
-    radius = next(row for row in result["property_extraction"]["properties"] if row["property_id"] == "radius_km")
-    assert radius["applied"] is False
-    assert radius["ignored_reason"] == "overridden_by_explicit_radius"
-    assert result["poi_search"]["effective_radius_km"] == 10
-    assert "query radius was replaced" in " ".join(result["poi_search"]["warnings"])
+def test_intent_factory_uses_property_profiles_without_poi_generation(monkeypatch):
+    import model_intent.search_runtime as module
 
-
-def test_real_model_rejection_cannot_be_promoted_by_explicit_category_alias():
-    search, category, repository = runtime(action="reject")
+    category = CategoryStub()
+    category.taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    category.enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
     category.model_key = "e5-base-multilingual"
-    result = search.search("quán cà phê có máy lạnh")
+    monkeypatch.setenv("DATABASE_URL", "postgresql://test:fake@127.0.0.1:5433/model_intent_unified")
+    monkeypatch.setattr(module.MatcherRuntime, "from_config", lambda **kwargs: category)
+    monkeypatch.setattr(module.SearchRuntime, "_validate_e5_category_runtime", lambda *args: None)
+
+    analysis = SearchRuntime.from_intent_config(
+        config_path=ROOT / "configs/benchmark.poi.pg.v3.yaml",
+        taxonomy_path=ROOT / "data/taxonomies/place_types.poc.v3.json",
+        model_key="e5-base-multilingual",
+    )
+    assert not hasattr(analysis, "poi_repository")
+    assert analysis.property_profiles is not None
+    assert analysis.analyze_intent("quán cà phê có máy lạnh")["property_extraction"]["properties"]
+    analysis.close()
+
+
+def test_intent_factory_closes_category_database_on_property_error(monkeypatch, tmp_path):
+    import model_intent.search_runtime as module
+
+    category = CategoryStub()
+    closed = []
+    category.database = SimpleNamespace(close=lambda: closed.append(True))
+    monkeypatch.setattr(module.MatcherRuntime, "from_config", lambda **kwargs: category)
+    monkeypatch.setattr(module.SearchRuntime, "_validate_e5_category_runtime", lambda *args: None)
+    monkeypatch.setattr(module, "validate_database_target", lambda config: None)
+    config_path = tmp_path / "configs/benchmark.yaml"
+    config_path.parent.mkdir(parents=True)
+    config_path.write_text("property_intent:\n  property_path: missing.json\n", encoding="utf-8")
+    with pytest.raises(FileNotFoundError, match="Property catalog"):
+        SearchRuntime.from_intent_config(
+            config_path=config_path,
+            taxonomy_path=ROOT / "data/taxonomies/place_types.poc.v1.json",
+            model_key="e5-base-multilingual",
+        )
+    assert closed == [True]
+
+
+def test_digital_property_after_explicit_place_does_not_veto_category():
+    search, category, _repository = runtime(action="accept")
+    category.model_key = "e5-base-multilingual"
+    category.category_id = "34"
+    allowed = search.analyze_intent("tìm nhà thuốc có app giao hàng")
+    assert allowed["intent"]["decision"]["action"] == "accept"
+    assert allowed["intent"]["decision"]["accepted_item_id"] == "34"
+    blocked = search.analyze_intent("tìm phần mềm quản lý nhà thuốc")
+    assert blocked["intent"]["decision"]["action"] == "reject"
+    assert blocked["intent"]["decision"]["reason"] == "digital_product_not_place_search"
+
+
+def test_anchored_place_name_never_promotes_near_tied_categories():
+    search, category, _repository = runtime(action="reject")
+    category.model_key = "e5-base-multilingual"
+
+    def close_candidates(text, **kwargs):
+        return {
+            "prediction": {"query": text, "hits": [
+                {"item_id": "23", "score": 0.790}, {"item_id": "34", "score": 0.786},
+            ]},
+            "decision": {"action": "reject", "reason": "low_calibrated_confidence",
+                         "accepted_item_id": None},
+            "runtime": {},
+        }
+
+    category.query = close_candidates
+    result = search.analyze_intent("Tui kiếm quán cà phê ở Thủ Đức")
     assert result["intent"]["decision"]["action"] == "reject"
     assert result["intent"]["category_resolution"]["source"] == "semantic_model"
-    assert result["poi_search"]["status"] == "skipped_category_reject"
-    assert repository.calls == 0
 
 
-def test_real_model_acceptance_conflicting_with_explicit_alias_requires_clarification():
-    search, category, repository = runtime(action="accept")
+def test_real_model_anchored_place_name_rescues_rejected_correct_top1_without_changing_score():
+    search, category, repository = runtime(action="reject")
     category.model_key = "e5-base-multilingual"
-    category.category_id = "23"
-    result = search.search("nhà thuốc")
-    assert result["intent"]["decision"]["action"] == "clarify"
-    assert {option["item_id"] for option in result["intent"]["decision"]["options"]} == {"23", "34"}
-    assert result["intent"]["category_resolution"]["source"] == "semantic_guard_clarify"
-    assert repository.calls == 0
 
+    def low_confidence(text, **kwargs):
+        return {
+            "prediction": {"query": text, "hits": [{"item_id": "23", "score": 0.79}]},
+            "decision": {"action": "reject", "reason": "low_calibrated_confidence",
+                         "accepted_item_id": None, "calibrated_confidence": 0.25,
+                         "in_domain_confidence": 0.42},
+            "runtime": {},
+        }
 
-def test_empty_poi_results_do_not_change_category_acceptance():
-    search, _category, _repo = runtime()
-    result = search.search("quán cà phê có máy lạnh")
-    # Replace with a constraint guaranteed to fail against both fixture POIs.
-    search.poi_repository.records = tuple(
-        make_poi(f"osm:node:{index}", False) for index in (3, 4)
-    )
-    result = search.search("quán cà phê có máy lạnh")
-    assert result["intent"]["decision"]["action"] == "accept"
-    assert result["poi_search"]["status"] == "no_matches"
-
-
-def test_branded_category_guard_does_not_search_generic_charging_pois():
-    search, category, repository = runtime(action="accept")
-    category.model_key = "e5-base-multilingual"
-    category.category_id = "19"
-    result = search.search("trạm sạc nhanh ,có nhà vệ sinh")
-    assert result["intent"]["query_interpretation"]["category_text"] == "trạm sạc nhanh"
-    assert result["intent"]["decision"]["reason"] == "unsupported_branded_category"
-    assert result["poi_search"]["status"] == "unsupported_category"
-    assert repository.calls == 0
-
-
-def test_named_branded_category_does_not_require_the_parent_brand_word():
-    search, category, repository = runtime(action="accept")
-    category.model_key = "e5-base-multilingual"
-    category.category_id = "234"
-    result = search.search("Vinschool")
-    assert result["intent"]["decision"]["action"] == "accept"
-    assert result["intent"]["decision"]["accepted_item_id"] == "234"
-    assert result["poi_search"]["status"] == "no_pois_for_category"
-    assert repository.calls == 1
-
-
-def test_real_model_focused_query_does_not_erase_category_component():
-    search, category, _repository = runtime(action="accept")
-    category.model_key = "e5-base-multilingual"
-    category.category_id = "52"
-    search.property_catalog = load_property_catalog(ROOT / "data/properties/poi_properties.poc.v2.json")
-    search.property_extractor = PropertyExtractor(search.property_catalog)
-    result = search.search("máy rút tiền")
-    assert category.queries == ["máy rút tiền"]
-    assert result["intent"]["query_interpretation"]["category_text"] == "máy rút tiền"
-    assert result["property_extraction"]["properties"][0]["ignored_reason"] == "category_component"
-
-
-def test_real_model_uses_focused_category_when_raw_query_is_distracted():
-    search, category, _repository = runtime(action="accept")
-    category.model_key = "e5-base-multilingual"
-    category.category_id = "23"
-    result = search.search("quán cà phê có máy lạnh")
-    assert category.queries == ["quán cà phê", "quán cà phê có máy lạnh"]
-    assert result["intent"]["category_resolution"]["semantic_query"] == "quán cà phê"
+    category.query = low_confidence
+    result = search.analyze_intent("Tui kiếm quán cà phê ở Thủ Đức")
     assert result["intent"]["decision"]["accepted_item_id"] == "23"
-    assert result["property_extraction"]["properties"][0]["applied"]
+    assert result["intent"]["decision"]["reason"] == "anchored_place_name_evidence"
+    assert result["intent"]["category_resolution"]["semantic_decision"]["action"] == "reject"
+    assert result["intent"]["decision"]["calibrated_confidence"] == 0.25
+    assert repository.calls == 0
+
+    bare_seeking = search.analyze_intent("Tui kiếm quán cà phê tư vấn pha chế")
+    assert bare_seeking["intent"]["decision"]["action"] == "reject"
+    negated = search.analyze_intent("Không tìm quán cà phê")
+    assert negated["intent"]["decision"]["action"] == "reject"
+    negated_prefixed = search.analyze_intent("Mình không muốn tìm quán cà phê")
+    assert negated_prefixed["intent"]["decision"]["action"] == "reject"
+    informational = search.analyze_intent("Tui không tìm quán cà phê; muốn hỏi cách tự pha cà phê")
+    assert informational["intent"]["decision"]["action"] == "reject"
+
+
+def test_curated_hospital_alias_protects_parking_as_required_property():
+    search, category, repository = runtime(action="reject")
+    category.taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    category.enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
+    category.model_key = "e5-base-multilingual"
+    search.query_aliases = CategoryQueryAliases(
+        category.taxonomy, category.enrichment,
+        overrides_path=ROOT / "data/taxonomies/category_query_aliases.poc.v3.json",
+    )
+    search.property_catalog = load_property_definitions(ROOT / "data/properties/poi_properties.poc.v5.json")
+    search.property_extractor = PropertyExtractor(search.property_catalog)
+
+    def query(text, **kwargs):
+        category.queries.append(text)
+        canonical = text == "Bệnh viện"
+        return {
+            "prediction": {"query": text, "hits": [{"item_id": "42" if canonical else "86", "score": 0.86}]},
+            "decision": {"action": "accept" if canonical else "reject",
+                         "reason": "calibrated_high_confidence" if canonical else "low_calibrated_confidence",
+                         "accepted_item_id": "42" if canonical else None},
+            "runtime": {},
+        }
+
+    category.query = query
+    result = search.analyze_intent("nhà thương có bãi đỗ xe")
+    assert result["intent"]["decision"]["accepted_item_id"] == "42"
+    assert result["intent"]["query_interpretation"]["category_text"] == "nhà thương"
+    assert result["property_extraction"]["properties"][0]["property_id"] == "parking"
+    assert result["property_extraction"]["properties"][0]["applied"] is True
+    assert repository.calls == 0
+
+
+def test_unique_reviewed_alias_requires_canonical_e5_confirmation_and_preserves_original_score():
+    search, category, repository = runtime(action="reject")
+    category.taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    category.enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
+    category.model_key = "e5-base-multilingual"
+    search.query_aliases = CategoryQueryAliases(
+        category.taxonomy, category.enrichment,
+        overrides_path=ROOT / "data/taxonomies/category_query_aliases.poc.v3.json",
+    )
+
+    def query(text, **kwargs):
+        category.queries.append(text)
+        is_canonical = text == "Bệnh viện"
+        top_id = "42" if is_canonical else "125"
+        return {
+            "prediction": {"query": text, "hits": [{"item_id": top_id, "score": 0.86 if is_canonical else 0.84}]},
+            "decision": {
+                "action": "accept" if is_canonical else "reject",
+                "reason": "calibrated_high_confidence" if is_canonical else "low_calibrated_confidence",
+                "accepted_item_id": "42" if is_canonical else None,
+                "calibrated_confidence": 0.9 if is_canonical else 0.4,
+            },
+            "runtime": {},
+        }
+
+    category.query = query
+    result = search.analyze_intent("nhà thương có máy lạnh")
+    decision = result["intent"]["decision"]
+    resolution = result["intent"]["category_resolution"]
+    assert decision["action"] == "accept" and decision["accepted_item_id"] == "42"
+    assert decision["calibrated_confidence"] == 0.9
+    assert resolution["source"] == "alias_canonical_probe"
+    assert resolution["original_semantic_top_id"] == "125"
+    assert resolution["original_semantic_decision"]["calibrated_confidence"] == 0.4
+    assert result["intent"]["confidence_assessment"]["semantic_variant_query"] == "Bệnh viện"
+    assert [row["property_id"] for row in result["property_extraction"]["properties"]] == ["air_conditioning"]
+    assert category.queries == ["nhà thương", "Bệnh viện"]
+    assert result["query_parts"]["pgvector_queries"] == ["nhà thương", "Bệnh viện"]
+    assert result["query_parts"]["category_text"] == "nhà thương"
+    assert repository.calls == 0
+
+    negated = search.analyze_intent("không phải nhà thương")
+    assert negated["intent"]["decision"]["action"] == "reject"
+    assert negated["intent"]["category_resolution"].get("alias_probe") is None
+    commercial = search.analyze_intent("nhà thương mại")
+    assert commercial["intent"]["decision"]["action"] == "reject"
+    assert commercial["intent"]["category_resolution"].get("alias_probe") is None
+
+
+def test_unique_reviewed_alias_does_not_override_conflicting_semantic_accept():
+    search, category, repository = runtime(action="accept")
+    category.taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    category.enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
+    category.model_key = "e5-base-multilingual"
+    search.query_aliases = CategoryQueryAliases(
+        category.taxonomy, category.enrichment,
+        overrides_path=ROOT / "data/taxonomies/category_query_aliases.poc.v3.json",
+    )
+
+    def query(text, **kwargs):
+        is_canonical = text == "Bệnh viện"
+        item_id = "42" if is_canonical else "125"
+        return {
+            "prediction": {"query": text, "hits": [{"item_id": item_id, "score": 0.86}]},
+            "decision": {"action": "accept", "reason": "calibrated_high_confidence", "accepted_item_id": item_id},
+            "runtime": {},
+        }
+
+    category.query = query
+    result = search.analyze_intent("nhà thương")
+    decision = result["intent"]["decision"]
+    assert decision["action"] == "clarify" and decision["reason"] == "alias_semantic_conflict"
+    assert {str(option["item_id"]) for option in decision["options"]} == {"42", "125"}
+    assert repository.calls == 0
+
+
+def test_curated_category_selection_preserves_unresolved_property_span():
+    search, category, _ = runtime(action="reject")
+    category.taxonomy = Taxonomy.load(ROOT / "data/taxonomies/place_types.poc.v3.json")
+    category.enrichment = load_enrichment(ROOT / "data/taxonomies/place_type_enrichment.rich.poc.v3.json")
+    category.model_key = "e5-base-multilingual"
+    catalog = load_property_definitions(ROOT / "data/properties/poi_properties.poc.v8.json")
+    search.property_catalog = catalog
+    search.property_extractor = PropertyExtractor(catalog)
+    search.query_aliases = CategoryQueryAliases(
+        category.taxonomy, category.enrichment,
+        overrides_path=ROOT / "data/taxonomies/category_query_aliases.poc.v3.json",
+    )
+    query = "nhà thương có mát rượi"
+    original = search.analyze_intent(query)
+    selected = search.resolve_selection_and_analyze_intent(
+        query=query, selected_id="42", allowed_option_ids=["42"],
+    )
+    spans = original["query_parts"]["unresolved_property_clauses"]
+    assert spans and spans == selected["query_parts"]["unresolved_property_clauses"]
+    assert spans[0]["text"] == "có mát rượi"

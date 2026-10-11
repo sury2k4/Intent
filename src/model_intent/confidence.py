@@ -2,9 +2,10 @@ from __future__ import annotations
 
 import json
 import math
+from collections.abc import Mapping
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any
 
 import numpy as np
 
@@ -20,6 +21,16 @@ FEATURE_NAMES = (
     "topk_entropy",
     "variant_agreement",
 )
+CONFIDENCE_TARGET = "retrieved_top1_acceptable_leaf_not_ood"
+LEGACY_QUALITY = "legacy_unverified"
+ACTION_THRESHOLDS = (
+    "reject_min_in_domain_confidence",
+    "reject_min_top_confidence",
+    "clarify_min_in_domain_confidence",
+    "accept_min_in_domain_confidence",
+    "accept_min_top_confidence",
+    "ambiguity_min_score",
+)
 
 
 class ConfidenceCalibrationError(ValueError):
@@ -33,23 +44,28 @@ class ConfidenceEvidence:
     ambiguity_score: float
     features: Mapping[str, float]
     calibration_version: str
+    quality: str = LEGACY_QUALITY
+    target: str = CONFIDENCE_TARGET
 
 
 def load_confidence_calibration(
     path: str | Path,
     *,
     model_key: str | None = None,
+    model_id: str | None = None,
     model_revision: str | None = None,
     renderer_version: str | None = None,
     taxonomy_fingerprint: str | None = None,
 ) -> dict[str, Any]:
     payload = json.loads(Path(path).read_text(encoding="utf-8"))
-    if payload.get("kind") != "logistic-evidence-v1":
+    if not isinstance(payload, dict) or payload.get("kind") != "logistic-evidence-v1":
         raise ConfidenceCalibrationError("unsupported confidence calibration kind")
     if model_key is not None and payload.get("model_key") != model_key:
         raise ConfidenceCalibrationError(
             f"confidence calibration model mismatch: {payload.get('model_key')} != {model_key}"
         )
+    if model_id is not None and payload.get("model_id") != model_id:
+        raise ConfidenceCalibrationError("confidence calibration model ID mismatch")
     expected_revision = str(payload.get("model_revision") or "")
     if model_revision is not None and expected_revision != str(model_revision or ""):
         raise ConfidenceCalibrationError("confidence calibration revision mismatch")
@@ -58,17 +74,54 @@ def load_confidence_calibration(
     pinned_taxonomy = payload.get("taxonomy_fingerprint")
     if taxonomy_fingerprint is not None and pinned_taxonomy is not None and pinned_taxonomy != taxonomy_fingerprint:
         raise ConfidenceCalibrationError("confidence calibration taxonomy mismatch")
+    quality = payload.get("quality", LEGACY_QUALITY)
+    if not isinstance(quality, str) or quality not in {
+        LEGACY_QUALITY, "legacy_poc", "provisional_synthetic_proxy_not_production_validated",
+    }:
+        raise ConfidenceCalibrationError("confidence calibration quality requires independent validation support")
+    payload["quality"] = quality
     for name in ("top_correct", "in_domain", "ambiguity"):
         model = payload.get(name)
         if not isinstance(model, dict):
             raise ConfidenceCalibrationError(f"missing confidence model: {name}")
-        feature_names = tuple(model.get("features") or ())
-        if not feature_names or any(feature not in FEATURE_NAMES for feature in feature_names):
+        raw_features = model.get("features")
+        if not isinstance(raw_features, list) or not all(isinstance(feature, str) for feature in raw_features):
+            raise ConfidenceCalibrationError(f"invalid feature list for {name}")
+        feature_names = tuple(raw_features)
+        if not feature_names or len(set(feature_names)) != len(feature_names) or any(feature not in FEATURE_NAMES for feature in feature_names):
             raise ConfidenceCalibrationError(f"invalid feature list for {name}")
         for field in ("means", "scales", "weights"):
             values = model.get(field)
             if not isinstance(values, list) or len(values) != len(feature_names):
                 raise ConfidenceCalibrationError(f"invalid {field} for {name}")
+            if any(isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) for value in values):
+                raise ConfidenceCalibrationError(f"non-finite {field} for {name}")
+            if field == "scales" and any(value <= 0 for value in values):
+                raise ConfidenceCalibrationError(f"non-positive scales for {name}")
+        bias = model.get("bias")
+        if isinstance(bias, bool) or not isinstance(bias, (int, float)) or not math.isfinite(bias):
+            raise ConfidenceCalibrationError(f"invalid bias for {name}")
+    thresholds = payload.get("action_thresholds")
+    if not isinstance(thresholds, dict) or any(key not in thresholds for key in ACTION_THRESHOLDS):
+        raise ConfidenceCalibrationError("missing confidence action thresholds")
+    if any(
+        isinstance(thresholds[key], bool) or not isinstance(thresholds[key], (int, float))
+        or not math.isfinite(thresholds[key]) or not 0 <= thresholds[key] <= 1
+        for key in ACTION_THRESHOLDS
+    ):
+        raise ConfidenceCalibrationError("confidence action thresholds must be finite values in [0, 1]")
+    if (
+        thresholds["reject_min_top_confidence"] > thresholds["accept_min_top_confidence"]
+        or thresholds["reject_min_in_domain_confidence"] > thresholds["accept_min_in_domain_confidence"]
+        or thresholds["clarify_min_in_domain_confidence"] < thresholds["reject_min_in_domain_confidence"]
+    ):
+        raise ConfidenceCalibrationError("confidence action thresholds are inconsistent")
+    temperature = payload.get("temperature", 0.05)
+    top_k = payload.get("top_k", 5)
+    if isinstance(temperature, bool) or not isinstance(temperature, (int, float)) or not math.isfinite(temperature) or temperature <= 0:
+        raise ConfidenceCalibrationError("confidence temperature must be positive and finite")
+    if isinstance(top_k, bool) or not isinstance(top_k, int) or top_k < 2:
+        raise ConfidenceCalibrationError("confidence top_k must be at least 2")
     return payload
 
 
@@ -148,4 +201,6 @@ def evaluate_confidence(
         ambiguity_score=ambiguity,
         features=features,
         calibration_version=str(calibration.get("calibration_version", "unknown")),
+        quality=str(calibration.get("quality", LEGACY_QUALITY)),
+        target=CONFIDENCE_TARGET,
     )

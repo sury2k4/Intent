@@ -1,0 +1,36 @@
+{"id":"PROP-001","query":"quán cà phê có chạy điều hòa","span":"chạy điều hòa","language":"vi","category_id":"23","expected_property_id":"air_conditioning","mode":"required","kind":"colloquial"}
+{"id":"PROP-002","query":"quán cà phê mát rượi","span":"mát rượi","language":"vi","category_id":"23","expected_property_id":null,"mode":null,"kind":"ambiguous_air_cooling"}
+{"id":"PROP-003","query":"tìm quán có không khí thoáng đãng","span":"không khí thoáng đãng","language":"vi","category_id":"23","expected_property_id":"airy","mode":"required","kind":"contrast_ac_airy_shade"}
+{"id":"PROP-004","query":"công viên có bóng cây dịu nắng","span":"bóng cây dịu nắng","language":"vi","category_id":"74","expected_property_id":"shade","mode":"required","kind":"contrast_ac_airy_shade"}
+{"id":"PROP-005","query":"nhà nghỉ có chỗ cất ô tô","span":"chỗ cất ô tô","language":"vi","category_id":"137","expected_property_id":"parking","mode":"required","kind":"generic_parking"}
+{"id":"PROP-006","query":"nhà nghỉ có bãi đỗ 4 bánh","span":"bãi đỗ 4 bánh","language":"vi","category_id":"137","expected_property_id":"parking","mode":"required","kind":"generic_parking"}
+{"id":"PROP-007","query":"bãi đậu xe có chỗ để xe máy","span":"chỗ để xe máy","language":"vi","category_id":"86","expected_property_id":"motorbike_parking","mode":"required","kind":"specialized_parking"}
+{"id":"PROP-008","query":"bãi đậu xe có bãi đỗ xe có mái","span":"bãi đỗ xe có mái","language":"vi","category_id":"86","expected_property_id":"covered_parking","mode":"required","kind":"specialized_parking"}
+{"id":"PROP-009","query":"bãi đậu xe có chỗ đỗ cho người khuyết tật","span":"chỗ đỗ cho người khuyết tật","language":"vi","category_id":"86","expected_property_id":"disabled_parking","mode":"required","kind":"specialized_parking"}
+{"id":"PROP-010","query":"quán ăn có ship đồ","span":"ship đồ","language":"vi","category_id":"20","expected_property_id":"delivery","mode":"required","kind":"delivery"}
+{"id":"PROP-011","query":"siêu thị giao tới nhà mình","span":"giao tới nhà mình","language":"vi","category_id":"28","expected_property_id":"home_delivery","mode":"required","kind":"delivery"}
+{"id":"PROP-012","query":"quán ăn lấy mang về","span":"lấy mang về","language":"vi","category_id":"20","expected_property_id":"takeaway","mode":"required","kind":"delivery"}
+{"id":"PROP-013","query":"siêu thị cho đặt hàng qua app","span":"đặt hàng qua app","language":"vi","category_id":"28","expected_property_id":"online_ordering","mode":"required","kind":"delivery"}
+{"id":"PROP-014","query":"nhà hàng có phòng vệ sinh","span":"phòng vệ sinh","language":"vi","category_id":"20","expected_property_id":"toilets","mode":"required","kind":"toilets"}
+{"id":"PROP-015","query":"bệnh viện có nhà vệ sinh xe lăn vào được","span":"nhà vệ sinh xe lăn vào được","language":"vi","category_id":"42","expected_property_id":"accessible_toilet","mode":"required","kind":"toilets_accessibility"}
+{"id":"PROP-016","query":"nhà nghỉ có lối vào xe lăn","span":"lối vào xe lăn","language":"vi","category_id":"137","expected_property_id":"wheelchair","mode":"required","kind":"toilets_accessibility"}
+{"id":"PROP-017","query":"nhà vệ sinh công cộng có WC dùng chung mọi giới","span":"WC dùng chung mọi giới","language":"vi","category_id":"240","expected_property_id":"gender_neutral","mode":"required","kind":"toilets_accessibility"}
+{"id":"PROP-018","query":"điểm xe buýt có chỗ đứng trú mưa","span":"chỗ đứng trú mưa","language":"vi","category_id":"114","expected_property_id":"shelter","mode":"required","kind":"cover"}
+{"id":"PROP-019","query":"công viên có bóng râm","span":"bóng râm","language":"vi","category_id":"74","expected_property_id":"shade","mode":"required","kind":"cover"}
+{"id":"PROP-020","query":"điểm dừng xe buýt có mái che công cộng","span":"mái che công cộng","language":"vi","category_id":"114","expected_property_id":"covered_area","mode":"required","kind":"cover"}
+{"id":"PROP-021","query":"cây xăng mở xuyên đêm mọi ngày","span":"mở xuyên đêm mọi ngày","language":"vi","category_id":"85","expected_property_id":"open_24h","mode":"required","kind":"hours"}
+{"id":"PROP-022","query":"nhà thuốc đóng cửa khuya","span":"đóng cửa khuya","language":"vi","category_id":"34","expected_property_id":"open_late","mode":"required","kind":"hours"}
+{"id":"PROP-023","query":"khách sạn có lễ tân túc trực cả đêm","span":"lễ tân túc trực cả đêm","language":"vi","category_id":"7","expected_property_id":"reception_24h","mode":"required","kind":"hours"}
+{"id":"PROP-024","query":"công viên có ghế công cộng","span":"ghế công cộng","language":"vi","category_id":"74","expected_property_id":"seating","mode":"required","kind":"seating"}
+{"id":"PROP-025","query":"quán cà phê ngồi ngoài trời","span":"ngồi ngoài trời","language":"vi","category_id":"23","expected_property_id":"outdoor_seating","mode":"required","kind":"seating"}
+{"id":"PROP-026","query":"quán cà phê ngồi phòng trong nhà","span":"ngồi phòng trong nhà","language":"vi","category_id":"23","expected_property_id":"indoor_seating","mode":"required","kind":"seating"}
+{"id":"PROP-027","query":"cửa hàng cho chạm thẻ thanh toán","span":"chạm thẻ thanh toán","language":"vi","category_id":"28","expected_property_id":"contactless","mode":"required","kind":"payment"}
+{"id":"PROP-028","query":"cửa hàng nhận quẹt thẻ ngân hàng","span":"quẹt thẻ ngân hàng","language":"vi","category_id":"28","expected_property_id":"accepts_cards","mode":"required","kind":"payment"}
+{"id":"PROP-029","query":"ATM có giao dịch không cần tiền mặt","span":"giao dịch không cần tiền mặt","language":"vi","category_id":"52","expected_property_id":"cashless","mode":"required","kind":"payment"}
+{"id":"PROP-030","query":"quán cà phê không cần wifi","span":"không cần wifi","language":"vi","category_id":"23","expected_property_id":null,"mode":"not_requested","kind":"no_filter"}
+{"id":"PROP-031","query":"khách sạn không có xe lăn","span":"không có xe lăn","language":"vi","category_id":"7","expected_property_id":null,"mode":null,"kind":"ambiguous_negation"}
+{"id":"PROP-032","query":"hỏi dự báo giá xăng ngày mai","span":"giá xăng ngày mai","language":"vi","category_id":null,"expected_property_id":null,"mode":null,"kind":"ood"}
+{"id":"PROP-033","query":"coffee shop has air conditioning","span":"cooling system inside","language":"en","category_id":"23","expected_property_id":"air_conditioning","mode":"required","kind":"bilingual"}
+{"id":"PROP-034","query":"motel with a car park","span":"place to leave my car","language":"en","category_id":"137","expected_property_id":"parking","mode":"required","kind":"bilingual"}
+{"id":"PROP-035","query":"library with a reading room","span":"a quiet place to study","language":"en","category_id":"50","expected_property_id":"study_space","mode":"required","kind":"bilingual"}
+{"id":"PROP-036","query":"bus stop with arrival display","span":"screen showing when the bus arrives","language":"en","category_id":"114","expected_property_id":"realtime_arrivals","mode":"required","kind":"bilingual"}

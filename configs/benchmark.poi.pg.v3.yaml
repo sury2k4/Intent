@@ -9,11 +9,9 @@ db_pool_min_size: 1
 db_pool_max_size: 8
 db_pool_timeout_seconds: 10
 db_statement_timeout_ms: 5000
-cache_dir: .cache/model-intent-poi-v3
-output_dir: artifacts/benchmark-poi-unified-v3
-# Stage both generation IDs before paired promotion; do not change live defaults early.
 taxonomy_path: data/taxonomies/place_types.poc.v3.json
 enrichment_path: data/taxonomies/place_type_enrichment.rich.poc.v3.json
+category_query_aliases_path: data/taxonomies/category_query_aliases.poc.v3.json
 policy_path: data/policies/place_type_decision_policy.poc.v1.json
 confidence_calibration_path: data/policies/e5_base_confidence_calibration.v3.rollout.json
 languages: [vi, en]
@@ -29,9 +27,8 @@ models:
     max_seq_length: 192
     enabled: true
     stretch: false
-poi_search:
-  backend: postgres
-  dataset_key: hcmc-osm
-  property_path: data/properties/poi_properties.poc.v5.json
-  ranking_policy_path: data/policies/poi_ranking.poc.v3.json
-  mapping_path: data/osm/mappings/place_types.poc.v3.json
+property_intent:
+  property_path: data/properties/poi_properties.poc.v8.json
+  property_semantic_profiles_path: data/properties/property_semantic_profiles.poc.v2.json
+  property_semantic_backend: pg_exact_v1
+  property_generation_id: 4

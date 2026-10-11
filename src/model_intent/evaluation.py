@@ -195,6 +195,11 @@ def _probability_metrics(probabilities: list[float], labels: list[float], bins: 
     return {"n": len(clipped), "brier": brier, "log_loss": log_loss, "ece": weighted_gap, "reliability": reliability}
 
 
+def probability_metrics(probabilities: list[float], labels: list[float], bins: int = 10) -> dict[str, Any]:
+    """Reliability diagnostics for independently labeled probabilities."""
+    return _probability_metrics(probabilities, labels, bins)
+
+
 def _decision_metrics(rows: list[dict[str, Any]]) -> dict[str, Any]:
     decided = [r for r in rows if r["decision"] is not None]
     action_counts = Counter(r["decision"].action for r in decided)

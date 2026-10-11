@@ -72,14 +72,14 @@ def test_calibration_taxonomy_fingerprint_is_checked_when_present(tmp_path):
 
     from model_intent.taxonomy import Taxonomy
 
-    current = Taxonomy.load("data/taxonomies/place_types.poc.v2.json")
-    payload = json.loads(Path("data/policies/e5_base_confidence_calibration.v2.json").read_text(encoding="utf-8"))
+    current = Taxonomy.load("data/taxonomies/place_types.poc.v3.json")
+    payload = json.loads(Path("data/policies/e5_base_confidence_calibration.v3.rollout.json").read_text(encoding="utf-8"))
     assert payload["taxonomy_fingerprint"] == current.fingerprint()
     path = tmp_path / "calibration.json"
     path.write_text(json.dumps(payload), encoding="utf-8")
     with pytest.raises(ConfidenceCalibrationError, match="taxonomy mismatch"):
         load_confidence_calibration(path, taxonomy_fingerprint="bad-hash")
-    assert load_confidence_calibration(path, taxonomy_fingerprint=current.fingerprint())["calibration_version"] == "e5-base-confidence-v2"
+    assert load_confidence_calibration(path, taxonomy_fingerprint=current.fingerprint())["calibration_version"] == payload["calibration_version"]
 
 
 def test_calibration_model_mismatch_fails_closed(tmp_path):
@@ -92,3 +92,39 @@ def test_calibration_model_mismatch_fails_closed(tmp_path):
     )
     with pytest.raises(ConfidenceCalibrationError, match="model mismatch"):
         load_confidence_calibration(path, model_key="y", model_revision="r")
+
+
+@pytest.mark.parametrize("field,value,error", [
+    ("model_id", "another-model", "model ID mismatch"),
+    ("quality", "independently_validated", "quality requires independent validation"),
+    ("reject_min_top_confidence", 1.2, r"finite values in \[0, 1\]"),
+    ("accept_min_top_confidence", 0.1, "thresholds are inconsistent"),
+    ("top_correct.bias", float("nan"), "invalid bias"),
+    ("top_correct.scales", [0.0] * 7, "non-positive scales"),
+    ("top_correct.weights", [float("inf")] * 7, "non-finite weights"),
+])
+def test_calibration_rejects_invalid_probabilities_and_metadata(tmp_path, field, value, error):
+    import json
+
+    payload = json.loads(Path("data/policies/e5_base_confidence_calibration.v3.rollout.json").read_text(encoding="utf-8"))
+    if field.startswith("top_correct."):
+        payload["top_correct"][field.split(".", 1)[1]] = value
+    elif field in payload["action_thresholds"]:
+        payload["action_thresholds"][field] = value
+    else:
+        payload[field] = value
+    path = tmp_path / "calibration.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    with pytest.raises(ConfidenceCalibrationError, match=error):
+        load_confidence_calibration(path, model_id="intfloat/multilingual-e5-base")
+
+
+def test_provisional_score_identifies_raw_top_hit_target():
+    payload = load_confidence_calibration(
+        "data/policies/e5_base_confidence_calibration.v3.rollout.json",
+        model_id="intfloat/multilingual-e5-base",
+    )
+    evidence = evaluate_confidence(prediction([0.85, 0.78, 0.74]), payload)
+    assert evidence.quality == "provisional_synthetic_proxy_not_production_validated"
+    assert evidence.target == "retrieved_top1_acceptable_leaf_not_ood"
+    assert 0 <= evidence.top_correct_confidence <= 1

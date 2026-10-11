@@ -2,16 +2,14 @@ from __future__ import annotations
 
 import hashlib
 import json
-import os
 import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
 
 import numpy as np
 
-from .benchmark import _configure_runtime, load_yaml, make_embedder, profiles_from_config
+from .serving_config import E5_MODEL_ID, E5_MODEL_REVISION, configure_runtime, load_yaml, make_embedder, profiles_from_config
 from .db import Database, validate_database_target
 from .rendering import (
     PROFILE_RENDERER_VERSION,
@@ -113,11 +111,12 @@ def model_profile(config: dict[str, Any]) -> ModelProfile:
     )
     if profile is None:
         raise ValueError(f"config does not contain {MODEL_KEY}")
-    if not profile.revision:
-        raise ValueError("E5-base revision must be pinned before embedding sync")
-    expected = profile.expected_dimension or MODEL_DIMENSION
-    if expected != MODEL_DIMENSION:
-        raise ValueError(f"pgvector profile storage is fixed to {MODEL_DIMENSION} dimensions")
+    if profile.revision != E5_MODEL_REVISION:
+        raise ValueError("embedding sync requires the pinned E5-base model revision")
+    if profile.model_id != E5_MODEL_ID or profile.expected_dimension != MODEL_DIMENSION:
+        raise ValueError("pgvector profile storage requires the pinned E5-base 768D model")
+    if profile.query_prefix != "query: " or profile.document_prefix != "passage: ":
+        raise ValueError("pgvector profile storage requires the pinned E5 query/passage prefixes")
     return profile
 
 
@@ -169,13 +168,13 @@ def sync_embeddings(
     activate: bool = False,
 ) -> SyncResult:
     if activate:
-        raise RuntimeError("unilateral E5 activation is disabled on unified DB; use paired POI promotion")
+        raise RuntimeError("automatic E5 activation is disabled; verify and use embeddings promote separately")
     started = time.perf_counter()
     config_path = Path(config_path).resolve()
     project_root = config_path.parent.parent
     config = load_yaml(config_path)
     validate_database_target(config, database.database_url)
-    _configure_runtime(config, local_files_only)
+    configure_runtime(config, local_files_only)
     taxonomy = Taxonomy.load(taxonomy_path)
     enrichment = load_enrichment(_resolve_path(project_root, config.get("enrichment_path")))
     validate_enrichment(taxonomy, enrichment, require_rich_fields=True)
@@ -192,8 +191,8 @@ def sync_embeddings(
     category_ids = {item.item_id for item in profiles}
     if category_ids != expected_categories:
         raise RuntimeError("profile corpus does not contain exactly one profile set per leaf category")
-    if any(not profile.item_id.isdigit() for profile in profiles):
-        raise ValueError("v3 place_type_id requires numeric taxonomy IDs")
+    if any(not item.item_id.isdigit() or item.item_id != str(int(item.item_id)) for item in profiles):
+        raise ValueError("v3 place_type_id requires canonical numeric taxonomy IDs without leading zeroes")
     profile_rows = [{"profile": item, "content_hash": profile_content_hash(item)} for item in profiles]
     content_set_hash = stable_hash(sorted(
         (row["profile"].item_id, row["profile"].language, row["content_hash"])
@@ -534,58 +533,3 @@ def embedding_status(database: Database) -> dict[str, Any]:
         },
         "generations": [_generation_payload(row) for row in generations],
     }
-
-
-def cleanup_generations(
-    database: Database, keep: int = 3, *, allow_disposable_scratch: bool = False,
-) -> list[int]:
-    """Never delete rollback candidates on unified; opt in only on isolated scratch."""
-    url = getattr(database, "database_url", None)
-    if not allow_disposable_scratch or not url or url != os.getenv("MODEL_INTENT_WRITE_TEST_DATABASE_URL"):
-        raise RuntimeError("E5 generation cleanup is disabled on unified DB; disposable scratch opt-in required")
-    try:
-        parsed = urlparse(url)
-        valid = (
-            parsed.scheme in ("postgres", "postgresql")
-            and parsed.hostname == "127.0.0.1"
-            and parsed.port not in (None, 5432, 5433)
-            and parsed.path == "/model_intent_write_test"
-            and not parsed.query and not parsed.fragment and not parsed.params
-        )
-    except ValueError:
-        valid = False
-    if not valid:
-        raise RuntimeError("E5 generation cleanup requires isolated disposable scratch DB, never unified")
-    if keep < 1:
-        raise ValueError("keep must be at least one")
-    with database.connection() as (connection, _):
-        active_ids = {
-            int(row[0]) for row in connection.execute(
-                """
-                SELECT generation_id FROM active_category_profile_generation_v3
-                UNION SELECT generation_id FROM active_category_profile_generation_v2
-                UNION SELECT generation_id FROM active_category_profile_generation
-                UNION SELECT generation_id FROM active_embedding_generation
-                """
-            ).fetchall()
-        }
-        rows = connection.execute(
-            """
-            SELECT g.id FROM embedding_generations g
-            JOIN embedding_model_configs m ON m.id=g.model_config_id
-            WHERE m.model_key=%s AND g.state IN ('ready','failed','retired')
-            ORDER BY g.id DESC
-            """,
-            (MODEL_KEY,),
-        ).fetchall()
-        retained = {int(row[0]) for row in rows[:keep]} | active_ids
-        remove = [int(row[0]) for row in rows if int(row[0]) not in retained]
-        if remove:
-            with connection.transaction():
-                connection.execute("DELETE FROM embedding_generations WHERE id=ANY(%s)", (remove,))
-        return remove
-
-
-def activate_generation(database: Database, generation_id: int) -> None:
-    """Unilateral E5 activation is unsafe; paired promotion owns both pointers."""
-    raise RuntimeError("unilateral E5 activation is disabled on unified DB; use paired POI promotion")

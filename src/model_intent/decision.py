@@ -2,12 +2,14 @@ from __future__ import annotations
 
 import json
 import math
+from contextlib import nullcontext
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Mapping
 
 from .confidence import ConfidenceEvidence, evaluate_confidence
 from .schemas import ClarificationOption, IntentDecision, Prediction, RetrievalHit
+from .search_timing import SearchTiming
 from .taxonomy import Taxonomy
 
 
@@ -102,6 +104,8 @@ def _evidence_kwargs(evidence: ConfidenceEvidence | None) -> dict[str, Any]:
         "ambiguity_score": evidence.ambiguity_score,
         "confidence_features": dict(evidence.features),
         "calibration_version": evidence.calibration_version,
+        "confidence_quality": evidence.quality,
+        "confidence_target": evidence.target,
     }
 
 
@@ -177,6 +181,7 @@ def decide_intent(
     confidence_calibration: Mapping[str, Any] | None = None,
     *,
     policy_prevalidated: bool = False,
+    timing: SearchTiming | None = None,
 ) -> IntentDecision:
     if not policy_prevalidated:
         validate_decision_policy(policy, taxonomy)
@@ -184,7 +189,8 @@ def decide_intent(
     language = language or str(policy.get("fallback_language", "vi"))
     values = _thresholds(policy, prediction.model_key, overrides)
     policy_version = str(policy.get("policy_version", "unknown"))
-    evidence = evaluate_confidence(prediction, confidence_calibration) if confidence_calibration else None
+    with (timing.measure("category_calibration") if timing and confidence_calibration else nullcontext()):
+        evidence = evaluate_confidence(prediction, confidence_calibration) if confidence_calibration else None
 
     if not prediction.hits or prediction.top1_score is None:
         return IntentDecision(

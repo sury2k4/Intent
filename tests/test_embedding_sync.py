@@ -96,7 +96,7 @@ class EmbeddingDatabase:
 
 def _stub_corpus(monkeypatch, connection):
     profile = SimpleNamespace(
-        key=module.MODEL_KEY, model_id="intfloat/multilingual-e5-base", revision="pinned-revision",
+        key=module.MODEL_KEY, model_id="intfloat/multilingual-e5-base", revision="d128750597153bb5987e10b1c3493a34e5a4502a",
         query_prefix="query: ", document_prefix="passage: ",
         expected_dimension=768, max_seq_length=128, batch_size=4,
     )
@@ -106,7 +106,7 @@ def _stub_corpus(monkeypatch, connection):
     )
     monkeypatch.setattr(module, "load_yaml", lambda *_: {"languages": ["en"], "enrichment_path": "ignored"})
     monkeypatch.setattr(module.Taxonomy, "load", lambda *_: taxonomy)
-    monkeypatch.setattr(module, "_configure_runtime", lambda *_: None)
+    monkeypatch.setattr(module, "configure_runtime", lambda *_: None)
     monkeypatch.setattr(module, "validate_database_target", lambda *_: None)
     monkeypatch.setattr(module, "load_enrichment", lambda *_: {})
     monkeypatch.setattr(module, "validate_enrichment", lambda *_ , **__: None)
@@ -161,17 +161,8 @@ def test_explicit_unpaired_activate_refused_before_connection(monkeypatch):
     connection = EmbeddingConnection(ready=True)
     _stub_corpus(monkeypatch, connection)
     database = EmbeddingDatabase(connection)
-    with pytest.raises(RuntimeError, match="unilateral E5 activation"):
+    with pytest.raises(RuntimeError, match="automatic E5 activation"):
         module.sync_embeddings(database, config_path="config.yml", taxonomy_path="taxonomy.json", activate=True)
-    with pytest.raises(RuntimeError, match="unilateral E5 activation"):
-        module.activate_generation(database, 17)
-    assert connection.statements == []
-
-
-def test_cleanup_refuses_unified_db_before_connection():
-    connection = EmbeddingConnection()
-    with pytest.raises(RuntimeError, match="cleanup is disabled"):
-        module.cleanup_generations(EmbeddingDatabase(connection))
     assert connection.statements == []
 
 

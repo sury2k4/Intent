@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import threading
 import time
+from contextlib import nullcontext
 from typing import Any
 
 import numpy as np
@@ -9,6 +10,7 @@ import numpy as np
 from .db import Database
 from .normalization import text_variants
 from .schemas import Prediction, RetrievalHit
+from .search_timing import SearchTiming
 from .taxonomy import Taxonomy
 
 
@@ -117,7 +119,9 @@ class PgVectorIndex:
             "artifact_kind": row[14], "pool_wait_ms": pool_metrics.wait_ms,
         }
 
-    def _search_vector(self, vector: np.ndarray, limit: int) -> tuple[list[tuple], dict[str, float]]:
+    def _search_vector(
+        self, vector: np.ndarray, limit: int, timing: SearchTiming | None = None,
+    ) -> tuple[list[tuple], dict[str, float]]:
         if vector.shape != (self.dimension,) or not np.isfinite(vector).all():
             raise ValueError(f"query vector must be a finite {self.dimension}-dimensional vector")
         generation_id = self.generation_id
@@ -149,19 +153,27 @@ class PgVectorIndex:
             LIMIT %s
         """
         with self.database.connection() as (connection, pool_metrics):
+            if timing is not None:
+                timing.record("category_pool_wait", pool_metrics.wait_ms)
             sql_started = time.perf_counter()
-            rows = connection.execute(sql, (vector, vector, generation_id, limit)).fetchall()
+            with (timing.measure("category_db_execute_fetch") if timing else nullcontext()):
+                rows = connection.execute(sql, (vector, vector, generation_id, limit)).fetchall()
         elapsed_ms = (time.perf_counter() - sql_started) * 1000
         return rows, {"pool_wait_ms": pool_metrics.wait_ms, "db_search_ms": elapsed_ms}
 
-    def search(self, query: str, embedder, top_k: int = 5, query_id: str = "query") -> Prediction:
-        query_entries = text_variants(query)
-        query_texts = [value for _, value in query_entries]
+    def search(
+        self, query: str, embedder, top_k: int = 5, query_id: str = "query",
+        *, timing: SearchTiming | None = None,
+    ) -> Prediction:
+        with (timing.measure("category_query_variants") if timing else nullcontext()):
+            query_entries = text_variants(query)
+            query_texts = [value for _, value in query_entries]
         encode_started = time.perf_counter()
-        with self._embedding_lock:
-            query_matrix = np.asarray(embedder.encode_queries(query_texts), dtype=np.float32)
-        norms = np.linalg.norm(query_matrix, axis=1, keepdims=True)
-        query_matrix = np.divide(query_matrix, np.maximum(norms, 1e-12), dtype=np.float32)
+        with (timing.measure("category_encode_normalize") if timing else nullcontext()):
+            with self._embedding_lock:
+                query_matrix = np.asarray(embedder.encode_queries(query_texts), dtype=np.float32)
+            norms = np.linalg.norm(query_matrix, axis=1, keepdims=True)
+            query_matrix = np.divide(query_matrix, np.maximum(norms, 1e-12), dtype=np.float32)
         encode_ms = (time.perf_counter() - encode_started) * 1000
 
         by_item: dict[str, RetrievalHit] = {}
@@ -169,43 +181,46 @@ class PgVectorIndex:
         db_search_ms = 0.0
         generation_ids: set[int] = set()
         variant_top_ids: list[str] = []
-        for (query_kind, _), vector in zip(query_entries, query_matrix):
-            rows, metrics = self._search_vector(vector, max(top_k, 20))
-            if rows:
-                variant_top_ids.append(str(rows[0][1]))
-            pool_wait_ms += metrics["pool_wait_ms"]
-            db_search_ms += metrics["db_search_ms"]
-            for row in rows:
-                generation_ids.add(int(row[0]))
-                item_id = str(row[1])
-                item = self.taxonomy.items.get(item_id)
-                if item is None:
-                    continue
-                language = str(row[2])
-                hit = RetrievalHit(
-                    item_id=item_id,
-                    code=item.code,
-                    score=float(row[4]),
-                    rank=0,
-                    language=language,
-                    matched_text=str(row[3]),
-                    path=tuple(self.taxonomy.path_names(item_id, language)),
-                    profile_kind="primary",
-                    query_variant_kind=query_kind,
-                )
-                previous = by_item.get(item_id)
-                if previous is None or hit.score > previous.score:
-                    by_item[item_id] = hit
+        for variant_index, ((query_kind, _), vector) in enumerate(zip(query_entries, query_matrix)):
+            with (timing.measure("category_db_variant", variant_index=variant_index) if timing else nullcontext()):
+                rows, metrics = self._search_vector(vector, max(top_k, 20), timing=timing)
+                if rows:
+                    variant_top_ids.append(str(rows[0][1]))
+                pool_wait_ms += metrics["pool_wait_ms"]
+                db_search_ms += metrics["db_search_ms"]
+                with (timing.measure("category_hydrate_merge", row_count=len(rows)) if timing else nullcontext()):
+                    for row in rows:
+                        generation_ids.add(int(row[0]))
+                        item_id = str(row[1])
+                        item = self.taxonomy.items.get(item_id)
+                        if item is None:
+                            continue
+                        language = str(row[2])
+                        hit = RetrievalHit(
+                            item_id=item_id,
+                            code=item.code,
+                            score=float(row[4]),
+                            rank=0,
+                            language=language,
+                            matched_text=str(row[3]),
+                            path=tuple(self.taxonomy.path_names(item_id, language)),
+                            profile_kind="primary",
+                            query_variant_kind=query_kind,
+                        )
+                        previous = by_item.get(item_id)
+                        if previous is None or hit.score > previous.score:
+                            by_item[item_id] = hit
         if generation_ids and self.generation_id not in generation_ids:
             raise RuntimeError("search returned vectors outside the runtime-pinned generation")
-        hits = sorted(by_item.values(), key=lambda hit: (-hit.score, hit.item_id))[:top_k]
-        ranked = tuple(
-            RetrievalHit(
-                hit.item_id, hit.code, hit.score, rank + 1, hit.language,
-                hit.matched_text, hit.path, hit.profile_kind, hit.query_variant_kind,
+        with (timing.measure("category_sort_hits", candidate_count=len(by_item)) if timing else nullcontext()):
+            hits = sorted(by_item.values(), key=lambda hit: (-hit.score, hit.item_id))[:top_k]
+            ranked = tuple(
+                RetrievalHit(
+                    hit.item_id, hit.code, hit.score, rank + 1, hit.language,
+                    hit.matched_text, hit.path, hit.profile_kind, hit.query_variant_kind,
+                )
+                for rank, hit in enumerate(hits)
             )
-            for rank, hit in enumerate(hits)
-        )
         top1 = ranked[0].score if ranked else None
         margin = top1 - ranked[1].score if len(ranked) > 1 else None
         self._search_local.metadata = {

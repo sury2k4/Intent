@@ -1,5 +1,0 @@
-{"id":"hcmc-001","query":"quán cà phê có máy lạnh","language":"vi","expected_properties":[{"property_id":"air_conditioning","mode":"required","value":true}]}
-{"id":"hcmc-002","query":"quán cafe ưu tiên wifi, không có chỗ ngồi ngoài trời","language":"vi","expected_properties":[{"property_id":"internet_access","mode":"preferred","value":true},{"property_id":"outdoor_seating","mode":"excluded","value":true}]}
-{"id":"hcmc-003","query":"airy cafe with outdoor seating","language":"en","expected_properties":[{"property_id":"airy","mode":"required","value":"high"},{"property_id":"outdoor_seating","mode":"required","value":true}]}
-{"id":"hcmc-004","query":"quán cà phê không cần wifi","language":"vi","expected_properties":[]}
-{"id":"hcmc-005","query":"cafe rating từ 4.5 trong 2 km","language":"vi","expected_properties":[{"property_id":"rating","mode":"required","value":4.5},{"property_id":"radius_km","mode":"required","value":2.0}]}

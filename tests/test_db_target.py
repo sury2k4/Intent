@@ -33,10 +33,10 @@ def test_database_url_rejects_non_unified_target_without_leaking_credentials(url
 
 def test_configured_db_backends_require_unified_url(monkeypatch):
     monkeypatch.delenv("DATABASE_URL", raising=False)
-    for config in ({"retrieval_backend": "pgvector"}, {"poi_search": {"backend": "postgres"}}):
+    for config in ({"retrieval_backend": "pgvector"}, {"require_explicit_database_url": True}):
         with pytest.raises(RuntimeError, match="explicit DATABASE_URL"):
             validate_database_target(config)
-    assert validate_database_target({"retrieval_backend": "numpy", "poi_search": {"backend": "artifact"}}) is None
+    assert validate_database_target({"retrieval_backend": "numpy"}) is None
 
 
 def test_unified_url_is_accepted_but_explicit_invalid_url_never_falls_back(monkeypatch):

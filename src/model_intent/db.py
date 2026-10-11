@@ -38,12 +38,7 @@ def require_database_url(database_url: str | None = None) -> str:
 
 def validate_database_target(config: Mapping[str, Any], database_url: str | None = None) -> str | None:
     """Reject an unsafe target before loading a database-backed runtime."""
-    poi_config = config.get("poi_search") or {}
-    if (
-        config.get("require_explicit_database_url")
-        or config.get("retrieval_backend") == "pgvector"
-        or poi_config.get("backend") == "postgres"
-    ):
+    if config.get("require_explicit_database_url") or config.get("retrieval_backend") == "pgvector":
         return require_database_url(database_url)
     return database_url if database_url is not None else os.getenv("DATABASE_URL")
 
