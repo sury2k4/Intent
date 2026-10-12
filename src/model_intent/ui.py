@@ -185,52 +185,40 @@ _TIMING_COUNTS = {
 }
 _QUICK_CASES = {
     "vi": (
-        ("Dễ nhận diện", (
-            ("Cà phê · máy lạnh", "quán cà phê có máy lạnh, ưu tiên thoáng mát"),
-            ("Nhà thương · đỗ xe", "nhà thương có bãi đỗ xe"),
-        )),
-        ("Còn khó", (
-            ("Hai loại địa điểm", "quán cà phê hoặc nhà thuốc có máy lạnh"),
-            ("Thuộc tính chưa rõ", "quán cà phê có mát rượi"),
-            ("Chỉ có thuộc tính", "có máy lạnh"),
-            ("Hỏi thông tin", "cách mở nhà thuốc"),
-        )),
-        ("Thử thêm · điều kiện và tình huống", (
-            ("Bắt buộc / ưu tiên", "Quán cà phê cần có máy lạnh, nếu có wifi càng tốt"),
-            ("Loại trừ Wi-Fi", "quán cà phê không có wifi, có máy lạnh"),
-            ("Không cần Wi-Fi", "quán cà phê không cần wifi"),
-            ("Công viên · bóng mát", "công viên có bóng mát và ghế ngồi"),
-            ("Xe buýt · mái che", "điểm dừng xe buýt có mái che và ghế ngồi"),
-            ("Nhà nghỉ · tiếp cận", "nhà nghỉ có bãi đỗ ô tô không có chỗ cho xe lăn"),
-            ("ATM · rút tiền", "ATM rút tiền có mái che"),
-            ("Bãi đỗ là địa điểm", "tìm bãi đỗ ô tô"),
-            ("Tên viết gần đúng", "nhà nghĩ có bãi đỗ ô tô, không có chỗ cho xe lăng"),
-            ("Phủ định loại khác", "không phải nhà thương, nhà thuốc"),
-            ("Không tìm địa điểm", "tìm phần mềm quản lý bệnh viện"),
-        )),
+        ("Cà phê · máy lạnh", "quán cà phê có máy lạnh"),
+        ("Công viên · bóng mát", "công viên có bóng mát và ghế ngồi"),
+        ("Xe buýt · mái che", "điểm dừng xe buýt có mái che và ghế ngồi"),
+        ("Bệnh viện · xe lăn", "bệnh viện có lối tiếp cận xe lăn"),
+        ("Nhà nghỉ · đỗ ô tô", "nhà nghỉ có bãi đỗ ô tô không có chỗ cho xe lăn"),
+        ("ATM · rút tiền", "ATM rút tiền có mái che"),
+        ("Cây xăng · dầu diesel", "cây xăng không có dầu diesel"),
+        ("Phòng khám · đặt lịch", "phòng khám đặt lịch khám trước"),
+        ("Bảo tàng · thuyết minh", "bảo tàng có thuyết minh tự động"),
     ),
     "en": (
-        ("Easy to identify", (
-            ("Cafe · air conditioning", "cafe with air conditioning"),
-            ("Pharmacy · parking", "pharmacy with parking"),
-        )),
-        ("Needs a closer look", (
-            ("Two place types", "cafe or pharmacy with air conditioning"),
-            ("Only a property", "with air conditioning"),
-            ("Information request", "how to open a pharmacy"),
-        )),
-        ("Explore more · conditions and edge cases", (
-            ("Cafe · seating", "air-conditioned cafe with outdoor seating"),
-            ("Exclude Wi-Fi", "coffee with no wifi"),
-            ("Prefer no parking", "Motel without a car park, if possible"),
-            ("Park · shade", "park with shade and seating"),
-            ("Bus stop · shelter", "bus stop with shelter and seating"),
-            ("Bus arrival display", "bus stop with arrival display"),
-            ("Library · study", "library with a reading room"),
-            ("Pharmacy, not hospital", "not a hospital, a pharmacy near me"),
-            ("Bank, not ATM", "Not an ATM: I need an actual bank branch with staff."),
-            ("Software, not a place", "find accounting software for my laptop"),
-        )),
+        ("Cafe · air conditioning", "cafe with air conditioning"),
+        ("Park · shade", "park with shade and seating"),
+        ("Bus stop · shelter", "bus stop with shelter and seating"),
+        ("Hospital · accessibility", "hospital with wheelchair access"),
+        ("Motel · parking", "Motel with car parking, no wheelchair access"),
+        ("Restaurant · takeaway", "restaurant with takeaway"),
+        ("Library · air conditioning", "library with air conditioning"),
+        ("Supermarket · parking", "supermarket with parking"),
+        ("Museum · audio guide", "museum with audio guide"),
+    ),
+}
+_LIMITATION_CASES = {
+    "vi": (
+        ("Nhiều loại địa điểm", "quán cà phê hoặc nhà thuốc có máy lạnh"),
+        ("Thuộc tính mơ hồ", "quán cà phê có mát rượi"),
+        ("Đồng nghĩa ngoài catalog", "nhà nghỉ có chỗ cất ô tô"),
+        ("Yêu cầu kết hợp", "bệnh viện có nhà vệ sinh xe lăn vào được"),
+    ),
+    "en": (
+        ("Multiple place types", "cafe or pharmacy with air conditioning"),
+        ("Ambiguous property", "cafe with a cooling breeze"),
+        ("Synonym outside the catalog", "motel with a place to leave my car"),
+        ("Compound requirement", "bus stop with a sheltered live arrival display"),
     ),
 }
 
@@ -427,25 +415,20 @@ def _render_intent_analysis(st) -> None:
         st.caption("Ứng viên chưa chắc chắn chỉ để tham khảo, không tự tạo điều kiện lọc.")
 
     if "intent_query_input" not in st.session_state:
-        st.session_state["intent_query_input"] = "quán cà phê có máy lạnh, ưu tiên thoáng mát"
-    st.subheader("Thử nhanh một câu")
-    st.caption("Ví dụ minh họa để khám phá cách hệ thống xử lý, không phải kết quả đánh giá đã kiểm chứng.")
-    quick_query = None
-    for group_index, (group_label, cases) in enumerate(_QUICK_CASES[language]):
-        if group_index >= 2:
-            with st.expander(f"{group_label} ({len(cases)} câu)", expanded=False):
-                chosen = _render_quick_case_buttons(st, cases, language, group_index)
-        else:
-            st.caption(group_label)
-            chosen = _render_quick_case_buttons(st, cases, language, group_index)
-        if chosen is not None:
-            quick_query = chosen
+        st.session_state["intent_query_input"] = "quán cà phê có máy lạnh"
+    st.subheader("Mẫu test nhanh" if language == "vi" else "Quick test examples")
+    st.caption("Đã xử lý được" if language == "vi" else "Handled examples")
+    quick_query = _render_quick_case_buttons(st, _QUICK_CASES[language], language, 0)
+    st.caption("Chưa xử lý trọn vẹn" if language == "vi" else "Not fully resolved")
+    limitation_query = _render_quick_case_buttons(st, _LIMITATION_CASES[language], language, 1)
+    if limitation_query is not None:
+        quick_query = limitation_query
     with st.form("intent_analysis_form"):
         query = st.text_area(
             "Bạn đang tìm nơi như thế nào?" if language == "vi" else "What place are you looking for?",
             key="intent_query_input",
             height=100,
-            placeholder="Ví dụ: quán cà phê có máy lạnh, ưu tiên thoáng mát",
+            placeholder="Ví dụ: quán cà phê có máy lạnh",
         )
         submitted = st.form_submit_button("Phân tích query", type="primary", width="stretch")
     if quick_query is not None or submitted:

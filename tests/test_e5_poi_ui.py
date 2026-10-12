@@ -527,41 +527,74 @@ def test_quick_example_runs_once_and_shows_request_latency(monkeypatch):
     at.button(key="intent-example-vi-0-0").click().run()
     assert not at.exception
     assert not at.error, [str(row.value) for row in at.error]
-    assert submitted == [("quán cà phê có máy lạnh, ưu tiên thoáng mát", "vi")]
+    assert submitted == [("quán cà phê có máy lạnh", "vi")]
     assert at.text_area[0].value == submitted[0][0]
     assert at.metric[0].value == "12.40 ms"
     assert any("Quán cà phê" in str(row.value) for row in at.success)
     assert not any(button.key and button.key.startswith("intent-clarify-") for button in at.button)
+    assert any("Chưa xử lý trọn vẹn" in str(row.value) for row in at.caption)
+    assert any(button.key and button.key.startswith("intent-example-vi-1-") for button in at.button)
+    assert not any(button.key and button.key.startswith("intent-limitation-") for button in at.button)
+    at.button(key="intent-example-vi-0-4").click().run()
+    assert not at.exception
+    assert submitted[-1] == ("nhà nghỉ có bãi đỗ ô tô không có chỗ cho xe lăn", "vi")
+    assert len(submitted) == 2
+    assert at.text_area[0].value == submitted[-1][0]
+    at.button(key="intent-example-vi-0-8").click().run()
+    assert not at.exception
+    assert submitted[-1] == ("bảo tàng có thuyết minh tự động", "vi")
+    assert len(submitted) == 3
+    assert at.text_area[0].value == submitted[-1][0]
     at.button(key="intent-example-vi-1-0").click().run()
     assert not at.exception
     assert submitted[-1] == ("quán cà phê hoặc nhà thuốc có máy lạnh", "vi")
-    assert len(submitted) == 2
+    assert len(submitted) == 4
     assert at.text_area[0].value == submitted[-1][0]
-    at.button(key="intent-example-vi-2-0").click().run()
+    at.button(key="intent-example-vi-1-3").click().run()
     assert not at.exception
-    assert submitted[-1] == ("Quán cà phê cần có máy lạnh, nếu có wifi càng tốt", "vi")
-    assert len(submitted) == 3
+    assert submitted[-1] == ("bệnh viện có nhà vệ sinh xe lăn vào được", "vi")
+    assert len(submitted) == 5
     assert at.text_area[0].value == submitted[-1][0]
     at.radio[0].set_value("en").run()
     assert not at.exception
-    at.button(key="intent-example-en-2-9").click().run()
+    at.button(key="intent-example-en-0-8").click().run()
     assert not at.exception
-    assert submitted[-1] == ("find accounting software for my laptop", "en")
-    assert len(submitted) == 4
+    assert submitted[-1] == ("museum with audio guide", "en")
+    assert len(submitted) == 6
+    assert at.text_area[0].value == submitted[-1][0]
+    at.button(key="intent-example-en-1-2").click().run()
+    assert not at.exception
+    assert submitted[-1] == ("motel with a place to leave my car", "en")
+    assert len(submitted) == 7
     assert at.text_area[0].value == submitted[-1][0]
 
 
-def test_quick_examples_cover_diverse_cases_without_duplicate_queries():
-    for language, groups in ui._QUICK_CASES.items():
-        assert len(groups) == 3
-        assert len(groups[0][1]) >= 2 and len(groups[1][1]) >= 3
-        assert len(groups[2][1]) >= 8
-        cases = [case for _, group_cases in groups for case in group_cases]
-        assert len(cases) >= 14
-        assert len({label for label, _ in cases}) == len(cases), language
-        assert len({query.casefold() for _, query in cases}) == len(cases), language
-    assert ui._QUICK_CASES["vi"][0][1][0][1] == "quán cà phê có máy lạnh, ưu tiên thoáng mát"
-    assert ui._QUICK_CASES["vi"][1][1][0][1] == "quán cà phê hoặc nhà thuốc có máy lạnh"
+def test_quick_examples_offer_two_matching_clickable_groups():
+    for language, cases in ui._QUICK_CASES.items():
+        assert len(cases) == 9
+        assert len({label for label, _ in cases}) == 9, language
+        assert len({query.casefold() for _, query in cases}) == 9, language
+        assert len({label.split(" · ")[0] for label, _ in cases}) >= 8, language
+        limitations = ui._LIMITATION_CASES[language]
+        assert len(limitations) == 4
+        assert all(label and example for label, example in limitations)
+        assert len({example.casefold() for _, example in limitations}) == 4
+        assert not ({example.casefold() for _, example in limitations}
+                    & {query.casefold() for _, query in cases})
+    assert ui._QUICK_CASES["vi"][0][1] == "quán cà phê có máy lạnh"
+    assert ui._LIMITATION_CASES["vi"][0][1] == "quán cà phê hoặc nhà thuốc có máy lạnh"
+    assert ui._LIMITATION_CASES["vi"][3] == ("Yêu cầu kết hợp", "bệnh viện có nhà vệ sinh xe lăn vào được")
+    assert not any("ship đồ" in query for _, query in ui._LIMITATION_CASES["vi"])
+
+
+def test_quick_examples_have_directly_recognized_properties():
+    from model_intent.poi_properties import load_property_definitions
+    from model_intent.property_extraction import PropertyExtractor
+
+    extractor = PropertyExtractor(load_property_definitions(ROOT / "data/properties/poi_properties.poc.v8.json"))
+    for language, cases in ui._QUICK_CASES.items():
+        for label, query in cases:
+            assert any(row.applied for row in extractor.extract(query).properties), (language, label)
 
 
 def test_result_columns_keep_latency_and_technical_details_full_width():
