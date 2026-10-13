@@ -9,6 +9,7 @@ from .category_resolution import ExplicitCategory, explicit_categories
 from .normalization import fold_vietnamese, normalize_text
 from .property_extraction import _fold_with_offsets
 from .property_schemas import ExtractedProperty, PropertyExtraction
+from .requested_search import extract_requested_search
 from .query_scope import non_place_reason
 from .taxonomy import Taxonomy
 
@@ -109,6 +110,7 @@ class InterpretedQuery:
     focused_reason: str
     category_boundary: Mapping[str, Any] | None = None
     unresolved_property_clauses: tuple[Mapping[str, Any], ...] = ()
+    requested_search: Mapping[str, Any] | None = None
 
     @property
     def variants(self) -> tuple[str, ...]:
@@ -132,6 +134,9 @@ class InterpretedQuery:
             "focused_reason": self.focused_reason,
             "category_boundary": dict(self.category_boundary) if self.category_boundary else None,
             "unresolved_property_clauses": [dict(row) for row in self.unresolved_property_clauses],
+            "requested_search": {
+                "sort_candidates": [dict(row) for row in (self.requested_search or {}).get("sort_candidates", ())],
+            },
         }
 
 
@@ -275,6 +280,53 @@ def _unresolved_property_clauses(
     return tuple(unresolved)
 
 
+def _merge_pending_requests(
+    text: str, properties: list[ExtractedProperty], requests: list[dict[str, Any]],
+) -> list[ExtractedProperty]:
+    merged = list(properties)
+    for request in requests:
+        start, end = request["start_offset"], request["end_offset"]
+        status = str(request["status"])
+        required_data = tuple(str(value) for value in request["requires"])
+        overlapping_rating = next((
+            index for index, row in enumerate(merged)
+            if row.property_id == "rating" and row.start_offset is not None and row.end_offset is not None
+            and start < row.end_offset and end > row.start_offset
+        ), None)
+        if overlapping_rating is not None:
+            row = merged[overlapping_rating]
+            if row.ignored_reason == "rating_out_of_range":
+                continue
+            if request["kind"] == "review_rating":
+                merged[overlapping_rating] = replace(
+                    row, status=status, requires=required_data,
+                    applied=False, ignored_reason="rating_unverified",
+                )
+                continue
+            merged.pop(overlapping_rating)
+        if any(
+            row.start_offset is not None and row.end_offset is not None
+            and start < row.end_offset and end > row.start_offset
+            for row in merged
+        ):
+            continue
+        kind = str(request["kind"])
+        merged.append(ExtractedProperty(
+            property_id="rating" if kind == "review_rating" else kind,
+            mode="preferred" if kind == "quality_by_reviews" else "required",
+            operator=str(request.get("operator", "near" if kind == "near" else "rank" if kind == "quality_by_reviews" else "eq")),
+            value=request.get("value"), evidence_text=text[start:end],
+            start_offset=start, end_offset=end, matched_alias=text[start:end],
+            cue="requested_search", confidence=0.0, applied=False,
+            ignored_reason="rating_unverified" if kind == "review_rating" else status,
+            status=status, requires=required_data,
+        ))
+    return sorted(merged, key=lambda row: (
+        row.start_offset if row.start_offset is not None else len(text),
+        row.end_offset if row.end_offset is not None else len(text),
+    ))
+
+
 def interpret_query(
     text: str,
     extraction: PropertyExtraction,
@@ -332,6 +384,18 @@ def interpret_query(
             "property_id": row.property_id, "evidence": row.evidence_text,
             "start_offset": start, "end_offset": end, "role": role,
         })
+
+    pending_filters, sort_requests, requested_spans = extract_requested_search(
+        text, category_matches=chosen, properties=resolved_properties,
+    )
+    resolved_properties = _merge_pending_requests(text, resolved_properties, pending_filters)
+    for start, end in requested_spans:
+        left, _ = _constraint_removal(text, start, end)
+        if left == start:
+            prefix = re.search(r"(?i)\b(?:ở|tại|in|at)\s*$", text[:start])
+            if prefix:
+                left = prefix.start()
+        removed_spans.append((left, end))
 
     cue = _first_property_boundary(text, chosen, roles, heads) if not extraction.failed_open else None
     if cue is None and not chosen and not extraction.failed_open and not non_place_reason(text):
@@ -428,4 +492,5 @@ def interpret_query(
         text, focused,
         PropertyExtraction(extraction.query, extraction.schema_version, tuple(resolved_properties), extraction.warnings, extraction.failed_open),
         tuple(chosen), tuple(roles), usable, reason, boundary, unresolved,
+        requested_search={"sort_candidates": sort_requests},
     )

@@ -23,6 +23,7 @@ POC này phân tích một câu hỏi tiếng Việt hoặc tiếng Anh thành *
 | Tách category và thuộc tính được nhắc đến; phân biệt yêu cầu bắt buộc, ưu tiên, loại trừ hoặc không cần. | Tìm POI theo tên hoặc kết hợp tên POI với `place_type`. |
 | Tìm ứng viên category bằng E5/pgvector; khi chưa phân định, hiển thị các khả năng để tham khảo. | Truy vấn, lọc, xác minh thuộc tính hoặc xếp hạng POI thực tế. |
 | Gợi ý property cho cụm chưa nhận diện; hiển thị latency của các bước phân tích. | Tự chấp nhận ứng viên category/property chưa rõ hoặc tạo filter từ gợi ý. |
+| Nhận diện yêu cầu **lọc/xếp hạng dự kiến** như gần đây, gần nhất, ngon/xịn, hạng khách sạn hoặc điểm đánh giá có ngữ cảnh. | Tính khoảng cách thực tế, lọc hạng sao hay xếp hạng theo review khi chưa có vị trí và dữ liệu POI được kiểm chứng. |
 
 Streamlit là **giao diện người dùng**. CLI `model_intent` phục vụ kiểm tra trạng thái và quản trị generation, **không phải** CLI hỏi đáp/tìm kiếm POI.
 
@@ -31,6 +32,7 @@ Streamlit là **giao diện người dùng**. CLI `model_intent` phục vụ ki�
 ```text
 Câu hỏi
   ├─ Dò alias thuộc tính + ngữ cảnh yêu cầu → property nhận diện trực tiếp
+  ├─ Nhận diện yêu cầu gần/chất lượng/sao → filter + sort dự kiến (chờ dữ liệu)
   ├─ Diễn giải phần còn lại → cụm category
   │    └─ E5 mã hóa → pgvector so cosine exact → ứng viên và quyết định category
   └─ Cụm thuộc tính chưa hiểu → E5/pgvector riêng → gợi ý, không tự áp dụng
@@ -41,6 +43,7 @@ Câu hỏi
 1. **Tách câu:** Catalog và các quy tắc xử lý vị trí, dấu nối, phủ định giúp phân vai cụm thuộc tính/category. Không cần có từ “có” để nhận diện một property đã có alias; từ “ưu tiên”, “không có”, “không cần” giúp xác định vai trò của nó. Phần không khớp được giữ là *chưa rõ*, không tự biến thành điều kiện lọc.
 2. **Đối chiếu category:** E5-base mã hóa phần câu mô tả loại địa điểm. PostgreSQL/pgvector xếp hạng các profile song ngữ theo cosine **exact**. Policy và kiểm tra alias, xung đột, ngữ cảnh ngoài phạm vi quyết định chấp nhận, giữ nhiều ứng viên hoặc từ chối; một từ khớp alias không tự động thắng kết quả semantic.
 3. **Xử lý property:** Thuộc tính nhận diện trực tiếp được kiểm tra khả năng áp dụng nếu category đã được chấp nhận. Khi có cụm chưa hiểu, hệ thống mới thử chỉ mục semantic property riêng và hiển thị tối đa ba gợi ý đạt ngưỡng. Lỗi backend được báo ra thay vì âm thầm thêm filter. Giao diện hiện **không có thao tác chọn/xác nhận gợi ý**.
+4. **Bộ lọc/xếp hạng được yêu cầu:** “gần đây/quanh đây” tạo property `near`, “gần nhất” thêm xếp khoảng cách tăng dần; “ngon/xịn” tạo property ưu tiên chất lượng và xếp theo điểm review như một *proxy dự kiến*, không khẳng định nơi đó ngon. “Khách sạn 5 sao” được hiểu là hạng lưu trú, “đánh giá 5 sao” là rating, còn “5 sao” thiếu ngữ cảnh giữ trạng thái mơ hồ. Các property này nằm **chung trong danh sách Properties**, có `applied=false`/`status` chờ vị trí hoặc dữ liệu POI/review; chỉ yêu cầu *thứ tự* nằm riêng trong `requested_search.sort_candidates`. Không có bộ lọc đã chạy hay nguồn điểm giả.
 
 Ví dụ minh họa cách tách: `quán cà phê có máy lạnh` có cụm category `quán cà phê` và thuộc tính trực tiếp `máy lạnh` ở chế độ bắt buộc. Đây là ví dụ về **cấu trúc đầu ra mong đợi**, không bảo đảm một lần chạy trên DB bất kỳ sẽ chấp nhận category hay tìm được POI có máy lạnh.
 
@@ -76,7 +79,8 @@ Mở `http://localhost:8501` hoặc cổng Streamlit thông báo. **Không đưa
 
 ## Đọc kết quả
 
-- `filter_candidates` (bắt buộc/loại trừ) và `preference_candidates` (ưu tiên) là **điều kiện được suy ra từ câu hỏi**, chưa chạy trên POI. `applied` nghĩa là một property được hiểu và, nếu category đã được chọn, vượt kiểm tra phù hợp; nó **không chứng minh có địa điểm thật đáp ứng**. Khi category chưa chốt, khả năng áp dụng vẫn có thể đang chờ xác định.
+- `property_extraction.properties` chứa **cả** thuộc tính catalog và các yêu cầu `near`, `quality_by_reviews`, `rating`, hạng sao/chưa rõ sao. Các yêu cầu mới này là property intent *ngoài catalog v8*, không được thêm vào chỉ mục semantic đã ghim. Khi cần dữ liệu ngoài POC, hàng có `applied=false`, kèm `status`/`requires` và hiển thị trong **cùng cột Properties**. `filter_candidates` (bắt buộc/loại trừ) và `preference_candidates` (ưu tiên) chỉ chứa các thuộc tính catalog đang áp dụng cho **cách hiểu câu hỏi**, chưa chạy trên POI. Khi category chưa chốt, khả năng áp dụng của thuộc tính catalog vẫn có thể đang chờ xác định.
+- `requested_search.sort_candidates` chỉ ghi **thứ tự mong muốn chưa được thực thi**. Chẳng hạn “quán ăn ngon gần nhất” có hai property pending (`near`, `quality_by_reviews`), ưu tiên khoảng cách tăng dần rồi tới điểm review giảm dần; vẫn cần vị trí người dùng, tọa độ POI và review đã kiểm chứng. “5 sao” không tự biến thành rating thật khi ngữ cảnh chưa rõ. `rating từ 4.5` có thể bóc tách số nhưng không đưa vào filter có thể áp dụng khi thiếu dữ liệu đánh giá. `applied` không chứng minh có POI thật đáp ứng điều kiện.
 - Ứng viên category khi hệ thống chưa phân định và gợi ý property semantic là **tham khảo**, không tự biến thành category đã chọn hay filter. Câu chỉ có property có thể không có category để tìm vector; câu hỏi thông tin/ngoài phạm vi không bị ép thành loại địa điểm.
 - Cosine E5 chỉ biểu diễn mức tương đồng, **không phải xác suất đúng**. `calibrated_confidence` v3 là điểm bằng chứng *proxy* tạm thời dựa trên nhãn tác giả/taxonomy tự xây dựng; nó mô tả top-1 semantic (có thể là canonical probe), **không phải xác suất category cuối cùng đúng**. Đọc nguồn quyết định và chứng cứ riêng trong JSON kỹ thuật.
 - Latency là thời gian **request phân tích đã hoàn tất** trên server, không phải thời gian tải trang hay hoạt ảnh. Bước con nằm trong thời gian của bước cha, không cộng hai lần; bước bị bỏ qua/không đo không phải `0 ms`.

@@ -636,12 +636,12 @@ class SearchRuntime:
         parts["filter_candidates"] = [
             row for row in properties
             if row["applied"] and row["mode"] in {"required", "excluded"}
-            and row["property_id"] != "radius_km"
+            and row["property_id"] not in {"radius_km", "rating"}
         ]
         parts["preference_candidates"] = [
             row for row in properties
             if row["applied"] and row["mode"] == "preferred"
-            and row["property_id"] != "radius_km"
+            and row["property_id"] not in {"radius_km", "rating"}
         ]
 
     def _analysis_from_category(
@@ -676,6 +676,9 @@ class SearchRuntime:
                     "unresolved_property_clauses": interpretation.get("unresolved_property_clauses", []),
                     "semantic_property_suggestions": suggestions,
                     "semantic_property_metadata": semantic_meta,
+                    "requested_search": interpretation.get("requested_search") or {
+                        "sort_candidates": [],
+                    },
                     "pgvector_queries": interpretation.get("pgvector_queries", []),
                     "vector_query_mode": interpretation.get("vector_query_mode", "unknown"),
                     "applicability": "checked" if decision.get("action") == "accept" else "pending_category",

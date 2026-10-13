@@ -20,9 +20,11 @@ class ExtractedProperty:
     confidence: float = 1.0
     applied: bool = True
     ignored_reason: str | None = None
+    status: str | None = None
+    requires: tuple[str, ...] = ()
 
     def as_dict(self) -> dict[str, Any]:
-        return {
+        payload = {
             "property_id": self.property_id,
             "mode": self.mode,
             "operator": self.operator,
@@ -36,6 +38,10 @@ class ExtractedProperty:
             "applied": self.applied,
             "ignored_reason": self.ignored_reason,
         }
+        if self.status is not None:
+            payload["status"] = self.status
+            payload["requires"] = list(self.requires)
+        return payload
 
 
 @dataclass(frozen=True)

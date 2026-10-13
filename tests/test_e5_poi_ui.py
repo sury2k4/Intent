@@ -438,6 +438,64 @@ def test_ui_keeps_accepted_category_distinct_from_semantic_top_hit():
     assert next(text for kind, text in st.messages if kind == "json")["prediction"] == result["intent"]["prediction"]
 
 
+def test_ui_displays_requested_filters_and_sorts_as_pending_only():
+    class RecordingUI:
+        def __init__(self):
+            self.messages = []
+
+        def __getattr__(self, method):
+            if method in {"subheader", "success", "warning", "caption", "info", "write", "markdown"}:
+                return lambda text, **kwargs: self.messages.append((method, text))
+            if method == "columns":
+                return lambda *args, **kwargs: (self, self)
+            if method == "expander":
+                return lambda *args, **kwargs: nullcontext()
+            if method == "json":
+                return lambda data: self.messages.append(("json", data))
+            if method in {"selectbox", "button"}:
+                pytest.fail("Pending search request must not be applied by UI")
+            raise AttributeError(method)
+
+    st = RecordingUI()
+    runtime = SimpleNamespace(
+        category_runtime=SimpleNamespace(taxonomy=SimpleNamespace(path_names=lambda *_: ["Quán ăn"])),
+        property_catalog={},
+    )
+    result = {
+        "query": "quán ăn ngon gần nhất",
+        "intent": {"decision": {"action": "accept", "accepted_item_id": "20"}},
+        "property_extraction": {"properties": [
+            {"property_id": "quality_by_reviews", "mode": "preferred", "status": "pending_review_data",
+             "applied": False, "evidence_text": "ngon", "value": None},
+            {"property_id": "near", "mode": "required", "status": "pending_location",
+             "applied": False, "evidence_text": "gần nhất", "value": None},
+        ]},
+        "query_parts": {
+            "filter_candidates": [], "preference_candidates": [],
+            "requested_search": {
+                "sort_candidates": [
+                    {"kind": "distance_asc", "status": "pending_location", "evidence_text": "gần nhất"},
+                    {"kind": "review_score_desc", "status": "pending_review_data", "evidence_text": "ngon"},
+                ],
+            },
+        },
+    }
+    ui._render_intent_result(st, result, runtime, "vi")
+    shown = " ".join(str(value) for method, value in st.messages if method != "json")
+    cards = [value for method, value in st.messages if method == "markdown" and 'class="prop-item-card"' in value]
+    assert len(cards) == 2
+    assert "Ưu tiên" in cards[0] and "Ưu tiên nơi được đánh giá tốt" in cards[0]
+    assert "Bắt buộc" in cards[1] and "Gần vị trí người dùng" in cards[1]
+    assert "Dự kiến, chưa áp dụng trên POI" in cards[0] and "Dự kiến, chưa áp dụng trên POI" in cards[1]
+    assert "Cần vị trí người dùng" in shown and "Cần dữ liệu đánh giá" in shown
+    assert "gần nhất trước" in shown and "điểm đánh giá cao trước" in shown
+    assert "Bộ lọc và xếp hạng dự kiến" not in shown
+    assert result["query_parts"]["filter_candidates"] == []
+    payload = next(value for method, value in st.messages if method == "json")
+    assert [row["property_id"] for row in payload["property_extraction"]["properties"]] == ["quality_by_reviews", "near"]
+    assert "filter_candidates" not in payload["query_parts"]["requested_search"]
+
+
 def test_ui_shows_folded_category_suggestion_and_unresolved_property_clause():
     class RecordingUI:
         def __init__(self):

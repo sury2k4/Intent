@@ -518,11 +518,15 @@ def _render_intent_result(st, result, runtime, language: str) -> None:
     properties = extraction.get("properties") or []
     filter_candidates = parts.get("filter_candidates") or []
     preference_candidates = parts.get("preference_candidates") or []
+    requested_search = parts.get("requested_search") or {}
+    requested_sorts = requested_search.get("sort_candidates") or []
+    pending_count = sum(row.get("status") is not None for row in properties)
 
     property_st.subheader("Properties · Yêu cầu thêm")
     property_st.caption(
-        f"Đã hiểu {len(filter_candidates)} điều kiện bắt buộc/loại trừ và "
-        f"{len(preference_candidates)} ưu tiên. Đây chỉ là cách hiểu câu hỏi, chưa lọc địa điểm nào."
+        f"Đã hiểu {len(filter_candidates)} điều kiện bắt buộc/loại trừ, "
+        f"{len(preference_candidates)} ưu tiên và {pending_count} yêu cầu còn chờ dữ liệu. "
+        "Đây chỉ là cách hiểu câu hỏi, chưa lọc địa điểm nào."
     )
     if parts.get("applicability") == "pending_category":
         property_st.caption("Chưa xác định loại địa điểm, nên một số yêu cầu chưa thể kiểm tra độ phù hợp.")
@@ -534,13 +538,33 @@ def _render_intent_result(st, result, runtime, language: str) -> None:
             prop_id = str(row.get("property_id", ""))
             definition = runtime.property_catalog.get(prop_id, {})
             aliases = (definition.get("aliases") or {}).get(language) or []
-            label = aliases[0] if aliases else prop_id
+            label = {
+                "near": "Gần vị trí người dùng",
+                "quality_by_reviews": "Ưu tiên nơi được đánh giá tốt",
+                "rating": "Điểm đánh giá",
+                "accommodation_star_class": "Hạng lưu trú",
+                "ambiguous_stars": "Số sao chưa rõ là hạng hay đánh giá",
+            }.get(prop_id, aliases[0] if aliases else prop_id)
+            if prop_id in {"rating", "accommodation_star_class", "ambiguous_stars"} and row.get("value") is not None:
+                label += f" {float(row['value']):g} sao"
             mode_raw = row.get("mode", "required")
             mode_label = {"required": "Bắt buộc", "preferred": "Ưu tiên", "excluded": "Loại trừ"}.get(
                 mode_raw, "Chưa rõ vai trò"
             )
-            if not row.get("applied"):
-                state_desc = "Chưa áp dụng" + (f": {row['ignored_reason']}" if row.get("ignored_reason") else "")
+            if row.get("status") is not None:
+                status = {
+                    "pending_location": "Cần vị trí người dùng và tọa độ POI",
+                    "pending_review_data": "Cần dữ liệu đánh giá đã kiểm chứng",
+                    "pending_classification_data": "Cần dữ liệu hạng lưu trú đã kiểm chứng",
+                    "needs_clarification": "Cần làm rõ ý nghĩa số sao",
+                }.get(row["status"], "Còn chờ dữ liệu")
+                state_desc = f"Dự kiến, chưa áp dụng trên POI · {status}"
+            elif not row.get("applied"):
+                reason = {
+                    "rating_out_of_range": "Điểm đánh giá ngoài thang 1–5",
+                    "rating_unverified": "Chưa có dữ liệu đánh giá để áp dụng",
+                }.get(row.get("ignored_reason"), row.get("ignored_reason"))
+                state_desc = "Chưa áp dụng" + (f": {reason}" if reason else "")
             elif prop_id == "radius_km":
                 state_desc = "Chỉ ghi nhận khoảng cách, chưa lọc địa điểm"
             elif action == "accept" and accepted_id:
@@ -574,6 +598,14 @@ def _render_intent_result(st, result, runtime, language: str) -> None:
             property_st.warning(f"Chưa hiểu yêu cầu “{clause['text']}”; chưa tạo điều kiện lọc.")
     if suggestions:
         _render_semantic_property_suggestions(property_st, result)
+    if requested_sorts:
+        labels = {
+            "distance_asc": "gần nhất trước",
+            "review_score_desc": "điểm đánh giá cao trước",
+        }
+        property_st.caption("Xếp hạng mong muốn (chưa chạy): " + " → ".join(
+            labels.get(str(row.get("kind")), str(row.get("kind"))) for row in requested_sorts
+        ))
 
     _render_timing_breakdown(st, result)
     with st.expander("Chi tiết kỹ thuật"):

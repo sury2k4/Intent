@@ -242,9 +242,9 @@ class PropertyExtractor:
     def _extract_numeric_constraints(text: str) -> list[ExtractedProperty]:
         output: list[ExtractedProperty] = []
         rating_pattern = re.compile(
-            r"(?P<cue>rating|điểm|d[aá]nh gi[aá]|stars?)\s*"
+            r"(?<!\w)(?P<cue>rating|điểm|đánh\s+giá|danh\s+gia|stars?)\s*"
             r"(?P<op>từ|trên|ít nhất|at least|above|over|>=|>)?\s*"
-            r"(?P<value>[0-5](?:[\.,]\d+)?)(?!\d)", re.IGNORECASE,
+            r"(?P<value>[0-5](?:[\.,]\d+)?)(?:\s*(?:sao|stars?))?(?!\w)", re.IGNORECASE,
         )
         for match in rating_pattern.finditer(text):
             value = float(match.group("value").replace(",", "."))
@@ -255,8 +255,8 @@ class PropertyExtractor:
                 property_id="rating", mode="required", operator=operator, value=value,
                 evidence_text=match.group(0), start_offset=match.start(), end_offset=match.end(),
                 matched_alias=match.group("cue"), cue=match.group("op") or "rating",
-                confidence=0.97, applied=not invalid,
-                ignored_reason="rating_out_of_range" if invalid else None,
+                confidence=0.97, applied=False,
+                ignored_reason="rating_out_of_range" if invalid else "rating_unverified",
             ))
         radius_pattern = re.compile(
             r"(?:trong|within|under)\s+(?P<value>\d+(?:[\.,]\d+)?)\s*(?P<unit>km|kilometers?|m|meters?)\b",

@@ -44,6 +44,74 @@ def runtime(action="accept"):
     return search, category, SimpleNamespace(calls=0)
 
 
+def test_catalog_property_and_pending_request_share_one_list():
+    search, category, repository = runtime()
+    category.model_key = "e5-base-multilingual"
+    result = search.analyze_intent("quán cà phê có máy lạnh gần nhất")
+    assert category.queries == ["quán cà phê"]
+    properties = result["property_extraction"]["properties"]
+    assert [(row["property_id"], row["applied"]) for row in properties] == [
+        ("air_conditioning", True), ("near", False),
+    ]
+    assert "status" not in properties[0]
+    assert (properties[1]["status"], properties[1]["requires"]) == (
+        "pending_location", ["user_location", "poi_coordinates"],
+    )
+    assert [row["property_id"] for row in result["query_parts"]["filter_candidates"]] == ["air_conditioning"]
+    assert result["query_parts"]["requested_search"]["sort_candidates"][0]["kind"] == "distance_asc"
+    assert "filter_candidates" not in result["query_parts"]["requested_search"]
+    assert "poi_search" not in result and repository.calls == 0
+
+
+def test_pending_requested_filters_are_exposed_without_poi_execution():
+    search, category, repository = runtime()
+    category.model_key = "e5-base-multilingual"
+    result = search.analyze_intent("quán ăn ngon gần nhất")
+    assert category.queries == ["quán ăn"]
+    assert result["query_parts"]["category_text"] == "quán ăn"
+    requested = result["query_parts"]["requested_search"]
+    properties = result["property_extraction"]["properties"]
+    assert [row["property_id"] for row in properties] == ["quality_by_reviews", "near"]
+    assert [row["status"] for row in properties] == ["pending_review_data", "pending_location"]
+    assert all(not row["applied"] for row in properties)
+    assert "filter_candidates" not in requested
+    assert [row["kind"] for row in requested["sort_candidates"]] == ["distance_asc", "review_score_desc"]
+    assert result["query_parts"]["filter_candidates"] == []
+    assert result["query_parts"]["preference_candidates"] == []
+    assert result["query_parts"]["unresolved_property_clauses"] == []
+    assert "poi_search" not in result and repository.calls == 0
+    assert result["intent"]["query_interpretation"]["requested_search"] == requested
+
+
+def test_explicit_review_rating_is_pending_not_an_applied_filter():
+    search, category, repository = runtime()
+    category.model_key = "e5-base-multilingual"
+    result = search.analyze_intent("quán cà phê rating above 4.5")
+    assert category.queries == ["quán cà phê"]
+    rating = next(row for row in result["property_extraction"]["properties"] if row["property_id"] == "rating")
+    assert rating["applied"] is False and rating["ignored_reason"] == "rating_unverified"
+    assert (rating["operator"], rating["value"]) == ("gt", 4.5)
+    assert result["query_parts"]["filter_candidates"] == []
+    assert rating["status"] == "pending_review_data"
+    assert "filter_candidates" not in result["query_parts"]["requested_search"]
+    assert repository.calls == 0
+
+
+def test_selected_category_preserves_pending_search_request_without_reretrieval():
+    search, category, repository = runtime(action="reject")
+    category.model_key = "e5-base-multilingual"
+    initial = search.analyze_intent("quán cà phê gần nhất")
+    selected = search.resolve_selection_and_analyze_intent(
+        query="quán cà phê gần nhất", selected_id="23", allowed_option_ids=["23"],
+    )
+    assert len(category.queries) == 1
+    assert selected["query_parts"]["requested_search"] == initial["query_parts"]["requested_search"]
+    assert selected["property_extraction"]["properties"] == initial["property_extraction"]["properties"]
+    assert selected["property_extraction"]["properties"][0]["status"] == "pending_location"
+    assert selected["query_parts"]["filter_candidates"] == []
+    assert "poi_search" not in selected and repository.calls == 0
+
+
 def test_intent_analysis_returns_category_and_properties_without_poi_search():
     search, category, repository = runtime()
     query = "quán cà phê có máy lạnh"
